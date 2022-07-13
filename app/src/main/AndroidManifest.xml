@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.naturalopinion">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NaturalOpinion"
+        tools:targetApi="31">
+        <activity
+            android:name=".SupplementDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BotanicalDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClinicalListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FiberDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VitaminMineralDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReferenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Common_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".OtherTherapyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SupplimentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BotanicalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodAndNutritionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VitamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConditionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DatabaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlaceOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
