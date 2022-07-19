@@ -16,6 +16,7 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
     lateinit var recyclerView: RecyclerView
     lateinit var medicalAdapter: MedicalAdapter
     private val items = ArrayList<String>()
+    val premium = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medical_condition)
@@ -136,7 +137,7 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
 
         back_button = findViewById(R.id.back_button_5)
         recyclerView = findViewById(R.id.medical_recycler)
-        medicalAdapter = MedicalAdapter(this,false,this, items,15)
+        medicalAdapter = MedicalAdapter(this,premium,this, items,15)
 
         //Finish Activity
         back_button.setOnClickListener { finish() }
@@ -149,9 +150,14 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(position==15){
+        if(premium){
             val intent = Intent(this,ConditionDetailActivity::class.java)
-            intent.putExtra("condition_name",items[position])
+            intent.putExtra("heading",items[position])
+            startActivity(intent)
+        }
+        else if(position==15){
+            val intent = Intent(this,ConditionDetailActivity::class.java)
+            intent.putExtra("heading",items[position])
             startActivity(intent)
         }
     }

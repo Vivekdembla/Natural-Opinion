@@ -14,6 +14,33 @@
         android:theme="@style/Theme.NaturalOpinion"
         tools:targetApi="31">
         <activity
+            android:name=".FourTherapyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HydroTherapyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProImmuneFood"
+            android:exported="false" />
+        <activity
+            android:name=".NutritionalTipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhysicalExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhyscalExamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FattyAcidActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CleanisingDietActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeopathyDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SupplementDetailActivity"
             android:exported="false" />
         <activity

@@ -30,7 +30,6 @@ class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
         }
         back_button = findViewById(R.id.back_button_10)
 
-        val items = ArrayList<String>()
 
 
         items.add("Acidophilus/Bifidus")
@@ -83,9 +82,9 @@ class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(position==4){
+        if(position==8){
             val intent = Intent(this,SupplementDetailActivity::class.java)
-            intent.putExtra("heading","Supplement")
+            intent.putExtra("heading",items[position])
             startActivity(intent)
         }
     }

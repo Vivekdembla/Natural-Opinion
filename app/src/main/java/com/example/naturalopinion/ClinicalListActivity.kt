@@ -3,6 +3,7 @@ package com.example.naturalopinion
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.naturalopinion.Adapter.MedicalAdapter
 import com.example.naturalopinion.Adapter.onMedicalItemClick
@@ -16,6 +17,7 @@ class ClinicalListActivity : AppCompatActivity(), onMedicalItemClick {
         super.onCreate(savedInstanceState)
         binding = ActivityClinicalListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         list = intent.getStringArrayListExtra("list")!!
         clinical_adapter = MedicalAdapter(this,false,this,list,0)

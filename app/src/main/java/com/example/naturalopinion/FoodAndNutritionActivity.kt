@@ -8,7 +8,6 @@ import android.view.WindowManager
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.naturalopinion.Adapter.DatabaseAdapter
 import com.example.naturalopinion.Adapter.MedicalAdapter
 import com.example.naturalopinion.Adapter.onMedicalItemClick
 
@@ -55,8 +54,27 @@ class FoodAndNutritionActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(position==2){
+        if(position==0){
+            val intent = Intent(this,CleanisingDietActivity::class.java)
+            startActivity(intent)
+        } else if(position==1){
+            val intent = Intent(this,FattyAcidActivity::class.java)
+            startActivity(intent)
+        }
+        else if(position==2){
             val intent = Intent(this,FiberDetailActivity::class.java)
+            startActivity(intent)
+        }else if(position==3){
+            val intent = Intent(this,PhysicalExamActivity::class.java)
+            startActivity(intent)
+        }else if(position==4){
+            val intent = Intent(this,NutritionalTipsActivity::class.java)
+            startActivity(intent)
+        }else if(position==5){
+            val intent = Intent(this,ProImmuneFood::class.java)
+            startActivity(intent)
+        }else if(position==6){
+            val intent = Intent(this,HydroTherapyActivity::class.java)
             startActivity(intent)
         }
     }
