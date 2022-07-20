@@ -2,6 +2,7 @@ package com.example.naturalopinion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Spannable
 import android.text.SpannableString
 import android.view.View
 import android.view.WindowManager
@@ -11,6 +12,7 @@ import com.example.naturalopinion.databinding.ActivitySulphiteBinding
 class HydroTherapyActivity : AppCompatActivity() {
     lateinit var binding : ActivitySulphiteBinding
     var heading = ""
+    var ss = SpannableString("")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySulphiteBinding.inflate(layoutInflater)
@@ -25,9 +27,138 @@ class HydroTherapyActivity : AppCompatActivity() {
         binding.backButton6.setOnClickListener { finish() }
 
         heading = intent.getStringExtra("heading").toString()
+        binding.fiber.text = heading
 
+        if(heading=="Homeopathy"){
+            binding.contentData.text = "Twenty-five centuries ago, Hippocrates taught the principle, 'the same things which cause a disease cure it.' Around 1790, Christian Samuel Hahnemann, a brillant German physician, chemist and toxicologist, began conducting experiments with the known medicines of that particular time, aconite, belladonna, cinchona, ipecac, mercury, etc., using himself as the patient. For example, he observed that taking quinine brought on symptoms of malaria, the disease that quinine often cured. After years and many agents tested, he concluded that 'like cures like' but only when the agent was very weak or infinitesimal.\n" +
+                    "\n" +
+                    "For 200 years since Hahnemann, homeopaths have studied the behavior of humans when brought into contact with a single substance. They collected data about such substances, referred to as remedies, in homeopathic repertories, including Kent's Repertory, Standard Repertory and Homeopathic Medical Repertory, to name a few.\n" +
+                    "\n" +
+                    "The remedies are made from substances taken from the vegetable, mineral, and animal kingdoms. Each remedy is diluted and succussed (shaken in a stylized fashion), yielding a solution that probably contains none of the original molecules but contains the electromagnetic imprint. Each remedy has its own profile, or personality, which is matched to the patient's profile.\n" +
+                    "\n" +
+                    "Europe, especially Germany, and India use homeopathy as a primary treatment modality. Even though the molecule of the original substance cannot be scientifically measured, numerous research articles have appeared, showing the effectiveness of homeopathic remedies in children and animals in double-blind studies. One research article showed homeopathic remedies contained no molecules of the original substances, and yet each remedy possessed a different lattice configuration upon freezing.\n" +
+                    "\n" +
+                    "Homeopathic remedies are becoming more popular in the United States. The remedies are non-invasive, without harmful side-effects and fairly cheap compared to conventional drug therapy. Someone interested in homeopathy should consult a homeopathic physician before taking any remedies.\n" +
+                    "\n" +
+                    "Natural Medical Protocols has included a Homeopathy section in each of the medical conditions. All the remedies listed are merely suggestions. The attending physician should take the whole homeopathic picture before prescribing."
+        }
+        else if(heading == "Sulfite Sources"){
+            binding.fiber.text = "Food Sources of Sulfites"
+            var s = "Alcoholic Beverages:\n" +
+                    "• Beer\n" +
+                    "• Cocktail mixes\n" +
+                    "• Most distilled liquors\n" +
+                    "• Wine\n" +
+                    "• Wine coolers\n" +
+                    "(Labeling of sulfites in alcoholic beverages is required if the concentration is 10 parts per million or greater.)\n" +
+                    "\n" +
+                    "Baked Goods:\n" +
+                    "• Bread with dough conditioners\n" +
+                    "• Cookies\n" +
+                    "• Crackers\n" +
+                    "• Crepes\n" +
+                    "Mixes with dried fruits or vegetables\n" +
+                    "• Pie crust\n" +
+                    "• Pizza crust\n" +
+                    "• Quiche crust\n" +
+                    "• Soft pretzels\n" +
+                    "• Tortillas and tortilla shells\n" +
+                    "• Waffles\n" +
+                    "Condiments and Relishes:\n" +
+                    "• Horseradish\n" +
+                    "• Olives\n" +
+                    "• Onion and pickle relishes\n" +
+                    "• Pickles\n" +
+                    "• Salad dressing mixes\n" +
+                    "• Wine vinegar\n" +
+                    "Confections and Frostings:\n" +
+                    "• All canned or packaged frosting mixes\n" +
+                    "Dairy Product Analogs:\n" +
+                    "• All processed 'cheese foods' containing filled milk (skim milk enriched in fat content by addition of vegetable oils)\n" +
+                    "Dried Vegetables:\n" +
+                    "• Chives\n" +
+                    "• Herbs and spices\n" +
+                    "• Parsley\n" +
+                    "Fish and Shellfish (fresh):\n" +
+                    "• Scallops\n" +
+                    "• Shrimp\n" +
+                    "• Fish and Shellfish (frozen, canned, dried):\n" +
+                    "• Clams\n" +
+                    "• Crab\n" +
+                    "• Dried cod\n" +
+                    "• Lobster\n" +
+                    "• Scallops\n" +
+                    "• Shrimp\n" +
+                    "Fresh Fruits and Vegetables:\n" +
+                    "• 'Fresh cut' potatoes (as delivered to restaurants)\n" +
+                    "• Grapes (sulfur dioxide is used as a fungicide on grapes)\n" +
+                    "Gelatins, Puddings, Fillings:\n" +
+                    "• Flavored and unflavored gelatin\n" +
+                    "• Fruit fillings\n" +
+                    "• Jelling agents\n" +
+                    "• Pectin\n" +
+                    "Grain Products and Pasta:\n" +
+                    "• Batters\n" +
+                    "• Breading\n" +
+                    "• Cornstarch\n" +
+                    "• Gravies\n" +
+                    "• Hominy\n" +
+                    "• Modified food starch\n" +
+                    "• Noodle/rice mixes\n" +
+                    "• Spinach pasta\n" +
+                    "Hard Candies:\n" +
+                    "• All clear, hard candy\n" +
+                    "Jams and Jellies:\n" +
+                    "• All jams and jellies\n" +
+                    "Nuts and Nut Products:\n" +
+                    "• Shredded coconut\n" +
+                    "Plant-Protein Products:\n" +
+                    "• Soy protein products including tofu, textured vegetable protein, and infant formula\n" +
+                    "Processed Fruits:\n" +
+                    "• All dried fruit, including raisins and prunes\n" +
+                    "• Canned, bottled or frozen fruit\n" +
+                    "• Glazed fruit\n" +
+                    "• Maraschino cherries\n" +
+                    "Processed Vegetables:\n" +
+                    "• All frozen vegetables (including french fries, deli potato salad)\n" +
+                    "• Canned vegetables (including potatoes)\n" +
+                    "• Dried vegetables\n" +
+                    "• Instant mashed potatoes\n" +
+                    "• Pickled vegetables (including sauerkraut, cauliflower and peppers)\n" +
+                    "• Vegetable juices\n" +
+                    "Refined Sugar:\n" +
+                    "• All sugars, including brown, white, powdered, and raw\n" +
+                    "Snack Foods:\n" +
+                    "• Dried fruit snacks\n" +
+                    "• Filled Crackers\n" +
+                    "• Potato chips\n" +
+                    "• Tortilla chips\n" +
+                    "• Trail mixes"
+            ss = SpannableString(s)
+            makeBold(ss,s,"Alcoholic Beverages:")
+            makeBold(ss,s,"Baked Goods:")
+            makeBold(ss,s,"Condiments and Relishes:")
+            makeBold(ss,s,"Confections and Frostings:")
+            makeBold(ss,s,"Dairy Product Analogs:")
+            makeBold(ss,s,"Dried Vegetables:")
+            makeBold(ss,s,"Fish and Shellfish (fresh):")
+            makeBold(ss,s,"Fish and Shellfish (frozen, canned, dried):")
+            makeBold(ss,s,"Fresh Fruits and Vegetables:")
+            makeBold(ss,s,"Gelatins, Puddings, Fillings:")
+            makeBold(ss,s,"Grain Products and Pasta:")
+            makeBold(ss,s,"Hard Candies:")
+            makeBold(ss,s,"Jams and Jellies:")
+            makeBold(ss,s,"Nuts and Nut Products:")
+            makeBold(ss,s,"Plant-Protein Products:")
+            makeBold(ss,s,"Processed Fruits:")
+            makeBold(ss,s,"Processed Vegetables:")
+            makeBold(ss,s,"Refined Sugar:")
+            makeBold(ss,s,"Snack Foods:")
+            binding.contentData.text = ss
+        }
+        else
+            itemsNeeded(heading)
         setButtons(heading)
-
         binding.first.setOnClickListener {
             itemsNeeded(heading)
 
@@ -196,6 +327,7 @@ class HydroTherapyActivity : AppCompatActivity() {
                 binding.secondText.text = "Directions"
             }
             "Heating Compress" -> {
+                binding.fiberDescription.text = "A heating compress is moist heat via a cold compress applied to a body part and covered with wool or flannel."
 
                 binding.first.visibility = View.VISIBLE
                 binding.firstText.text = "Materials"
@@ -222,7 +354,7 @@ class HydroTherapyActivity : AppCompatActivity() {
                 binding.firstText.text = "Contraindications"
             }
             "Sitz Bath" -> {
-
+                binding.fiberDescription.text = "Patient sits with lower abdomen and pelvis immersed in water."
                 binding.first.visibility = View.VISIBLE
                 binding.firstText.text = "Indications"
 
@@ -378,6 +510,7 @@ class HydroTherapyActivity : AppCompatActivity() {
                         "Raynaud's disease\n" +
                         "Varicose veins"
                 ss = SpannableString(s)
+                makeBold(ss,s,"Contraindications")
             }
             "Heating Compress" -> {
                 s = "Chest compress:\n" +
@@ -467,6 +600,9 @@ class HydroTherapyActivity : AppCompatActivity() {
                         "Have the person flip over onto the stomach and do the identical procedure on the back.\n" +
                         "After completing both sides, allow the person to rest quietly for 10-15 minutes."
                 ss = SpannableString(s)
+                makeBold(ss,s,"hot")
+                makeBold(ss,s,"ice")
+                makeBold(ss,s,"cold")
             }
             "Enemas" -> {
                 s = "Fill enema bag\n" +
@@ -516,7 +652,6 @@ class HydroTherapyActivity : AppCompatActivity() {
 
     private fun itemsNeeded(heading: String) {
         var s = ""
-        var ss = SpannableString("")
         when(heading){
             "Continuous Bath" -> {
                 s = "Bathtub with running water\n" +
@@ -530,6 +665,10 @@ class HydroTherapyActivity : AppCompatActivity() {
                         "1 towel placed in cold water with ice cubes\n" +
                         "bed with 1 wool blanket and 1 sheet (more blankets if available)"
                 ss = SpannableString(s)
+                makeBold(ss,"heated",s)
+                makeBold(ss,"hot",s)
+                makeBold(ss,"cold",s)
+                makeBold(ss,"ice",s)
             }
             "Enemas" -> {
                 s = "Garlic-Epsom Salt Enema:\n" +
@@ -679,5 +818,10 @@ class HydroTherapyActivity : AppCompatActivity() {
             }
         }
         binding.contentData.text = ss
+    }
+    fun makeBold(ss : SpannableString,string:String,substr:String){
+        if(string.indexOf(substr)!=-1 )
+            ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     }
 }

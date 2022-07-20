@@ -75,6 +75,7 @@ class FoodAndNutritionActivity : AppCompatActivity(), onMedicalItemClick {
             startActivity(intent)
         }else if(position==6){
             val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Sulfite Sources")
             startActivity(intent)
         }
     }

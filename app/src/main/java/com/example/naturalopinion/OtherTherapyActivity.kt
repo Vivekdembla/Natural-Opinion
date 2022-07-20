@@ -15,8 +15,14 @@ import com.example.naturalopinion.databinding.ActivityCommonBinding
 import com.example.naturalopinion.databinding.ActivityOtherTherapyBinding
 
 class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
-    lateinit var therapy_adapter : MedicalAdapter
+    lateinit var hydro_therapy_adapter : MedicalAdapter
+    lateinit var four_therapy_adapter : MedicalAdapter
+    lateinit var overView : MedicalAdapter
     lateinit var binding: ActivityOtherTherapyBinding
+    var status = 2
+    val hydro_items = ArrayList<String>()
+    val four_therapy_items = ArrayList<String>()
+    val homeopathy_item = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOtherTherapyBinding.inflate(layoutInflater)
@@ -31,15 +37,50 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
             window.statusBarColor = this.resources.getColor(R.color.deep_green)
         }
 
-        val hydro_items = ArrayList<String>()
-        for(i in 1..16)
-            hydro_items.add("Therapy")
 
-        therapy_adapter = MedicalAdapter(this,false,this,hydro_items)
-        binding.therapyRv.adapter = therapy_adapter
+        four_therapy_items.add("Abnormal Sulfur Metabolism")
+        four_therapy_items.add("Acne")
+        four_therapy_items.add("Alcoholism")
+        four_therapy_items.add("Anti-Infection")
+        four_therapy_items.add("Antiviral")
+        four_therapy_items.add("Arrhythmia")
+        four_therapy_items.add("Asthma")
+        four_therapy_items.add("Celiac Disease")
+        four_therapy_items.add("Congestive Heart Failure")
+        four_therapy_items.add("Crohn's Disease")
+        four_therapy_items.add("Diabetes")
+        four_therapy_items.add("Glaucoma")
+        four_therapy_items.add("Hepatitis")
+        four_therapy_items.add("Hypertension")
+        four_therapy_items.add("Macular Degeneration")
+        four_therapy_items.add("Migraine Headaches")
+        four_therapy_items.add("IV Migraine Push")
+        four_therapy_items.add("Multiple Sclerosis")
+        four_therapy_items.add("Nausea/Vomiting of Pregnancy")
+        four_therapy_items.add("Stroke")
+        four_therapy_items.add("Tonic Therapy")
+        four_therapy_items.add("Trace Minerals")
+        four_therapy_items.add("Vitamins/Minerals/Amino Acids")
+        four_therapy_items.add("WBC Stimulation")
+
+        homeopathy_item.add("Overview")
+
+        hydro_items.add("Continuous Bath")
+        hydro_items.add("Constitutional Hydrotherapy")
+        hydro_items.add("Enemas")
+        hydro_items.add("Heating Compress")
+        hydro_items.add("Poultices")
+        hydro_items.add("Sitz Bath")
+
+        hydro_therapy_adapter = MedicalAdapter(this,false,this,hydro_items)
+        four_therapy_adapter = MedicalAdapter(this,false,this,four_therapy_items)
+        overView = MedicalAdapter(this,false,this,homeopathy_item)
+
+        binding.therapyRv.adapter = hydro_therapy_adapter
         binding.therapyRv.layoutManager = LinearLayoutManager(this)
 
         binding.first.setOnClickListener {
+            status = 1
             binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.second.strokeWidth = 5
             binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -52,10 +93,11 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
             binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
 
 
-            binding.therapyRv.adapter = therapy_adapter
+            binding.therapyRv.adapter = four_therapy_adapter
             binding.heading.text = "IV Therapies"
         }
         binding.second.setOnClickListener {
+            status = 2
             binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.first.strokeWidth = 5
             binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -67,10 +109,11 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
             binding.second.strokeWidth = 0
             binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
 
-            binding.therapyRv.adapter = therapy_adapter
+            binding.therapyRv.adapter = hydro_therapy_adapter
             binding.heading.text = "Hydo Therapy"
         }
         binding.third.setOnClickListener {
+            status = 3
             binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.second.strokeWidth = 5
             binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -82,7 +125,7 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
             binding.third.strokeWidth = 0
             binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
 
-            binding.therapyRv.adapter = therapy_adapter
+            binding.therapyRv.adapter = overView
             binding.heading.text = "Homeopathy"
         }
 
@@ -90,11 +133,20 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(position==4){
-            val intent = Intent(this,Common_Activity::class.java)
-            intent.putExtra("heading","Therapy")
+        if(status == 1){
+            val intent = Intent(this,FourTherapyActivity::class.java)
+            intent.putExtra("heading",four_therapy_items[position])
+            startActivity(intent)
+        }else if(status==2){
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading",hydro_items[position])
+            startActivity(intent)
+        }else{
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Homeopathy")
             startActivity(intent)
         }
+
 
     }
 }

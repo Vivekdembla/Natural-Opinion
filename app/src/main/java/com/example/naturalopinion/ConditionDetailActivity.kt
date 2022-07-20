@@ -6,6 +6,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.text.Spannable
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -34,7 +35,7 @@ class ConditionDetailActivity : AppCompatActivity() {
     var homeopathic_detail : String = ""
     var other_therapy : String = ""
     var recommended_labs : String = ""
-    lateinit var ss : SpannableString
+    var ss = SpannableString("")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityConditionDetailBinding.inflate(layoutInflater)
@@ -59,6 +60,7 @@ class ConditionDetailActivity : AppCompatActivity() {
 
         back_button.setOnClickListener { finish() }
 
+        setDietData(heading)
 
         binding.first.setOnClickListener {
             setDietData(heading)
@@ -310,30 +312,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid simple sugars - allergies to other chemicals are exacerbated when sugar is ingested\n" +
                         "• For chelating heavy metals: apples, seaweed, foods high in methionine and cysteine, garlic, and beans"
                 ss = SpannableString(diet_detail)
-                val clickableSpan1 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Methionine")
-                        startActivity(intent)
-                    }
-                }
-                val clickableSpan2 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","N-Acetyl Cysteine")
-                        startActivity(intent)
-                    }
-                }
-                val clickableSpan3 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Allium sativum (Garlic)")
-                        startActivity(intent)
-                    }
-                }
-                ss.setSpan(clickableSpan1,diet_detail.indexOf("methionine"),diet_detail.indexOf("methionine")+9,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan2,diet_detail.indexOf("cysteine"),diet_detail.indexOf("cysteine")+7,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan3,diet_detail.indexOf("garlic"),diet_detail.indexOf("garlic")+5,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                createLink(ss,"methionine",diet_detail,"Supplement","Methionine")
+                createLink(ss,"cysteine",diet_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"garlic",diet_detail,"Supplement","Allium sativum (Garlic)")
 
             }
             "Atherosclerosis" ->{
@@ -348,13 +329,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink more tea and cocoa<br/>" +
                         "• Avoid milk and other dairy products"
                 ss = SpannableString(diet_detail)
-                val clickableSpan = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        Toast.makeText(this@ConditionDetailActivity,"Fiber",Toast.LENGTH_LONG).show()
-                    }
-
-                }
-                ss.setSpan(clickableSpan,20,24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                createLink(ss,"fiber",diet_detail,"Fiber","")
             }
 
         }
@@ -371,64 +346,70 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Calcium: 1 gm.\n" +
                         "• Magnesium: 500 mg."
                 ss = SpannableString(vitamin_detail)
-                val clickableSpan1 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Vitamin B3 (Niacin)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan2 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Vitamin B6 (Pyridoxine)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan3 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Vitamin C (Ascorbic Acid)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan4 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Zinc")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan5 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Calcium")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan6 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                        intent.putExtra("heading","Magnesium")
-                        startActivity(intent)
-                    }
-
-                }
-                ss.setSpan(clickableSpan1,2,13,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan2,vitamin_detail.indexOf("Vitamin B6"),vitamin_detail.indexOf("Vitamin B6")+10,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan3,vitamin_detail.indexOf("Vitamin C"),vitamin_detail.indexOf("Vitamin C")+9,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan4,vitamin_detail.indexOf("Zinc"),vitamin_detail.indexOf("Zinc")+4,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan5,vitamin_detail.indexOf("Calcium"),vitamin_detail.indexOf("Calcium")+7,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan6,vitamin_detail.indexOf("Magnesium"),vitamin_detail.indexOf("Magnesium")+9,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                val clickableSpan1 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Vitamin B3 (Niacin)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan2 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Vitamin B6 (Pyridoxine)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan3 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Vitamin C (Ascorbic Acid)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan4 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Zinc")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan5 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Calcium")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan6 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+//                        intent.putExtra("heading","Magnesium")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                ss.setSpan(clickableSpan1,2,13,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan2,vitamin_detail.indexOf("Vitamin B6"),vitamin_detail.indexOf("Vitamin B6")+10,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan3,vitamin_detail.indexOf("Vitamin C"),vitamin_detail.indexOf("Vitamin C")+9,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan4,vitamin_detail.indexOf("Zinc"),vitamin_detail.indexOf("Zinc")+4,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan5,vitamin_detail.indexOf("Calcium"),vitamin_detail.indexOf("Calcium")+7,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan6,vitamin_detail.indexOf("Magnesium"),vitamin_detail.indexOf("Magnesium")+9,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
             }
 
             "Atherosclerosis" -> {
-            vitamin_detail = "• Beta-Carotene: 100,000 I.U.<br/>" +
+                vitamin_detail = "• Beta-Carotene: 100,000 I.U.<br/>" +
                     "• Vitamin B3 (Niacin): 30 - 1500 mg. TID in divided doses (increase slowly from 200 mg.) Do not use the time released form of niacin for atherosclerosis<br/>" +
                     "• Vitamin B5: 600 - 1200 mg.<br/>" +
                     "• Vitamin B6: 50 mg.<br/>" +
@@ -443,14 +424,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                     "• Magnesium (Aspartate form): 500 - 800 mg.<br/>" +
                     "• Molybdenum, Vanadium, Silicon, and other trace minerals<br/>" +
                     "• Chromium Aspartate: 200 - 500 mcg. (can use brewers yeast)"
-            ss = SpannableString(recommended_labs)
-//            val clickableSpan = object : ClickableSpan(){
-//                override fun onClick(widget: View) {
-//                    Toast.makeText(this@ConditionDetailActivity,"Fiber",Toast.LENGTH_LONG).show()
-//                }
-//
-//            }
-//            ss.setSpan(clickableSpan,20,24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                ss = SpannableString(recommended_labs)
+
             }
         }
 
@@ -471,26 +446,20 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Garlic: 400 mg.<br/>" +
                         "• Red Yeast Rice (Monascus purpureus): 1200 mg. with 50 mg. Coenzyme Q10 2 times a day"
                 ss = SpannableString(supplements_detail)
-//            val clickableSpan = object : ClickableSpan(){
-//                override fun onClick(widget: View) {
-//                    Toast.makeText(this@ConditionDetailActivity,"Fiber",Toast.LENGTH_LONG).show()
-//                }
-//
-//            }
-//            ss.setSpan(clickableSpan,20,24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             }
             "ADD/ADHD" -> {
                 supplements_detail = "• Omega-3 Fatty Acids: 500-1000 mg. TID\n" +
                         "• Pycnogenol: 20-100 mg. TID"
                 ss = SpannableString(supplements_detail)
-                val clickableSpan2 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Pycnogenol")
-                        startActivity(intent)
-                    }
-                }
-                ss.setSpan(clickableSpan2,supplements_detail.indexOf("Pycnogenol"),supplements_detail.indexOf("Pycnogenol")+10,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                val clickableSpan2 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+//                        intent.putExtra("heading","Pycnogenol")
+//                        startActivity(intent)
+//                    }
+//                }
+//                ss.setSpan(clickableSpan2,supplements_detail.indexOf("Pycnogenol"),supplements_detail.indexOf("Pycnogenol")+10,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
             }
         }
 
@@ -514,13 +483,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "  Pausinystalia yohimbe (Yohimbe)<br/>" +
                         "  Zingiber officinale (Ginger)"
                 ss = SpannableString(botanical_detail)
-//            val clickableSpan = object : ClickableSpan(){
-//                override fun onClick(widget: View) {
-//                    Toast.makeText(this@ConditionDetailActivity,"Fiber",Toast.LENGTH_LONG).show()
-//                }
-//
-//            }
-//            ss.setSpan(clickableSpan,20,24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
             }
             "ADD/ADHD" -> {
                 botanical_detail = "• Compound Glycerite - *Passiflora incarnata, *Melissa officinalis, *Nepeta cataria, *Eschscholzia californica, *Lavendula angustifolia: for the acute child, 10 drops up to 5 times a day\n" +
@@ -533,113 +496,126 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "Passiflora incarnata (Passionflower)\n" +
                         "Piper methysticum (Kava kava)"
                 ss = SpannableString(botanical_detail)
-                val clickableSpan1 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Passiflora incarnata (Passionflower)")
-                        startActivity(intent)
-                    }
-                }
-                val clickableSpan2 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Melissa officinalis (Lemon balm)")
-                        startActivity(intent)
-                    }
+//                val clickableSpan1 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Passiflora incarnata (Passionflower)")
+//                        startActivity(intent)
+//                    }
+//                }
+//                val clickableSpan2 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Melissa officinalis (Lemon balm)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan3 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Nepeta cataria (Catnip)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan4 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Eschscholzia californica (California poppy)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan5 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+//                        intent.putExtra("heading","Lavendula angustifolia (Lavender)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan6 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Allium sativum (Garlic)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan7 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Eschscholzia californica (California poppy)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan8 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Lavendula angustifolia (Lavender)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan9 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Melissa officinalis (Lemon balm)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan10 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+//                        intent.putExtra("heading","Nepeta cataria (Catnip)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan11 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+//                        intent.putExtra("heading","Passiflora incarnata (Passionflower)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                val clickableSpan12 = object : ClickableSpan(){
+//                    override fun onClick(widget: View) {
+//                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+//                        intent.putExtra("heading","Piper methysticum (Kava kava)")
+//                        startActivity(intent)
+//                    }
+//
+//                }
+//                ss.setSpan(clickableSpan1,botanical_detail.indexOf("Passiflora incarnata"),botanical_detail.indexOf("Passiflora incarnata")+20,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan2,botanical_detail.indexOf("Melissa officinalis"),botanical_detail.indexOf("Melissa officinalis")+19,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan3,botanical_detail.indexOf("Nepeta cataria"),botanical_detail.indexOf("Nepeta cataria")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan4,botanical_detail.indexOf("Eschscholzia californica"),botanical_detail.indexOf("Eschscholzia californica")+24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan5,botanical_detail.indexOf("Lavendula angustifolia"),botanical_detail.indexOf("Lavendula angustifolia")+22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan6,botanical_detail.indexOf("Allium sativum"),botanical_detail.indexOf("Allium sativum")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan7,botanical_detail.indexOf("Garlic")+8,botanical_detail.indexOf("Garlic")+32,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan8,botanical_detail.indexOf("Lavendula angustifolia (Lavender)"),botanical_detail.indexOf("Lavendula angustifolia (Lavender)")+22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan9,botanical_detail.indexOf("Melissa officinalis (Lemon balm)"),botanical_detail.indexOf("Melissa officinalis (Lemon balm)")+19,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan10,botanical_detail.indexOf("Nepeta cataria (Catnip)"),botanical_detail.indexOf("Nepeta cataria (Catnip)")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan11,botanical_detail.indexOf("Passiflora incarnata (Passionflower)"),botanical_detail.indexOf("Passiflora incarnata (Passionflower)")+20,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+//                ss.setSpan(clickableSpan12,botanical_detail.indexOf("Piper methysticum (Kava kava)"),botanical_detail.indexOf("Piper methysticum (Kava kava)")+17,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-                }
-                val clickableSpan3 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Nepeta cataria (Catnip)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan4 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Eschscholzia californica (California poppy)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan5 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Lavendula angustifolia (Lavender)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan6 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Allium sativum (Garlic)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan7 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Eschscholzia californica (California poppy)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan8 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Lavendula angustifolia (Lavender)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan9 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Melissa officinalis (Lemon balm)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan10 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Nepeta cataria (Catnip)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan11 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                        intent.putExtra("heading","Passiflora incarnata (Passionflower)")
-                        startActivity(intent)
-                    }
-
-                }
-                val clickableSpan12 = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                        intent.putExtra("heading","Piper methysticum (Kava kava)")
-                        startActivity(intent)
-                    }
-
-                }
-                ss.setSpan(clickableSpan1,botanical_detail.indexOf("Passiflora incarnata"),botanical_detail.indexOf("Passiflora incarnata")+20,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan2,botanical_detail.indexOf("Melissa officinalis"),botanical_detail.indexOf("Melissa officinalis")+19,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan3,botanical_detail.indexOf("Nepeta cataria"),botanical_detail.indexOf("Nepeta cataria")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan4,botanical_detail.indexOf("Eschscholzia californica"),botanical_detail.indexOf("Eschscholzia californica")+24,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan5,botanical_detail.indexOf("Lavendula angustifolia"),botanical_detail.indexOf("Lavendula angustifolia")+22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan6,botanical_detail.indexOf("Allium sativum"),botanical_detail.indexOf("Allium sativum")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan7,botanical_detail.indexOf("Garlic")+8,botanical_detail.indexOf("Garlic")+32,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan8,botanical_detail.indexOf("Lavendula angustifolia (Lavender)"),botanical_detail.indexOf("Lavendula angustifolia (Lavender)")+22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan9,botanical_detail.indexOf("Melissa officinalis (Lemon balm)"),botanical_detail.indexOf("Melissa officinalis (Lemon balm)")+19,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan10,botanical_detail.indexOf("Nepeta cataria (Catnip)"),botanical_detail.indexOf("Nepeta cataria (Catnip)")+14,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan11,botanical_detail.indexOf("Passiflora incarnata (Passionflower)"),botanical_detail.indexOf("Passiflora incarnata (Passionflower)")+20,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                ss.setSpan(clickableSpan12,botanical_detail.indexOf("Piper methysticum (Kava kava)"),botanical_detail.indexOf("Piper methysticum (Kava kava)")+17,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                createLink(ss,"Passiflora incarnata",botanical_detail,"Botanical","Passiflora incarnata (Passionflower)")
+                createLink(ss,"Melissa officinalis",botanical_detail,"Botanical","Melissa officinalis (Lemon balm)")
+                createLink(ss,"Nepeta cataria",botanical_detail,"Botanical","Nepeta cataria (Catnip)")
+                createLink(ss,"Eschscholzia californica",botanical_detail,"Botanical","Eschscholzia californica (California poppy)")
+                createLink(ss,"Lavendula angustifolia",botanical_detail,"Supplement","Lavendula angustifolia (Lavender)")
+                createLink(ss,"Allium sativum",botanical_detail,"Botanical","Allium sativum (Garlic)")
+                createLink(ss,"Eschscholzia californica ",botanical_detail,"Botanical","Eschscholzia californica (California poppy)")
+                createLink(ss,"Lavendula angustifolia (Lavender)",botanical_detail,"Botanical","Lavendula angustifolia (Lavender)")
+                createLink(ss,"Melissa officinalis (Lemon balm)",botanical_detail,"Botanical","Melissa officinalis (Lemon balm)")
+                createLink(ss,"Nepeta cataria (Catnip)",botanical_detail,"Supplement","Nepeta cataria (Catnip)")
+                createLink(ss,"Passiflora incarnata (Passionflower)",botanical_detail,"Botanical","Passiflora incarnata (Passionflower)")
+                createLink(ss,"Piper methysticum (Kava kava)",botanical_detail,"Supplement","Piper methysticum (Kava kava)")
             }
         }
 
@@ -663,7 +639,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 homeopathic_detail = "Aversion to concentration:\n" +
                         "calc, gels, lyc, med, nux-v, phos, ph-ac, plb, sil, staph\n" +
                         "Difficult to concentrate in children:\n" +
-                        "aeth, am-c, BAR-C, carc, lach, med, ph-ac, phos, sil, zinc\n" +
+                        "aeth, am-c, BAR-C, carc, lach, med, ph-ac, phos , sil, zinc\n" +
                         "Difficult to concentrate in the afternoon:\n" +
                         "ang, cham, ery-a, myris, sang\n" +
                         "Difficult to concentrate while studying and reading:\n" +
@@ -674,12 +650,33 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(homeopathic_detail)
                 val clickableSpan1 = object : ClickableSpan(){
                     override fun onClick(widget: View) {
-                        val intent = Intent(this@ConditionDetailActivity,HomeopathyDetailActivity::class.java)
+                        val intent = Intent(this@ConditionDetailActivity,HydroTherapyActivity::class.java)
+                        intent.putExtra("heading","Homeopathy")
                         startActivity(intent)
                     }
 
                 }
                 ss.setSpan(clickableSpan1,homeopathic_detail.indexOf("here"),homeopathic_detail.indexOf("here")+4,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                makeBold(ss,homeopathic_detail,"gels")
+                makeBold(ss,homeopathic_detail,"ph-ac")
+                makeBold(ss,homeopathic_detail,"sil")
+                makeBold(ss,homeopathic_detail,"aeth")
+                makeBold(ss,homeopathic_detail,"BAR-C, carc")
+                makeBold(ss,homeopathic_detail,"phos")
+                makeBold(ss,homeopathic_detail,"AETH, agn")
+                makeBold(ss,homeopathic_detail,"HELL")
+                makeBold(ss,homeopathic_detail,"kali-p")
+                makeBold(ss,homeopathic_detail,"NUX-V")
+                makeBold(ss,homeopathic_detail,"phos ")
+                makeBold(ss,homeopathic_detail,"SIL")
+                makeBold(ss,homeopathic_detail,"staph")
+                makeBold(ss,homeopathic_detail,"syph")
+                makeBold(ss,homeopathic_detail,"ars")
+                makeBold(ss,homeopathic_detail,"CARC, cina")
+                makeBold(ss,homeopathic_detail,"HYOS")
+                makeBold(ss,homeopathic_detail,"MED")
+                makeBold(ss,homeopathic_detail,"STRAM, tarent")
+                makeBold(ss,homeopathic_detail,"TUB, verat")
             }
         }
 
@@ -735,4 +732,41 @@ class ConditionDetailActivity : AppCompatActivity() {
 
         binding.contentData.text = ss
     }
+
+    private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
+        val clickableSpan = object : ClickableSpan(){
+            override fun onClick(widget: View) {
+                val intent : Intent
+                if(activity=="Condition"){
+                    intent = Intent(this@ConditionDetailActivity,ConditionDetailActivity::class.java)
+                    intent.putExtra("heading",heading)
+                    startActivity(intent)
+                }else if(activity=="Supplement"){
+                    intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+                    intent.putExtra("heading",heading)
+                    startActivity(intent)
+                }else if(activity=="Fiber"){
+                    intent = Intent(this@ConditionDetailActivity,FiberDetailActivity::class.java)
+                    intent.putExtra("heading",heading)
+                    startActivity(intent)
+                }else if(activity=="Vitamin"){
+                    intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+                    intent.putExtra("heading",heading)
+                    startActivity(intent)
+                }else if(activity=="Botanical"){
+                    intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+                    intent.putExtra("heading",heading)
+                    startActivity(intent)
+                }
+            }
+        }
+        if(string.indexOf(sub_str)!=-1)
+        ss.setSpan(clickableSpan,string.indexOf(sub_str),string.indexOf(sub_str)+sub_str.length,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    fun makeBold(ss : SpannableString,string:String,substr:String){
+        if(string.indexOf(substr)!=-1 )
+            ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+
 }

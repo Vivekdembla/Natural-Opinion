@@ -29,6 +29,7 @@ class FourTherapyActivity : AppCompatActivity() {
         binding.backButton6.setOnClickListener { finish() }
 
         setOptions(heading)
+        setFirst(heading)
         binding.first.setOnClickListener {
             setFirst(heading)
             binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
@@ -155,7 +156,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Directions:\n" +
                         "Administer over at least 2.5 hours.\n" +
                         "Use a large vein."
-
+                ss = SpannableString(s)
             }
         }
         makeBold(ss,s,"IV:")
@@ -180,7 +181,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Directions:\n" +
                         "Do as a slow IV push. If painful inject 1/2 cc, wait, inject another 1/2 cc.\n" +
                         "Patient can squeeze a ball with same hand to enhance blood flow."
-
+                ss = SpannableString(s)
             }
         }
         makeBold(ss,s,"IV:")
@@ -728,7 +729,7 @@ class FourTherapyActivity : AppCompatActivity() {
                 binding.third.visibility = View.VISIBLE
                 binding.thirdText.text = "Treatment 3 (Long)"
                 binding.forth.visibility = View.VISIBLE
-                binding.secondText.text = "Treatment 4 (Short)"
+                binding.forthText.text = "Treatment 4 (Short)"
             }
             "Asthma" -> {
                 binding.second.visibility = View.VISIBLE
@@ -743,6 +744,7 @@ class FourTherapyActivity : AppCompatActivity() {
     }
 
     fun makeBold(ss : SpannableString,string:String,substr:String){
+        if(string.indexOf(substr)!=-1 )
         ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     }

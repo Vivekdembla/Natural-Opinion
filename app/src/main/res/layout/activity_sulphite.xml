@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@id/fiber"
                 app:layout_constraintTop_toBottomOf="@id/fiber"
-                android:text="Lorem ipsum dolor sit amet, consectetur\nLorem ipsum dolor sit "
+                android:text=""
                 android:textColor="@color/white"
                 android:id="@+id/fiber_description"
                 app:layout_constraintRight_toRightOf="parent"
@@ -216,7 +216,8 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="15dp"
-                    android:id="@+id/sub_heading"/>
+                    android:id="@+id/sub_heading"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:layout_width="0dp"

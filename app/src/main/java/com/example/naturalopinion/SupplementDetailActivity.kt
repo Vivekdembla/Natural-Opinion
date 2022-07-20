@@ -40,8 +40,6 @@ class SupplementDetailActivity : AppCompatActivity() {
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
 
-
-
         binding.supplement.text = heading
 
         showNecessarySections(heading)
@@ -790,6 +788,94 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.dosage.visibility = View.VISIBLE//
             binding.drugNutrition.visibility = View.VISIBLE//
             binding.adverseReaction.visibility = View.VISIBLE//
+        }else if(heading=="Alanine"){
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+            binding.signSymptom.visibility = View.VISIBLE
+            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+        }else if(heading=="Amino Acids"||heading=="Dehydroepiandrosterone (DHEA)"||heading == "Dimethyl Glycine (DMG)" || heading=="Ethylenediaminetetraacetic acid (EDTA)"){
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE//physiologic therapeutic
+            binding.plantFoodText.text = "Physiologic Therapeutics"
+            binding.indication.visibility = View.VISIBLE
+            binding.dosage.visibility = View.VISIBLE
+            if(heading=="Dehydroepiandrosterone (DHEA)") {
+                binding.deficiencyCause.visibility == View.VISIBLE
+                binding.deficiencyCauseText.text = "Labs"
+            }
+            binding.drugNutrition.visibility = View.VISIBLE
+            if(heading =="Ethylenediaminetetraacetic acid (EDTA)")
+                binding.contraindiction.visibility = View.VISIBLE
+            binding.adverseReaction.visibility = View.VISIBLE
+        }else if(heading=="Arginine"||heading == "Carnitine"||heading=="Carnosine"||heading =="Cystine"){
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+            binding.signSymptom.visibility = View.VISIBLE
+            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+        }else if(heading=="Bioflavonoids"){
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+            binding.signSymptom.visibility = View.VISIBLE
+            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+            binding.drugNutrition.visibility = View.VISIBLE
+        }else if(heading=="Bromelain"){
+
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+
+            binding.drugNutrition.visibility = View.VISIBLE
+            binding.dosage.visibility = View.VISIBLE
+            binding.adverseReaction.visibility = View.VISIBLE
+        }else if(heading=="Digestive Enzymes"){
+
+            binding.description.visibility = View.VISIBLE
+            binding.descriptionText.text = "Mouth"
+            binding.plantFood.visibility = View.VISIBLE
+            binding.plantFoodText.text = "Stomach"
+            binding.function.visibility = View.VISIBLE
+            binding.functionText.text = "Pancreas"
+        }else if(heading==""){
+
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+            binding.signSymptom.visibility = View.VISIBLE
+            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+            binding.drugNutrition.visibility = View.VISIBLE
+
+            binding.dosage.visibility = View.VISIBLE
+            binding.adverseReaction.visibility = View.VISIBLE
+        }else if(heading==""){
+
+            binding.description.visibility = View.VISIBLE
+            binding.plantFood.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
+            binding.signSymptom.visibility = View.VISIBLE
+            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+            binding.drugNutrition.visibility = View.VISIBLE
+
+            binding.dosage.visibility = View.VISIBLE
+            binding.adverseReaction.visibility = View.VISIBLE
         }
 
     }

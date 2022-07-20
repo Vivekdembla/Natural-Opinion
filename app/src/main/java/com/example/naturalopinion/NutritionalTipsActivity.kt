@@ -22,6 +22,13 @@ class NutritionalTipsActivity : AppCompatActivity() {
 
         binding.backButton6.setOnClickListener { finish() }
 
+        binding.subHeading.text = "Eat to live, not live to eat"
+        binding.contentData.text = "• A good deal of the problems with healthy diet comes from our attitudes to what it means to nourish ourselves.\n" +
+                "• Eating has been associated with festive occasions and with the good life and not with what is right or important for our bodies.\n" +
+                "• Commercials are seductive and misleading to the point that we have distorted our tastes almost completely.\n" +
+                "• Taste is a matter of conditioning and habit. This phenomena has been noted with many animal studies. For example: Once rats were fed sugar, they gave up their normal diet. Baby food companies often sweeten and salt baby food for the mother's taste, not the baby's.\n" +
+                "• Feast days are usually accompanied by lavishly rich foods and if kept to feast days, do not generally cause a problem. If, however, we eat as though every day is a feast day, the body cannot handle the stress load. The results of eating rich foods containing excessive animal proteins, fats, sugars, and refined carbohydrates are invariably digestive overload with putrefaction of undigested food and fermentation with production of toxic by products in the body.\n" +
+                "• Your attitude is of paramount importance."
         binding.first.setOnClickListener {
             binding.subHeading.text = "Eat to live, not live to eat"
             binding.contentData.text = "• A good deal of the problems with healthy diet comes from our attitudes to what it means to nourish ourselves.\n" +

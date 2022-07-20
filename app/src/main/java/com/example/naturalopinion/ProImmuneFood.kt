@@ -24,6 +24,8 @@ class ProImmuneFood : AppCompatActivity() {
 
         binding.backButton6.setOnClickListener { finish() }
 
+        setPro()
+
         binding.first.setOnClickListener {
             setPro()
             binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))

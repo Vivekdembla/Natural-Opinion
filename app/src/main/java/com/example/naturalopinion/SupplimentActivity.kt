@@ -82,10 +82,10 @@ class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(position==8){
+//        if(position==8){
             val intent = Intent(this,SupplementDetailActivity::class.java)
             intent.putExtra("heading",items[position])
             startActivity(intent)
-        }
+//        }
     }
 }
