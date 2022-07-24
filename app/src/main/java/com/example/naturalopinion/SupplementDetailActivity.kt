@@ -1409,7 +1409,7 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Amino Acids" -> {
-                text = "• KDepression"
+                text = "• Depression"
                 ss = SpannableString(text)
             }
             "Arginine" -> {
@@ -3035,26 +3035,32 @@ class SupplementDetailActivity : AppCompatActivity() {
     private fun showNecessarySections(heading: String) {
         if(heading == "Coenzyme Q10" || heading == "Acidophilus/Bifidus"){
             binding.description.visibility = View.VISIBLE//
-            setDescription(heading)
             if(heading!="Coenzyme Q10")
                 binding.function.visibility = View.VISIBLE
             binding.indication.visibility = View.VISIBLE//
             binding.dosage.visibility = View.VISIBLE//
             binding.drugNutrition.visibility = View.VISIBLE//
             binding.adverseReaction.visibility = View.VISIBLE//
-        }else if(heading=="Alanine"){
+        }else if(heading=="Alanine"||heading == "Glutamic Acid"||heading == "Glutamine"||
+            heading =="Glutathione"||heading == "Glycine"||heading == "Lysine"||
+            heading=="Methionine"||heading=="N-Acetyl Cysteine"){
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
             binding.indication.visibility = View.VISIBLE
+            if(heading!="Glutathione")
             binding.signSymptom.visibility = View.VISIBLE
             binding.deficiencyCause.visibility = View.VISIBLE
             binding.contraindiction.visibility = View.VISIBLE
             binding.toxicity.visibility = View.VISIBLE
-        }else if(heading=="Amino Acids"||heading=="Dehydroepiandrosterone (DHEA)"||heading == "Dimethyl Glycine (DMG)" || heading=="Ethylenediaminetetraacetic acid (EDTA)"){
+        }else if(heading=="Amino Acids"||heading=="Dehydroepiandrosterone (DHEA)"||
+            heading == "Dimethyl Glycine (DMG)" || heading=="Ethylenediaminetetraacetic acid (EDTA)"
+            || heading == "Fructooliogosaccharides (FOS)" || heading=="Fumaric Acid"
+            || heading == "Hydrochloric Acid"||heading == "Lipoic Acid"||heading == "Melatonin"
+            ||heading=="NADH"||heading=="Red Yeast Rice"||heading=="Quercetin"){
             binding.description.visibility = View.VISIBLE
-            binding.plantFood.visibility = View.VISIBLE//physiologic therapeutic
-            binding.plantFoodText.text = "Physiologic Therapeutics"
+            binding.function.visibility = View.VISIBLE//physiologic therapeutic
+            binding.functionText.text = "Physiologic Therapeutics"
             binding.indication.visibility = View.VISIBLE
             binding.dosage.visibility = View.VISIBLE
             if(heading=="Dehydroepiandrosterone (DHEA)") {
@@ -3065,7 +3071,13 @@ class SupplementDetailActivity : AppCompatActivity() {
             if(heading =="Ethylenediaminetetraacetic acid (EDTA)")
                 binding.contraindiction.visibility = View.VISIBLE
             binding.adverseReaction.visibility = View.VISIBLE
-        }else if(heading=="Arginine"||heading == "Carnitine"||heading=="Carnosine"||heading =="Cystine"){
+            if(heading=="Pycnogenol"||heading=="Quercetin"){
+                binding.plantFood.visibility = View.VISIBLE
+            }
+        }
+        else if(heading=="Arginine"||heading == "Carnitine"||heading=="Carnosine"||
+            heading =="Cystine"||heading=="Phenylalanine"||heading=="Proline"
+            ||heading=="Taurine"||heading=="Tryptophan"||heading=="Tyrosine"){
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
@@ -3074,26 +3086,22 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.deficiencyCause.visibility = View.VISIBLE
             binding.contraindiction.visibility = View.VISIBLE
             binding.toxicity.visibility = View.VISIBLE
-        }else if(heading=="Bioflavonoids"){
-            binding.description.visibility = View.VISIBLE
-            binding.plantFood.visibility = View.VISIBLE
-            binding.function.visibility = View.VISIBLE
-            binding.indication.visibility = View.VISIBLE
-            binding.signSymptom.visibility = View.VISIBLE
-            binding.deficiencyCause.visibility = View.VISIBLE
-            binding.contraindiction.visibility = View.VISIBLE
-            binding.toxicity.visibility = View.VISIBLE
-            binding.drugNutrition.visibility = View.VISIBLE
-        }else if(heading=="Bromelain"){
+            if(heading=="Bioflavonoids")
+                binding.drugNutrition.visibility = View.VISIBLE
+
+        }else if(heading=="Bromelain"||heading=="Phosphatidylserine"){
 
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
             binding.indication.visibility = View.VISIBLE
-
             binding.drugNutrition.visibility = View.VISIBLE
             binding.dosage.visibility = View.VISIBLE
             binding.adverseReaction.visibility = View.VISIBLE
+            if(heading=="Phosphatidylserine"){
+                binding.plantFoodText.text = "Sources:"
+                binding.functionText.text = "Physiologic Therapeutics:"
+            }
         }else if(heading=="Digestive Enzymes"){
 
             binding.description.visibility = View.VISIBLE
@@ -3102,20 +3110,29 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.plantFoodText.text = "Stomach"
             binding.function.visibility = View.VISIBLE
             binding.functionText.text = "Pancreas"
-        }else if(heading==""){
+        }else if(heading=="Glandulars"){
 
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
+            binding.plantFoodText.text = "Types of Glandulars:"
+            binding.function.visibility = View.VISIBLE
+            binding.functionText.text = "Types of Tissue Extracts:"
+        }else if(heading=="Glucosamine Sulfate"||heading=="Methylsufonylmethane (MSM)"){
+            binding.description.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
             binding.indication.visibility = View.VISIBLE
-            binding.signSymptom.visibility = View.VISIBLE
-            binding.deficiencyCause.visibility = View.VISIBLE
+            binding.contraindiction.visibility = View.VISIBLE
+            binding.toxicity.visibility = View.VISIBLE
+        }else if(heading=="S-Adenosyl-L-Methionine (SAM)"){
+
+            binding.description.visibility = View.VISIBLE
+            binding.function.visibility = View.VISIBLE
+            binding.indication.visibility = View.VISIBLE
             binding.contraindiction.visibility = View.VISIBLE
             binding.toxicity.visibility = View.VISIBLE
             binding.drugNutrition.visibility = View.VISIBLE
 
             binding.dosage.visibility = View.VISIBLE
-            binding.adverseReaction.visibility = View.VISIBLE
         }else if(heading==""){
 
             binding.description.visibility = View.VISIBLE
