@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.WindowManager
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
@@ -23,6 +25,7 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
     val hydro_items = ArrayList<String>()
     val four_therapy_items = ArrayList<String>()
     val homeopathy_item = ArrayList<String>()
+    var premium = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOtherTherapyBinding.inflate(layoutInflater)
@@ -37,6 +40,8 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
             window.statusBarColor = this.resources.getColor(R.color.deep_green)
         }
 
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        premium = pref.getBoolean("Premium",false)
 
         four_therapy_items.add("Abnormal Sulfur Metabolism")
         four_therapy_items.add("Acne")
@@ -72,9 +77,9 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
         hydro_items.add("Poultices")
         hydro_items.add("Sitz Bath")
 
-        hydro_therapy_adapter = MedicalAdapter(this,false,this,hydro_items)
-        four_therapy_adapter = MedicalAdapter(this,false,this,four_therapy_items)
-        overView = MedicalAdapter(this,false,this,homeopathy_item)
+        hydro_therapy_adapter = MedicalAdapter(this,premium,this,hydro_items,1)
+        four_therapy_adapter = MedicalAdapter(this,premium,this,four_therapy_items,17)
+        overView = MedicalAdapter(this,premium,this,homeopathy_item,0)
 
         binding.therapyRv.adapter = hydro_therapy_adapter
         binding.therapyRv.layoutManager = LinearLayoutManager(this)
@@ -130,23 +135,77 @@ class OtherTherapyActivity : AppCompatActivity(), onMedicalItemClick {
         }
 
         binding.backButton11.setOnClickListener { finish() }
+
+        binding.searchEdittext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do Nothing
+            }
+
+        })
     }
 
     override fun onItemCLick(position: Int) {
         if(status == 1){
-            val intent = Intent(this,FourTherapyActivity::class.java)
-            intent.putExtra("heading",four_therapy_items[position])
-            startActivity(intent)
+            if(position==17||premium){
+                val intent = Intent(this,FourTherapyActivity::class.java)
+                intent.putExtra("heading",four_therapy_items[position])
+                startActivity(intent)
+            }
         }else if(status==2){
-            val intent = Intent(this,HydroTherapyActivity::class.java)
-            intent.putExtra("heading",hydro_items[position])
-            startActivity(intent)
+            if(position==1||premium){
+                val intent = Intent(this,HydroTherapyActivity::class.java)
+                intent.putExtra("heading",hydro_items[position])
+                startActivity(intent)
+            }
         }else{
             val intent = Intent(this,HydroTherapyActivity::class.java)
             intent.putExtra("heading","Homeopathy")
             startActivity(intent)
         }
 
+
+    }
+    fun filter(text: String?) {
+        val temp: MutableList<String> = ArrayList()
+        if(status==1){
+            for (d in four_therapy_items) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            four_therapy_adapter.updateList(temp)
+        }else if(status==2){
+            for (d in hydro_items) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            hydro_therapy_adapter.updateList(temp)
+        }else{
+            for (d in homeopathy_item) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            overView.updateList(temp)
+        }
 
     }
 }

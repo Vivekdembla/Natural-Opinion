@@ -24,50 +24,13 @@ class ReferenceActivity : AppCompatActivity() {
 
         binding.backButton.setOnClickListener { finish() }
 
+        val heading = intent.getStringExtra("heading")
 
+        setData(heading)
 
-        binding.first.setOnClickListener {
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
-            binding.first.strokeWidth = 0
+    }
 
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.second.strokeWidth = 5
-
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.third.strokeWidth = 5
-
-        }
-        binding.second.setOnClickListener {
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
-            binding.second.strokeWidth = 0
-
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.first.strokeWidth = 5
-
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.third.strokeWidth = 5
-
-        }
-        binding.third.setOnClickListener {
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
-            binding.third.strokeWidth = 0
-
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.second.strokeWidth = 5
-
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
-            binding.first.strokeWidth = 5
-
-        }
+    private fun setData(heading: String?) {
 
     }
 }

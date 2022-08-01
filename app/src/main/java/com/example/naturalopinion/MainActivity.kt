@@ -5,10 +5,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import android.view.KeyEvent
-import android.view.Window
-import android.view.WindowManager
+import android.util.Log
+import android.view.*
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,12 +26,14 @@ class MainActivity : AppCompatActivity() {
     lateinit var data_card : CardView
     lateinit var sample_card : CardView
     lateinit var binding: ActivityMainBinding
+    var premium = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
 
 
         //Status bar color changed
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.logout.setOnClickListener {
-            showDialog("Exit","Do you want to logout?")
+            showDialog("Logout","Do you want to logout?")
         }
 
         about_card.setOnClickListener {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         access_card.setOnClickListener {
-            startActivity(Intent(this,AccessActivity::class.java))
+            startActivityForResult(Intent(this,AccessActivity::class.java),1)
         }
 
         order_card.setOnClickListener {
@@ -107,6 +107,10 @@ class MainActivity : AppCompatActivity() {
             }
         }else{
             positive.setOnClickListener {
+                val editor = getSharedPreferences("Paid", MODE_PRIVATE).edit()
+                editor.putBoolean("Premium",false)
+                editor.apply()
+                onResume()
                 dialog.dismiss()
             }
         }
@@ -157,4 +161,22 @@ class MainActivity : AppCompatActivity() {
     private fun exitByBackKey() {
         showDialog("Exit","Do you want to exit from app?")
     }
+
+    override fun onResume() {
+        super.onResume()
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        premium = pref.getBoolean("Premium",false)
+        if(premium){
+            binding.logout.visibility = View.VISIBLE
+            binding.accessCard.visibility = View.GONE
+            binding.sampleText.text = "Database"
+            binding.sampleImage.setImageResource(R.drawable.ic_database)
+        }else{
+            binding.logout.visibility = View.GONE
+            binding.accessCard.visibility = View.VISIBLE
+            binding.sampleText.text = "Try a sample"
+            binding.sampleImage.setImageResource(R.drawable.ic_sample)
+        }
+    }
+
 }

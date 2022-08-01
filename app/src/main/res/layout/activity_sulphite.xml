@@ -216,8 +216,7 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="15dp"
-                    android:id="@+id/sub_heading"
-                    android:visibility="gone"/>
+                    android:id="@+id/sub_heading"/>
 
                 <TextView
                     android:layout_width="0dp"

@@ -1,5 +1,6 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
@@ -25,6 +26,12 @@ class ProImmuneFood : AppCompatActivity() {
         binding.backButton6.setOnClickListener { finish() }
 
         setPro()
+
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
         binding.first.setOnClickListener {
             setPro()

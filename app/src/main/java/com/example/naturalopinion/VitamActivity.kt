@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.WindowManager
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
@@ -22,6 +24,7 @@ class VitamActivity : AppCompatActivity(), onMedicalItemClick {
     var vitamin_status = true
     val vitamin_item : ArrayList<String> = ArrayList()
     val mineral_item : ArrayList<String> = ArrayList()
+    var prime = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityVitamBinding.inflate(layoutInflater)
@@ -34,9 +37,8 @@ class VitamActivity : AppCompatActivity(), onMedicalItemClick {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             window.statusBarColor = this.resources.getColor(R.color.deep_green)
         }
-
-
-
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        prime = pref.getBoolean("Premium",false)
 
         vitamin_item.add("Vitamin A (Retinol)")
         vitamin_item.add("Beta Carotene (Carotenoids)")
@@ -81,11 +83,25 @@ class VitamActivity : AppCompatActivity(), onMedicalItemClick {
 
         back_button = findViewById(R.id.back_button_7)
         vitamin_recycler = findViewById(R.id.vitamin_recycler)
-        vitamin_adapter = MedicalAdapter(this,false,this,vitamin_item,6)
-        mineral_adapter = MedicalAdapter(this,false,this,mineral_item,9)
+        vitamin_adapter = MedicalAdapter(this,prime,this,vitamin_item,6)
+        mineral_adapter = MedicalAdapter(this,prime,this,mineral_item,9)
         vitamin_recycler.adapter = vitamin_adapter
         vitamin_recycler.layoutManager = LinearLayoutManager(this)
 
+        binding.searchEdittext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do Nothing
+            }
+
+        })
 
         binding.first.setOnClickListener { showVitamins() }
         binding.second.setOnClickListener { showMinerals() }
@@ -127,10 +143,8 @@ class VitamActivity : AppCompatActivity(), onMedicalItemClick {
         vitamin_status = false
     }
 
-
     override fun onItemCLick(position: Int) {
-        if((position==6 && vitamin_status) || (!vitamin_status && position==9)){
-
+        if(prime||(position==6 && vitamin_status) || (!vitamin_status && position==9)){
             val intent = Intent(this, VitaminMineralDetailActivity::class.java)
             if(vitamin_status)
                 intent.putExtra("heading",vitamin_item[position])
@@ -139,5 +153,32 @@ class VitamActivity : AppCompatActivity(), onMedicalItemClick {
 
             startActivity(intent)
         }
+    }
+
+    fun filter(text: String?) {
+        val temp: MutableList<String> = ArrayList()
+        val temp2: MutableList<String> = ArrayList()
+        if(vitamin_status){
+            for (d in vitamin_item) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            vitamin_adapter!!.updateList(temp)
+        }else{
+            for (d in mineral_item) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            mineral_adapter!!.updateList(temp)
+        }
+
     }
 }

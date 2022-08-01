@@ -2,24 +2,32 @@ package com.example.naturalopinion
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.naturalopinion.Adapter.MedicalAdapter
 import com.example.naturalopinion.Adapter.onMedicalItemClick
+import com.example.naturalopinion.databinding.ActivityMedicalConditionBinding
 
 class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
     lateinit var back_button : ImageView
     lateinit var recyclerView: RecyclerView
     lateinit var medicalAdapter: MedicalAdapter
-    private val items = ArrayList<String>()
-    val premium = true
+    var items = ArrayList<String>()
+    var premium = false
+    lateinit var binding : ActivityMedicalConditionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_medical_condition)
+        binding = ActivityMedicalConditionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        premium = pref.getBoolean("Premium",false)
 
         //Status bar color changed
         if (Build.VERSION.SDK_INT >= 21) {
@@ -28,6 +36,7 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             window.statusBarColor = this.resources.getColor(R.color.white)
         }
+
 
             items.add("ADD/ADHD")
             items.add("Adult Acne")
@@ -138,6 +147,21 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
         back_button = findViewById(R.id.back_button_5)
         recyclerView = findViewById(R.id.medical_recycler)
         medicalAdapter = MedicalAdapter(this,premium,this, items,15)
+        //
+        binding.searchEdittext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do Nothing
+            }
+
+        })
 
         //Finish Activity
         back_button.setOnClickListener { finish() }
@@ -150,15 +174,24 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(premium){
-            val intent = Intent(this,ConditionDetailActivity::class.java)
-            intent.putExtra("heading",items[position])
-            startActivity(intent)
-        }
-        else if(position==15){
+        if(premium||position==15){
             val intent = Intent(this,ConditionDetailActivity::class.java)
             intent.putExtra("heading",items[position])
             startActivity(intent)
         }
     }
+    fun filter(text: String?) {
+        val temp: MutableList<String> = ArrayList()
+        for (d in items) {
+            //or use .equal(text) with you want equal match
+            //use .toLowerCase() for better matches
+            if (d.lowercase().contains("$text".lowercase())) {
+                temp.add(d)
+            }
+        }
+        //update recyclerview
+        medicalAdapter.updateList(temp)
+    }
+
+
 }

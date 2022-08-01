@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
@@ -15,16 +17,17 @@ import com.example.naturalopinion.Adapter.onMedicalItemClick
 import com.example.naturalopinion.databinding.ActivityBotanicalsBinding
 
 class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
-    lateinit var botanical_rv : RecyclerView
-    lateinit var botanical_adapter_common : MedicalAdapter
-    lateinit var botanical_adapter_clinical : MedicalAdapter
-    lateinit var botanical_adapter_latin : MedicalAdapter
-    lateinit var back_button : ImageView
-    lateinit var binding : ActivityBotanicalsBinding
+    lateinit var botanical_rv: RecyclerView
+    lateinit var botanical_adapter_common: MedicalAdapter
+    lateinit var botanical_adapter_clinical: MedicalAdapter
+    lateinit var botanical_adapter_latin: MedicalAdapter
+    lateinit var back_button: ImageView
+    lateinit var binding: ActivityBotanicalsBinding
     var index = 1
     val items_by_latin = ArrayList<String>()
     val items_by_common = ArrayList<String>()
     val items_by_clinical = ArrayList<String>()
+    var premium = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBotanicalsBinding.inflate(layoutInflater)
@@ -39,12 +42,14 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
         }
         back_button = findViewById(R.id.back_button_9)
 
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        premium = pref.getBoolean("Premium",false)
 
         setLists()
 
-        botanical_adapter_common = MedicalAdapter(this,false,this,items_by_common,62)
-        botanical_adapter_latin = MedicalAdapter(this,false,this, items_by_latin,7)
-        botanical_adapter_clinical = MedicalAdapter(this,false,this, items_by_clinical,3)
+        botanical_adapter_common = MedicalAdapter(this, premium, this, items_by_common, 62)
+        botanical_adapter_latin = MedicalAdapter(this, premium, this, items_by_latin, 7)
+        botanical_adapter_clinical = MedicalAdapter(this, premium, this, items_by_clinical, 3)
 
         botanical_rv = findViewById(R.id.botanical_rv)
         botanical_rv.adapter = botanical_adapter_clinical
@@ -58,16 +63,16 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
             binding.languageCard.visibility = View.GONE
             botanical_rv.adapter = botanical_adapter_clinical
 
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
+            binding.first.setCardBackgroundColor(ContextCompat.getColor(this, R.color.skin))
+            binding.firstText.setTextColor(ContextCompat.getColor(this, R.color.deep_green))
             binding.first.strokeWidth = 0
 
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.second.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.secondText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.second.strokeWidth = 5
 
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.third.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.thirdText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.third.strokeWidth = 5
 
         }
@@ -78,16 +83,16 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
 
             botanical_rv.adapter = botanical_adapter_latin
 
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
+            binding.second.setCardBackgroundColor(ContextCompat.getColor(this, R.color.skin))
+            binding.secondText.setTextColor(ContextCompat.getColor(this, R.color.deep_green))
             binding.second.strokeWidth = 0
 
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.first.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.firstText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.first.strokeWidth = 5
 
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.third.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.thirdText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.third.strokeWidth = 5
 
         }
@@ -95,22 +100,37 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
             index = 3
             binding.languageCard.visibility = View.VISIBLE
             binding.alertMessage.text = "Botanicals By Common Name"
-            
+
             botanical_rv.adapter = botanical_adapter_common
 
-            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
-            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
+            binding.third.setCardBackgroundColor(ContextCompat.getColor(this, R.color.skin))
+            binding.thirdText.setTextColor(ContextCompat.getColor(this, R.color.deep_green))
             binding.third.strokeWidth = 0
 
-            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.second.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.secondText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.second.strokeWidth = 5
 
-            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
-            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.first.setCardBackgroundColor(ContextCompat.getColor(this, R.color.transparent))
+            binding.firstText.setTextColor(ContextCompat.getColor(this, R.color.skin))
             binding.first.strokeWidth = 5
 
         }
+
+        binding.searchEdittext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do Nothing
+            }
+
+        })
 
     }
 
@@ -532,39 +552,890 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
     }
 
     override fun onItemCLick(position: Int) {
-        if(index == 1){
-            if(items_by_clinical[position]=="Antiatherosclerotic"){
-                val list = ArrayList<String>()
-                list.add("Allium sativum (Garlic)")
-                list.add("Commiphora mukul (Guggulu)")
-                list.add("Crataegus oxycantha (Hawthorn, May bush, Whitethorn)")
-                list.add("Curcuma longa (Tumeric)")
-                list.add("Ginkgo biloba (Ginkgo)")
-                list.add("Medicago sativa (Alfalfa)")
-                list.add("Salvia miltiorrhiza (Danshen)")
-                list.add("Zingiber offiniale (Ginger)")
+        if (index == 1) {
+            val list = ArrayList<String>()
+            if(premium||items_by_clinical[position]=="Antiatherosclerotic"){
+                when (items_by_clinical[position]) {
+                    "Alterative" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Avena sativa (Oats)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Chimaphilia umbellata (Pipsissewa)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Collinsonia canadensis (Stone root)")
+                        list.add("Corydalis bulbosa (Corydalis)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Fucus vesiculosus (Bladderwrack, Kelp)")
+                        list.add("Galium aparine (Cleavers, Bed straw)")
+                        list.add("Geranium maculatum (Wild geranium, Cranesbill)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Phytolacca decandra (Poke)")
+                        list.add("Rumex crispis (Yellow dock, Curly dock)")
+                        list.add("Salvia officinalis (Sage)")
+                        list.add("Sambucus canadensis, nigra (Elder)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Smilax sarsaparilla (Sarsaparilla)")
+                        list.add("Stillingia sylvatica (Queen's root)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                    }
+                    "Analgesic/Anodyne" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Angelica sinensis (Dong quai)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Asclepias tuberosa (Pleurisy root)")
+                        list.add("Atropa belladonna (Belladonna)")
+                        list.add("Bryonia alba (Bryony)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Corydalis bulbosa (Corydalis)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Datura stramonium (Jimson weed, Thornapple)")
+                        list.add("Dioscorea villosa (Wild yam)")
+                        list.add("Eschscholzia californica (California poppy)")
+                        list.add("Filipendula ulmaria (Meadowsweet)")
+                        list.add("Gelsemium sempervirens (Yellow jasmine, Gelsemium)")
+                        list.add("Harpagophytum procumbens (Devil's claw, Grapple plant)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Matricaria chamomilla (German chamomile)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Petasites hybridus (Butterbur)")
+                        list.add("Piper methysticum (Kava kava)")
+                        list.add("Piscidia piscipula (Jamaican dogwood)")
+                        list.add("Rosmarius officinalis (Rosemary)")
+                        list.add("Sticta pulmonaria (Lungwort)")
+                        list.add("Symphytum officinale (Comfrey)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Verbascum thapsus (Mullein)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Antiallergic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Angelica sinensis (Dong quai)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Larrea tridentata (Chapparrel, Creosote bush, Creosotum)")
+                        list.add("Linum usitatissimum (Flax, Linseed)")
+                        list.add("Spilanthes acmella (Paracress)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Urtica urens (Nettles)")
+                    }
+                    "Antiatherosclerotic" -> {
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Commiphora mukul (Guggulu)")
+                        list.add("Crataegus oxycantha (Hawthorn, May bush, Whitethorn)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Ginkgo biloba (Ginkgo)")
+                        list.add("Medicago sativa (Alfalfa)")
+                        list.add("Polygonum multiflorum (Fo-Ti, He-shou-wu)")
+                        list.add("Salvia miltiorrhiza (Danshen)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Antibiotic/Antibacterial" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Armoracia rusticana (Horseradish)")
+                        list.add("Astragalus membranaceus (Milk vetch)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Fucus vesiculosus (Bladderwrack, Kelp)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Lavendula angustifolia (Lavender)")
+                        list.add("Lomatium disectum (Desert parsley)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Polygonum multiforum (Fo-ti, He-shou-wu)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Salvia miltiorrhiza (Danshen)")
+                        list.add("Salvia officinalis (Sage)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Schisandra chinensis (Wu wei zi)")
+                        list.add("Spilanthes acmella (Paracress)")
+                        list.add("Tabebuia impetiginosa (Pau d' arco)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Usnea spp. (Old man's beard)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                    }
+                    "Antidepressant" -> {
+                        list.add("Avena sativa (Oats)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Antidiarrheic" -> {
+                        list.add("Agrimonia eupatorium (Agrimony)")
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                    }
+                    "Antidiuretic" -> {
+                        list.add("Valeriana officinalis (Valerian)")
+                    }
+                    "Antidysmenorrheic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Antidyspeptic" -> {
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Melissa officinalis (Lemon balm)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Polygonum multiflorum (Fo-ti, He-shou-wu)")
+                        list.add("Tanacetum parthenium) (Feverfew)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Antiedemic" -> {
+                        list.add("Aesculus hippocastanum (Horsechestnut)")
+                    }
+                    "Antifungal" -> {
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Lomatium disectum (Desert parsley)")
+                        list.add("Polygonum multiforum (Fo-Ti, He-shou-wu)")
+                        list.add("Tabebuia impetiginosa (Pau d' arco)")
+                        list.add("Tanacetum parthenium) (Feverfew)")
+                    }
+                    "Antiherpetic" -> {
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Hyssopus officinalis (Hyssop)")
+                        list.add("Lomatium disectum (Desert parsley)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Spilanthes acmella (Paracress)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                    }
+                    "Anti-inflammatory" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Geranium maculatum (Wild geranium, Cranesbill)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Harpagophytum procumbens (Devil's claw, Grapple plant)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Larrea tridentata (Chapparrel, Creosote bush, Creosotum)")
+                        list.add("Linum usitatissimum (Flax, Linseed)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Petasites hybridus (Butterbur)")
+                        list.add("Piper methysticum (Kava kava)")
+                        list.add("Polygonum multiflorum (Fo-ti, He-shou-wu)")
+                        list.add("Ruscus aculeatus (Butcher's broom)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Tussilago farfara (Colt's foot)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                    }
+                    "Antineoplastic" -> {
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Larrea tridentata (Chapparrel, Creosote bush, Creosotum)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Tabebuia impetiginosa (Pau d' arco)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                    }
+                    "Antirheumatic" -> {
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Bryonia alba (Bryony)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Harpagophytum procumbens (Devil's claw, Grapple plant)")
+                        list.add("Vitex agnus castus (Chaste tree, Monk's pepper)")
+                        list.add("Wathanis somnifera (Ashwagandha)")
+                        list.add("Yucca spp. (Yucca)")
+                    }
+                    "Antiseptic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Chimaphilia umbellata (Pipsissewa)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Salvia officinalis (Sage)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                    }
+                    "Antispasmodlist.add(ic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Ammi visnaga (Khella)")
+                        list.add("Atropa belladonna (Belladonna)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Caulophyllum thalictroides (Blue cohosh)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Datura stramonium (Jimson weed, Thornapple)")
+                        list.add("Dioscorea villosa (Wild yam)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Gelsemium sempervirens (Yellow jasmine, Gelsemium)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Matricaria chamomilla (German chamomile)")
+                        list.add("Melissa officinalis (Lemon balm)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Petasites hybridus (Butterbur)")
+                        list.add("Piper methysticum (Kava kava)")
+                        list.add("Rosmarius officinalis (Rosemary)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Symplocarpus foetida (Skunk cabbage)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Trillium erectum (Beth root)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Viburnum opulus (Cramp bark)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Antitussive" -> {
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Asclepias tuberosa (Pleurisy root)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Verbascum thapsus (Mullein)")
+                    }
+                    "Antiviral" -> {
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Ligusticum porteri (Osha)")
+                        list.add("Lomatium disectum (Desert parsley)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Phytolacca decandra (Poke)")
+                        list.add("Tabebuia impetiginosa (Pau d' arco)")
+                    }
+                    "Astringent" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Aesculus hippocastanum (Horsechestnut)")
+                        list.add("Alchemilla vulgaris (Lady's mantle)")
+                        list.add("Althea officinalis (Marshmallow)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Collinsonia canadensis (Stone root)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Euphrasia officinalis (Eyebright)")
+                        list.add("Geranium maculatum (Wild geranium, Cranesbill)")
+                        list.add("Hamamelis virginiana (Witch hazel)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Mitchella repens (Squawvine, Partridge berry)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Salvia officinalis (Sage)")
+                        list.add("Sambucus canadensis, nigra (Elder)")
+                        list.add("Stillingia sylvatica (Queen's root)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Bitter" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Agrimonia eupatorium (Agrimony)")
+                        list.add("Gentiana lutea (Gentian)")
+                        list.add("Harpagophytum procumbens (Devil's claw, Grapple plant)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Silybum marianum (Milk thistle)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Usnea spp. (Old man's beard)")
+                    }
+                    "Carminative" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Hyssopus officinalis (Hyssop)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Matricaria chamomilla (German chamomile)")
+                        list.add("Melaleuca alternifolia (Tea tree)")
+                        list.add("Melissa officinalis (Lemon balm)")
+                        list.add("Nepeta cataria (Catnip)")
+                        list.add("Pimpinella anisum (Anise)")
+                        list.add("Salvia officinalis (Sage)")
+                        list.add("Sambucus canadensis, nigra (Elder)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Cathartic" -> {
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Bryonia alba (Bryony)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Rhamnus purshiana (Cascara)")
+                        list.add("Stillingia sylvatica (Queen's root)")
+                    }
+                    "Cholagogue" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Curcuma longa (Tumeric)")
+                        list.add("Cynara scolymus (Artichoke)")
+                        list.add("Gentiana lutea (Gentian)")
+                        list.add("Lavendula angustifolia (Lavender)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Rosmarius officinalis (Rosemary)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Schisandra chinensis (Wu wei zi)")
+                        list.add("Stillingia sylvatica (Queen's root)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Demulcent" -> {
+                        list.add("Althea officinalis (Marshmallow)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Linum usitatissimum (Flax, Linseed)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Symphytum officinale (Comfrey)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Ulmus fulva (Slippery elm, American elm)")
+                        list.add("Verbascum thapsus (Mullein)")
+                    }
+                    "Depressant" -> {
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Atropa belladonna (Belladonna)")
+                        list.add("Datura stramonium (Jimson weed, Thornapple)")
+                        list.add("Gelsemium sempervirens (Yellow jasmine, Gelsemium)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Viscum alba (Mistletoe)")
+                    }
+                    "Diaphoretic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Caulophyllum thalictroides (Blue cohosh)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Melaleuca alternifolia (Tea tree)")
+                        list.add("Nepeta cataria (Catnip)")
+                        list.add("Sambucus canadensis, nigra (Elder)")
+                        list.add("Symplocarpus foetida (Skunk cabbage)")
+                        list.add("Tanacetum parthenium (Feverfew)")
+                        list.add("Tilia europaea (Linden flower, Lime blossom)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Diuretic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Althea officinalis (Marshmallow)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Caulophyllum thalictroides (Blue cohosh)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Chimaphilia umbellata (Pipsissewa)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Collinsonia canadensis (Stone root)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Fucus vesiculosus (Bladderwrack, Kelp)")
+                        list.add("Galium aparine (Cleavers, Bed straw)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Mitchella repens (Squawvine, Partridge berry)")
+                        list.add("Petroselinum crispum (Parsley)")
+                        list.add("Sambucus canadensis, nigra (Elder)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Symplocarpus foetida (Skunk cabbage)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                        list.add("Verbascum thapsus (Mullein)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zea mays (Corn silk)")
+                    }
+                    "Emetic" -> {
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Phytolacca decandra (Poke)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Symplocarpus foetida (Skunk cabbage)")
+                    }
+                    "Emmenagogue" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Caulophyllum thalictroides (Blue cohosh)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Petroselinum crispum (Parsley)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Tanacetum parthenium) (Feverfew)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Estrogenic" -> {
+                        list.add("Angelica sinensis (Dong quai)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Dioscorea villosa (Wild yam)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Medicago sativa (Alfalfa)")
+                        list.add("Panax ginseng (Chinese ginseng, Korean ginseng)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Vitex agnus castus (Chaste tree, Monk's pepper)")
+                    }
+                    "Expectorant" -> {
+                        list.add("Aesculus hippocastanum (Horsechestnut)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Eriodictyon californicum (Yerba santa)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Hyssopus officinalis (Hyssop)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Lomatium disectum (Desert parsley)")
+                        list.add("Melaleuca alternifolia (Tea tree)")
+                        list.add("Pimpinella anisum (Anise)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Tussilago farfara (Colt's foot)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Febrifuge" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Bryonia alba (Bryony)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Gelsemium sempervirens (Yellow jasmine, Gelsemium)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Hemostatic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Alchemilla vulgaris (Lady's mantle)")
+                        list.add("Angelica sinensis (Dong quai)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Geranium maculatum (Wild geranium, Cranesbill)")
+                        list.add("Hamamelis virginiana (Witch hazel)")
+                        list.add("Ruscus aculeatus (Butcher's broom)")
+                        list.add("Symphytum officinale (Comfrey)")
+                    }
+                    "Hypnotic" -> {
+                        list.add("Eschscholzia californica (California poppy)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Piper methysticum (Kava kava)")
+                        list.add("Piscidia piscipula (Jamaican dogwood)")
+                        list.add("Verbena officinalis (Vervain)")
+                    }
+                    "Hypoglycemic" -> {
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Vaccinium myrtillus (Bilberry)")
+                    }
+                    "Hypotensive" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Camellia sinensis (Green tea)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Polygonum multiflorum (Fo-ti, He-shou-wu)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Viscum alba (Mistletoe)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                    }
+                    "Laxative" -> {
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Galium aparine (Cleavers, Bed straw)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Linum usitatissimum (Flax, Linseed)")
+                        list.add("Momordica charantia (Bitter melon)")
+                        list.add("Polygonum multiflorum (Fo-Ti, He-shou-wu)")
+                        list.add("Rhamnus purshiana (Cascara)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Rumex crispis (Yellow dock, Curly dock)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                    }
+                    "Lipotropic" -> {
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Cynara scolymus (Artichoke)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Silybum marianum (Milk thistle)")
+                    }
+                    "Nervine" -> {
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Avena sativa (Oats)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Nepeta cataria (Catnip)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Trillium erectum (Beth root)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Viscum alba (Mistletoe)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                    }
+                    "Nutritive" -> {
+                        list.add("Crataegus oxycantha (Hawthorn, May bush, Whitethorn)")
+                        list.add("Fucus vesiculosus (Bladderwrack, Kelp)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Medicago sativa (Alfalfa)")
+                        list.add("Petroselinum crispum (Parsley)")
+                        list.add("Symphytum officinale (Comfrey)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Ulmus fulva (Slippery elm, American elm)")
+                    }
+                    "Progesteronic" -> {
+                        list.add("Dioscorea villosa (Wild yam)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Smilax sarsaparilla (Sarsaparilla)")
+                        list.add("Vitex agnus castus (Chaste tree, Monk's pepper)")
+                    }
+                    "Purgative" -> {
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Hyssopus officinalis (Hyssop)")
+                        list.add("Phytolacca decandra (Poke)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                    }
+                    "Rubefacient" -> {
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Rosmarius officinalis (Rosemary)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Sedative" -> {
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Alchemilla vulgaris (Lady's mantle)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Avena sativa (Oats)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Eschscholzia californica (California poppy)")
+                        list.add("Gelsemium sempervirens (Yellow jasmine, Gelsemium)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Melissa officinalis (Lemon balm)")
+                        list.add("Passiflora incarnata (Passionflower)")
+                        list.add("Piper methysticum (Kava kava)")
+                        list.add("Piscidia piscipula (Jamaican dogwood)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Trifollium pratense (Red clover)")
+                        list.add("Tussilago farfara (Colt's foot)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Verbascum thapsus (Mullein)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Viburnum opulus (Cramp bark)")
+                        list.add("Viscum alba (Mistletoe)")
+                        list.add("Withania somnifera (Ashwagandha)")
+                        list.add("Zea mays (Corn silk)")
+                    }
+                    "Sialagogue" -> {
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Stimulant" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Arctium lappa (Burdock)")
+                        list.add("Asclepias tuberosa (Pleurisy root)")
+                        list.add("Baptisia tintoria (Wild indigo)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Bryonia alba (Bryony)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Cinnamomum spp. (Cinnamon)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Ephedra sinica (Ma huang)")
+                        list.add("Fucus vesiculosus (Bladderwrack, Kelp)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Lobelia inflata (Indian tobacco, Puke weed)")
+                        list.add("Melaleuca alternifolia (Tea tree)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Panax ginseng (Chinese ginseng, Korean ginseng)")
+                        list.add("Petasites hybridus (Butterbur)")
+                        list.add("Rhamnus purshiana (Cascara)")
+                        list.add("Rosmarius officinalis (Rosemary)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                        list.add("Zea mays (Corn silk)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Stomachic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Aletris farinosa (True unicorn)")
+                        list.add("Collinsonia canadensis (Stone root)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Cynara scolymus (Artichoke)")
+                        list.add("Gentiana lutea (Gentian)")
+                        list.add("Humulus lupulus (Hops)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Juniperis communis (Juniper)")
+                        list.add("Melaleuca alternifolia (Tea tree)")
+                        list.add("Mentha piperita (Peppermint)")
+                        list.add("Rheum officinalis (Rhubarb)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Valeriana officinalis (Valerian)")
+                        list.add("Verbena officinalis (Vervain)")
+                        list.add("Zingiber offiniale (Ginger)")
+                    }
+                    "Synergist" -> {
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Althea officinalis (Marshmallow)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                    }
+                    "Tonic" -> {
+                        list.add("Achillea millefolium (Yarrow)")
+                        list.add("Acorus calamus (Sweet flag)")
+                        list.add("Agrimonia eupatorium (Agrimony)")
+                        list.add("Aletris farinosa (True unicorn)")
+                        list.add("Arctostaphylos uva ursi (Bearberry)")
+                        list.add("Asclepias tuberosa (Pleurisy root)")
+                        list.add("Astragalus membranaceus (Milk vetch)")
+                        list.add("Barosma betulina (Buchu)")
+                        list.add("Berberis vulgaris (Barberry)")
+                        list.add("Caulophyllum thalictroides (Blue cohosh)")
+                        list.add("Chimaphilia umbellata (Pipsissewa)")
+                        list.add("Chionanthus virginicus (Fringe tree)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Collinsonia canadensis (Stone root)")
+                        list.add("Corydalis bulbosa (Corydalis)")
+                        list.add("Crataegus oxycantha (Hawthorn, May bush, Whitethorn)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Equisetum arvense (Shave grass, Horsetail)")
+                        list.add("Galium aparine (Cleavers, Bed straw)")
+                        list.add("Gentiana lutea (Gentian)")
+                        list.add("Glycyrrhiza glabra (Licorice)")
+                        list.add("Hydrastis canadensis (Goldenseal)")
+                        list.add("Inula helenium (Elecampane)")
+                        list.add("Leonurus cardiaca (Motherwort)")
+                        list.add("Nepeta cataria (Catnip)")
+                        list.add("Panax ginseng (Chinese ginseng, Korean ginseng)")
+                        list.add("Polygonum multiflorum (Fo-ti, He-shou-wu)")
+                        list.add("Rumex crispis (Yellow dock, Curly dock)")
+                        list.add("Scutellaria laterifolia (Skullcap)")
+                        list.add("Serenoa repens (Saw palmetto)")
+                        list.add("Silybum marianum (Milk thistle)")
+                        list.add("Tanacetum parthenium) (Feverfew)")
+                        list.add("Taraxacum officinale (Dandelion, Lion's tooth)")
+                        list.add("Thuja plicata, occidentalis (Western cedar)")
+                        list.add("Thymus vulgaris (Thyme)")
+                        list.add("Urtica urens (Nettles)")
+                        list.add("Usnea spp. (Old man's beard)")
+                        list.add("Viburnum opulus (Cramp bark)")
+                        list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
+                    }
+                    "Toxic" -> {
+                        list.add("Aconitum napellus (Monkshood, Aconite)")
+                        list.add("Datura stramonium (Jimson weed, Thornapple)")
+                        list.add("Sanguinaria canadensia (Blood root)")
+                        list.add("Valeriana officinalis (Valerian)")
+                    }
+                    "Vasoconstrilist.add(ctor" -> {
+                        list.add("Aesculus hippocastanum (Horsechestnut)")
+                        list.add("Euphrasia officinalis (Eyebright)")
+                        list.add("Ruscus aculeatus (Butcher's broom)")
+                    }
+                    "Vasodilator" -> {
+                        list.add("Allium sativum (Garlic)")
+                        list.add("Ammi visnaga (Khella)")
+                        list.add("Atropa belladonna (Belladonna)")
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Cimicifuga racemosa (Black cohosh)")
+                        list.add("Foeniculum vulgare (Fennel)")
+                        list.add("Ginkgo biloba (Ginkgo)")
+                        list.add("Petasites hybridus (Butterbur)")
+                    }
+                    "Vesicant" -> {
+                        list.add("Capsicum frutescens (Cayenne, Red pepper)")
+                        list.add("Chelidonium majus (Celandine)")
+                    }
+                    "Vulnerary" -> {
+                        list.add("Althea officinalis (Marshmallow)")
+                        list.add("Armoracia rusticana (Horseradish)")
+                        list.add("Calendula officinalis (Marigold)")
+                        list.add("Chelidonium majus (Celandine)")
+                        list.add("Commiphora molmol (Myrrh)")
+                        list.add("Echinacea angustifolia (Purple cone flower)")
+                        list.add("Grindelia camporum (Gumweed)")
+                        list.add("Hamamelis virginiana (Witch hazel)")
+                        list.add("Hypericum perforatum (St. John's wort)")
+                        list.add("Symphytum officinale (Comfrey)")
+                        list.add("Ulmus fulva (Slippery elm, American elm)")
+                    }
+                }
                 val intent = Intent(this,ClinicalListActivity::class.java)
-                intent.putStringArrayListExtra("list",list)
+                intent.putStringArrayListExtra("heading",list)
                 startActivity(intent)
             }
-        }else if(index == 2){
-            if(items_by_latin[position]=="Allium sativum (Garlic)"){
-                val intent = Intent(this,BotanicalDetailActivity::class.java)
-                intent.putExtra("heading",items_by_latin[position])
+
+        } else if (index == 2) {
+            if (items_by_latin[position] == "Allium sativum (Garlic)"||premium) {
+                val intent = Intent(this, BotanicalDetailActivity::class.java)
+                intent.putExtra("heading", items_by_latin[position])
                 startActivity(intent)
             }
-        }else{
-            if(items_by_common[position]=="Garlic (Allium sativum)"){
-                val intent = Intent(this,BotanicalDetailActivity::class.java)
-                intent.putExtra("heading",items_by_common[position])
+        } else {
+            if (items_by_common[position] == "Garlic (Allium sativum)"||premium) {
+                val intent = Intent(this, BotanicalDetailActivity::class.java)
+                intent.putExtra("heading", items_by_common[position])
                 startActivity(intent)
             }
         }
+    }
 
-//        if(position==4){
-//            val intent = Intent(this,Common_Activity::class.java)
-//            intent.putExtra("heading","Botanical")
-//            startActivity(intent)
-//        }
+    fun filter(text: String?) {
+        val temp: MutableList<String> = ArrayList()
+        if(index==1){
+            for (d in items_by_clinical) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            botanical_adapter_clinical.updateList(temp)
+        }else if(index==2){
+            for (d in items_by_latin) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            botanical_adapter_latin.updateList(temp)
+        }else{
+            for (d in items_by_common) {
+                //or use .equal(text) with you want equal match
+                //use .toLowerCase() for better matches
+                if (d.lowercase().contains("$text".lowercase())) {
+                    temp.add(d)
+                }
+            }
+            //update recyclerview
+            botanical_adapter_common.updateList(temp)
+        }
+
     }
 }

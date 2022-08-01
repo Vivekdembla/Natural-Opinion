@@ -1,7 +1,14 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.example.naturalopinion.databinding.ActivityPhysicalExamBinding
@@ -13,6 +20,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         binding = ActivityPhysicalExamBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.contentData.movementMethod = LinkMovementMethod.getInstance()
 
         //Status bar color changed
         val window = this.window
@@ -22,18 +30,46 @@ class PhysicalExamActivity : AppCompatActivity() {
 
         binding.backButton6.setOnClickListener { finish() }
 
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
+
         binding.subHeading.text = "Blood Pressure:"
-        binding.contentData.text = "• Orthostatic hypertension\n" +
+        var text = "• Orthostatic hypertension\n" +
                 "Consider:  adrenal insufficiency, hypothyroidism, anemia\n" +
                 "• Hypertension in a pregnant woman (accompanied by ankle edema)\n" +
                 "Consider:  deficiency of protein, magnesium, vitamin B6"
 
+        val ss = SpannableString(text)
+
+        createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
+        createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+        createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+
+        makeBold(ss,text,"Orthostatic hypertension")
+        makeBold(ss,text,"Hypertension in a pregnant woman (accompanied by ankle edema)")
+
+        binding.contentData.text = ss
+
         binding.first.setOnClickListener {
             binding.subHeading.text = "Blood Pressure:"
-            binding.contentData.text = "• Orthostatic hypertension\n" +
+
+            var text = "• Orthostatic hypertension\n" +
                     "Consider:  adrenal insufficiency, hypothyroidism, anemia\n" +
                     "• Hypertension in a pregnant woman (accompanied by ankle edema)\n" +
                     "Consider:  deficiency of protein, magnesium, vitamin B6"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Orthostatic hypertension")
+            makeBold(ss,text,"Hypertension in a pregnant woman (accompanied by ankle edema)")
+
+            createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
+            createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            binding.contentData.text = ss
 
             binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
@@ -91,7 +127,8 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.second.setOnClickListener {
             binding.subHeading.text = "Hair:"
-            binding.contentData.text = "• Extremely painful when hair is gently pulled\n" +
+
+            var text = "• Extremely painful when hair is gently pulled\n" +
                     "\n" +
                     "Consider:  deficiency of vitamin D\n" +
                     "• Flaky dandruff\n" +
@@ -116,6 +153,32 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Premature graying\n" +
                     "\n" +
                     "Consider:  deficiency of PABA"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Extremely painful when hair is gently pulled")
+            makeBold(ss,text,"Flaky dandruff")
+            makeBold(ss,text,"Dull, lifeless hair")
+            makeBold(ss,text,"Thinning hair in a postmenopausal woman")
+            makeBold(ss,text,"Thinning hair in a woman taking birth control pills, pregnant or postpartum")
+            makeBold(ss,text,"Thinning hair in a woman not taking birth control/estrogen or pregnant")
+            makeBold(ss,text,"Hair loss")
+            makeBold(ss,text,"Premature graying")
+
+            createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
+            createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+
+            createLink(ss,"vitamin D",text,"Vitmain","Vitamin D (Cholecalciferol)")
+            createLink(ss,"selenium",text,"Vitmain","Selenium")
+            createLink(ss,"EFAs",text,"Fat","")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"DHEA",text,"Supplement","Dehydroepiandrosterone (DHEA)")
+            createLink(ss,"folate",text,"Vitamin","Folate")
+            createLink(ss,"PABA",text,"Vitamin","PABA (Para-aminobenzoic Acid)")
+            createLink(ss,"hydrochloric acid",text,"Condition","Hydrochloric Acid")
+            binding.contentData.text = ss
+
 
             binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -173,7 +236,8 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.third.setOnClickListener {
             binding.subHeading.text = "Eyes:"
-            binding.contentData.text = "• Cataract in the older patient\n" +
+
+                val text = "• Cataract in the older patient\n" +
                     "\n" +
                     "Consider:  glucose imbalance\n" +
                     "Consider:  deficiency of vitamin B2, vitamin A, vitamin C, zinc, selenium, magnesium\n" +
@@ -190,7 +254,29 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "\n" +
                     "Consider:  allergies, especially to milk"
 
-            binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Cataract in the older patient")
+            makeBold(ss,text,"Floaters")
+            makeBold(ss,text,"Retinitis pigmentosa")
+            makeBold(ss,text,"Dark circles under both eyes")
+            makeBold(ss,text,"Dilated pupils to 1/4 inch or more in a child")
+
+            createLink(ss,"vitamin D",text,"Vitmain","Vitamin D (Cholecalciferol)")
+            createLink(ss,"vitamin B2",text,"Vitamin","Vitamin B2 (Riboflavin)")
+            createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
+            createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"selenium",text,"Vitamin","Selenium")
+            createLink(ss,"magnesium",text,"Vitamin","Magnesium")
+            createLink(ss,"choline",text,"Vitamin","Choline (Lecithin)")
+            createLink(ss,"inositol",text,"Vitamin","Inositol")
+            createLink(ss,"methionine",text,"Vitamin","Methionine")
+            createLink(ss,"calcium",text,"Vitamin","Calcium")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+
+            binding.contentData.text = ss
+                binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.thirteen.strokeWidth = 5
 
@@ -246,12 +332,22 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.forth.setOnClickListener {
             binding.subHeading.text = "Nose:"
-            binding.contentData.text = "• Polyps\n" +
+            val text = "• Polyps\n" +
                     "\n" +
                     "Consider:  allergies, especially to salicylates including aspirin, artificial colors and flavors and white willow (salix alba)\n" +
                     "• Loss of smell\n" +
                     "\n" +
                     "Consider:  deficiency of zinc, vitamin A"
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Polyps")
+            makeBold(ss,text,"Loss of smell")
+
+            createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+
+            binding.contentData.text = ss
 
             binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -310,7 +406,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.fifth.setOnClickListener {
             binding.subHeading.text = "Ears:"
-            binding.contentData.text = "• Hardened or excessive ear wax\n" +
+                val text = "• Hardened or excessive ear wax\n" +
                     "\n" +
                     "Consider:  deficiency of EFAs\n" +
                     "• Cracking behind ears\n" +
@@ -327,8 +423,29 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "\n" +
                     "Consider:  allergies, aspirin toxicity or cardiovascular disease"
 
+            val ss = SpannableString(text)
 
-            binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            makeBold(ss,text,"Hardened or excessive ear wax")
+            makeBold(ss,text,"Cracking behind ears")
+            makeBold(ss,text,"Diagonal crease across lobes")
+            makeBold(ss,text,"Fluid behind TM or recurrent otitis media")
+            makeBold(ss,text,"Tinnitus")
+
+
+            createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
+//            createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+//            createLink(ss,"selenium",text,"Vitamin","Selenium")
+//            createLink(ss,"magnesium",text,"Vitamin","Magnesium")
+//            createLink(ss,"choline",text,"Vitamin","Choline (Lecithin)")
+//            createLink(ss,"inositol",text,"Vitamin","Inositol")
+//            createLink(ss,"methionine",text,"Vitamin","Methionine")
+//            createLink(ss,"calcium",text,"Vitamin","Calcium")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+
+            binding.contentData.text = ss
+
+                binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.thirteen.strokeWidth = 5
 
@@ -384,7 +501,8 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.sixth.setOnClickListener {
             binding.subHeading.text = "Mouth:"
-            binding.contentData.text = "• Cheilosis\n" +
+
+            val text = "• Cheilosis\n" +
                     "\n" +
                     "Consider:  deficiency of vitamin B2, vitamin B-complex\n" +
                     "• Loss of taste\n" +
@@ -393,6 +511,17 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Enlarged tonsils in children\n" +
                     "\n" +
                     "Consider:  food allergies"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Cheilosis")
+            makeBold(ss,text,"Loss of taste")
+            makeBold(ss,text,"Enlarged tonsils in children")
+
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"vitamin B2",text,"Condition","Vitamin B2 (Riboflavin)")
+
+            binding.contentData.text = ss
 
             binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -450,14 +579,27 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.seventh.setOnClickListener {
             binding.subHeading.text = "Teeth:"
-            binding.contentData.text = "• Periodontal problems\n" +
+                val text = "• Periodontal problems\n" +
                     "\n" +
                     "Consider:  deficiency of co-enzyme Q10, folate, antioxidants, calcium, vitamin C\n" +
                     "• Bruxism\n" +
                     "\n" +
                     "Consider:  allergies or stress"
 
-            binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Periodontal problems")
+            makeBold(ss,text,"Bruxism")
+
+            createLink(ss,"co-enzyme Q10",text,"Supplement","Coenzyme Q10")
+            createLink(ss,"folate",text,"Vitamin","Folate")
+            createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+            createLink(ss,"calcium",text,"Vitamin","Calcium")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+
+            binding.contentData.text = ss
+
+                binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.thirteen.strokeWidth = 5
 
@@ -512,7 +654,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.eight.setOnClickListener {
             binding.subHeading.text = "Tongue:"
-            binding.contentData.text = "• Pale tongue with pale buccal membranes and inner surface of lower eyelids\n" +
+            val text = "• Pale tongue with pale buccal membranes and inner surface of lower eyelids\n" +
                     "\n" +
                     "Consider:  anemia\n" +
                     "• Geographic tongue\n" +
@@ -521,6 +663,19 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Swollen and scalloped\n" +
                     "\n" +
                     "Consider:  food allergies"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Pale tongue with pale buccal membranes and inner surface of lower eyelids")
+            makeBold(ss,text,"Geographic tongue")
+            makeBold(ss,text,"Swollen and scalloped")
+
+            createLink(ss,"folate",text,"Vitamin","Folate")
+            createLink(ss,"vitamin B12",text,"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"food allergies",text,"Condition","Allergies")
+
+            binding.contentData.text = ss
 
             binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -577,7 +732,9 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.nine.setOnClickListener {
             binding.subHeading.text = "Face:"
-            binding.contentData.text = "• Acne in a teenager\n" +
+
+
+            val text = "• Acne in a teenager\n" +
                     "\n" +
                     "Consider:  allergies\n" +
                     "Consider:  deficiency of zinc, EFAs, selenium in boys\n" +
@@ -594,6 +751,26 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Seborrheic dermatitis on eyebrows, center of forehead, angles of nose, or chest\n" +
                     "\n" +
                     "Consider:  deficiency of PABA, vitamin B6, vitamin B-complex, EFAs"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Acne in a teenager")
+            makeBold(ss,text,"Dilated capillaries on cheeks and edges of nose in men")
+            makeBold(ss,text,"Reddened facial skin, usually on forehead and cheeks with scattered acne-like lumps")
+            makeBold(ss,text,"Slightly yellow tone to facial skin in an older person")
+            makeBold(ss,text,"Seborrheic dermatitis on eyebrows, center of forehead, angles of nose, or chest")
+
+            createLink(ss,"selenium",text,"Vitamin","Selenium")
+            createLink(ss,"EFAs",text,"Fat","")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+            createLink(ss,"hydrochloric acid",text,"Supplement","Hydrochloric Acid")
+            createLink(ss,"vitamin B12",text,"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"folate",text,"Vitamin","Folate")
+            createLink(ss,"PABA",text,"Vitamin","PABA (Para-aminobenzoic Acid)")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+
+            binding.contentData.text = ss
 
             binding.thirteen.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.thirteenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -650,7 +827,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.ten.setOnClickListener {
             binding.subHeading.text = "Skin:"
-            binding.contentData.text = "• Slightly yellow\n" +
+            val text = "• Slightly yellow\n" +
                     "\n" +
                     "Consider:  overconsumption of carrots or hypothyroidism (thyroid provides the hormone necessary to transform beta carotene to vitamin A)\n" +
                     "• Dry/rough\n" +
@@ -697,6 +874,40 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "\n" +
                     "Consider:  deficiency of vitamin C, vitamin K"
 
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Slightly yellow")
+            makeBold(ss,text,"Dry/rough")
+            makeBold(ss,text,"Multiple pigmented skin tags")
+            makeBold(ss,text,"Yellow spots, pimples under eyes")
+            makeBold(ss,text,"Red nodules on elbow")
+            makeBold(ss,text,"Dermatographism")
+            makeBold(ss,text,"Follicular hyperkeratosis")
+            makeBold(ss,text,"Slow wound healing")
+            makeBold(ss,text,"Dry, grayish skin")
+            makeBold(ss,text,"Dry, scaly skin")
+            makeBold(ss,text,"Scaly dark dermatitis with pigmented lesions")
+            makeBold(ss,text,"Yellow with pallor and eruptions")
+            makeBold(ss,text,"Irregular brownish/yellowish discoloration on anterior surface of lower leg")
+            makeBold(ss,text,"Fissures in heels in men")
+            makeBold(ss,text,"Easy bruising")
+
+
+            createLink(ss,"selenium",text,"Vitamin","Selenium")
+            createLink(ss,"EFAs",text,"Fat","")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"hypothyroidism ",text,"Vitamin","Hypothyroid")
+            createLink(ss,"diabetes mellitus",text,"Condition","Diabetes Mellitus")
+            createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
+            createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+            createLink(ss,"vitamin K",text,"Vitamin","Vitamin K (Quinones)")
+            createLink(ss,"vitamin B3",text,"Vitamin","Vitamin B3 (Niacin)")
+            createLink(ss,"beta carotene ",text,"Vitamin","Beta Carotene (Carotenoids)")
+            createLink(ss,"biotin",text,"Vitamin","Biotin")
+
+            binding.contentData.text = ss
             binding.twelve.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.twelveText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.twelve.strokeWidth = 5
@@ -753,12 +964,22 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.eleven.setOnClickListener {
             binding.subHeading.text = "Hands:"
-            binding.contentData.text = "• Dry with fissures on knuckles\n" +
+            val text = "• Dry with fissures on knuckles\n" +
                     "\n" +
                     "Consider:  deficiency of EFAs\n" +
                     "• Callouses and contractures\n" +
                     "\n" +
                     "Consider:  deficiency of vitamin E"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Dry with fissures on knuckles")
+            makeBold(ss,text,"Callouses and contractures")
+
+            createLink(ss,"EFAs",text,"Fat","")
+            createLink(ss,"vitamin E",text,"Vitamin","Vitamin E (Tocopherol)")
+
+            binding.contentData.text = ss
 
             binding.twelve.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.twelveText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -815,7 +1036,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.twelve.setOnClickListener {
             binding.subHeading.text = "Nails:"
-            binding.contentData.text = "• Flattened and spooned\n" +
+            val text = "• Flattened and spooned\n" +
                     "\n" +
                     "Consider:  iron deficiency anemia\n" +
                     "Consider:  deficiency of hydrochloric acid or malabsorption\n" +
@@ -851,6 +1072,36 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Discoloration\n" +
                     "\n" +
                     "Consider:  diabetes mellitus or allergies"
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Flattened and spooned")
+            makeBold(ss,text,"Thin, weak, bend easily in women")
+            makeBold(ss,text,"White spots on nails, for teenagers")
+            makeBold(ss,text,"Cracks and splits at fingertips")
+            makeBold(ss,text,"Paronychia")
+            makeBold(ss,text,"Brittle/splitting nails")
+            makeBold(ss,text,"Brittle nails")
+            makeBold(ss,text,"Horizontal and vertical ridges")
+            makeBold(ss,text,"Dryness with rounded or curved nail ends")
+            makeBold(ss,text,"Hangnails")
+            makeBold(ss,text,"Discoloration")
+
+            createLink(ss,"iron",text,"Vitamin","Iron")
+            createLink(ss,"EFAs",text,"Fat","")
+            createLink(ss,"zinc",text,"Vitamin","Zinc")
+            createLink(ss,"allergies",text,"Condition","Allergies")
+            createLink(ss,"hydrochloric acid",text,"Supplement","Hydrochloric Acid")
+            createLink(ss,"vitamin B12",text,"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"folate",text,"Vitamin","Folate")
+            createLink(ss,"hypothyroidism ",text,"Vitamin","Hypothyroid")
+            createLink(ss,"diabetes mellitus",text,"Condition","Diabetes Mellitus")
+            createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+            createLink(ss,"calcium",text,"Vitamin","Calcium")
+            createLink(ss,"wheat allergy",text,"Condition","Allergies")
+            createLink(ss,"pancreatic enzymes",text,"Supplement","Digestive Enzymes")
+
+            binding.contentData.text = ss
 
             binding.eleven.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.elevenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -907,7 +1158,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         }
         binding.thirteen.setOnClickListener {
             binding.subHeading.text = "Musculoskeletal:"
-            binding.contentData.text = "• Bursitis\n" +
+            val text = "• Bursitis\n" +
                     "\n" +
                     "Consider:  deficiency of vitamin B12\n" +
                     "• Costochondritis\n" +
@@ -922,6 +1173,26 @@ class PhysicalExamActivity : AppCompatActivity() {
                     "• Pain in lower leg if pressure is applied to tibia\n" +
                     "\n" +
                     "Consider:  deficiency of calcium, niacinamide"
+
+
+            val ss = SpannableString(text)
+
+            makeBold(ss,text,"Bursitis")
+            makeBold(ss,text,"Costochondritis")
+            makeBold(ss,text,"Degenerative arthritis, especially with crepitis behind the patella")
+            makeBold(ss,text,"Enlarged, painful nodule below the patella on the anterior side")
+            makeBold(ss,text,"Pain in lower leg if pressure is applied to tibia")
+
+            createLink(ss,"selenium",text,"Vitamin","Selenium")
+            createLink(ss,"vitamin B12",text,"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"calcium",text,"Vitamin","Calcium")
+            createLink(ss,"niacinamide",text,"Vitamin","Vitamin B3 (Niacin)")
+            createLink(ss,"glucosamine",text,"Supplement","Glucosamine Sulfate")
+            createLink(ss,"vitamin E",text,"Vitamin","Vitamin E (Tocopherol)")
+
+            binding.contentData.text = ss
+
 
             binding.eleven.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.elevenText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -975,6 +1246,53 @@ class PhysicalExamActivity : AppCompatActivity() {
             binding.nineText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.nine.strokeWidth = 5
 
+        }
+    }
+
+
+    fun makeBold(ss : SpannableString,string:String,substr:String){
+        if(string.indexOf(substr)!=-1 )
+            ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+
+    private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
+
+        var index = string.indexOf(sub_str)
+        while (index != -1) {
+            val clickableSpan = object : ClickableSpan(){
+                override fun onClick(widget: View) {
+                    val intent : Intent
+                    if(activity=="Condition"){
+                        intent = Intent(this@PhysicalExamActivity,ConditionDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Supplement"){
+                        intent = Intent(this@PhysicalExamActivity,SupplementDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Fiber"){
+                        intent = Intent(this@PhysicalExamActivity,FiberDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Vitamin"){
+                        intent = Intent(this@PhysicalExamActivity,VitaminMineralDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Botanical"){
+                        intent = Intent(this@PhysicalExamActivity,BotanicalDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(heading == "Fat"){
+                        val intent = Intent(this@PhysicalExamActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+            ss.setSpan(clickableSpan,index,index+sub_str.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            index = string.indexOf(sub_str, index + 1)
         }
     }
 }

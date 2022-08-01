@@ -4,22 +4,28 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.WindowManager
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.naturalopinion.Adapter.MedicalAdapter
 import com.example.naturalopinion.Adapter.onMedicalItemClick
+import com.example.naturalopinion.databinding.ActivitySupplimentBinding
 
 class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
     lateinit var back_button : ImageView
     lateinit var supplement_adapter : MedicalAdapter
     lateinit var supplement_rv : RecyclerView
     var items = ArrayList<String>()
+    var premium = false
+    lateinit var binding : ActivitySupplimentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_suppliment)
+        binding = ActivitySupplimentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Status bar color changed
         if (Build.VERSION.SDK_INT >= 21) {
@@ -30,6 +36,8 @@ class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
         }
         back_button = findViewById(R.id.back_button_10)
 
+        val pref = getSharedPreferences("Paid", MODE_PRIVATE)
+        premium = pref.getBoolean("Premium",false)
 
 
         items.add("Acidophilus/Bifidus")
@@ -73,19 +81,46 @@ class SupplimentActivity : AppCompatActivity(), onMedicalItemClick {
         items.add("Tryptophan")
         items.add("Tyrosine")
 
-        supplement_adapter = MedicalAdapter(this,false,this,items,8)
+        supplement_adapter = MedicalAdapter(this,premium,this,items,8)
         supplement_rv = findViewById(R.id.supplement_rv)
         supplement_rv.adapter = supplement_adapter
         supplement_rv.layoutManager = LinearLayoutManager(this)
 
         back_button.setOnClickListener { finish() }
+
+        binding.searchEdittext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do Nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filter(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // Do Nothing
+            }
+
+        })
     }
 
     override fun onItemCLick(position: Int) {
-//        if(position==8){
+        if(position==8||premium){
             val intent = Intent(this,SupplementDetailActivity::class.java)
             intent.putExtra("heading",items[position])
             startActivity(intent)
-//        }
+        }
+    }
+    fun filter(text: String?) {
+        val temp: MutableList<String> = ArrayList()
+        for (d in items) {
+            //or use .equal(text) with you want equal match
+            //use .toLowerCase() for better matches
+            if (d.lowercase().contains("$text".lowercase())) {
+                temp.add(d)
+            }
+        }
+        //update recyclerview
+        supplement_adapter!!.updateList(temp)
     }
 }

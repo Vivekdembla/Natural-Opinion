@@ -21,5 +21,8 @@ class ForgotActivity : AppCompatActivity() {
             window.statusBarColor = this.resources.getColor(R.color.white)
         }
         binding.backButton.setOnClickListener { finish() }
+        binding.cross1.setOnClickListener {
+            binding.email.setText("")
+        }
     }
 }

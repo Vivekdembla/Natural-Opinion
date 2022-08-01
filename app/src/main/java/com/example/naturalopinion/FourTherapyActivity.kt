@@ -1,9 +1,13 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
@@ -19,7 +23,11 @@ class FourTherapyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFourTherapyBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.contentData.movementMethod = LinkMovementMethod.getInstance()
+
         heading = intent.getStringExtra("heading").toString()
+
         //Status bar color changed
         val window = this.window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -27,6 +35,12 @@ class FourTherapyActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
 
         binding.backButton6.setOnClickListener { finish() }
+
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
         setOptions(heading)
         setFirst(heading)
@@ -443,7 +457,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "\n" +
                         "Option #2:\n" +
                         "MTE #5 concentrate: 2 ml.\n" +
-                        "Selenium (40 mcg./ml.): 8 ml.\n" +
+                        "Selenium  (40 mcg./ml.): 8 ml.\n" +
                         "Lactated Ringer's: 120 ml.\n" +
                         "(This option provides about the same amount of zinc and selenium, but also provides copper, chromium, and manganese.)\n" +
                         "\n" +
@@ -717,6 +731,67 @@ class FourTherapyActivity : AppCompatActivity() {
         if(heading == "WBC Stimulation"){
             makeBold(ss,s,"Injection:")
         }
+        createLink(ss,"asthma",s,"Condition","Asthma")
+        createLink(ss,"Asthma",s,"Condition","Asthma")
+        createLink(ss,"Allergic rhinitis",s,"Condition","Allergies")
+        createLink(ss,"Ascorbic acid",s,"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"ACE (adrenal cortical extract)",s,"Supplement","Glandulars")
+        createLink(ss,"allergies",s,"Vitamin","Allergies")
+        createLink(ss,"Boron",s,"Vitamin","Boron")
+        createLink(ss,"Calcium gluconate",s,"Vitamin","Calcium")
+        createLink(ss,"Ca1cium phosphate",s,"Vitamin","Calcium")
+        createLink(ss,"Calcium glycerophosphate",s,"Vitamin","Calcium")
+        createLink(ss,"Copper",s,"Vitamin","Copper")
+        createLink(ss,"Chromium",s,"Vitamin","Chromium")
+        createLink(ss,"Congestive heart failure (CHF)",s,"Condition","Congestive Heart Failure")
+        createLink(ss,"Chronic fatigue syndrome",s,"Condition","Chronic Fatigue Syndrome")
+        createLink(ss,"Dexpanthenol",s,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+        createLink(ss,"Depression",s,"Condition","Depression")
+        createLink(ss,"Dimethyl glycine",s,"Supplement","Dimethyl Glycine (DMG)")
+        createLink(ss,"Folic acid",s,"Vitamin","Folate")
+        createLink(ss,"Fibromyalgia",s,"Condition","Fibromyalgia")
+        createLink(ss,"Glutathione",s,"Supplement","Glutathione")
+        createLink(ss,"Glycyrrhiza",s,"Botanical","Glycyrrhiza glabra (Licorice)")
+        createLink(ss,"Germanium",s,"Vitamin","Germanium")
+        createLink(ss,"Hydroxycobalmin",s,"Vitamin","Vitamin B12 (Cobalamin)")
+        createLink(ss,"Hydroxycobalamin",s,"Vitamin","Vitamin B12 (Cobalamin)")
+        createLink(ss,"HCl",s,"Supplement","Hydrochloric Acid")
+        createLink(ss,"Hydrochloric acid",s,"Supplement","Hydrochloric Acid")
+        createLink(ss,"L-Arginine:",s,"Supplement","Arginine")
+        createLink(ss,"L-arginine:",s,"Supplement","Arginine")
+        createLink(ss,"Lithium",s,"Supplement","Lithium")
+        createLink(ss,"Magnesium sulfate",s,"Vitamin","Magnesium")
+        createLink(ss,"Magnesium chloride",s,"Vitamin","Magnesium")
+        createLink(ss,"Magnesium",s,"Vitamin","Magnesium")
+        createLink(ss,"Molybdenum",s,"Vitamin","Molybdenum")
+        createLink(ss,"molybdenum",s,"Vitamin","Molybdenum")
+        createLink(ss,"Manganese",s,"Vitamin","Manganese")
+        createLink(ss,"NAC",s,"Supplement","N-Acetyl Cysteine")
+        createLink(ss,"Niacin",s,"Vitamin","Vitamin B3 (Niacin)")
+        createLink(ss,"Pyridoxine HCl",s,"Vitamin","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"Pyridoxine",s,"Vitamin","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"Pantothenic acid",s,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+        createLink(ss,"Potassium chloride",s,"Vitamin","Potassium")
+        createLink(ss,"Riboflavin",s,"Vitamin","Vitamin B2 (Riboflavin)")
+        createLink(ss,"Selenium",s,"Vitamin","Selenium")
+        createLink(ss,"Selenium  ",s,"Vitamin","Selenium")
+        createLink(ss,"Strontium",s,"Vitamin","Strontium")
+        createLink(ss,"Seasonal allergic rhinitis",s,"Condition","Allergies")
+        createLink(ss,"Sodium",s,"Vitamin","Sodium")
+        createLink(ss,"Taurine",s,"Supplement","Taurine")
+        createLink(ss,"Thiamine",s,"Vitamin","Vitamin B1 (Thiamine)")
+        createLink(ss,"Vitamin C",s,"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"Vanadium",s,"Vitamin","Vanadium")
+        createLink(ss,"Vitamin B6",s,"Vitamin","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"Vitamin B5",s,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+        createLink(ss,"Vitamin B12",s,"Vitamin","Vitamin B12 (Cobalamin)")
+        createLink(ss,"Vitamin E",s,"Vitamin","Vitamin E (Tocopherol)")
+        createLink(ss,"Vitamin K",s,"Vitamin","Vitamin K (Quinones)")
+        createLink(ss,"Zinc",s,"Vitamin","Zinc")
+        createLink(ss,"Zinc sulfate",s,"Vitamin","Zinc")
+
+//        createLink(ss,"Vitamin B-complex",s,"Vitamin","Molybdenum")
+
 
         binding.contentData.text = ss
     }
@@ -747,5 +822,44 @@ class FourTherapyActivity : AppCompatActivity() {
         if(string.indexOf(substr)!=-1 )
         ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
+
+        var index = string.indexOf(sub_str)
+        while (index != -1) {
+            val clickableSpan = object : ClickableSpan(){
+                override fun onClick(widget: View) {
+                    val intent : Intent
+                    if(activity=="Condition"){
+                        intent = Intent(this@FourTherapyActivity,ConditionDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Supplement"){
+                        intent = Intent(this@FourTherapyActivity,SupplementDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Fiber"){
+                        intent = Intent(this@FourTherapyActivity,FiberDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Vitamin"){
+                        intent = Intent(this@FourTherapyActivity,VitaminMineralDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Botanical"){
+                        intent = Intent(this@FourTherapyActivity,BotanicalDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(heading == "Fat"){
+                        val intent = Intent(this@FourTherapyActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+            ss.setSpan(clickableSpan,index,index+sub_str.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            index = string.indexOf(sub_str, index + 1)
+        }
     }
 }

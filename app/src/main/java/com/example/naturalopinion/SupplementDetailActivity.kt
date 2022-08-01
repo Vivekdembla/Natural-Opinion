@@ -578,7 +578,11 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.description.strokeWidth = 5
         }
 
-        binding.reference.setOnClickListener { startActivity(Intent(this,ReferenceActivity::class.java)) }
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
     }
 
@@ -1584,17 +1588,17 @@ class SupplementDetailActivity : AppCompatActivity() {
                         "• Diabetes mellitus\n" +
                         "• Fertility/Infertility\n" +
                         "• Hypertension\n" +
-                        "vObesity\n" +
+                        "• Obesity\n" +
                         "• Parkinson's Disease\n" +
-                        "vPeptic ulcer\n" +
+                        "• Peptic ulcer\n" +
                         "• Adriamycin cardiotoxicity\n" +
                         "• Angina pectoris\n" +
                         "• Beta-blocker toxicity\n" +
                         "• Cancer\n" +
                         "• Cardiomyopathy\n" +
-                        "vCardiotoxicity of psychotropic drugs - including phenothiazines, tricyclic antidepressants\n" +
+                        "• Cardiotoxicity of psychotropic drugs - including phenothiazines, tricyclic antidepressants\n" +
                         "• Enhance aerobic capacity and muscle performance\n" +
-                        "vHyperthyroid heart failure\n" +
+                        "• Hyperthyroid heart failure\n" +
                         "• Immune system - tissues and cells involved with immune function are highly energy-dependent\n" +
                         "• Mitral valve prolapse\n" +
                         "• Muscular dystrophy\n" +
@@ -3151,35 +3155,43 @@ class SupplementDetailActivity : AppCompatActivity() {
     }//
 
     private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
-        val clickableSpan = object : ClickableSpan(){
-            override fun onClick(widget: View) {
-                val intent : Intent
-                if(activity=="Condition"){
-                    intent = Intent(this@SupplementDetailActivity,ConditionDetailActivity::class.java)
-                    intent.putExtra("heading",heading)
-                    startActivity(intent)
-                }else if(activity=="Supplement"){
-                    intent = Intent(this@SupplementDetailActivity,SupplementDetailActivity::class.java)
-                    intent.putExtra("heading",heading)
-                    startActivity(intent)
-                }else if(activity=="Fiber"){
-                    intent = Intent(this@SupplementDetailActivity,FiberDetailActivity::class.java)
-                    intent.putExtra("heading",heading)
-                    startActivity(intent)
-                }else if(activity=="Vitamin"){
-                    intent = Intent(this@SupplementDetailActivity,VitaminMineralDetailActivity::class.java)
-                    intent.putExtra("heading",heading)
-                    startActivity(intent)
-                }else if(activity=="Botanical"){
-                    intent = Intent(this@SupplementDetailActivity,BotanicalDetailActivity::class.java)
-                    intent.putExtra("heading",heading)
-                    startActivity(intent)
+
+        var index = string.indexOf(sub_str)
+        while (index != -1) {
+            val clickableSpan = object : ClickableSpan(){
+                override fun onClick(widget: View) {
+                    val intent : Intent
+                    if(activity=="Condition"){
+                        intent = Intent(this@SupplementDetailActivity,ConditionDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Supplement"){
+                        intent = Intent(this@SupplementDetailActivity,SupplementDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Fiber"){
+                        intent = Intent(this@SupplementDetailActivity,FiberDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Vitamin"){
+                        intent = Intent(this@SupplementDetailActivity,VitaminMineralDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Botanical"){
+                        intent = Intent(this@SupplementDetailActivity,BotanicalDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(heading == "Fat"){
+                        val intent = Intent(this@SupplementDetailActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
-        }
-        if(string.indexOf(sub_str)!=-1)
-            ss.setSpan(clickableSpan,string.indexOf(sub_str),string.indexOf(sub_str)+sub_str.length,
+
+            ss.setSpan(clickableSpan,index,index+sub_str.length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            index = string.indexOf(sub_str, index + 1)
+        }
     }
 
 }

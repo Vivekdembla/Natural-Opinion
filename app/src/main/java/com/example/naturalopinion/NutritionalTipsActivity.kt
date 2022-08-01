@@ -1,5 +1,6 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
@@ -21,6 +22,12 @@ class NutritionalTipsActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
 
         binding.backButton6.setOnClickListener { finish() }
+
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
         binding.subHeading.text = "Eat to live, not live to eat"
         binding.contentData.text = "• A good deal of the problems with healthy diet comes from our attitudes to what it means to nourish ourselves.\n" +

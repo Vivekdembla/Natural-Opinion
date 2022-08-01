@@ -1,10 +1,14 @@
 package com.example.naturalopinion
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+
 
 class PlaceOrderActivity : AppCompatActivity() {
     lateinit var back_button : ImageView
@@ -18,6 +22,13 @@ class PlaceOrderActivity : AppCompatActivity() {
             window.statusBarColor = this.resources.getColor(R.color.white)
         }
         setContentView(R.layout.activity_place_order)
+        findViewById<CardView>(R.id.open_form).setOnClickListener {
+            val uri: Uri =
+                Uri.parse("http://www.naturalopinion.com/nmp/OrderNMP.html") // missing 'http://' will cause crashed
+
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
 
 
 

@@ -1,9 +1,15 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
+import android.text.SpannableString
 import android.text.Spanned
+import android.text.method.LinkMovementMethod
+import android.text.method.MovementMethod
+import android.text.style.ClickableSpan
+import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.example.naturalopinion.databinding.ActivityFiberDetailBinding
@@ -15,6 +21,8 @@ class FiberDetailActivity : AppCompatActivity() {
         binding = ActivityFiberDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.contentData.movementMethod = LinkMovementMethod.getInstance()
+
         //Status bar color changed
         val window = this.window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -22,6 +30,12 @@ class FiberDetailActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
 
         binding.backButton6.setOnClickListener { finish() }
+
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
         binding.fiberDescription.text = "Fiber is the components of plant cell walls and the undigestible carbohydrates residues, except lignin which is a non carbohydrate polymer. There are several types of fiber: water soluble (e.g., pectin, gums, mucilages) found in fruits; and water insoluble (e.g., cellulose, hemicelluloses) found in wheat bran."
         binding.contentData.text = "• Pill form-can swell 7 times the original size in 1 minute after contact with water\n" +
@@ -151,47 +165,116 @@ class FiberDetailActivity : AppCompatActivity() {
         }
         binding.third.setOnClickListener {
             binding.subHeading.text = "Clinical Indications"
-            binding.contentData.text = setTextHTML("• AIDS<br/>" +
-                    "• Atherosclerosis<br/>" +
-                    "• Cancer prevention<br/>" +
-                    "• Candidiasis<br/>" +
-                    "• Cholecystitis<br/>" +
-                    "• Cholelithiasis<br/>" +
-                    "• Chronic fatigue syndrome<br/>" +
-                    "• Congestive heart failure<br/>" +
-                    "• Constipation<br/>" +
-                    "• Crohn's disease<br/>" +
-                    "• Diabetes mellitus<br/>" +
-                    "• Dysmenorrhea<br/>" +
-                    "• Endometriosis<br/>" +
-                    "• Eczema<br/>" +
-                    "• Fibrocystic breast disease<br/>" +
-                    "• Gout<br/>" +
-                    "• Headaches<br/>" +
-                    "• Hemorrhoids<br/>" +
-                    "• Hypertension<br/>" +
-                    "• Irritable bowel syndrome<br/>" +
-                    "• Menopause<br/>" +
-                    "• Multiple sclerosis<br/>" +
-                    "• Obesity<br/>" +
-                    "• Peptic ulcers<br/>" +
-                    "• PMS<br/>" +
-                    "• Psoriasis<br/>" +
-                    "• Psoriatic arthritis<br/>" +
-                    "• Ulcerative colitis<br/>" +
-                    "• Uterine fibroid<br/>" +
-                    "• Appendicitis<br/>" +
-                    "• Autoimmune disorders<br/>" +
-                    "• Colon cancer<br/>" +
-                    "• Deep-vein thrombosis<br/>" +
-                    "• Dental caries<br/>" +
-                    "• Diverticulitis<br/>" +
-                    "• Pernicious anemia<br/>" +
-                    "• Pulmonary embolism<br/>" +
-                    "• Renal lithiasis<br/>" +
-                    "• Skin disorders<br/>" +
-                    "• Thyrotoxicosis<br/>" +
-                    "• Varicose veins")
+            val text ="• AIDS\n" +
+                    "• Atherosclerosis\n" +
+                    "• Cancer prevention\n" +
+                    "• Candidiasis\n" +
+                    "• Cholecystitis\n" +
+                    "• Cholelithiasis\n" +
+                    "• Chronic fatigue syndrome\n" +
+                    "• Congestive heart failure\n" +
+                    "• Constipation\n" +
+                    "• Crohn's disease\n" +
+                    "• Diabetes mellitus\n" +
+                    "• Dysmenorrhea\n" +
+                    "• Endometriosis\n" +
+                    "• Eczema\n" +
+                    "• Fibrocystic breast disease\n" +
+                    "• Gout\n" +
+                    "• Headaches\n" +
+                    "• Hemorrhoids\n" +
+                    "• Hypertension\n" +
+                    "• Irritable bowel syndrome\n" +
+                    "• Menopause\n" +
+                    "• Multiple sclerosis\n" +
+                    "• Obesity\n" +
+                    "• Peptic ulcers\n" +
+                    "• PMS\n" +
+                    "• Psoriasis\n" +
+                    "• Psoriatic arthritis\n" +
+                    "• Ulcerative colitis\n" +
+                    "• Uterine fibroid\n" +
+                    "• Appendicitis\n" +
+                    "• Autoimmune disorders\n" +
+                    "• Colon cancer\n" +
+                    "• Deep-vein thrombosis\n" +
+                    "• Dental caries\n" +
+                    "• Diverticulitis\n" +
+                    "• Pernicious anemia\n" +
+                    "• Pulmonary embolism\n" +
+                    "• Renal lithiasis\n" +
+                    "• Skin disorders\n" +
+                    "• Thyrotoxicosis\n" +
+                    "• Varicose veins"
+
+            val ss = SpannableString(text)
+            createLink(ss,"Aging prevention",text,"Condition","Aging Prevention")
+            createLink(ss,"AIDS",text,"Condition","AIDS")
+            createLink(ss,"Candidiasis",text,"Condition","Candidiasis")
+            createLink(ss,"Constipation",text,"Condition","Constipation")
+            createLink(ss,"Attention decficit disorder (ADD)",text,"Condition","Attention Deficit Disorder")
+            createLink(ss,"Allergies",text,"Condition","Allergies")
+            createLink(ss,"Alzheimer's disease",text,"Condition","Alzheimer's Disease")
+            createLink(ss,"Aphthous stomatitis",text,"Condition","Aphthous Stomatitis")
+            createLink(ss,"Asthma",text,"Condition","Asthma")
+            createLink(ss,"Atherosclerosis",text,"Condition","Atherosclerosis")
+            createLink(ss,"Autism",text,"Condition","Autism")
+            createLink(ss,"Bipolar disorder",text,"Condition","Bipolar Disorder")
+            createLink(ss,"Bipolar disease",text,"Condition","Bipolar Disorder")
+            createLink(ss,"Benign prostatic hypertrophy (BPH)",text,"Condition","Benign Prostatic Hypertrophy")
+            createLink(ss,"Benign prostatic hypertrophy",text,"Condition","Benign Prostatic Hypertrophy")
+            createLink(ss,"Cancer prevention",text,"Condition","Cancer Prevention")
+            createLink(ss,"Cataract",text,"Condition","Cataract")
+            createLink(ss,"Cataract prevention",text,"Condition","Cataract prevention")
+            createLink(ss,"Chronic fatigue syndrome",text,"Condition","Chronic Fatigue Syndrome")
+            createLink(ss,"Congestive heart failure",text,"Condition","Congestive Heart Failure")
+            createLink(ss,"Cholecystitis",text,"Condition","Cholecystitis")
+            createLink(ss,"Cholelithiasis",text,"Condition","Cholelithiasis")
+            createLink(ss,"Crohn's disease",text,"Condition","Crohn's Disease")
+            createLink(ss,"Diabetes",text,"Condition","Diabetes Mellitus")
+            createLink(ss,"Depression",text,"Condition","Depression")
+            createLink(ss,"Dysmenorrhea",text,"Condition","Dysmenorrhea")
+            createLink(ss,"dysmenorrhea",text,"Condition","Dysmenorrhea")
+            createLink(ss,"Eczema",text,"Condition","Eczema")
+            createLink(ss,"Endometriosis",text,"Condition","Endometriosis")
+            createLink(ss,"Fertility/Infertility",text,"Condition","Fertility")
+            createLink(ss,"Fertility",text,"Condition","Fertility")
+            createLink(ss,"Fibrocystic breast disease",text,"Condition","Fibrocystic Breast Disease")
+            createLink(ss,"Fibromyalgia",text,"Condition","Fibromyalgia")
+            createLink(ss,"Gout",text,"Condition","Gout")
+            createLink(ss,"Headaches",text,"Condition","Headache")
+            createLink(ss,"Hepatitis C",text,"Condition","Hepatitis")
+            createLink(ss,"Hepatitis",text,"Condition","Hepatitis")
+            createLink(ss,"Herpes simplex",text,"Condition","Herpes Simplex")
+            createLink(ss,"Hemorrhoids",text,"Condition","Hemorrhoids")
+            createLink(ss,"Hypertension",text,"Condition","Hypertension")
+            createLink(ss,"Hypercholesterolemia",text,"Condition","Hypercholesterolemia")
+            createLink(ss,"Hypothyroidism",text,"Condition","Hypothyroidism")
+            createLink(ss,"Impotence",text,"Condition","Impotence")
+            createLink(ss,"Insomnia",text,"Condition","Insomnia")
+            createLink(ss,"Irritable bowel syndrome",text,"Condition","Irritable Bowel Syndrome")
+            createLink(ss,"Macular degeneration",text,"Condition","Macular Degeneration")
+            createLink(ss,"Multiple sclerosis",text,"Condition","Multiple Sclerosis")
+            createLink(ss,"Menopause",text,"Condition","Menopause")
+            createLink(ss,"Uterine fibroid",text,"Condition","Uterine Fibroids")
+            createLink(ss,"Memory Loss",text,"Condition","Memory Loss")
+            createLink(ss,"Obesity",text,"Condition","Obesity")
+            createLink(ss,"Osteoarthritis",text,"Condition","Osteoarthritis")
+            createLink(ss,"osteoarthritis",text,"Condition","Osteoarthritis")
+            createLink(ss,"Short term memory loss",text,"Condition","Memory Loss")
+            createLink(ss,"Peptic ulcers",text,"Condition","Peptic Ulcers")
+            createLink(ss,"Psoriasis",text,"Condition","Psoriasis")
+            createLink(ss,"PMS",text,"Condition","PMS")
+            createLink(ss,"Psoriatic arthritis",text,"Condition","Psoriatic Arthritis")
+            createLink(ss,"psoriatic arthritis",text,"Condition","Psoriatic Arthritis")
+            createLink(ss,"Parkinson's disease",text,"Condition","Parkinson's Disease")
+            createLink(ss,"Rheumatoid arthritis",text,"Condition","Rheumatoid Arthritis")
+            createLink(ss,"rheumatoid arthritis",text,"Condition","Rheumatoid Arthritis")
+            createLink(ss,"Schizophrenia",text,"Condition","Schizophrenia")
+            createLink(ss,"Uterine Fibroids",text,"Condition","Uterine Fibroids")
+            createLink(ss,"Ulcerative colitis",text,"Condition","Ulcerative Colitis")
+
+            binding.contentData.text = ss
 
             binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
@@ -319,13 +402,45 @@ class FiberDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun setTextHTML(html: String): Spanned
-    {
-        val result: Spanned = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
-        } else {
-            Html.fromHtml(html)
+
+    private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
+
+        var index = string.indexOf(sub_str)
+        while (index != -1) {
+            val clickableSpan = object : ClickableSpan(){
+                override fun onClick(widget: View) {
+                    val intent : Intent
+                    if(activity=="Condition"){
+                        intent = Intent(this@FiberDetailActivity,ConditionDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Supplement"){
+                        intent = Intent(this@FiberDetailActivity,SupplementDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Fiber"){
+                        intent = Intent(this@FiberDetailActivity,FiberDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Vitamin"){
+                        intent = Intent(this@FiberDetailActivity,VitaminMineralDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Botanical"){
+                        intent = Intent(this@FiberDetailActivity,BotanicalDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(heading == "Fat"){
+                        val intent = Intent(this@FiberDetailActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+
+            ss.setSpan(clickableSpan,index,index+sub_str.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            index = string.indexOf(sub_str, index + 1)
         }
-        return result
     }
+
 }

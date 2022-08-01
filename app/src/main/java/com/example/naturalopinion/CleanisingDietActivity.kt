@@ -1,5 +1,6 @@
 package com.example.naturalopinion
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
@@ -18,6 +19,12 @@ class CleanisingDietActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
+
+        binding.reference.setOnClickListener {
+            val intent = Intent(this,HydroTherapyActivity::class.java)
+            intent.putExtra("heading","Reference")
+            startActivity(intent)
+        }
 
         binding.subHeading.text = "Steamed vegetables:"
         binding.contentData.text = "• The primary reason for using steamed vegetables is that steaming improves the utilization or the availability of the food substances and it reduces the irritating residue in the gut, allowing it to restore itself.\n" +
