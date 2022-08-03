@@ -289,8 +289,8 @@ class ConditionDetailActivity : AppCompatActivity() {
 
 
         binding.reference.setOnClickListener {
-            val intent = Intent(this,HydroTherapyActivity::class.java)
-            intent.putExtra("heading","Reference")
+            val intent = Intent(this,ReferenceActivity::class.java)
+            intent.putExtra("heading",heading)
             startActivity(intent)
         }
 
@@ -2362,6 +2362,7 @@ class ConditionDetailActivity : AppCompatActivity() {
         }
 
         checkAllLinks(ss,vitamin_detail)
+
         binding.contentData.text = ss
     }
 
@@ -8958,6 +8959,7 @@ class ConditionDetailActivity : AppCompatActivity() {
 
         createLink(ss,"here.",text,"Hydrotherapy","Homeopathy")
         createLink(ss, "anthocyanadin", text.lowercase(), "Supplement", "Bioflavonoids")
+        createLink(ss, "acidophilis and bifidus", text.lowercase(), "Supplement", "Acidophilus/Bifidus")
         createLink(ss, "bioflavonoids", text.lowercase(), "Supplement", "Bioflavonoids")
         createLink(ss, "adrenal glandular", text.lowercase(), "Supplement", "Glandulars")
         createLink(
@@ -9216,7 +9218,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Ulmus fulva (Slippery elm, American elm)"
         )
         createLink(ss, "vitamin b6", text.lowercase(), "Vitamin", "Vitamin B6 (Pyridoxine)")
-//    createLink(ss,"vitamin b-complex",text.lowercase(),"Vitamin","")
+        createLink(ss,"vitamin b-complex",text.lowercase(),"HydroTherapy","B Complex")
         createLink(ss, "vitamin c", text.lowercase(), "Vitamin", "Vitamin C (Ascorbic Acid)")
         createLink(ss, "vitamin d", text.lowercase(), "Vitamin", "Vitamin D (Cholecalciferol)")
         createLink(ss, "vitamin k", text.lowercase(), "Vitamin", "Vitamin K (Quinones)")

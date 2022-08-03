@@ -39,7 +39,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_physical_exam.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_place_order.xml" value="0.18" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_pro_immune_food.xml" value="0.2" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_reference.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_reference.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_sulphite.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_sulphite_source.xml" value="0.2" />
@@ -52,6 +52,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/database_item.xml" value="0.23889739663093415" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/dialog_layout.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/medical_items.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/reference_item.xml" value="0.19895833333333332" />
       </map>
     </option>
   </component>

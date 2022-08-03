@@ -3,7 +3,6 @@ package com.example.naturalopinion
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.Spanned
@@ -11,7 +10,6 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.naturalopinion.databinding.ActivityBotanicalDetailBinding
 
@@ -25,6 +23,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
     var toxic_details = ""
     var ss: SpannableString = SpannableString("")
     var premium = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBotanicalDetailBinding.inflate(layoutInflater)
@@ -319,7 +318,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Althea officinalis (Marshmallow)", "Marshmallow (Althea officinalis)" -> {
                 text = "• None known"
             }
-            "Ammi visnaga(Khella)", "Khella (Ammi visnaga)" -> {
+            "Ammi visnaga (Khella)", "Khella (Ammi visnaga)" -> {
                 text = "• No known toxicity"
             }
             "Angelica sinensis (Dong quai)", "Dong quai (Angelica sinensis)" -> {
@@ -400,7 +399,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Skin irritation\n" +
                         "Stomach upset"
             }
-            "Bryonia alba(Bryony)", "Bryony (Bryonia alba)" -> {
+            "Bryonia alba (Bryony)", "Bryony (Bryonia alba)" -> {
                 text = "• Fatal dose: children-1-5 berries; adults-40 berries\n" +
                         "• Symptoms include:\n" +
                         "• Cardiac depression\n" +
@@ -568,7 +567,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Filipendula ulmaria (Meadowsweet)", "Meadowsweet (Filipendula ulmaria)" -> {
                 text = "• No known toxicity"
             }
-            "Foeniculum v• ulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
+            "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• Overdose of the essential oil can cause:\n" +
                         "Nausea\n" +
                         "Pulmonary edema\n" +
@@ -1217,7 +1216,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Vitamin C\n" +
                         "• Vitamin E"
             }
-            "Ammi visnaga(Khella)", "Khella (Ammi visnaga)" -> {
+            "Ammi visnaga (Khella)", "Khella (Ammi visnaga)" -> {
                 text = "• Coumarins\n" +
                         "• Furanochromones (psoralens):\n" +
                         "Khellin\n" +
@@ -1414,7 +1413,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Oxycanthine\n" +
                         "Palmatine"
             }
-            "Bryonia alba(Bryony)", "Bryony (Bryonia alba)" -> {
+            "Bryonia alba (Bryony)", "Bryony (Bryonia alba)" -> {
                 text = "• Cucurbitacins including:\n" +
                         "Cucurbitacins B, D, E, I, J, K, L\n" +
                         "Tetrahydrocucurbitacin I\n" +
@@ -1846,7 +1845,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Methoxybenzaldehyde\n" +
                         "Salicylaldehyde"
             }
-            "Foeniculum v• ulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
+            "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• 2-6% essential oil consisting of:\n" +
                         "• 50-70% of the sweet trans-anethole\n" +
                         "• 20% of the bitter and camphoraceous (+)-fenchone\n" +
@@ -3249,7 +3248,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
         createLink(ss, "copper", text.lowercase(), "Vitamin", "Copper")
         createLink(ss, "choline", text.lowercase(), "Vitamin", "Choline (Lecithin)")
         createLink(ss, "carotene", text.lowercase(), "Vitamin", "Beta Carotene (Carotenoids)")
-        createLink(ss, "folic acid", text.lowercase(), "Vitamin", "Folate (Folic Acid)")
+        createLink(ss, "folic acid", text.lowercase(), "Vitamin", "Folate")
         createLink(ss, "flavonoids", text.lowercase(), "Supplement", "Bioflavonoids")
         createLink(ss, "iron", text.lowercase(), "Vitamin", "Iron")
         createLink(ss, "iodine", text.lowercase(), "Vitamin", "Iodine")
@@ -3268,13 +3267,14 @@ class BotanicalDetailActivity : AppCompatActivity() {
         createLink(ss, "vitamin b3", text.lowercase(), "Vitamin", "Vitamin B3 (Niacin)")
         createLink(ss, "vitamin b2", text.lowercase(), "Vitamin", "Vitamin B2 (Riboflavin)")
         createLink(ss, "vitamin b1", text.lowercase(), "Vitamin", "Vitamin B1 (Thiamine)")
-//        createLink(ss,"vitamin b complex",text.lowercase(),"Vitamin","")
+        createLink(ss,"vitamin b complex",text.lowercase(),"HydroTherapy","B Complex")
         createLink(ss, "vitamin d", text.lowercase(), "Vitamin", "Vitamin D (Cholecalciferol)")
         createLink(ss, "vitamin a", text.lowercase(), "Vitamin", "Vitamin A (Retinol)")
         createLink(ss, "vitamin k", text.lowercase(), "Vitamin", "Vitamin K (Quinones)")
         createLink(ss, "vitamin e", text.lowercase(), "Vitamin", "Vitamin E (Tocopherol)")
         createLink(ss, "vanadium", text.lowercase(), "Vitamin", "Vanadium")
         createLink(ss, "vitamin b12", text.lowercase(), "Vitamin", "")
+        createLink(ss, "quercitin", text.lowercase(), "Supplement", "Quercetin")
         createLink(ss, "quercetin", text.lowercase(), "Supplement", "Quercetin")
         createLink(ss, "zinc", text.lowercase(), "Vitamin", "Zinc")
 //        createLink(ss,"B complex",text.lowercase(),"Vitamin","")
@@ -3320,7 +3320,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                     "• Anti-inflammatory activity potentiates the effects of topical steroids\n" +
                             "• Oral drugs or herbs taken with marshmallow may have delayed absorption due to the mucilage content"
             }
-            "Ammi visnaga(Khella)", "Khella (Ammi visnaga)" -> {
+            "Ammi visnaga (Khella)", "Khella (Ammi visnaga)" -> {
                 text = "• Digitoxin toxicity is decreased by visnadin"
             }
             "Angelica sinensis (Dong quai)", "Dong quai (Angelica sinensis)" -> {
@@ -3363,7 +3363,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                     "• Counterproductive to use medications that inhibit stomach acid production, ie antacids, gastric acid secretion inhibitors and histamine H2 receptor antagonists, since Berberis promotes stomach acid secretion\n" +
                             "• May interfere with vitamin B metabolism"
             }
-            "Bryonia alba(Bryony)", "Bryony (Bryonia alba)" -> {
+            "Bryonia alba (Bryony)", "Bryony (Bryonia alba)" -> {
                 text = "• Limited data"
             }
             "Bupleurum chinense (Thoroughwax)", "Thoroughwax (Bupleurum chinense)" -> {
@@ -3474,7 +3474,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Filipendula ulmaria (Meadowsweet)", "Meadowsweet (Filipendula ulmaria)" -> {
                 text = "• Limited data"
             }
-            "Foeniculum v• ulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
+            "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• Limited data"
             }
             "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
@@ -3887,7 +3887,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Althea officinalis (Marshmallow)", "Marshmallow (Althea officinalis)" -> {
                 text = "• No known contraindications"
             }
-            "Ammi visnaga(Khella)", "Khella (Ammi visnaga)" -> {
+            "Ammi visnaga (Khella)", "Khella (Ammi visnaga)" -> {
                 text = "• May cause photodermatitis in sensitive individuals\n" +
                         "• Pregnancy due to emmenagogue and uterine stimulating activity of khellin"
             }
@@ -3938,7 +3938,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text =
                     "• Pregnancy due to the uterine stimulants, berberine, palmatine, jatorrhizine and columbamine"
             }
-            "Bryonia alba(Bryony)", "Bryony (Bryonia alba)" -> {
+            "Bryonia alba (Bryony)", "Bryony (Bryonia alba)" -> {
                 text = "• Pregnancy"
             }
             "Bupleurum chinense (Thoroughwax)", "Thoroughwax (Bupleurum chinense)" -> {
@@ -4063,7 +4063,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Filipendula ulmaria (Meadowsweet)", "Meadowsweet (Filipendula ulmaria)" -> {
                 text = "• May cause allergic hypersensitivity in persons sensitive to salicylates"
             }
-            "Foeniculum v• ulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
+            "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• Allergic hypersensitivity - empirical data\n" +
                         "• Infants due to the essential oil - speculative\n" +
                         "• Pregnancy due to the emmenagogue effect and phytoestrogen activity - empirical data\n" +
@@ -4580,19 +4580,28 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Vaginitis"
             }
             "Althea officinalis (Marshmallow)", "Marshmallow (Althea officinalis)" -> {
-                text = "• Amenorrhea\n" +
-                        "• Dysmenorrhea\n" +
-                        "• Fertility/Infertility\n" +
-                        "• Menopause\n" +
-                        "• Dyspepsia\n" +
-                        "• Flatulence\n" +
-                        "• Hormonal insufficiency\n" +
-                        "• Inflammation of the pelvic organs\n" +
-                        "• Miscarriage prevention\n" +
-                        "• Prolapse of vagina or uterus\n" +
-                        "• Uterine sedative"
+                text = "• Bronchitis\n" +
+                        "• Crohn's disease\n" +
+                        "• Cystitis\n" +
+                        "• Irritable bowel syndrome\n" +
+                        "• Peptic ulcer\n" +
+                        "• Rosacea\n" +
+                        "• Ulcerative Colitis\n" +
+                        "• Any inflamed mucosal tissues:\n" +
+                        "Gastritis\n" +
+                        "Pharyngitis\n" +
+                        "Vaginitis\n" +
+                        "• Externally:\n" +
+                        "All inflammatory skin disorders\n" +
+                        "Burns\n" +
+                        "Ulcers\n" +
+                        "Wounds\n" +
+                        "• GI inflammation\n" +
+                        "• Respiratory\n" +
+                        "• Skin irritation - use topically as a poultice of fresh leaves and flowers\n" +
+                        "• Sore throats"
             }
-            "Ammi visnaga(Khella)", "Khella (Ammi visnaga)" -> {
+            "Ammi visnaga (Khella)", "Khella (Ammi visnaga)" -> {
                 text = "• Asthma, chronic\n" +
                         "• Hypertension\n" +
                         "• Psoriasis\n" +
@@ -4787,7 +4796,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Vibrio c\n" +
                         "• Maldigestion"
             }
-            "Bryonia alba(Bryony)", "Bryony (Bryonia alba)" -> {
+            "Bryonia alba (Bryony)", "Bryony (Bryonia alba)" -> {
                 text = "• Endometriosis\n" +
                         "• Headache from frontal region to occiput\n" +
                         "• Hypertension\n" +
@@ -4999,16 +5008,10 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tonsilitis"
             }
             "Commiphora mukul (Guggulu)", "Guggulu (Commiphora mukul)" -> {
-                text = "• Aphthous stomatitis\n" +
-                        "• Boils\n" +
-                        "• Brucellosis\n" +
-                        "• Gingivitis\n" +
-                        "• Laryngitis\n" +
-                        "• Pharyngitis\n" +
-                        "• Sinusitis\n" +
-                        "• Thrush caused by Candida albicans\n" +
-                        "• Tinea pedis\n" +
-                        "• Tonsilitis"
+                text = "• Atherosclerosis\n" +
+                        "• Hypothyroidism\n" +
+                        "• Hypercholesterolemia\n" +
+                        "• Hyperlipidemia"
             }
             "Corydalis bulbosa (Corydalis)", "Corydalis (Corydalis bulbosa)" -> {
                 text = "• Dysmenorrhea\n" +
@@ -5216,7 +5219,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Hyperacidity\n" +
                         "• Nausea"
             }
-            "Foeniculum v• ulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
+            "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• Constipation\n" +
                         "• Hepatitis\n" +
                         "• Cough\n" +
@@ -6319,54 +6322,29 @@ class BotanicalDetailActivity : AppCompatActivity() {
         createLink(ss, "aids", text.lowercase(), "Condition", "AIDS")
         createLink(ss, "anorexia nervosa", text.lowercase(), "Condition", "Anorexia Nervosa")
         createLink(ss, "autism", text.lowercase(), "Condition", "Autism")
-        createLink(
-            ss,
-            "attention deficit disorder",
-            text.lowercase(),
-            "Condition",
-            "Attention Deficit Disorder"
-        )
+        createLink(ss,"attention deficit disorder",text.lowercase(),"Condition","Attention Deficit Disorder")
         createLink(ss, "allergies", text.lowercase(), "Condition", "Allergies")
         createLink(ss, "alzheimer's disease", text.lowercase(), "Condition", "Alzheimer's Disease")
         createLink(ss, "aphthous stomatitis", text.lowercase(), "Condition", "Aphthous Stomatitis")
         createLink(ss, "asthma", text.lowercase(), "Condition", "Asthma")
         createLink(ss, "atherosclerosis", text.lowercase(), "Condition", "Atherosclerosis")
         createLink(ss, "autism", text.lowercase(), "Condition", "Autism")
+        createLink(ss, "amenorrhea", text.lowercase(), "Condition", "Amenorrhea")
         createLink(ss, "bipolar disorder", text.lowercase(), "Condition", "Bipolar Disorder")
         createLink(ss, "bronchitis", text.lowercase(), "Condition", "Bronchitis")
         createLink(ss, "bipolar disease", text.lowercase(), "Condition", "Bipolar Disorder")
-        createLink(
-            ss,
-            "benign prostatic hypertrophy (BPH)",
-            text.lowercase(),
-            "Condition",
-            "Benign Prostatic Hypertrophy"
-        )
-        createLink(
-            ss,
-            "benign prostatic hypertrophy",
-            text.lowercase(),
-            "Condition",
-            "Benign Prostatic Hypertrophy"
-        )
+        createLink(ss, "stress incontinence", text.lowercase(), "Condition", "Stress Incontinence")
+        createLink(ss,"benign prostatic hypertrophy (BPH)",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
+        createLink(ss,"bph",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
+        createLink(ss,"benign prostatic hypertrophy",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
         createLink(ss, "cancer prevention", text.lowercase(), "Condition", "Cancer Prevention")
         createLink(ss, "cataract", text.lowercase(), "Condition", "Cataract")
         createLink(ss, "cataract prevention", text.lowercase(), "Condition", "Cataract prevention")
-        createLink(
-            ss,
-            "chronic fatigue syndrome",
-            text.lowercase(),
-            "Condition",
-            "Chronic Fatigue Syndrome"
-        )
-        createLink(
-            ss,
-            "congestive heart failure",
-            text.lowercase(),
-            "Condition",
-            "Congestive Heart Failure"
-        )
+        createLink(ss,"chronic fatigue syndrome",text.lowercase(),"Condition","Chronic Fatigue Syndrome")
+        createLink(ss,"congestive heart failure",text.lowercase(),"Condition","Congestive Heart Failure")
         createLink(ss, "cholecystitis", text.lowercase(), "Condition", "Cholecystitis")
+        createLink(ss, "cystitis", text.lowercase(), "Condition", "Cystitis")
+        createLink(ss, "constipation", text.lowercase(), "Condition", "Constipation")
         createLink(ss, "candidiasis", text.lowercase(), "Condition", "Candidiasis")
         createLink(ss, "cholelithiasis", text.lowercase(), "Condition", "Cholelithiasis")
         createLink(ss, "crohn's disease", text.lowercase(), "Condition", "Crohn's Disease")
@@ -6375,83 +6353,47 @@ class BotanicalDetailActivity : AppCompatActivity() {
         createLink(ss, "dysmenorrhea", text.lowercase(), "Condition", "Dysmenorrhea")
         createLink(ss, "dysmenorrhea", text.lowercase(), "Condition", "Dysmenorrhea")
         createLink(ss, "eczema", text.lowercase(), "Condition", "Eczema")
+        createLink(ss, "endometrosis", text.lowercase(), "Condition", "Endometriosis")
         createLink(ss, "endometriosis", text.lowercase(), "Condition", "Endometriosis")
         createLink(ss, "fertility/infertility", text.lowercase(), "Condition", "Fertility")
+        if(heading!="Caulophyllum thalictroides (Blue cohosh)"&&heading!="Blue cohosh (Caulophyllum thalictroides)"&&heading!="Cimicifuga racemosa (Black cohosh)"&&heading!="Black cohosh (Cimicifuga racemosa)")
         createLink(ss, "fertility", text.lowercase(), "Condition", "Fertility")
-        createLink(
-            ss,
-            "fibrocystic breast disease",
-            text.lowercase(),
-            "Condition",
-            "Fibrocystic Breast Disease"
-        )
+        createLink(ss,"fibrocystic breast disease",text.lowercase(),"Condition","Fibrocystic Breast Disease")
         createLink(ss, "fibromyalgia", text.lowercase(), "Condition", "Fibromyalgia")
         createLink(ss, "gout", text.lowercase(), "Condition", "Gout")
-        createLink(ss, "headache", text.lowercase(), "Condition", "Headache")
+        createLink(ss, "headache", text.lowercase(), "Condition", "Headache, General")
         createLink(ss, "hepatitis c", text.lowercase(), "Condition", "Hepatitis")
         createLink(ss, "hepatitis", text.lowercase(), "Condition", "Hepatitis")
         createLink(ss, "herpes simplex", text.lowercase(), "Condition", "Herpes Simplex")
-        createLink(ss, "hmorrhoids", text.lowercase(), "Condition", "Hemorrhoids")
+        createLink(ss, "hemorrhoids", text.lowercase(), "Condition", "Hemorrhoids")
         createLink(ss, "hypertension", text.lowercase(), "Condition", "Hypertension")
-        createLink(
-            ss,
-            "hypercholesterolemia",
-            text.lowercase(),
-            "Condition",
-            "Hypercholesterolemia"
-        )
+        createLink(ss,"hypercholesterolemia",text.lowercase(),"Condition","Hypercholesterolemia")
         createLink(ss, "hypothyroidism", text.lowercase(), "Condition", "Hypothyroidism")
         createLink(ss, "impotence", text.lowercase(), "Condition", "Impotence")
         createLink(ss, "insomnia", text.lowercase(), "Condition", "Insomnia")
-        createLink(
-            ss,
-            "irritable bowel syndrome",
-            text.lowercase(),
-            "Condition",
-            "Irritable Bowel Syndrome"
-        )
-        createLink(
-            ss,
-            "macular degeneration",
-            text.lowercase(),
-            "Condition",
-            "Macular Degeneration"
-        )
-        createLink(
-            ss,
-            "macular degeneration",
-            text.lowercase(),
-            "Condition",
-            "Macular Degeneration"
-        )
+        createLink(ss, "incontinence", text.lowercase(), "Condition", "Incontinence, Stress")
+        createLink(ss,"irritable bowel syndrome",text.lowercase(),"Condition","Irritable Bowel Syndrome")
+        createLink(ss,"macular degeneration",text.lowercase(),"Condition","Macular Degeneration")
+        createLink(ss,"mastitis",text.lowercase(),"Condition","Mastitis")
         createLink(ss, "menopause", text.lowercase(), "Condition", "Menopause")
+        createLink(ss, "migraine headache", text.lowercase(), "Condition", "Headache, Migraine")
         createLink(ss, "multiple sclerosis", text.lowercase(), "Condition", "Multiple Sclerosis")
-        createLink(ss, "memory Loss", text.lowercase(), "Condition", "Memory Loss")
+        createLink(ss, "memory loss", text.lowercase(), "Condition", "Memory Loss")
         createLink(ss, "obesity", text.lowercase(), "Condition", "Obesity")
         createLink(ss, "otitis media", text.lowercase(), "Condition", "Otitis Media")
         createLink(ss, "osteoarthritis", text.lowercase(), "Condition", "Osteoarthritis")
+        createLink(ss, "osteoporosis", text.lowercase(), "Condition", "Osteoporosis")
         createLink(ss, "short term memory loss", text.lowercase(), "Condition", "Memory Loss")
-        createLink(ss, "peptic ulcers", text.lowercase(), "Condition", "Peptic Ulcers")
+        createLink(ss, "peptic ulcer", text.lowercase(), "Condition", "Peptic Ulcers")
         createLink(ss, "psoriasis", text.lowercase(), "Condition", "Psoriasis")
         createLink(ss, "pms", text.lowercase(), "Condition", "PMS")
         createLink(ss, "psoriatic arthritis", text.lowercase(), "Condition", "Psoriatic Arthritis")
         createLink(ss, "parkinson's disease", text.lowercase(), "Condition", "Parkinson's Disease")
-        createLink(
-            ss,
-            "rheumatoid arthritis",
-            text.lowercase(),
-            "Condition",
-            "Rheumatoid Arthritis"
-        )
-        createLink(
-            ss,
-            "rheumatoid arthritis",
-            text.lowercase(),
-            "Condition",
-            "Rheumatoid Arthritis"
-        )
+        createLink(ss,"rheumatoid arthritis",text.lowercase(),"Condition","Rheumatoid Arthritis")
+        createLink(ss,"rosacea",text.lowercase(),"Condition","Rosacea")
         createLink(ss, "schizophrenia", text.lowercase(), "Condition", "Schizophrenia")
-        createLink(ss, "uterine fibroids", text.lowercase(), "Condition", "Uterine Fibroids")
+        createLink(ss, "systemic lupus erythematosus (sle)", text.lowercase(), "Condition", "Systemic Lupus Erythematosus")
+        createLink(ss, "uterine fibroid", text.lowercase(), "Condition", "Uterine Fibroids")
         createLink(ss, "ulcerative colitis", text.lowercase(), "Condition", "Ulcerative Colitis")
 
         binding.contentData.text = ss
@@ -8179,14 +8121,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
         binding.contentData.text = ss
     }//
 
-
-    private fun createLink(
-        ss: SpannableString,
-        sub_str: String,
-        string: String,
-        activity: String,
-        heading: String
-    ) {
+    private fun createLink(ss: SpannableString,sub_str: String,string: String,activity: String,heading: String) {
 
         var index = string.indexOf(sub_str)
         while (index != -1) {
@@ -8226,9 +8161,15 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         )
                         intent.putExtra("heading", heading)
                         startActivity(intent)
-                    } else if (heading == "Fat") {
+                    } else if (activity == "Fat") {
                         val intent =
                             Intent(this@BotanicalDetailActivity, FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    } else if (activity == "HydroTherapy") {
+
+                        val intent =
+                            Intent(this@BotanicalDetailActivity, HydroTherapyActivity::class.java)
+                        intent.putExtra("heading",heading)
                         startActivity(intent)
                     }
                 }

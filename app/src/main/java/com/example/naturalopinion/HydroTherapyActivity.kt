@@ -170,10 +170,6 @@ class HydroTherapyActivity : AppCompatActivity() {
             makeBold(ss,s,"Snack Foods:")
             binding.contentData.text = ss
         }
-        else if(heading == "Condition"){
-            val condition_name = intent.getStringExtra("condition_name")
-//            setDetailOfReference(condition_name)
-        }
         else if(heading == "Reference"){
             binding.reference.visibility = View.GONE
             binding.fiberDescription.text = "Below are lists of books, journals and other periodicals that have been used as the source of medical information for this program. Corroboration of each fact by at least three sources is necessary before being included."
@@ -273,6 +269,36 @@ class HydroTherapyActivity : AppCompatActivity() {
             ss = SpannableString(text)
             makeBold(ss,text,"Books:")
             makeBold(ss,text,"Journals and Periodicals:")
+            binding.contentData.text = ss
+        }
+        else if(heading == "B Complex"){
+            val text = "B vitamins are the water-soluble vitamins other than C. They are used as enzymes for a variety of biochemical reactions in almost all parts of the body. They are essential for building and maintaining healthy nerves, skin, hair, eyes, liver, mouth, and the entire GI tract. B vitamins provide energy by assisting in the metabolism of carbohydrates, fats, and proteins. They are associated with a healthy immune system and the prevention of aging and are depleted by stress.\n" +
+                    "\n" +
+                    "The B vitamins include:\n" +
+                    "\n" +
+                    "Vitamin B1 (Thiamine)\n" +
+                    "Vitamin B2 (Riboflavin)\n" +
+                    "Vitamin B3 (Niacin)\n" +
+                    "Vitamin B5 (Pantothenic Acid)\n" +
+                    "Vitamin B6 (Pyridoxine)\n" +
+                    "Vitamin B12 (Cobalamin)\n" +
+                    "Biotin\n" +
+                    "Folate\n" +
+                    "Choline (Lecithin)\n" +
+                    "Inositol\n" +
+                    "PABA (Para-aminobenzoic Acid)"
+            ss = SpannableString(text)
+            createLink(ss,"Vitamin B1 ",text,"Vitamin","Vitamin B1 (Thiamine)")
+            createLink(ss,"Vitamin B2",text,"Vitamin","Vitamin B2 (Riboflavin)")
+            createLink(ss,"Vitamin B3",text,"Vitamin","Vitamin B3 (Niacin)")
+            createLink(ss,"Vitamin B5",text,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+            createLink(ss,"Vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"Vitamin B12",text,"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"Biotin",text,"Vitamin","Biotin")
+            createLink(ss,"Folate",text,"Vitamin","Folate (Folic Acid)")
+            createLink(ss,"Choline",text,"Vitamin","Choline (Lecithin)")
+            createLink(ss,"Inositol",text,"Vitamin","Inositol")
+            createLink(ss,"PABA",text,"Vitamin","PABA (Para-aminobenzoic Acid)")
             binding.contentData.text = ss
         }
         else

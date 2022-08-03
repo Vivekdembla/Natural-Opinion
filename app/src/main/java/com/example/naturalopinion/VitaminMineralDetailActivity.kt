@@ -43,6 +43,8 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
 
 
         binding.vitaminMineralName.text = heading
+        if(heading=="Folate")
+            binding.vitaminMineralName.text = "Folate (Folic Acid)"
 
         binding.backButton6.setOnClickListener { finish() }
         binding.first.setOnClickListener {
@@ -1497,6 +1499,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         val ss = SpannableString(text)
         Log.e("Checking",text.lowercase())
         GlobalScope.launch(Dispatchers.IO) {
+            if(heading!="Choline (Lecithin)")
             createLink(ss,"alzheimer's disease",text.lowercase(),"Condition","Alzheimer's Disease")
             createLink(ss,"aging prevention",text.lowercase(),"Condition","Aging Prevention")
             createLink(ss,"anorexia nervosa",text.lowercase(),"Condition","Anorexia Nervosa")
@@ -1509,8 +1512,10 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             createLink(ss,"amenorrhea",text.lowercase(),"Condition","Amenorrhea")
             createLink(ss,"aphthous stomatitis",text.lowercase(),"Condition","Aphthous Stomatitis")
             createLink(ss,"benign prostatic hypertrophy (bph)",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
+            createLink(ss,"bph",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
             createLink(ss,"bipolar disorder",text.lowercase(),"Condition","Bipolar Disorder")
             createLink(ss,"bronchitis",text.lowercase(),"Condition","Bronchitis")
+            if(heading!="Vitamin D (Cholecalciferol)")
             createLink(ss,"cancer prevention",text.lowercase(),"Condition","Cancer Prevention")
             createLink(ss,"candidiasis",text.lowercase(),"Condition","Candidiasis")
             createLink(ss,"cataract prevention",text.lowercase(),"Condition","Cataract Prevention")
@@ -1518,35 +1523,39 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             createLink(ss,"cluster headaches",text.lowercase(),"Condition","Headache, General")
             createLink(ss,"crohn's disease",text.lowercase(),"Condition","Crohn's Disease")
             createLink(ss,"cholecystitis",text.lowercase(),"Condition","Cholecystitis")
+            createLink(ss,"constipation",text.lowercase(),"Condition","Constipation")
             createLink(ss,"congestive heart failure",text.lowercase(),"Condition","Congestive Heart Failure")
             createLink(ss,"depression",text.lowercase(),"Condition","Depression")
-            createLink(ss,"diabetes mellitus",text.lowercase(),"Condition","diabetes mellitus")
+            createLink(ss,"diabetes mellitus",text.lowercase(),"Condition","Diabetes Mellitus")
             createLink(ss,"dysmenorrhea",text.lowercase(),"Condition","Dysmenorrhea")
-            createLink(ss,"eczema",text.lowercase(),"Condition","Eczema")
+            createLink(ss,"eczema",text.lowercase(),"Condition","Eczema, Chronic")
             createLink(ss,"endometriosis",text.lowercase(),"Condition","Endometriosis")
             createLink(ss,"fibrocystic breast disease",text.lowercase(),"Condition","Fibrocystic Breast Disease")
             createLink(ss,"fibromyalgia",text.lowercase(),"Condition","Fibromyalgia")
             createLink(ss,"fertility/infertility",text.lowercase(),"Condition","Fertility")
             createLink(ss,"gout",text.lowercase(),"Condition","Gout")
-            createLink(ss,"headaches",text.lowercase(),"Condition","Headaches")
+            createLink(ss,"headaches",text.lowercase(),"Condition","Headache, General")
             createLink(ss,"hypertension",text.lowercase(),"Condition","Hypertension")
             createLink(ss,"hemorrhoids",text.lowercase(),"Condition","Hemorrhoids")
             createLink(ss,"hepatitis",text.lowercase(),"Condition","Hepatitis")
             createLink(ss,"herpes simplex",text.lowercase(),"Condition","Herpes Simplex")
-            createLink(ss,"hypothyroidism",text.lowercase(),"Condition","Hypothyroidism")
+            createLink(ss,"hypothyroidism",text.lowercase(),"Condition","Hypothyroid")
             createLink(ss,"insomnia",text.lowercase(),"Condition","Insomnia")
             createLink(ss,"impotence",text.lowercase(),"Condition","Impotence")
+            createLink(ss,"incontinence",text.lowercase(),"Condition","Incontinence, Stress")
             createLink(ss,"irritable bowel syndrome",text.lowercase(),"Condition","Irritable Bowel Syndrome")
             createLink(ss,"memory loss",text.lowercase(),"Condition","Memory Loss")
             createLink(ss,"menopause",text.lowercase(),"Condition","Menopause")
             createLink(ss,"macular degeneration",text.lowercase(),"Condition","Macular Degeneration")
             createLink(ss,"multiple sclerosis",text.lowercase(),"Condition","Multiple Sclerosis")
+            createLink(ss,"migraine headaches",text.lowercase(),"Condition","Headache, Migraine")
             createLink(ss,"osteoarthritis",text.lowercase(),"Condition","Osteoarthritis")
             createLink(ss,"osteoporosis",text.lowercase(),"Condition","Osteoporosis")
             createLink(ss,"obesity",text.lowercase(),"Condition","Obesity")
             createLink(ss,"otitis media",text.lowercase(),"Condition","Otitis Media")
+            if(heading!="Choline (Lecithin)")
             createLink(ss,"parkinson's disease",text.lowercase(),"Condition","Parkinson's Disease")
-            createLink(ss,"peptic ulcer",text.lowercase(),"Condition","Peptic Ulcer")
+            createLink(ss,"peptic ulcer",text.lowercase(),"Condition","Peptic Ulcers")
             createLink(ss,"psoriasis",text.lowercase(),"Condition","Psoriasis")
             createLink(ss,"pms",text.lowercase(),"Condition","PMS")
             createLink(ss,"psoriatic arthritis",text.lowercase(),"Condition","Psoriatic Arthritis")
@@ -1555,9 +1564,12 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             createLink(ss,"schizophrenia",text.lowercase(),"Condition","Schizophrenia")
             createLink(ss,"systemic lupus erythematosus (sle)",text.lowercase(),"Condition","Systemic Lupus Erythematosus")
             createLink(ss,"ulcerative colitis",text.lowercase(),"Condition","Ulcerative Colitis")
-            createLink(ss,"uterine fibroid",text.lowercase(),"Condition","Uterine Fibroid")
+            createLink(ss,"uterine fibroid",text.lowercase(),"Condition","Uterine Fibroids")
             createLink(ss,"zinc",text.lowercase(),"Vitamin","Zinc")
             createLink(ss,"vitamin e",text.lowercase(),"Vitamin","Vitamin E (Tocopherol)")
+            createLink(ss,"vitamin b12",text.lowercase(),"Vitamin","Vitamin B12 (Cobalamin)")
+            createLink(ss,"cystitis",text.lowercase(),"Condition","Cystitis")
+            createLink(ss,"mastitis",text.lowercase(),"Condition","Mastitis")
             withContext(Dispatchers.Main){
                 binding.contentData.text = ss
             }
@@ -1867,6 +1879,11 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
 
         val ss = SpannableString(text)
         createLink(ss,"tryptophan",text,"Supplement","Tryptophan")
+        createLink(ss,"vitamin k",text,"Supplement","Vitamin K (Quinones)")
+        createLink(ss,"vitamin b6",text,"Supplement","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"folic acid",text,"Supplement","Folate")
+        createLink(ss,"niacin",text,"Supplement","Vitamin B3 (Niacin)")
+        createLink(ss,"carnitine",text,"Supplement","Carnitine")
         binding.contentData.text = ss
 
     }//
@@ -2223,10 +2240,14 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         }
         val ss = SpannableString(text)
         createLink(ss,"bipolar disorder",text.lowercase(),"Condition","Bipolar Disorder")
+        if(heading!="Vitamin B6 (Pyridoxine)" && heading!="Magnesium")
         createLink(ss,"magnesium",text.lowercase(),"Vitamin","Magnesium")
+        if(heading!="Vitamin E (Tocopherol)")
         createLink(ss,"vitamin e",text.lowercase(),"Vitamin","Vitamin E (Tocopherol)")
         createLink(ss,"molybdenum",text.lowercase(),"Vitamin","Molybdenum")
+        if(heading!="Vitamin B12 (Cobalamin)"&&heading!="Vitamin C (Ascorbic Acid)")
         createLink(ss,"vitamin c",text.lowercase(),"Vitamin","Vitamin C (Ascorbic Acid)")
+        if(heading!="Vitamin B6 (Pyridoxine)")
         createLink(ss,"vitamin b6",text.lowercase(),"Vitamin","Vitamin B6 (Pyridoxine)")
         createLink(ss,"omega 3 and omega 6 fatty acids",text.lowercase(),"Fat","")
         createLink(ss,"selenium",text.lowercase(),"Vitamin","Selenium")
@@ -2491,6 +2512,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             }
         }
         val ss = SpannableString(text)
+        createLink(ss,"parkinson's disease",text.lowercase(),"Condition","Parkinson's Disease")
         binding.contentData.text = ss
     }//
 
@@ -2661,24 +2683,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                         "• High leucine"
             }
             "Vitamin B5 (Pantothenic Acid)" -> {
-                text =  "• Aging\n" +
-                        "• Alcohol\n" +
-                        "• Antioxidants in the petroleum industry\n" +
-                        "• Birth control pills\n" +
-                        "• Celiac disease\n" +
-                        "• Crohn's disease\n" +
-                        "• Hydrazine compounds\n" +
-                        "• Hypoacidity (acid is necessary for vitamin B6 absorption)\n" +
-                        "• L-canavanine compound - found in alfalfa\n" +
-                        "• Maleica hydrazide - a plant growth regulator and herbicide\n" +
-                        "• Monoamine oxidase inhibitors, isoniazid, theophyline and other anti asthma medications\n" +
-                        "• PCB's (polychlorinated biphenols) - have been found in 99% of all Americans tested\n" +
-                        "• Penicillamine\n" +
-                        "• Peroxides and free radicals\n" +
-                        "• Plating materials and antitarnish agents used in metal manufacturing\n" +
-                        "• Pregnancy\n" +
-                        "• Tartrazine (yellow dye #5)\n" +
-                        "• Tobacco smoke"
+                text =  "• Malnutrition"
             }
             "Vitamin B6 (Pyridoxine)" -> {
                 text =  "• Aging\n" +
@@ -2742,6 +2747,8 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         val ss = SpannableString(text)
         if(heading=="Vitamin A (Retinol)")
         createLink(ss,"zinc",text,"Vitamin","Zinc")
+        createLink(ss,"vitamin c",text,"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"copper",text,"Vitamin","Copper")
         binding.contentData.text = ss
     }//
 
@@ -2908,21 +2915,21 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             }
             "Vitamin B1 (Thiamine)" -> {
                 text =  "• Adults:\n" +
-                        "• Anorexia\n" +
-                        "• Ataxia\n" +
-                        "• Calf muscle tenderness\n" +
-                        "• Dry beriberi - worsening of polyneuritis in early stages - difficulty walking, muscle wasting\n" +
-                        "• Constipation\n" +
-                        "• Indigestion\n" +
-                        "• Mental confusion\n" +
-                        "• Palpitations\n" +
-                        "• Tachycardia\n" +
-                        "• Weakness of muscles\n" +
-                        "• Wernicke Korsakoff syndrome - nystagmus caused by weakness of 6th cranial nerve, irritability, disordered thinking\n" +
-                        "• Wet beriberi - edema starting in the feet progressing upward into legs, trunk, face, and eventually heart which leads to death by heart failure\n" +
+                        "Anorexia\n" +
+                        "Ataxia\n" +
+                        "Calf muscle tenderness\n" +
+                        "Dry beriberi - worsening of polyneuritis in early stages - difficulty walking, muscle wasting\n" +
+                        "Constipation\n" +
+                        "Indigestion\n" +
+                        "Mental confusion\n" +
+                        "Palpitations\n" +
+                        "Tachycardia\n" +
+                        "Weakness of muscles\n" +
+                        "Wernicke Korsakoff syndrome - nystagmus caused by weakness of 6th cranial nerve, irritability, disordered thinking\n" +
+                        "Wet beriberi - edema starting in the feet progressing upward into legs, trunk, face, and eventually heart which leads to death by heart failure\n" +
                         "• Infants:\n" +
-                        "• Cardiac failure\n" +
-                        "• Cyanosis"
+                        "Cardiac failure\n" +
+                        "Cyanosis"
             }
             "Vitamin B2 (Riboflavin)" -> {
                 text =  "• Cheilosis\n" +
@@ -3525,6 +3532,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             }
         }
         val ss = SpannableString(text)
+        createLink(ss,"green tea",text,"Botanical","Camellia sinensis (Green tea)")
         binding.contentData.text = ss
     }//
 
@@ -3535,6 +3543,10 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             "Manganese" -> {
                 text = "• Whole blood manganese - preferred\n" +
                         "• Hair analysis varies with graying"
+            }
+            "Calcium" -> {
+                text = "• Hair analysis inaccurate\n" +
+                        "• Total blood levels are very inaccurate for assessing calcium"
             }
             "Boron"->{
                 text = "• Hair analysis inaccurate\n" +
@@ -3808,6 +3820,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             }
         }
         val ss = SpannableString(text)
+        createLink(ss,"B-complex",text,"HydroTherapy","B Complex")
         binding.contentData.text = ss
     }//
 
@@ -4095,8 +4108,11 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                         intent = Intent(this@VitaminMineralDetailActivity,BotanicalDetailActivity::class.java)
                         intent.putExtra("heading",heading)
                         startActivity(intent)
-                    }else if(heading == "Fat"){
+                    }else if(activity == "Fat"){
                         val intent = Intent(this@VitaminMineralDetailActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }else if(activity =="HydroTherapy"){
+                        val intent = Intent(this@VitaminMineralDetailActivity,HydroTherapyActivity::class.java)
                         startActivity(intent)
                     }
                 }
