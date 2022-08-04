@@ -5436,6 +5436,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Pycnogenol: 20-100 mg. TID"
                 ss = SpannableString(supplements_detail)
                 createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
             }
 
             "Adult Acne" -> {
@@ -5443,6 +5444,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 1 - 2 tablets per meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
 
             "Age-Related Macular Degeneration" -> {
@@ -5450,6 +5454,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Taurine: 1.5 gm. BID\n" +
                         "• Anthocyanadin : 80 -160 mg. (standard extract from Bilberry)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"Supplement","Taurine")
+                createLink(ss,"Anthocyanadin",supplements_detail,"Supplement","Bioflavonoids")
 
             }
             "Aging Prevention" -> {
@@ -5460,6 +5467,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Coenzyme Q10: 30 mg. BID\n" +
                         "• Omega 6 Fatty Acids: 2 - 4 gm."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"Supplement","Melatonin")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Omega 6 Fatty Acids",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
 
             }
             "AIDS" -> {
@@ -5475,6 +5488,16 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 20 - 45 gm. per day in divided doses with 12 oz. of water per dose\n" +
                         "• DHEA (Dehydroepiandrosterone): 20-100 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Omega 6 Fatty Acids",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"N-acetyl Cysteine",supplements_detail,"supplement","N-Acetyl Cysteine")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
 
             }
             "Allergies" -> {
@@ -5485,6 +5508,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Adrenal Glandular: 1 tablet BID\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(recommended_labs)
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
 
             }
             "Alzheimer's Disease" -> {
@@ -5497,6 +5526,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Melatonin: 3-6 mg. at 9 PM\n" +
                         "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 3 hours"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"L-Acetyl-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
 
             }
             "Amenorrhea" -> {
@@ -5505,12 +5542,18 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Adrenal Glandular: 1 tablet TID\n" +
                         "• Liver Glandular: 1 tablet TID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Ovary Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Pituitary Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Liver Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
 
             }
             "Anorexia Nervosa" -> {
                 supplements_detail = "• 5-Hydroxytryptophan: 50 mg. TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
                         "• Melatonin: 3-6 mg. at 9PM"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
 
             }
             "Aphthous Stomatitis" -> {
@@ -5519,6 +5562,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lysine: 500 - 2000 mg. (if viral/herpetic - reduce dosage after improvement)\n" +
                         "• Acidophilis and Bifidus: apply topically to ulcer during initial stage"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Arthritis, Gout" -> {
                 supplements_detail = "• Bromelain: 250 mg. 3 times a day away from food\n" +
@@ -5526,6 +5573,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Quercetin: 400 mg. 3 times a day away from food\n" +
                         "• *Digestive Enzymes: 2 tablets with each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
 
             }
             "Arthritis, Osteo" -> {
@@ -5534,6 +5585,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Glucosamine Sulfate: 350 mg. TID\n" +
                         "• Omega-3 Fatty Acids: 2 - 5 gm."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Arthritis, Psoriatic" -> {
@@ -5546,6 +5601,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Glucosamine Sulfate: 500 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Fumaric Acid",supplements_detail,"Supplement","Fumaric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Arthritis, Rheumatoid" -> {
@@ -5556,6 +5619,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Glucosamine Sulfate: 500 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Fumaric Acid",supplements_detail,"Supplement","Fumaric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Asthma" -> {
@@ -5565,6 +5636,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Coenzyme Q10: 60 mg. in small divided doses every 3 - 4 hours"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
 
             }
             "Atherosclerosis" -> {
@@ -5579,6 +5655,17 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Garlic: 400 mg.\n" +
                         "• Red Yeast Rice (Monascus purpureus): 1200 mg. with 50 mg. Coenzyme Q10 2 times a day\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Red Yeast Rice",supplements_detail,"Food","Red Yeast Rice (Monascus purpureus)")
+
 
             }
             "Atopic Dermatitis" -> {
@@ -5589,12 +5676,20 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
 
             }
             "Attention Deficit Disorder" -> {
                 supplements_detail = "• Omega-3 Fatty Acids: 500-1000 mg. TID\n" +
                         "• Pycnogenol: 20-100 mg. TID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
 
             }
             "Autism" -> {
@@ -5604,7 +5699,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Acidophilus and Bifidus: 1 capsule between meals\n" +
                         "• Omega 3 Fatty Acids: 3 gm."
                 ss = SpannableString(supplements_detail)
-
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Benign Prostatic Hypertrophy" ->{
                 supplements_detail = "• Dimethyl Glycine(DMG): 100-200 mg. in divided doses\n" +
@@ -5614,6 +5713,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Prostate Glandular: 1 tablet TID\n" +
                         "• Omega 3 Fatty Acids: 1-3 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Prostate Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
             }
             "Bipolar Disorder" ->{
                 supplements_detail = "• Omega-3 Fatty Acids : 500-1000 mg. TID\n" +
@@ -5624,11 +5729,19 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Melatonin: 3-6 mg. at 9PM\n" +
                         "• Phosphatidylserine: 100 mg. TID with food\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"S-Adenosy-L-Methionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
             }
             "Bladder Infection" ->{
                 supplements_detail = "• Arginine: 500 - 2,000 mg. in divided doses on an empty stomach\n" +
                         "• Mannose (powder): 1/4 tsp. 3 - 6 times a day"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Blood Pressure, High" ->{
                 supplements_detail = "• Coenzyme Q10: 30 mg. QID (takes 4-12 weeks for this therapy to make a difference in blood pressure)\n" +
@@ -5639,6 +5752,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• L-Arginine: 1,000 mg. TID on empty stomach\n" +
                         "• L-Carnitine: 500 mg. TID away from food"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
             }
             "BPH" ->{
                 supplements_detail = "• Dimethyl Glycine(DMG): 100-200 mg. in divided doses\n" +
@@ -5648,6 +5768,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Prostate Glandular: 1 tablet TID\n" +
                         "• Omega 3 Fatty Acids: 1-3 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Prostate Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
             }
             "Bronchitis" ->{
                 supplements_detail = "• N-Acetyl Cysteine: 1 gm. BID\n" +
@@ -5655,12 +5781,18 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lung Glandular: 1 tablet TID\n" +
                         "• Bromelain: 150-500 mg. TID (between meals)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lung Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
             }
             "Cancer Prevention" ->{
                 supplements_detail = "• Most Cancers:\n" +
                         "• L-Glutathione: 500 mg. BID away from food\n" +
                         "• Omega-3 Fatty Acids : 2 - 5 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
             }
             "Candida Infection" ->{
                 supplements_detail = "• Fiber: 20 - 45 gm. in divided doses per meal with 12 ounces of water per dose\n" +
@@ -5671,6 +5803,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Thymus Glandular: 2 tablets TID\n" +
                         "• Digestive Enzymes: 1 - 2 tablets per meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Candidiasis" ->{
                 supplements_detail = "• Fiber: 20 - 45 gm. in divided doses per meal with 12 ounces of water per dose\n" +
@@ -5681,6 +5846,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Thymus Glandular: 2 tablets TID\n" +
                         "• Digestive Enzymes: 1 - 2 tablets per meal\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Canker Sores" ->{
                 supplements_detail = "• *Hydrochloric Acid: 10 - 70 grains per meal (if hypochlorhydric)\n" +
@@ -5688,6 +5886,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lysine: 500 - 2000 mg. (if viral/herpetic - reduce dosage after improvement)\n" +
                         "• Acidophilis and Bifidus: apply topically to ulcer during initial stage"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Cataract Prevention" ->{
                 supplements_detail = "• 5-Hydroxytryptophan : 50 - 200 mg. TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
@@ -5696,6 +5927,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-3 Fatty Acids: 2 - 5 gm. TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Glutathione",supplements_detail,"supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "CFS/CFIDS" ->{
                 supplements_detail = "• Glutathione: 65 mg.\n" +
@@ -5706,6 +5970,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• NADH: 5 mg. with water only on an empty stomach TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Glutathione",supplements_detail,"supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "CHF" ->{
                 supplements_detail = "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 2 hours\n" +
@@ -5716,6 +6014,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Kidney Glandular: 1 tablet BID\n" +
                         "• Arginine: 500 - 4,000 mg. in divided doses on an empty stomach"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Heart Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Kidney Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Cholecystitis" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -5727,6 +6059,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Lipase: 10,000 units with lunch and dinner"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
             }
             "Cholelithiasis" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -5736,6 +6076,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-6 Fatty Acids: 1 gm. TID\n" +
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
             }
             "Chronic Fatigue Syndrome" ->{
                 supplements_detail = "• Glutathione: 65 mg.\n" +
@@ -5746,6 +6094,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• NADH: 5 mg. with water only on an empty stomach TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Colitis" ->{
                 supplements_detail = "• Quercetin: 400 mg. 20 minutes before meals, TID\n" +
@@ -5755,6 +6136,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Acidophilus and Bifidus: 1 capsule between meals\n" +
                         "• Fiber : 5 - 45 gm. in divided doses taken with 12 ounces of water per dose"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"EFA",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Fructooligosaccarides",supplements_detail,"Supplement","Fructooligosaccarides (FOS)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Congestive Heart Failure" ->{
                 supplements_detail = "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 2 hours\n" +
@@ -5765,12 +6152,22 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Kidney Glandular: 1 tablet BID\n" +
                         "• Arginine: 500 - 4,000 mg. in divided doses on an empty stomach"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Heart Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Kidney Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Constipation" ->{
                 supplements_detail = "• Fiber : 5 - 45 gm. in divided doses taken with 12 ounces of water per dose\n" +
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
             }
             "Crohn's Disease" ->{
                 supplements_detail = "• Quercetin: 400 mg. 20 minutes before meals, TID\n" +
@@ -5779,11 +6176,17 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses at mealtime with 12 ounces of water per dose\n" +
                         "• Fructooligosaccarides: 800 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Fructooligosaccarides",supplements_detail,"Supplement","Fructooligosaccarides (FOS)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Cystitis" ->{
                 supplements_detail = "• Arginine: 500 - 2,000 mg. in divided doses on an empty stomach\n" +
                         "• Mannose (powder): 1/4 tsp. 3 - 6 times a day"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Depression" ->{
                 supplements_detail = "• 5-Hydroxytryptophan : 100-300 mg TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
@@ -5795,6 +6198,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Phenylalanine: 500 mg. daily initially, increasing as needed to 2-3 gm. daily\n" +
                         "• Phosphatidylserine: 100 mg. TID with food"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosy-L-Methionine (SAM)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+
             }
             "Diabetes Mellitus" ->{
                 supplements_detail = "• Quercetin: 500 mg.\n" +
@@ -5807,6 +6242,37 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: up to 100 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Digestive Enzymes: 2 tablets before each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Dysmenorrhea" ->{
                 supplements_detail = "• Omega 3 and 6 Fatty Acids: 1-5 gm. TID\n" +
@@ -5814,6 +6280,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Bromelain: 250 - 500 mg. TID on an empty stomach\n" +
                         "• Quercetin: 250 - 500 mg. every 2 hours during cramping (enhances vitamin B3)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 and 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Ovary Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
             }
 
             "Ear Infection" ->{
@@ -5823,6 +6293,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega 6 Fatty Acids: 250-500 mg.\n" +
                         "• Thymus Glandular: 500 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Eczema, Chronic" ->{
                 supplements_detail = "• Omega-3 Fatty Acids : 2 - 5 gm. TID\n" +
@@ -5832,6 +6334,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
 
             "Endometriosis" ->{
@@ -5841,6 +6375,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *DL-Methionine: 100 mg. (as a lipotropic factor)\n" +
                         "• *Trimethylglycine HCl: 100 mg. (as a lipotropic factor)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Liver Concentrate",supplements_detail,"supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
             }
 
             "Erectile Dysfunction" ->{
@@ -5851,6 +6390,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Pituitary Glandular: 20 mg. BID\n" +
                         "• Orchic Glandular: 100 mg. BID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pituitary Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Orchic Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Hypothalamus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Dehydroepiandrosterone (DHEA)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+
             }
 
             "Fertility" ->{
@@ -5864,6 +6410,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Coenzyme Q10: 30 mg. BID\n" +
                         "• S-Adenosylmethionine (SAMe): 200 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Fibrocystic Breast Disease" ->{
                 supplements_detail = "• Omega 3 Fatty Acids: 1 -5 gm. TID\n" +
@@ -5872,6 +6451,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Ovary, Pituitary, Adrenal and Liver Glandulars: 1 tablet TID\n" +
                         "• *Lipotropic factors"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Ovary, Pituitary, Adrenal and Liver Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
 
             "Fibromyalgia" ->{
@@ -5881,6 +6464,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• 5-Hydroxytryptophan: begin with 50 mg. TID, increase up to 200 mg. TID if necessary (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
                         "• L-Carnitine: 3 gm.\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Gallbladder Disease" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -5892,6 +6508,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Lipase: 10,000 units with lunch and dinner"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars (Protomorphogens)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"L-Methionine",supplements_detail,"Supplement","Methionine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Gallstones" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -5901,6 +6551,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-6 Fatty Acids: 1 gm. TID\n" +
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Methionine",supplements_detail,"Supplement","Methionine")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
             }
             "Gout" ->{
                 supplements_detail = "• Bromelain: 250 mg. 3 times a day away from food\n" +
@@ -5908,6 +6564,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Quercetin: 400 mg. 3 times a day away from food\n" +
                         "• *Digestive Enzymes: 2 tablets with each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
             }
             "Headache, General" ->{
                 supplements_detail = "• Quercetin: 500 mg. 15 minutes prior to eating\n" +
@@ -12020,9 +12680,9 @@ class ConditionDetailActivity : AppCompatActivity() {
 
         createLink(ss,"here.",text,"Hydrotherapy","Homeopathy")
         createLink(ss, "anthocyanadin", text.lowercase(), "Supplement", "Bioflavonoids")
-        createLink(ss, "acidophilis and bifidus", text.lowercase(), "Supplement", "Acidophilus/Bifidus")
         createLink(ss, "bioflavonoids", text.lowercase(), "Supplement", "Bioflavonoids")
-        createLink(ss, "adrenal glandular", text.lowercase(), "Supplement", "Glandulars")
+        createLink(ss, "Adrenal glandular", text.lowercase(), "Supplement", "Glandulars")
+        createLink(ss, "Alternating sitz bath", text.lowercase(), "Supplement", "Sitz Bath (Sitting Bath or Hip Bath)")
         createLink(
             ss,
             "althea officinalis",
@@ -12062,7 +12722,20 @@ class ConditionDetailActivity : AppCompatActivity() {
         createLink(ss, "althea", text.lowercase(), "Botanical", "Althea officinalis (Marshmallow)")
         if(heading!="ADD/ADHD")
         createLink(ss, "allergies", text.lowercase(), "Condition", "Allergies")
+        createLink(ss, "Amenorrhea", text.lowercase(), "Condition", "Amenorrhea")
         createLink(ss, "allium sativum", text.lowercase(), "Botanical", "Allium sativum (Garlic)")
+        createLink(ss, "Asthma iv therapy", text.lowercase(), "Hydrotherapy", "Asthma IV Treatment")
+        createLink(ss, "asthma", text.lowercase(), "Condition", "Asthma")
+        createLink(ss,"Acidophilus and Bifidus",text.lowercase(),"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+        createLink(ss,"Acetyl-L-Carnitine",text.lowercase(),"supplement","Carnitine")
+        createLink(ss,"Alanine",text.lowercase(),"Supplement","Alanine")
+        createLink(ss,"Amino Acids",text.lowercase(),"Supplement","Amino Acids")
+        createLink(ss,"Anthocyanadin",text.lowercase(),"Supplement","Bioflavonoids")
+        createLink(ss,"Adrenal Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
+        createLink(ss, "Alzheimer's Disease", text.lowercase(), "Condition", "Alzheimer's Disease")
+        createLink(ss, "anorexia nervosa", text.lowercase(), "Condition", "Anorexia Nervosa")
+        createLink(ss, "Antiviral IV therapy", text.lowercase(), "Hydrotherapy", "Antiviral IV Treatments")
+        createLink(ss, "Anti-infection iv therapy", text.lowercase(), "Hydrotherapy", "Anti-Infection IV Therapy")
         createLink(ss, "arctium lappa", text.lowercase(), "Botanical", "Arctium lappa (Burdock)")
         createLink(
             ss,
@@ -12080,6 +12753,9 @@ class ConditionDetailActivity : AppCompatActivity() {
         )
         createLink(ss, "beta carotene", text.lowercase(), "Vitamin", "Beta Carotene (Carotenoids)")
         createLink(ss, "beta-carotene", text.lowercase(), "Vitamin", "Beta Carotene (Carotenoids)")
+        createLink(ss,"Bioflavonoids",text.lowercase(),"Supplement","Bioflavonoids")
+        createLink(ss,"Bromelain",text.lowercase(),"Supplement","Bromelain")
+        createLink(ss,"Bone Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
         createLink(
             ss,
             "berberis vulgaris",
@@ -12089,17 +12765,44 @@ class ConditionDetailActivity : AppCompatActivity() {
         )
         createLink(
             ss,
+            "bipolar disease (manic phase)",
+            text.lowercase(),
+            "Condition",
+            "Bipolar Disorder"
+        )
+        createLink(
+            ss,
+            "bipolar disorder",
+            text.lowercase(),
+            "Condition",
+            "Bipolar Disorder"
+        )
+        createLink(
+            ss,
             "capsicum frutescens",
             text.lowercase(),
             "Botanical",
             "Capsicum frutescens (Cayenne, Red pepper)"
         )
+        createLink(
+            ss,
+            "Continuous bath/hammock bath",
+            text.lowercase(),
+            "hydrotherapy",
+            "Continuous Bath/Hammock Bath"
+        )
         createLink(ss, "curcuma longa", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
         createLink(ss, "cysteine", text.lowercase(), "Supplement", "N-Acetyl Cysteine")
         createLink(ss, "calcium", text.lowercase(), "Vitamin", "Calcium")
+        createLink(ss, "Copper", text.lowercase(), "Vitamin", "Copper")
         createLink(ss, "copper", text.lowercase(), "Vitamin", "Copper")
         createLink(ss, "cataract", text.lowercase(), "Condition", "Cataract Prevention")
         createLink(ss, "coenzyme q10", text.lowercase(), "Supplement", "Coenzyme Q10")
+        createLink(ss,"Coenzyme Q10",text.lowercase(),"Supplement","Coenzyme Q10 (Ubiquinone)")
+        createLink(ss,"Carnosine",text.lowercase(),"Supplement","Carnosine")
+        createLink(ss,"Cysteine",text.lowercase(),"Supplement","N-Acetyl Cysteine")
+        createLink(ss,"Choline",text.lowercase(),"Vitamin","Choline (Lecithin)")
+        createLink(ss,"Citrus Bioflavonoids",text.lowercase(),"Supplement","Bioflavonoids")
         createLink(ss, "coffee enema", text.lowercase(), "Hydrotherapy", "Enemas")
         createLink(
             ss,
@@ -12109,10 +12812,21 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Constitutional Hydrotherapy"
         )
         createLink(ss, "curcuma", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
+        createLink(ss, "Congestive heart IV therapy", text.lowercase(), "Hydrotherapy", "Congestive Heart Failure IV Treatment")
+        createLink(ss, "congestive heart failure", text.lowercase(), "Hydrotherapy", "Congestive Heart Failure IV Treatment")
+        createLink(ss, "Charcoal Poultice", text.lowercase(), "Hydrotherapy", "Poultice")
         createLink(ss, "candidiasis", text.lowercase(), "Condition", "Candidiasis")
+        createLink(ss, "Crohn's Disease", text.lowercase(), "Condition", "Crohn's Disease (Regional Enteritis)")
+        createLink(ss, "Crohns Disease", text.lowercase(), "Condition", "Crohn's Disease (Regional Enteritis)")
+        createLink(ss, "chronic fatigue syndrome", text.lowercase(), "Condition", "Chronic Fatigue Syndrome")
         createLink(ss, "dhea", text.lowercase(), "Supplement", "Dehydroepiandrosterone (DHEA)")
-        createLink(ss, "digestive enzymes", text.lowercase(), "Supplement", "Digestive Enzymes")
-        createLink(ss, "EFA", text, "Fat", "Fat")
+        createLink(ss, "diabetes", text.lowercase(), "Condition", "Diabetes Mellitus (Type 2)")
+        createLink(ss, "depression", text.lowercase(), "Condition", "Depression")
+        createLink(ss,"Digestive Enzymes",text.lowercase(),"Supplement","Digestive Enzymes")
+        createLink(ss,"DHEA (Dehydroepiandrosterone)",text.lowercase(),"Supplement","Dehydroepiandrosterone (DHEA)")
+        createLink(ss,"Dehydroepiandrosterone (DHEA)",text.lowercase(),"Supplement","Dehydroepiandrosterone (DHEA)")
+        createLink(ss,"Dimethyl Glycine (DMG)",text.lowercase(),"Supplement","Dimethyl Glycine (DMG)")
+        createLink(ss, "Diabetes IV therapy", text.lowercase(), "Hydrotherapy", "Diabetes IV Treatment")
         createLink(
             ss,
             "echinacea",
@@ -12128,9 +12842,21 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Echinacea angustifolia (Purple cone flower)"
         )
         createLink(ss, "ephedra sinica", text.lowercase(), "Botanical", "Ephedra sinica (Ma huang)")
+        createLink(ss, "endometriosis", text.lowercase(), "Condition", "Endometriosis")
+        createLink(ss,"EFA",text.lowercase(),"Supplement","Essential Fatty Acids (EFAs)")
+        createLink(ss,"Essential Fatty Acids",text.lowercase(),"Supplement","Essential Fatty Acids (EFAs)")
+        createLink(ss,"EDTA",text.lowercase(),"Supplement","Ethylenediaminetetraacetic acid (EDTA)")
+        createLink(ss,"Fructooligosaccarides",text.lowercase(),"Supplement","Fructooligosaccarides (FOS)")
+        createLink(ss,"Fiber",text.lowercase(),"Food","Fiber")
+        createLink(ss,"Fumaric Acid",text.lowercase(),"Supplement","Fumaric Acid")
         createLink(ss, "fiber", text.lowercase(), "Food", "Fiber")
+        createLink(ss, "fibromyalgia", text.lowercase(), "Condition", "Fibromyalgia")
         createLink(ss, "folate", text.lowercase(), "Vitamin", "Folate")
+        createLink(ss, "food allergies", text.lowercase(), "Condition", "Allergies")
         createLink(ss, "garlic", text.lowercase(), "Botanical", "Allium sativum (Garlic)")
+        createLink(ss, "gout", text.lowercase(), "Condition", "Gout")
+        createLink(ss, "gall bladder disease (cholecystitis)", text.lowercase(), "Condition", "Gall Bladder Disease (Cholecystitis)")
+        createLink(ss, "gallstones (Cholelithiasis)", text.lowercase(), "Condition", "Gallstones (Cholelithiasis)")
         createLink(
             ss,
             "Geranium maculatum (Wild geranium, Cranesbill)".lowercase(),
@@ -12161,12 +12887,27 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Glycyrrhiza glabra (Licorice)"
         )
+        createLink(ss,"Garlic",text.lowercase(),"Food","Allium sativum (Garlic)")
+        createLink(ss,"Glutathione",text.lowercase(),"Supplement","Glutathione")
+        createLink(ss,"Glucosamine Sulfate",text.lowercase(),"Food","Glucosamine Sulfate")
+        createLink(ss,"Glutamic Acid",text.lowercase(),"Supplement","Glutamic Acid")
+        createLink(ss,"Hydrochloric Acid (HCL)",text.lowercase(),"Supplement","Hydrochloric Acid")
+        createLink(ss,"Hydrochloric Acid",text.lowercase(),"Supplement","Hydrochloric Acid")
+        createLink(ss,"5-Hydroxytryptophan",text.lowercase(),"supplement","Tryptophan")
+        createLink(ss,"Hypothalamus Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
         createLink(
             ss,
             "hydrastis",
             text.lowercase(),
             "Botanical",
             "Hydrastis canadensis (Goldenseal)"
+        )
+        createLink(
+            ss,
+            "hepatitis B and C",
+            text.lowercase(),
+            "Condition",
+            "Hepatitis"
         )
         createLink(
             ss,
@@ -12182,9 +12923,39 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Hydrastis canadensis (Goldenseal)"
         )
+        createLink(
+            ss,
+            "Hot sitz baths and alternating sitz baths (hot and cold)",
+            text.lowercase(),
+            "Hydrotherapy",
+            "Sitz Bath (Sitting Bath or Hip Bath)"
+        )
+        createLink(
+            ss,
+            "Hot enemas",
+            text.lowercase(),
+            "Hydrotherapy",
+            "Enemas"
+        )
         createLink(ss, "hydrochloric acid", text.lowercase(), "Supplement", "Hydrochloric Acid")
-        createLink(ss, "l-glutathione", text.lowercase(), "Supplement", "Glutathione")
-        createLink(ss, "lipoic acid", text.lowercase(), "Supplement", "Lipoic Acid")
+        createLink(ss, "Heating compress", text.lowercase(), "Hydrotherapy", "Heating Compress")
+        createLink(ss, "Hypertension IV therapy", text.lowercase(), "Hydrotherapy", "Hypertension IV Treatment")
+        createLink(ss, "Hepatitis IV therapy", text.lowercase(), "Hydrotherapy", "Hepatitis IV Treatment")
+        createLink(ss, "hypothyroidism", text.lowercase(), "Condition", "Hypothyroid")
+        createLink(ss, "headache", text.lowercase(), "Condition", "Headache")
+        createLink(ss, "herpes", text.lowercase(), "Condition", "herpes Simplex")
+        createLink(ss, "iron", text.lowercase(), "Vitamin", "Iron")
+        createLink(ss,"Inositol",text.lowercase(),"Vitamin","Inositol")
+        createLink(ss, "L-glutathione", text.lowercase(), "Supplement", "Glutathione")
+        createLink(ss,"L-Arginine",text.lowercase(),"supplement","Arginine")
+        createLink(ss,"L-Glutathione",text.lowercase(),"Supplement","Glutathione")
+        createLink(ss,"Lysine",text.lowercase(),"Supplement","Lysine")
+        createLink(ss,"Lipoic Acid",text.lowercase(),"supplement","Lipoic Acid")
+        createLink(ss,"L-Methionine",text.lowercase(),"supplement","Methionine")
+        createLink(ss,"L-Carnitine",text.lowercase(),"supplement","Carnitine")
+        createLink(ss,"L-Tyrosine",text.lowercase(),"supplement","Tyrosine")
+        createLink(ss,"L-Glutamine",text.lowercase(),"supplement","Glutamine")
+        createLink(ss,"L-Glycine",text.lowercase(),"supplement","Glycine")
         createLink(
             ss,
             "ligusticum porteri",
@@ -12201,28 +12972,54 @@ class ConditionDetailActivity : AppCompatActivity() {
         )
         createLink(
             ss,
-            "lactobacillus acidophilus enema",
+            "Lactobacillus acidophilus enema",
             text.lowercase(),
             "Hydrotherapy",
             "Enemas"
         )
         createLink(ss, "methionine", text.lowercase(), "Supplement", "Methionine")
         createLink(ss, "magnesium", text.lowercase(), "Vitamin", "Magnesium")
+        createLink(ss, "manganese", text.lowercase(), "Vitamin", "Manganese")
+        createLink(ss, "menopause", text.lowercase(), "condition", "Menopause")
+        createLink(ss, "migraine", text.lowercase(), "Condition", "Migraine Headache")
+        createLink(ss, "Migraine IV therapy", text.lowercase(), "hydrotherapy", "Migraine IV Treatment")
+        createLink(ss, "Migraine IV push therapy", text.lowercase(), "hydrotherapy", "Migraine IV Push Treatment")
+        createLink(ss, "MS IV therapy", text.lowercase(), "hydrotherapy", "Multiple Sclerosis IV Treatment")
         createLink(ss, "melatonin", text.lowercase(), "Supplement", "Melatonin")
+        createLink(ss, "multiple sclerosis", text.lowercase(), "Condition", "Multiple Sclerosis")
         createLink(
             ss,
-            "macular degeneration iv therapy",
+            "Macular degeneration iv therapy",
             text.lowercase(),
             "iv",
             "Macular Degeneration"
         )
+        createLink(
+            ss,
+            "macular degeneration",
+            text.lowercase(),
+            "iv",
+            "Macular Degeneration"
+        )
+        createLink(ss,"Melatonin",text.lowercase(),"supplement","Melatonin")
+        createLink(ss,"NADH",text.lowercase(),"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+        createLink(ss,"N-Acetyl Cysteine",text.lowercase(),"Supplement","N-Acetyl Cysteine")
+        createLink(ss,"Nerve Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
         createLink(ss, "niacinamide", text.lowercase(), "Vitamin", "Vitamin B3 (Niacin)")
         createLink(ss, "n-acetyl cysteine", text.lowercase(), "Supplement", "N-Acetyl Cysteine")
-        createLink(ss, "omega-3 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega 3 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega 6 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega-6 fatty acids", text.lowercase(), "Fat", "")
+        createLink(ss, "omega 3 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "omega 6 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "Omega 3 and 6 Fatty Acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "omega-6 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "osteoarthritis", text.lowercase(), "Condition", "osteoarthritis")
+        createLink(ss, "otitis media", text.lowercase(), "Condition", "Otitis Media (Ear Infection)")
+        createLink(ss,"Omega-3 Fatty Acid",text.lowercase(),"Food","Essential Fatty Acids (EFAs)")
+        createLink(ss,"Orchic Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
+        createLink(ss,"Ovary Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
         createLink(ss, "pycnogenol", text.lowercase(), "Supplement", "Pycnogenol")
+        createLink(ss, "psoriasis", text.lowercase(), "Condition", "Psoriasis")
+        createLink(ss, "peptic ulcer", text.lowercase(), "Condition", "Peptic Ulcer")
+        createLink(ss, "Parkinsons Disease", text.lowercase(), "Condition", "Parkinson's Disease (Paralysis Agitans)")
         createLink(
             ss,
             "panax ginseng",
@@ -12237,12 +13034,42 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Polygonum multiflorum (Fo-ti, He-shou-wu)"
         )
+        createLink(ss,"Pycnogenol",text.lowercase(),"Supplement","Pycnogenol")
+        createLink(ss,"Phenylalanine",text.lowercase(),"Food","Phenylalanine")
+        createLink(ss,"Pituitary Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
+        createLink(ss,"Phosphatidylserine",text.lowercase(),"supplement","Phosphatidylserine")
+        createLink(ss,"Quercetin",text.lowercase(),"Supplement","Quercetin")
+        createLink(ss,"Red Yeast Rice",text.lowercase(),"Supplement","Red Yeast Rice (Monascus purpureus)")
+        createLink(ss,"S-Adenosylmethionine (SAMe)",text.lowercase(),"Food","S-Adenosy-L-Methionine (SAM)")
+        createLink(ss,"S-Adenosy-L-Methionine (SAM)",text.lowercase(),"Food","S-Adenosy-L-Methionine (SAM)")
         createLink(
             ss,
             "subacute cutaneous systemic lupus erythematosus",
             text.lowercase(),
             "Condition",
             "Systemic Lupus Erythematosus"
+        )
+        createLink(
+            ss,
+            "sitz bath",
+            text.lowercase(),
+            "Hydrotherapy",
+            "Sitz Bath (Sitting Bath or Hip Bath)"
+        )
+        createLink(
+            ss,
+            "schizophrenia",
+            text.lowercase(),
+            "Condition",
+            "Schizophrenia"
+        )
+
+        createLink(
+            ss,
+            "systemic lupus erythematosus (SLE)",
+            text.lowercase(),
+            "Condition",
+            "Systemic Lupus Erythematosus (SLE)"
         )
         createLink(ss, "selenium", text.lowercase(), "Vitamin", "Selenium")
         createLink(
@@ -12260,10 +13087,24 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Spilanthes acmella (Paracress)"
         )
         createLink(ss, "taurine", text.lowercase(), "Supplement", "Taurine")
-        createLink(ss, "tonic iv therapy", text.lowercase(), "iv", "Tonic Therapy")
+        createLink(ss, "Tonic iv therapy", text.lowercase(), "iv", "Tonic Therapy")
         createLink(ss, "tumeric", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
-        createLink(ss, "thymus glandular", text.lowercase(), "Supplement", "Glandulars")
+        createLink(ss,"Taurine",text.lowercase(),"supplement","Taurine")
+        createLink(ss,"Trimethylglycine HCL",text.lowercase(),"supplement","Dimethyl Glycine (DMG)")
+        createLink(ss,"Thymus Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
+        createLink(ss,"Thyroid Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
+        createLink(ss,"Tyrosine",text.lowercase(),"Supplement","Tyrosine")
+        createLink(ss,"Uterus Glandular",text.lowercase(),"Supplement","Glandulars (Protomorphogens)")
         createLink(ss, "urtica urens", text.lowercase(), "Botanical", "Urtica urens (Nettles)")
+        createLink(ss, "ulcerative colitis", text.lowercase(), "Condition", "Ulcerative Colitis")
+        createLink(
+            ss,
+            "Ulcerative colitis IV therapy",
+            text.lowercase(),
+            "Hydrotherapy",
+            "Crohn's Disease and Ulcerative Colitis IV Treatment"
+        )
+        createLink(ss, "Uterine fibroids", text.lowercase(), "Condition", "Uterine Fibroids")
         createLink(
             ss,
             "ulmus",
@@ -12285,6 +13126,7 @@ class ConditionDetailActivity : AppCompatActivity() {
         createLink(ss, "vitamin k", text.lowercase(), "Vitamin", "Vitamin K (Quinones)")
         createLink(ss, "vitamin e", text.lowercase(), "Vitamin", "Vitamin E (Tocopherol)")
         createLink(ss, "vitamin a", text.lowercase(), "Vitamin", "Vitamin A (Retinol)")
+        createLink(ss, "vanadium", text.lowercase(), "Vitamin", "Vanadium")
         createLink(ss, "vitamin b12", text.lowercase(), "Vitamin","Vitamin B12 (Cobalamin)")
         createLink(
             ss,
@@ -12300,8 +13142,12 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Withania somnifera (Ashwagandha)"
         )
+
         createLink(ss, "quercetin", text.lowercase(), "Supplement", "Quercetin")
+        createLink(ss, "rheumatoid arthritis", text.lowercase(), "Condition", "Rheumatoid Arthritis")
+        createLink(ss, "vanadium", text.lowercase(), "Vitamin", "Vanadium")
         createLink(ss, "zinc", text.lowercase(), "Vitamin", "Zinc")
+
     }
 
         private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
