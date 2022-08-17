@@ -58,9 +58,20 @@ class ConditionDetailActivity : AppCompatActivity() {
 
         condition_name.text = heading
 
-        back_button.setOnClickListener { finish() }
+        if(heading=="Bladder Infection"){
+            condition_name.text = "Cystitis"
+        }else if(heading=="Blood Pressure, High"){
+            condition_name.text = "Hypertension"
+        }else if(heading=="Canker Sores"){
+            condition_name.text = "Aphthous Stomatitis"
+        }else if(heading=="Chronic Fatigue Syndrome"){
+            binding.lab.visibility = View.VISIBLE
+        }else if(heading=="Incontinence, Stress"){
+            heading=="Stress Incontinence"
+            condition_name.text = heading
+        }
 
-        setDietData(heading)
+        back_button.setOnClickListener { finish() }
 
         setDietData(heading)
 
@@ -95,9 +106,18 @@ class ConditionDetailActivity : AppCompatActivity() {
             binding.seventh.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.seventhText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.seventh.strokeWidth = 5
+
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
         }
         binding.second.setOnClickListener {
             setVitaminData(heading)
+
+
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
 
             binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
@@ -131,6 +151,10 @@ class ConditionDetailActivity : AppCompatActivity() {
         binding.third.setOnClickListener {
             setSupplementData(heading)
 
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
+
             binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
             binding.third.strokeWidth = 0
@@ -163,6 +187,10 @@ class ConditionDetailActivity : AppCompatActivity() {
         binding.forth.setOnClickListener {
             setBotanicalData(heading)
 
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
+
             binding.forth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.forthText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
             binding.forth.strokeWidth = 0
@@ -194,6 +222,10 @@ class ConditionDetailActivity : AppCompatActivity() {
         binding.fifth.setOnClickListener {
             setHomepathicData(heading)
 
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
+
             binding.fifth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.fifthText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
             binding.fifth.strokeWidth = 0
@@ -224,6 +256,10 @@ class ConditionDetailActivity : AppCompatActivity() {
         }
         binding.sixth.setOnClickListener {
             setTherapyData(heading)
+
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
 
             binding.sixth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
@@ -257,9 +293,49 @@ class ConditionDetailActivity : AppCompatActivity() {
         binding.seventh.setOnClickListener {
             setRecommendedLabData(heading)
 
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.lab.strokeWidth = 5
+
             binding.seventh.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
             binding.seventhText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
             binding.seventh.strokeWidth = 0
+
+            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.second.strokeWidth = 5
+
+            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.third.strokeWidth = 5
+
+            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.first.strokeWidth = 5
+
+            binding.forth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.forthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.forth.strokeWidth = 5
+
+            binding.fifth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.fifthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.fifth.strokeWidth = 5
+
+            binding.sixth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.sixth.strokeWidth = 5
+
+        }
+        binding.lab.setOnClickListener {
+            setLabData(heading)
+
+            binding.seventh.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.seventhText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.seventh.strokeWidth = 5
+
+            binding.lab.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
+            binding.labText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
+            binding.lab.strokeWidth = 0
 
             binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
@@ -296,6 +372,15 @@ class ConditionDetailActivity : AppCompatActivity() {
 
     }
 
+    private fun setLabData(heading: String) {
+        if(heading=="Chronic Fatigue Syndrome"){
+            binding.contentData.text = "• Thyroid panel\n" +
+                    "• Glucose - for hypoglycemia\n" +
+                    "• Adrenal function\n" +
+                    "• Food allergies"
+        }
+    }
+
     private fun setDietData(conditionName: String?) {
         binding.diet.text = "Diet and Nutrition"
         when(conditionName){
@@ -321,7 +406,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(diet_detail)
                 createLink(ss,"methionine",diet_detail,"Supplement","Methionine")
                 createLink(ss,"cysteine",diet_detail,"Supplement","N-Acetyl Cysteine")
-                createLink(ss,"garlic",diet_detail,"Supplement","Allium sativum (Garlic)")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
 
             }
             "Adult Acne" ->{
@@ -354,11 +439,15 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of garlic, onions, tumeric and shiitake and/or reishi mushrooms\n" +
                         "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"tumeric",diet_detail,"Botanicals","Curcuma longa (Tumeric)")
             }
             "Allergies" ->{
                 diet_detail = "• Isolate and eliminate foods that cause an allergic response or to which there is a sensitivity and do not introduce foods that have a high potential for allergy too early in an infant's diet\n" +
                         "• Eat more garlic"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Alzheimer's Disease" ->{
                 diet_detail = "• Drink 2 litres of filtered water a day\n" +
@@ -370,6 +459,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat more fish (non-farmed, cold water)\n" +
                         "• Eat lots of garlic"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Amenorrhea" ->{
                 diet_detail = "• For female atheletes with amenorrhea, there is evidence to suspect that a completely vegetarian diet may exacerbate the problem"
@@ -415,6 +505,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of fresh ginger (proven anti-inflammatory effect in arthritis)\n" +
                         "• Avoid refined foods and all food additives"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"ginger",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
             }
             "Arthritis, Rheumatoid" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -425,6 +518,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid alcohol, coffee, and black tea\n" +
                         "• Avoid tomatoes, potatoes, eggplant, peppers, and tobacco (all in the Solanacea family of plants)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"ginger",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
             }
             "Asthma" ->{
                 diet_detail = "• Eliminate foods and preservatives (especially sulfites) that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods). Generally, the younger an asthma patient, the more the allergen will be food. The older a patient, the more the allergen will be to inhalants.\n" +
@@ -436,6 +530,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of onions\n" +
                         "• Caffeine, tea and other substances containing methyl-xanthines can increase bronchodilation during asthmatic episodes"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"sulfites",diet_detail,"Food","Food Sources of Sulfites")
+                createLink(ss,"cleansing diet",diet_detail,"Food","Cleansing Diet")
+                createLink(ss,"EPA",diet_detail,"Food","Essential Fatty Acids (EFAs)")
             }
             "Atherosclerosis" ->{
                 diet_detail = "• Eat foods high in fiber (significantly lowers cholesterol)\n" +
@@ -449,6 +546,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink more tea and cocoa\n" +
                         "• Avoid milk and other dairy products"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Atopic Dermatitis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -477,6 +576,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid simple sugars - allergies to other chemicals are exacerbated when sugar is ingested\n" +
                         "• For chelating heavy metals: apples, seaweed, foods high in methionine and cysteine, garlic, and beans"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"methionine",diet_detail,"Supplement","Methionine")
+                createLink(ss,"cysteine",diet_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Autism" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity, especially wheat and dairy (fast, use an elimination diet, or allergy test to isolate such foods)"
@@ -489,6 +591,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat more soy products\n" +
                         "• *Remove all chemicals and pesticides from diet (eat organic food)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"zinc",diet_detail,"Vitamin","Zinc")
             }
             "Bipolar Disorder" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -511,6 +614,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat onions daily\n" +
                         "• Eat lots of celery"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "BPH" ->{
                 diet_detail = "• Reduce fat and cholesterol intake especially saturated fats (animal products) and eat more fruits and vegetables\n" +
@@ -519,6 +623,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat more soy products\n" +
                         "• *Remove all chemicals and pesticides from diet (eat organic food)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"zinc",diet_detail,"Vitamin","Zinc")
             }
             "Bronchitis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods - especially investigate dairy products, corn, and wheat)\n" +
@@ -526,6 +631,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Eat lots of garlic and onions and, if, on the cool side, ginger and cayenne\n" +
                         "• *Decrease sugar intake as well as starches and carbohydrates"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"ginger",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
+                createLink(ss,"cayenne",diet_detail,"Botanicals","Capsicum frutescens (Cayenne, Red pepper)")
             }
             "Cancer Prevention" ->{
                 diet_detail = "Most Cancers:\n" +
@@ -547,6 +655,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Esophageal, Stomach, Colon and Rectal Cancers:\n" +
                         "• Reduce consumption of salted, pickled and smoked foods\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Candida Infection" ->{
                 diet_detail = "• Avoid simple carbohydrates, e.g., sugar, alcohol and fruit juice\n" +
@@ -557,6 +667,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid all yeast products (fermented beverages, cakes, breads, many fruits, peanuts)\n" +
                         "• Avoid leftovers unless frozen (these contain a high level of fungus)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"cleansing diet",diet_detail,"Food","Cleansing Diet")
             }
             "Candidiasis" ->{
                 diet_detail = "• Avoid simple carbohydrates, e.g., sugar, alcohol and fruit juice\n" +
@@ -567,6 +680,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid all yeast products (fermented beverages, cakes, breads, many fruits, peanuts)\n" +
                         "• Avoid leftovers unless frozen (these contain a high level of fungus)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"cleansing diet",diet_detail,"Food","Cleansing Diet")
             }
             "Canker Sores" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity, especially wheat (fast, use an elimination diet, or allergy test to isolate such foods)\n"
@@ -586,12 +702,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Avoid sugar, refined foods, nuts, peanuts, caffeine, and all food additives and preservatives\n" +
                         "• Eat lots of garlic and onions"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "CHF" ->{
                 diet_detail = "• Avoid excessive dietary salt, sodium and chloride\n" +
                         "• No caffeine, refined carbohydrates and saturated fats\n" +
                         "• Eat high fiber diet\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Cholecystitis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -600,6 +718,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Reduce fats in general and especially animal fats\n" +
                         "• Drink lots of vegetable juices\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Cholelithiasis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -610,6 +729,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink lots of vegetable juices\n" +
                         "• Eliminate fried foods, and especially trans-fatty acids"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Chronic Fatigue Syndrome" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -624,12 +744,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink liquid/elemental diet in active phase, e.g., juices from cabbage and green leafy vegetables\n" +
                         "• *Avoid caffeine and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Congestive Heart Failure" ->{
                 diet_detail = "• Avoid excessive dietary salt, sodium and chloride\n" +
                         "• No caffeine, refined carbohydrates and saturated fats\n" +
                         "• Eat high fiber diet"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Constipation" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity - especially dairy products (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -637,6 +759,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink lots of filtered water\n" +
                         "• Use honey instead of sugar as a sweetener"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Crohn's Disease" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -648,6 +771,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink vegetable broths\n" +
                         "• Avoid caffeine and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Cystitis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -674,12 +798,15 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink more green tea\n" +
                         "• Use more cinnamon to spice up your food"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"cinnamon",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
             }
             "Dysmenorrhea" ->{
                 diet_detail = "• Increase complex carbohydrates to 60-70 % of total calories, including whole grains, legumes, fruits, vegetables and seeds and nuts such as ground raw flaxseed and pumpkin seed\n" +
                         "• Decrease fat, especially from arachidonic acid sources (animal products)\n" +
                         "• *Increase fiber\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
 
             "Ear Infection" ->{
@@ -702,6 +829,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid sugar and refined carbohydrates\n" +
                         "• *Increase fiber"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
 
             "Erectile Dysfunction" ->{
@@ -728,6 +856,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid dairy products\n" +
                         "• Avoid chocolate, coffee, colas, and black tea (all forms of caffeine/methyl xanthine)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
 
             "Fibromyalgia" ->{
@@ -743,6 +872,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Reduce fats in general and especially animal fats\n" +
                         "• Drink lots of vegetable juices"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Gallstones" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -753,6 +883,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink lots of vegetable juices\n" +
                         "• Eliminate fried foods, and especially trans-fatty acids"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Gout" ->{
                 diet_detail = "• Absolutely no alcohol\n" +
@@ -771,6 +902,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eliminate foods and drinks containing aspartame (NutraSweet) - source of many chronic headaches\n" +
                         "• Increase fiber and complex carbohydrates"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Headache, Migraine" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods). Most common allergens, in order of likelihood, are:\n" +
@@ -802,6 +934,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink large amounts of filtered water every day (6-8 glasses)\n" +
                         "• Eat lots of blueberries, cherries, and blackberries\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Hepatitis" ->{
                 diet_detail = "• Increase vegetable intake\n" +
@@ -809,6 +942,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Use lots of tumeric\n" +
                         "• Eliminate alcohol\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"tumeric",diet_detail,"Botanicals","Curcuma longa (Tumeric)")
             }
             "Herpes Simplex" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -830,6 +964,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat onions daily\n" +
                         "• Eat lots of celery"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "High Cholesterol" ->{
                 diet_detail = "• Eat foods high in fiber (significantly lowers cholesterol)\n" +
@@ -844,6 +979,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid milk and other dairy products\n" +
                         "• Eat more almonds and walnuts\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "HIV" ->{
                 diet_detail = "• Avoid sucrose and all simple sugars\n" +
@@ -853,6 +990,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of garlic, onions, tumeric and shiitake and/or reishi mushrooms\n" +
                         "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"tumeric",diet_detail,"Botanicals","Curcuma longa (Tumeric)")
             }
             "Hyperactivity" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods) - especially food additives and preservatives. When there is hyperactivity along with the ADD it is inevitably due to an allergic reaction to some food or chemical. Most common causes, in order of likelihood, are:\n" +
@@ -874,6 +1014,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid simple sugars - allergies to other chemicals are exacerbated when sugar is ingested\n" +
                         "• For chelating heavy metals: apples, seaweed, foods high in methionine and cysteine, garlic, and beans\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"methionine",diet_detail,"Supplement","Methionine")
+                createLink(ss,"cysteine",diet_detail,"Supplement","N-Acetyl Cysteine")
             }
             "Hypercholesterolemia" ->{
                 diet_detail = "• Eat foods high in fiber (significantly lowers cholesterol)\n" +
@@ -888,6 +1031,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid milk and other dairy products\n" +
                         "• Eat more almonds and walnuts"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Hypertension" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -898,6 +1043,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat onions daily\n" +
                         "• Eat lots of celery"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Hypothyroid" ->{
                 diet_detail = "• Avoid foods high in cysteine - red meat and eggs\n" +
@@ -913,6 +1059,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink liquid/elemental diet in active phase, e.g., juices from cabbage and green leafy vegetables\n" +
                         "• *Avoid caffeine and alcohol\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Impotence" ->{
                 diet_detail = "• Consume a diet which focuses on whole, unprocessed foods\n" +
@@ -948,6 +1095,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink liquid/elemental diet in active phase, e.g., juices from cabbage and green leafy vegetables\n" +
                         "• *Avoid caffeine and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Longevity" ->{
                 diet_detail = "• Avoid meats\n" +
@@ -994,12 +1142,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
                         "• Avoid sugar and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"sulfites",diet_detail,"Food","Food Sources of Sulfites")
             }
             "Menopause" ->{
                 diet_detail = "• Eat low fat, high fiber, vegetarian based diet with whole grains, legumes, raw seeds and nuts, fruits, and vegetables making up the core of the diet\n" +
                         "• Avoid sugar, refined carbohydrates, salt, dairy products, alcohol, and caffeine in coffee, teas, colas, and chocolate\n" +
                         "• Eat foods containing phytoestrogens: soybeans, apples, carrots, yams, green beans, peas, pomegranates, potatoes, red beans, brown rice, whole wheat, rye, sesame seeds, legumes, flaxseed and pumpkin seeds\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Migraine Headache" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods). Most common allergens, in order of likelihood, are:\n" +
@@ -1037,6 +1187,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• No sugar or refined carbohydrates\n" +
                         "• Eliminate foods containing trans-fatty acids, hydrogenated oils (margarine, vegetable shortenings, imitation butter spreads, most commercial peanut butters), oxidized fats (deep fried foods, fast food, ghee, barbecued meats)\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"omega-3 and omega-6 fatty acids",diet_detail,"Food","Essential Fatty Acids (EFAs)")
             }
             "Obesity" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1044,6 +1195,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid aspartame (NutraSweet) - people who consume this eat more food\n" +
                         "• Eat high fiber diet"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Osteoarthritis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1086,6 +1238,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Decrease fat, especially from arachidonic acid sources (animal products)\n" +
                         "• *Increase fiber\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Paralysis Agitans" ->{
                 diet_detail = "• Decrease consumption of meats and fatty foods\n" +
@@ -1109,6 +1262,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat smaller meals\n" +
                         "• Avoid spicy foods, sugar, alcohol, and caffeine"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "PMS" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1118,6 +1272,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Decrease consumption of saturated fats, e.g., red meats and dairy products\n" +
                         "• Avoid/decrease caffeine consumption\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Premenstrual Syndrome" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1127,6 +1282,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Decrease consumption of saturated fats, e.g., red meats and dairy products\n" +
                         "• Avoid/decrease caffeine consumption\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Psoriasis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1138,6 +1294,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of garlic (inhibits lipoxygenase)\n" +
                         "• Don't drink any alcohol (wine only if you must)\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
             }
             "Psoriatic Arthritis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1151,6 +1309,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Eat lots of fresh ginger (proven anti-inflammatory effect in arthritis)\n" +
                         "• Avoid refined foods and all food additives\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"ginger",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
             }
             "Regional Enteritis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1162,6 +1323,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Drink vegetable broths\n" +
                         "• Avoid caffeine and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Rheumatoid Arthritis" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1172,6 +1334,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid alcohol, coffee, and black tea\n" +
                         "• Avoid tomatoes, potatoes, eggplant, peppers, and tobacco (all in the Solanacea family of plants)"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"ginger",diet_detail,"Botanicals","Zingiber officinale (Ginger)")
             }
             "Rosacea" ->{
                 diet_detail = "• Eliminate foods that cause an allergic response or to which there is a sensitivity (fast, use an elimination diet, or allergy test to isolate such foods)\n" +
@@ -1220,11 +1383,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid dairy products\n" +
                         "• Avoid caffeine and alcohol"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Uterine Fibroids" ->{
                 diet_detail = "• Avoid dairy products, animal fats, sugar, alcohol, salt, caffeine, refined foods, and wheat\n" +
                         "• Increase fiber\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
             }
             "Vaginal Yeast Infection" ->{
                 diet_detail = "• Avoid simple carbohydrates, e.g., sugar, alcohol and fruit juice\n" +
@@ -1235,6 +1400,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid all yeast products (fermented beverages, cakes, breads, many fruits, peanuts)\n" +
                         "• Avoid leftovers unless frozen (these contain a high level of fungus)\n"
                 ss = SpannableString(diet_detail)
+                createLink(ss,"fiber",diet_detail,"Food","Fiber")
+                createLink(ss,"garlic",diet_detail,"Botanicals","Allium sativum (Garlic)")
+                createLink(ss,"cleansing diet",diet_detail,"Food","Cleansing Diet")
             }
         }
         checkAllLinks(ss,diet_detail)
@@ -1268,6 +1436,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 60 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
 
             }
 
@@ -1278,6 +1451,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 45 mg.\n" +
                         "• Selenium: 400 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoid)")
 
             }
             "Aging Prevention" -> {
@@ -1294,6 +1472,18 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 1200 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoid)")
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
 
             }
             "AIDS" -> {
@@ -1307,6 +1497,15 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Copper: 2 - 4 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Beta carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoid)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
 
             }
             "Allergies" -> {
@@ -1318,6 +1517,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg.\n" +
                         "• Copper : 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
 
             }
             "Alzheimer's Disease" -> {
@@ -1330,6 +1536,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Choline: 250 mg.\n" +
                         "• Magnesium (Aspartate form): 400 - 800 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
 
             }
             "Amenorrhea" -> {
@@ -1337,6 +1550,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 50 mg.\n" +
                         "• *Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
 
             }
             "Anorexia Nervosa" -> {
@@ -1349,6 +1565,23 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg. TID\n" +
                         "• *Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"*Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"*Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"*Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
 
             }
             "Aphthous Stomatitis" -> {
@@ -1359,6 +1592,23 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Copper: 2 - 4 mg.\n" +
                         "• Iron: if deficient"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"vitamin b-complex",vitamin_detail.lowercase(),"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
 
             }
             "Arthritis, Gout" -> {
@@ -1366,6 +1616,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 800 I.U.\n" +
                         "• Folic Acid: 25-50 mg. 3 times a day with vitamin C"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Folic Acid",vitamin_detail,"Vitamin","Folate (Folic Acid)")
+
 
             }
             "Arthritis, Osteo" -> {
@@ -1383,6 +1637,29 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 300 mg.\n" +
                         "• Calcium: 300 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+
 
             }
             "Arthritis, Psoriatic" -> {
@@ -1398,6 +1675,29 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 64 mg. BID\n" +
                         "• Manganese: 15 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+
 
             }
             "Arthritis, Rheumatoid" -> {
@@ -1411,6 +1711,29 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper (salicylate form): 64 mg. BID\n" +
                         "• Manganese: 15 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+
 
             }
             "Asthma" -> {
@@ -1422,6 +1745,29 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Molybdenum: 1 - 3 mg.\n" +
                         "• Selenium: 250 - 400 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
 
             }
             "Atherosclerosis" -> {
@@ -1440,6 +1786,31 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Silicon, and other trace minerals\n" +
                         "• Chromium Aspartate: 200 - 500 mcg. (can use brewers yeast)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+
 
             }
             "Atopic Dermatitis" -> {
@@ -1449,6 +1820,33 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 250 - 400 mcg.\n" +
                         "• Zinc: 30 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+
+
 
             }
             "Attention Deficit Disorder" -> {
@@ -1459,6 +1857,33 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Calcium: 1 gm.\n" +
                         "• Magnesium: 500 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+
+
 
             }
             "Autism" -> {
@@ -1468,7 +1893,31 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium (Aspartate form): 500-2000 mg.\n" +
                         "• Calcium: 500-2000 mg."
                 ss = SpannableString(vitamin_detail)
-
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
             }
 
             "Benign Prostatic Hypertrophy" ->{
@@ -1479,6 +1928,33 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 400 mg.\n" +
                         "• Selenium: 200 - 300 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+
+
             }
             "Bipolar Disorder" ->{
                 vitamin_detail = "• Vitamin B6: 100-200 mg. (necessary to convert phenylalanine to phenylethylamine)\n" +
@@ -1489,6 +1965,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lithium carbonate: start with 300 mg. QID for 7 days, then draw serum levels, increase until reaching therapeutic range: 1200 -1800 mg/d with serum level of 0.6-1.5 meq.\n" +
                         "• Potassium chloride: 1.9 - 5.6 gm. (may eliminate adverse side effects of lithium)\n"
                 ss = SpannableString(vitamin_detail)
+
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+
+
             }
             "Bladder Infection" ->{
                 vitamin_detail = "• Vitamin A: 25,000 - 50,000 I.U.\n" +
@@ -1496,6 +2002,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 600 I.U.\n" +
                         "• Folate: 1.8 mg. (for patients with uric acid stones)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "Blood Pressure, High" ->{
                 vitamin_detail = "• Vitamin B6: 20 - 60 mg.\n" +
@@ -1505,6 +2040,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 800 - 1000 mg.\n" +
                         "• Potassium: 4 gm. (this amount may cause stomach upset; eat potassium-containing foods instead, e.g. bananas and oranges)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "BPH" ->{
                 vitamin_detail = "• Vitamin D3: 200-400 I.U.\n" +
@@ -1514,6 +2078,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 400 mg.\n" +
                         "• Selenium: 200 - 300 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "Bronchitis" ->{
                 vitamin_detail = "• Vitamin A: 25,000 I.U. BID\n" +
@@ -1524,6 +2117,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 2 - 4 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "Cancer Prevention" ->{
                 vitamin_detail = "• Most Cancers:\n" +
@@ -1537,6 +2159,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 400 mcg.\n" +
                         "• Calcium: 1000 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "Candida Infection" ->{
                 vitamin_detail = "• Vitamin A: 25,000 - 50,000 I.U.\n" +
@@ -1547,6 +2198,35 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Iron: 45 mg.\n" +
                         "• Selenium: 200 - 300 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+
+
             }
             "Candidiasis" ->{
                 vitamin_detail = "• Vitamin A: 25,000 - 50,000 I.U.\n" +
@@ -1557,6 +2237,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "Iron: 45 mg.\n" +
                         "Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Canker Sores" ->{
                 vitamin_detail = "• Vitamin C: 1 - 3 gm.\n" +
@@ -1566,6 +2276,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Copper: 2 - 4 mg.\n" +
                         "• Iron: if deficient"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Cataract Prevention" ->{
                 vitamin_detail = "• Vitamin B1: 100 mg.\n" +
@@ -1576,6 +2316,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 2 - 4 mg.\n" +
                         "• Selenium: 400 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "CFS/CFIDS" ->{
                 vitamin_detail = "• Beta-Carotene: 15,000 I.U.\n" +
@@ -1587,6 +2357,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 300 mcg.\n" +
                         "• Magnesium: IM 1 gm. weekly for 6 weeks"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "CHF" ->{
                 diet_detail = "• Vitamin B-Complex: (with at least 200 mg. Vitamin B1)\n" +
@@ -1597,6 +2397,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "Calcium (Citrate form): 1 gm.\n" +
                         "Potassium: 100 - 500 mg."
                 ss = SpannableString(diet_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Cholecystitis" ->{
                 vitamin_detail = "• Vitamin A: 10,000 I.U.\n" +
@@ -1604,12 +2434,52 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "Vitamin E: 400 - 800 I.U.\n" +
                         "Choline: 1 gm."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Cholelithiasis" ->{
                 vitamin_detail = "• Vitamin C: 1 - 2 gm.\n" +
                         "• Vitamin E: 400 - 800 I.U.\n" +
                         "• Choline: 100 mg. TID\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+
+
             }
             "Chronic Fatigue Syndrome" ->{
                 vitamin_detail = "• Beta-Carotene: 15,000 I.U.\n" +
@@ -1621,6 +2491,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 300 mcg.\n" +
                         "• Magnesium: IM 1 gm. weekly for 6 weeks"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Colitis" ->{
                 vitamin_detail = "• Vitamin A: 50,000 - 75,000 I.U. initially, then taper\n" +
@@ -1632,6 +2532,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 500 mg. BID\n" +
                         "• Magnesium: 500 mg. BID"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Congestive Heart Failure" ->{
                 vitamin_detail = "• Vitamin B-Complex: (with at least 200 mg. Vitamin B1)\n" +
@@ -1642,12 +2572,72 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium (Citrate form): 1 gm.\n" +
                         "• Potassium: 100 - 500 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Constipation" ->{
                 vitamin_detail = "• Vitamin B5: 250 mg.\n" +
                         "• Folic Acid: 20 - 60 mg. (if deficient)\n" +
                         "• Magnesium: 600 - 900 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folic Acid",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+
+
             }
             "Crohn's Disease" ->{
                 vitamin_detail = "• Vitamin A: 50,000 - 75,000 I.U. initially, then taper\n" +
@@ -1661,6 +2651,36 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 400 mcg.\n" +
                         "• Magnesium: 500 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+
+
             }
             "Cystitis" ->{
                 vitamin_detail = "• Vitamin A: 25,000 - 50,000 I.U.\n" +
@@ -1668,6 +2688,19 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 600 I.U.\n" +
                         "• Folate: 1.8 mg. (for patients with uric acid stones)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+
+
             }
             "Depression" ->{
                 vitamin_detail = "• Vitamin B6: 100 mg. TID\n" +
@@ -1677,6 +2710,37 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Inositol: 500 mg.\n" +
                         "• Magnesium: 500 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+
+
             }
             "Diabetes Mellitus" ->{
                 vitamin_detail = "• Vitamin B1: 100 mg.\n" +
@@ -1696,6 +2760,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Potassium: 3 gm.\n" +
                         "• Vanadium: 100 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium (GTF)",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Vanadium",vitamin_detail,"Vitamin","Vanadium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+
+
             }
             "Dysmenorrhea" ->{
                 vitamin_detail = "• Vitamin B-Complex: take as directed\n" +
@@ -1705,6 +2802,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 1200 I.U.\n" +
                         "• Magnesium: 500 - 800 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
 
             "Ear Infection" ->{
@@ -1716,6 +2847,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Beta Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Eczema, Chronic" ->{
                 vitamin_detail = "• Vitamin A: 50,000 I.U.\n" +
@@ -1724,6 +2889,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 250 - 400 mcg.\n" +
                         "• Zinc: 30 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
 
             "Endometriosis" ->{
@@ -1735,6 +2934,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Folic Acid: 100 mcg. (as a lipotropic factor)\n" +
                         "• *Vitamin B12: 10 mcg. (as a lipotropic factor)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folic Acid",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
 
             "Erectile Dysfunction" ->{
@@ -1745,6 +2978,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 45 mg. daily\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol Hexaniacinate",vitamin_detail,"Vitamin","Vitamin B3(Niacin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
 
             "Fertility" ->{
@@ -1763,6 +3030,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 150 mg. in divided doses\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Fibrocystic Breast Disease" ->{
                 vitamin_detail = "• Beta Carotene: 50 - 300,000 I.U.\n" +
@@ -1772,6 +3073,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin B6: 200 mg.\n" +
                         "• Iodine (SSKI): 6 - 8 drops (cut back after 2 weeks to 2 - 4 drops)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Iodine (SSKI)",vitamin_detail,"Vitamin","Iodine")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
 
             "Fibromyalgia" ->{
@@ -1787,6 +3122,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 1200 mg.\n" +
                         "• Magnesium: 600 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Gallbladder Disease" ->{
                 vitamin_detail = "• Vitamin A: 10,000 I.U.\n" +
@@ -1794,18 +3163,31 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 400 - 800 I.U.\n" +
                         "• Choline: 1 gm."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+
+
             }
             "Gallstones" ->{
                 vitamin_detail = "• Vitamin C: 1 - 2 gm.\n" +
                         "• Vitamin E: 400 - 800 I.U.\n" +
                         "• Choline: 100 mg. TID"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
             }
             "Gout" ->{
                 vitamin_detail = "• Vitamin C: 1 gm. 3 times a day - start with 500 mg. 3 times a day for 1 week, then increase until 1 gm. 3 times a day is reached\n" +
                         "• Vitamin E: 800 I.U.\n" +
                         "• Folic Acid: 25-50 mg. 3 times a day with vitamin C"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Folic Acid",vitamin_detail,"Vitamin","Folic Acid")
             }
             "Headache, General" ->{
                 vitamin_detail = "• Vitamin B2: 60 mg.\n" +
@@ -1816,12 +3198,82 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 400 mg. TID\n" +
                         "• Calcium: 600 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Headache, Migraine" ->{
                 vitamin_detail = "• Vitamin B2: 400 mg.\n" +
                         "• Vitamin B12: 1000 mcg. once a week IM\n" +
                         "• Magnesium: 300-600 mg. in divided dose"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Hemorrhoids" ->{
                 vitamin_detail = "• Vitamin A: 25,000 I.U.\n" +
@@ -1833,6 +3285,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 45 mg.\n" +
                         "• Copper: 2 - 4 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Hepatitis" ->{
                 vitamin_detail = "• Vitamin B12: 1,000 - 3,000 mcg. daily to weekly, with folic acid for alcoholic hepatitis, chronic active hepatitis and viral hepatitis\n" +
@@ -1842,6 +3329,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 2 - 4 mg.\n" +
                         "• Selenium: 200 - 300 mcg. - for hepatitis B, viral hepatitis"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Herpes Simplex" ->{
                 vitamin_detail = "• Vitamin B12: 2,000 mcg. every other day during outbreaks\n" +
@@ -1852,6 +3374,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 2 mg.\n" +
                         "• Lithium Succinate: Topically\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Lithium Succinate",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "High Blood Pressure" ->{
                 vitamin_detail = "• Vitamin B6: 20 - 60 mg.\n" +
@@ -1861,6 +3418,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 800 - 1000 mg.\n" +
                         "• Potassium: 4 gm. (this amount may cause stomach upset; eat potassium-containing foods instead, e.g. bananas and oranges)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "High Cholesterol" ->{
                 vitamin_detail = "• Beta-Carotene: 100,000 I.U.\n" +
@@ -1877,6 +3469,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium (Aspartate form): 500 - 800 mg.\n" +
                         "• Chromium Aspartate: 200 - 500 mcg. (can use brewers yeast)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3 (Niacin)",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "HIV" ->{
                 vitamin_detail = "• Beta carotene: 150,000 I.U. TID\n" +
@@ -1889,6 +3516,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Copper: 2 - 4 mg.\n" +
                         "• Selenium: 200 - 300 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Hyperactivity" ->{
                 vitamin_detail = "• Niacinamide: 1 - 3 gm.\n" +
@@ -1898,6 +3560,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Calcium: 1 gm.\n" +
                         "• Magnesium: 500 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3 (Niacin)",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Caroteniods)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Hypercholesterolemia" ->{
                 vitamin_detail = "• Beta-Carotene: 100,000 I.U.\n" +
@@ -1914,6 +3611,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium (Aspartate form): 500 - 800 mg.\n" +
                         "• Chromium Aspartate: 200 - 500 mcg. (can use brewers yeast)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Caroteniods)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Hypertension" ->{
                 vitamin_detail = "• Vitamin B6: 20 - 60 mg.\n" +
@@ -1923,6 +3655,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 800 - 1000 mg.\n" +
                         "• Potassium: 4 gm. (this amount may cause stomach upset; eat potassium-containing foods instead, e.g. bananas and oranges)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Hypothyroid" ->{
                 vitamin_detail = "• Vitamin A: 25,000 I.U.\n" +
@@ -1934,6 +3701,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 40 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "IBS" ->{
                 vitamin_detail = "• Vitamin A: 50,000 - 75,000 I.U. initially, then taper\n" +
@@ -1945,6 +3747,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 500 mg. BID\n" +
                         "• Magnesium: 500 mg. BID\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Impotence" ->{
                 vitamin_detail = "• High-Potency Multivitamin/Mineral Supplement\n" +
@@ -1954,11 +3791,54 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 45 mg. daily\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Inositol Hexaniacinate",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Incontinence, Stress" ->{
                 vitamin_detail = "• Vitamin C: 1 gm TID\n" +
                         "• Vitamin B12: 1000 mcg. daily or 1 cc IM 3 times a week (especially for geriatric patients)\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
             }
             "Infertility" ->{
                 vitamin_detail = "  Female:\n" +
@@ -1976,12 +3856,82 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 150 mg. in divided doses\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Insomnia" ->{
                 vitamin_detail = "• Vitamin B1: 20-40 mg.\n" +
                         "• Vitamin B12: 300-600 mcg.\n" +
                         "• Magnesium (Aspartate form): 1000 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Irritable Bowel Syndrome" ->{
                 vitamin_detail = "• Vitamin A: 50,000 - 75,000 I.U. initially, then taper\n" +
@@ -1993,6 +3943,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 500 mg. BID\n" +
                         "• Magnesium: 500 mg. BID\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Longevity" ->{
                 vitamin_detail = "• Beta Carotene: 150,000 I.U.\n" +
@@ -2008,6 +3993,41 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 1200 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Beta Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+
+
             }
             "Lupus" ->{
                 vitamin_detail = "• Beta-Carotene: 90,000 I.U.\n" +
@@ -2021,6 +4041,44 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200-300 mcg.\n" +
                         "• Copper: 2-4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K (Phytonadione)",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
+
+
             }
             "Macular Degeneration" ->{
                 vitamin_detail = "• Vitamin C: 1 gm. TID\n" +
@@ -2029,6 +4087,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 45 mg.\n" +
                         "• Selenium: 400 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Manic Depressive Disorder" ->{
                 vitamin_detail = "• Vitamin B6: 100-200 mg. (necessary to convert phenylalanine to phenylethylamine)\n" +
@@ -2039,6 +4133,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lithium carbonate: start with 300 mg. QID for 7 days, then draw serum levels, increase until reaching therapeutic range: 1200 -1800 mg/d with serum level of 0.6-1.5 meq.\n" +
                         "• Potassium chloride: 1.9 - 5.6 gm. (may eliminate adverse side effects of lithium)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Mastitis" ->{
                 vitamin_detail = "• Vitamin A: 100,000 I.U.\n" +
@@ -2048,6 +4178,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg.\n" +
                         "• Copper: 2-4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Memory Loss" ->{
                 vitamin_detail = "• Vitamin B1 (Thiamine): 15-30 mg.\n" +
@@ -2057,6 +4223,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Folate: 2 - 4 mg.\n" +
                         "• Choline: 250 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1 (Thiamine)",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Menopause" ->{
                 vitamin_detail = "• Vitamin B-Complex: take as directed on the bottle\n" +
@@ -2067,12 +4269,84 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium (Citrate form): 600 -1200 mg.\n" +
                         "• Magnesium: 400 - 800 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Migraine Headache" ->{
                 vitamin_detail = "• Vitamin B2: 400 mg.\n" +
                         "• Vitamin B12: 1000 mcg. once a week IM\n" +
                         "• Magnesium: 300-600 mg. in divided dose"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Mouth Ulcers" ->{
                 vitamin_detail = "• Vitamin C: 1 - 3 gm.\n" +
@@ -2082,6 +4356,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Copper: 2 - 4 mg.\n" +
                         "• Iron: if deficient"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Multiple Sclerosis" ->{
                 vitamin_detail = "• Vitamin C: 6 - 10 gm. to bowel tolerance\n" +
@@ -2099,12 +4409,65 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 mcg..\n" +
                         "• Copper: 1 - 2 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
 
             "Obesity" ->{
                 vitamin_detail = "• Vitamin C: 1 gm. TID\n" +
                         "• Calcium (Citrate form): 600 -1200 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Osteoarthritis" ->{
                 vitamin_detail = "• Vitamin A: 10,000 I.U.\n" +
@@ -2121,6 +4484,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 300 mg.\n" +
                         "• Calcium: 300 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Osteoporosis" ->{
                 vitamin_detail = "• Vitamin B6: 5 - 50 mg.\n" +
@@ -2138,6 +4537,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Silicon: 1 - 2 mg.\n" +
                         "• Strontium: 0.5 - 6 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K (Phytonadione)",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Strontium",vitamin_detail,"Vitamin","Strontium")
+
+
             }
             "Otitis Media" ->{
                 vitamin_detail = "• Vitamin A: 10,000 - 40,000 I.U.\n" +
@@ -2148,6 +4583,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Ovarian Cancer" ->{
                 vitamin_detail = "• Beta Carotene: 25,000 I.U. TID\n" +
@@ -2157,6 +4628,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 800 I.U.\n" +
                         "• Selenium: 300 mcg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Painful Menses" ->{
                 vitamin_detail = "• Vitamin B-Complex: take as directed\n" +
@@ -2166,6 +4673,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Vitamin E: 1200 I.U.\n" +
                         "• Magnesium: 500 - 800 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Paralysis Agitans" ->{
                 vitamin_detail = "• Vitamin C: 1 - 2 gm. TID (to bowel tolerance)\n" +
@@ -2179,6 +4722,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 800 - 1200 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Parkinson's Disease" ->{
                 vitamin_detail = "• Vitamin C: 1 - 2 gm. TID (to bowel tolerance)\n" +
@@ -2192,6 +4771,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Calcium: 800 - 1200 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Peptic Ulcers" ->{
                 vitamin_detail = "• Vitamin A: 20,000 I.U. TID\n" +
@@ -2202,6 +4817,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 mcg.\n" +
                         "• Copper: 2 - 4 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "PMS" ->{
                 vitamin_detail = "• Vitamin A: 15,000 - 25,000 I.U.\n" +
@@ -2214,6 +4865,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 300 mcg.\n" +
                         "• Copper: 2 - 4 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Premenstrual Syndrome" ->{
                 vitamin_detail = "• Vitamin A: 15,000 - 25,000 I.U.\n" +
@@ -2226,6 +4913,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 300 mcg.\n" +
                         "• Copper: 2 - 4 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Psoriasis" ->{
                 vitamin_detail = "• Vitamin A: 50,000 I.U.\n" +
@@ -2236,6 +4959,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 mcg.\n" +
                         "• Zinc: 30 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folic Acid",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Psoriatic Arthritis" ->{
                 vitamin_detail = "• Vitamin A: 50,000 I.U.\n" +
@@ -2250,6 +5009,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper: 64 mg. BID\n" +
                         "• Manganese: 15 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Regional Enteritis" ->{
                 vitamin_detail = "• Vitamin A: 50,000 - 75,000 I.U. initially, then taper\n" +
@@ -2263,6 +5058,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200 - 400 mcg.\n" +
                         "• Magnesium: 500 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Rheumatoid Arthritis" ->{
                 vitamin_detail = "• Niacinamide: 500 mg. QID (check liver enzymes regularly)\n" +
@@ -2275,6 +5106,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Copper (salicylate form): 64 mg. BID\n" +
                         "• Manganese: 15 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Rosacea" ->{
                 vitamin_detail = "• Vitamin A: 100,000-300,000 I.U. for 3 months\n" +
@@ -2283,6 +5150,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 - 60 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Schizophrenia" ->{
                 vitamin_detail = "• Vitamin B1: 3-8 gm.\n" +
@@ -2294,6 +5197,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Magnesium: 125 - 500 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "SLE" ->{
                 vitamin_detail = "• Beta-Carotene: 90,000 I.U.\n" +
@@ -2307,17 +5246,98 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200-300 mcg.\n" +
                         "• Copper: 2-4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K (Phytonadione)",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Sleep Disorder" ->{
                 vitamin_detail = "• Vitamin B1: 20-40 mg.\n" +
                         "• Vitamin B12: 300-600 mcg.\n" +
                         "• Magnesium (Aspartate form): 1000 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+
             }
             "Stress Incontinence" ->{
                 vitamin_detail = "• Vitamin C: 1 gm TID\n" +
                         "• Vitamin B12: 1000 mcg. daily or 1 cc IM 3 times a week (especially for geriatric patients)"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Systemic Lupus Erythematosus" ->{
                 vitamin_detail = "• Beta-Carotene: 90,000 I.U.\n" +
@@ -2331,6 +5351,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Selenium: 200-300 mcg.\n" +
                         "• Copper: 2-4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K (Phytonadione)",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Ulcerative Colitis" ->{
                 vitamin_detail = "• Vitamin A: 100,000 I.U. initially, then taper to 25,000 I.U.\n" +
@@ -2340,6 +5396,24 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg. TID\n" +
                         "• Magnesium (Aspartate form): 500 mg.\n"
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+
+
             }
             "Uterine Fibroids" ->{
                 vitamin_detail = "• Vitamin C: 2 gm. TID\n" +
@@ -2348,6 +5422,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Zinc: 30 mg.\n" +
                         "• Copper: 2 - 4 mg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
             "Vaginal Yeast Infection" ->{
                 vitamin_detail = "• Vitamin A: 25,000 - 50,000 I.U.\n" +
@@ -2358,6 +5468,42 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Iron: 45 mg.\n" +
                         "• Selenium: 200 - 300 mcg."
                 ss = SpannableString(vitamin_detail)
+                createLink(ss,"Vitamin A",vitamin_detail,"Vitamin","Vitamin A (Retinol)")
+                createLink(ss,"Vitamin B-Complex",vitamin_detail,"HydroTherapy","B Complex")
+                createLink(ss,"Vitamin B1",vitamin_detail,"Vitamin","Vitamin B1 (Thiamine)")
+                createLink(ss,"Vitamin B6",vitamin_detail,"Vitamin","Vitamin B6 (Pyridoxine)")
+                createLink(ss,"Vitamin B2",vitamin_detail,"Vitamin","Vitamin B2 (Riboflavin)")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B12",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Vitamin C",vitamin_detail,"Vitamin","Vitamin C (Ascorbic Acid)")
+                createLink(ss,"Vitamin E",vitamin_detail,"Vitamin","Vitamin E (Tocopherol)")
+                createLink(ss,"Vitamin D",vitamin_detail,"Vitamin","Vitamin D (Cholecalciferol)")
+                createLink(ss,"Vitamin K",vitamin_detail,"Vitamin","Vitamin K (Quinones)")
+                createLink(ss,"Calcium",vitamin_detail,"Vitamin","Calcium")
+                createLink(ss,"Magnesium",vitamin_detail,"Vitamin","Magnesium")
+                createLink(ss,"Folate",vitamin_detail,"Vitamin","Folic Acid")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Zinc",vitamin_detail,"Vitamin","Zinc")
+                createLink(ss,"Copper",vitamin_detail,"Vitamin","Copper")
+                createLink(ss,"Choline",vitamin_detail,"Vitamin","Choline (Lecithin)")
+                createLink(ss,"Manganese",vitamin_detail,"Vitamin","Manganese")
+                createLink(ss,"Iron",vitamin_detail,"Vitamin","Iron")
+                createLink(ss,"Niacinamide",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Vitamin B5",vitamin_detail,"Vitamin","Vitamin B5 (Pantothenic Acid)")
+                createLink(ss,"Selenium",vitamin_detail,"Vitamin","Selenium")
+                createLink(ss,"Boron",vitamin_detail,"Vitamin","Boron")
+                createLink(ss,"Molybdenum",vitamin_detail,"Vitamin","Molybdenum")
+                createLink(ss,"Silicon",vitamin_detail,"Vitamin","Silicon")
+                createLink(ss,"Chromium Aspartate",vitamin_detail,"Vitamin","Chromium")
+                createLink(ss,"Lithium",vitamin_detail,"Vitamin","Lithium")
+                createLink(ss,"Potassium",vitamin_detail,"Vitamin","Potassium")
+                createLink(ss,"Biotin",vitamin_detail,"Vitamin","Biotin")
+                createLink(ss,"Hydroxycobalamin",vitamin_detail,"Vitamin","Vitamin B12 (Cobalamin)")
+                createLink(ss,"Inositol",vitamin_detail,"Vitamin","Inositol")
+                createLink(ss,"Vitamin B3",vitamin_detail,"Vitamin","Vitamin B3 (Niacin)")
+                createLink(ss,"Beta-Carotene",vitamin_detail,"Vitamin","Beta Carotene (and other Carotenoids)")
+
+
             }
         }
 
@@ -2375,6 +5521,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Pycnogenol: 20-100 mg. TID"
                 ss = SpannableString(supplements_detail)
                 createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
             }
 
             "Adult Acne" -> {
@@ -2382,6 +5529,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 1 - 2 tablets per meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
 
             "Age-Related Macular Degeneration" -> {
@@ -2389,6 +5539,9 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Taurine: 1.5 gm. BID\n" +
                         "• Anthocyanadin : 80 -160 mg. (standard extract from Bilberry)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"Supplement","Taurine")
+                createLink(ss,"Anthocyanadin",supplements_detail,"Supplement","Bioflavonoids")
 
             }
             "Aging Prevention" -> {
@@ -2399,6 +5552,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Coenzyme Q10: 30 mg. BID\n" +
                         "• Omega 6 Fatty Acids: 2 - 4 gm."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"Supplement","Melatonin")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Omega 6 Fatty Acids",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
 
             }
             "AIDS" -> {
@@ -2414,16 +5573,32 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 20 - 45 gm. per day in divided doses with 12 oz. of water per dose\n" +
                         "• DHEA (Dehydroepiandrosterone): 20-100 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Omega 6 Fatty Acids",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"N-acetyl Cysteine",supplements_detail,"supplement","N-Acetyl Cysteine")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
 
             }
             "Allergies" -> {
-                vitamin_detail = "• EFA: 3 gm.\n" +
+                supplements_detail = "• EFA: 3 gm.\n" +
                         "• Quercetin: 500 mg. 30 minutes before meals\n" +
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Thymus Glandular: 1 tablet BID\n" +
                         "• Adrenal Glandular: 1 tablet BID\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(recommended_labs)
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
 
             }
             "Alzheimer's Disease" -> {
@@ -2436,6 +5611,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Melatonin: 3-6 mg. at 9 PM\n" +
                         "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 3 hours"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"L-Acetyl-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
 
             }
             "Amenorrhea" -> {
@@ -2444,12 +5627,18 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Adrenal Glandular: 1 tablet TID\n" +
                         "• Liver Glandular: 1 tablet TID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Ovary Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Pituitary Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Liver Glandular",supplements_detail,"Supplement","Glandulars")
 
             }
             "Anorexia Nervosa" -> {
                 supplements_detail = "• 5-Hydroxytryptophan: 50 mg. TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
                         "• Melatonin: 3-6 mg. at 9PM"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
 
             }
             "Aphthous Stomatitis" -> {
@@ -2458,6 +5647,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lysine: 500 - 2000 mg. (if viral/herpetic - reduce dosage after improvement)\n" +
                         "• Acidophilis and Bifidus: apply topically to ulcer during initial stage"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Arthritis, Gout" -> {
                 supplements_detail = "• Bromelain: 250 mg. 3 times a day away from food\n" +
@@ -2465,6 +5658,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Quercetin: 400 mg. 3 times a day away from food\n" +
                         "• *Digestive Enzymes: 2 tablets with each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
 
             }
             "Arthritis, Osteo" -> {
@@ -2473,6 +5670,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Glucosamine Sulfate: 350 mg. TID\n" +
                         "• Omega-3 Fatty Acids: 2 - 5 gm."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Arthritis, Psoriatic" -> {
@@ -2485,6 +5686,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Glucosamine Sulfate: 500 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Fumaric Acid",supplements_detail,"Supplement","Fumaric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Arthritis, Rheumatoid" -> {
@@ -2495,6 +5704,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Glucosamine Sulfate: 500 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Fumaric Acid",supplements_detail,"Supplement","Fumaric Acid")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
 
             }
             "Asthma" -> {
@@ -2504,6 +5721,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Coenzyme Q10: 60 mg. in small divided doses every 3 - 4 hours"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
 
             }
             "Atherosclerosis" -> {
@@ -2518,6 +5740,17 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Garlic: 400 mg.\n" +
                         "• Red Yeast Rice (Monascus purpureus): 1200 mg. with 50 mg. Coenzyme Q10 2 times a day\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Red Yeast Rice",supplements_detail,"Food","Red Yeast Rice")
+
 
             }
             "Atopic Dermatitis" -> {
@@ -2528,12 +5761,20 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
 
             }
             "Attention Deficit Disorder" -> {
                 supplements_detail = "• Omega-3 Fatty Acids: 500-1000 mg. TID\n" +
                         "• Pycnogenol: 20-100 mg. TID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
 
             }
             "Autism" -> {
@@ -2543,7 +5784,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Acidophilus and Bifidus: 1 capsule between meals\n" +
                         "• Omega 3 Fatty Acids: 3 gm."
                 ss = SpannableString(supplements_detail)
-
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Benign Prostatic Hypertrophy" ->{
                 supplements_detail = "• Dimethyl Glycine(DMG): 100-200 mg. in divided doses\n" +
@@ -2553,6 +5798,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Prostate Glandular: 1 tablet TID\n" +
                         "• Omega 3 Fatty Acids: 1-3 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Prostate Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
             }
             "Bipolar Disorder" ->{
                 supplements_detail = "• Omega-3 Fatty Acids : 500-1000 mg. TID\n" +
@@ -2563,11 +5814,19 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Melatonin: 3-6 mg. at 9PM\n" +
                         "• Phosphatidylserine: 100 mg. TID with food\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"S-Adenosy-L-Methionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
             }
             "Bladder Infection" ->{
                 supplements_detail = "• Arginine: 500 - 2,000 mg. in divided doses on an empty stomach\n" +
                         "• Mannose (powder): 1/4 tsp. 3 - 6 times a day"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Blood Pressure, High" ->{
                 supplements_detail = "• Coenzyme Q10: 30 mg. QID (takes 4-12 weeks for this therapy to make a difference in blood pressure)\n" +
@@ -2578,6 +5837,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• L-Arginine: 1,000 mg. TID on empty stomach\n" +
                         "• L-Carnitine: 500 mg. TID away from food"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
             }
             "BPH" ->{
                 supplements_detail = "• Dimethyl Glycine(DMG): 100-200 mg. in divided doses\n" +
@@ -2587,6 +5853,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Prostate Glandular: 1 tablet TID\n" +
                         "• Omega 3 Fatty Acids: 1-3 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Prostate Glandular",supplements_detail,"Supplement","Glandulars")
             }
             "Bronchitis" ->{
                 supplements_detail = "• N-Acetyl Cysteine: 1 gm. BID\n" +
@@ -2594,12 +5866,18 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lung Glandular: 1 tablet TID\n" +
                         "• Bromelain: 150-500 mg. TID (between meals)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lung Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
             }
             "Cancer Prevention" ->{
                 supplements_detail = "• Most Cancers:\n" +
                         "• L-Glutathione: 500 mg. BID away from food\n" +
                         "• Omega-3 Fatty Acids : 2 - 5 gm. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"L-Glutathione",supplements_detail,"Supplement","Glutathione")
             }
             "Candida Infection" ->{
                 supplements_detail = "• Fiber: 20 - 45 gm. in divided doses per meal with 12 ounces of water per dose\n" +
@@ -2610,6 +5888,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Thymus Glandular: 2 tablets TID\n" +
                         "• Digestive Enzymes: 1 - 2 tablets per meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Candidiasis" ->{
                 supplements_detail = "• Fiber: 20 - 45 gm. in divided doses per meal with 12 ounces of water per dose\n" +
@@ -2620,6 +5931,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Thymus Glandular: 2 tablets TID\n" +
                         "• Digestive Enzymes: 1 - 2 tablets per meal\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Canker Sores" ->{
                 supplements_detail = "• *Hydrochloric Acid: 10 - 70 grains per meal (if hypochlorhydric)\n" +
@@ -2627,6 +5971,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Lysine: 500 - 2000 mg. (if viral/herpetic - reduce dosage after improvement)\n" +
                         "• Acidophilis and Bifidus: apply topically to ulcer during initial stage"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Cataract Prevention" ->{
                 supplements_detail = "• 5-Hydroxytryptophan : 50 - 200 mg. TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
@@ -2635,6 +6012,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-3 Fatty Acids: 2 - 5 gm. TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Glutathione",supplements_detail,"supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "CFS/CFIDS" ->{
                 supplements_detail = "• Glutathione: 65 mg.\n" +
@@ -2645,6 +6055,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• NADH: 5 mg. with water only on an empty stomach TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Glutathione",supplements_detail,"supplement","Glutathione")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "CHF" ->{
                 supplements_detail = "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 2 hours\n" +
@@ -2655,6 +6099,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Kidney Glandular: 1 tablet BID\n" +
                         "• Arginine: 500 - 4,000 mg. in divided doses on an empty stomach"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Heart Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Kidney Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Cholecystitis" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -2666,6 +6144,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Lipase: 10,000 units with lunch and dinner"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
             }
             "Cholelithiasis" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -2675,6 +6161,14 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-6 Fatty Acids: 1 gm. TID\n" +
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"L-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
             }
             "Chronic Fatigue Syndrome" ->{
                 supplements_detail = "• Glutathione: 65 mg.\n" +
@@ -2685,6 +6179,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• NADH: 5 mg. with water only on an empty stomach TID\n" +
                         "• Melatonin: 3-6 mg. at 9PM\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Adrenal Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Colitis" ->{
                 supplements_detail = "• Quercetin: 400 mg. 20 minutes before meals, TID\n" +
@@ -2694,6 +6221,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Acidophilus and Bifidus: 1 capsule between meals\n" +
                         "• Fiber : 5 - 45 gm. in divided doses taken with 12 ounces of water per dose"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"EFA",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Fructooligosaccarides",supplements_detail,"Supplement","Fructooligosaccarides (FOS)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Congestive Heart Failure" ->{
                 supplements_detail = "• Coenzyme Q10: 60 - 150 mg. in small divided doses every 2 hours\n" +
@@ -2704,12 +6237,22 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Kidney Glandular: 1 tablet BID\n" +
                         "• Arginine: 500 - 4,000 mg. in divided doses on an empty stomach"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Heart Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Kidney Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Constipation" ->{
                 supplements_detail = "• Fiber : 5 - 45 gm. in divided doses taken with 12 ounces of water per dose\n" +
                         "• Hydrochloric Acid: 10 - 70 grains per meal (if lab work confirms)\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
             }
             "Crohn's Disease" ->{
                 supplements_detail = "• Quercetin: 400 mg. 20 minutes before meals, TID\n" +
@@ -2718,11 +6261,17 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses at mealtime with 12 ounces of water per dose\n" +
                         "• Fructooligosaccarides: 800 mg. TID"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Fructooligosaccarides",supplements_detail,"Supplement","Fructooligosaccarides (FOS)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
             "Cystitis" ->{
                 supplements_detail = "• Arginine: 500 - 2,000 mg. in divided doses on an empty stomach\n" +
                         "• Mannose (powder): 1/4 tsp. 3 - 6 times a day"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Arginine",supplements_detail,"supplement","Arginine")
             }
             "Depression" ->{
                 supplements_detail = "• 5-Hydroxytryptophan : 100-300 mg TID (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
@@ -2734,6 +6283,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Phenylalanine: 500 mg. daily initially, increasing as needed to 2-3 gm. daily\n" +
                         "• Phosphatidylserine: 100 mg. TID with food"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosy-L-Methionine (SAM)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
+
             }
             "Diabetes Mellitus" ->{
                 supplements_detail = "• Quercetin: 500 mg.\n" +
@@ -2746,6 +6327,37 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: up to 100 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Digestive Enzymes: 2 tablets before each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Dysmenorrhea" ->{
                 supplements_detail = "• Omega 3 and 6 Fatty Acids: 1-5 gm. TID\n" +
@@ -2753,6 +6365,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Bromelain: 250 - 500 mg. TID on an empty stomach\n" +
                         "• Quercetin: 250 - 500 mg. every 2 hours during cramping (enhances vitamin B3)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 and 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Ovary Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
             }
 
             "Ear Infection" ->{
@@ -2762,6 +6378,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega 6 Fatty Acids: 250-500 mg.\n" +
                         "• Thymus Glandular: 500 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Eczema, Chronic" ->{
                 supplements_detail = "• Omega-3 Fatty Acids : 2 - 5 gm. TID\n" +
@@ -2771,6 +6419,38 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Digestive Enzymes: 2 tablets with each meal\n" +
                         "• Acidophilus and Bifidus: 1 capsule between meals"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
 
             "Endometriosis" ->{
@@ -2780,6 +6460,11 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *DL-Methionine: 100 mg. (as a lipotropic factor)\n" +
                         "• *Trimethylglycine HCl: 100 mg. (as a lipotropic factor)"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Liver Concentrate",supplements_detail,"supplement","Glandulars")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
             }
 
             "Erectile Dysfunction" ->{
@@ -2790,6 +6475,13 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Pituitary Glandular: 20 mg. BID\n" +
                         "• Orchic Glandular: 100 mg. BID\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pituitary Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Orchic Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Hypothalamus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Dehydroepiandrosterone (DHEA)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+
             }
 
             "Fertility" ->{
@@ -2803,6 +6495,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Coenzyme Q10: 30 mg. BID\n" +
                         "• S-Adenosylmethionine (SAMe): 200 mg."
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Glutathione",supplements_detail,"Supplement","Glutathione")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Fibrocystic Breast Disease" ->{
                 supplements_detail = "• Omega 3 Fatty Acids: 1 -5 gm. TID\n" +
@@ -2811,6 +6536,10 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Ovary, Pituitary, Adrenal and Liver Glandulars: 1 tablet TID\n" +
                         "• *Lipotropic factors"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Omega 3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega 6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Ovary, Pituitary, Adrenal and Liver Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
             }
 
             "Fibromyalgia" ->{
@@ -2820,6 +6549,39 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• 5-Hydroxytryptophan: begin with 50 mg. TID, increase up to 200 mg. TID if necessary (Note: approximately 1-3% of oral tryptophan enters the brain compared to 70% of oral 5-HTP)\n" +
                         "• L-Carnitine: 3 gm.\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid (HCL)",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"Carnosine",supplements_detail,"Supplement","Carnosine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"Alanine",supplements_detail,"Supplement","Alanine")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Gallbladder Disease" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -2831,6 +6593,40 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n" +
                         "• Lipase: 10,000 units with lunch and dinner"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Pycnogenol",supplements_detail,"Supplement","Pycnogenol")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Digestive Enzymes",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Acidophilus and Bifidus",supplements_detail,"Supplement","Lactobacillus Acidophilus and Bifidus (Probiotics)")
+                createLink(ss,"EFA",supplements_detail,"Supplement","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Quercetin",supplements_detail,"Supplement","Quercetin")
+                createLink(ss,"Lysine",supplements_detail,"Supplement","Lysine")
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"N-Acetyl Cysteine",supplements_detail,"Supplement","N-Acetyl Cysteine")
+                createLink(ss,"Coenzyme Q10",supplements_detail,"Supplement","Coenzyme Q10 (Ubiquinone)")
+                createLink(ss,"Acetyl-L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Arginine",supplements_detail,"supplement","Arginine")
+                createLink(ss,"L-Carnitine",supplements_detail,"supplement","Carnitine")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Lipoic Acid",supplements_detail,"supplement","Lipoic Acid")
+                createLink(ss,"DHEA (Dehydroepiandrosterone)",supplements_detail,"Supplement","Dehydroepiandrosterone (DHEA)")
+                createLink(ss,"Melatonin",supplements_detail,"supplement","Melatonin")
+                createLink(ss,"5-Hydroxytryptophan",supplements_detail,"supplement","Tryptophan")
+                createLink(ss,"Phenylalanine",supplements_detail,"Food","Phenylalanine")
+                createLink(ss,"DL-Methionine",supplements_detail,"supplement","Methionine")
+                createLink(ss,"Trimethylglycine HCL",supplements_detail,"supplement","Dimethyl Glycine (DMG)")
+                createLink(ss,"Phosphatidylserine",supplements_detail,"supplement","Phosphatidylserine")
+                createLink(ss,"NADH",supplements_detail,"supplement","Nicotinamide Adenine Dinucleotide (NADH)")
+                createLink(ss,"Thymus Glandular",supplements_detail,"Supplement","Glandulars")
+                createLink(ss,"S-Adenosylmethionine (SAMe)",supplements_detail,"Food","S-Adenosy-L-Methionine (SAM)")
+                createLink(ss,"Glucosamine Sulfate",supplements_detail,"Food","Glucosamine Sulfate")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
+                createLink(ss,"Garlic",supplements_detail,"Food","Allium sativum (Garlic)")
+                createLink(ss,"L-Methionine",supplements_detail,"Supplement","Methionine")
+                createLink(ss,"Glutamic Acid",supplements_detail,"Supplement","Glutamic Acid")
+                createLink(ss,"lipase",supplements_detail,"Supplement","Digestive Enzymes")
+                createLink(ss,"Dimethyl Glycine (DMG)",supplements_detail,"Supplement","Dimethyl Glycine (DMG)")
             }
             "Gallstones" ->{
                 supplements_detail = "• L-Methionine: 1 gm.\n" +
@@ -2840,6 +6636,12 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Omega-6 Fatty Acids: 1 gm. TID\n" +
                         "• Fiber: 5 - 45 gm. in divided doses with 12 oz. of water per dose\n"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"L-Methionine",supplements_detail,"Supplement","Methionine")
+                createLink(ss,"L-Taurine",supplements_detail,"supplement","Taurine")
+                createLink(ss,"Omega-3 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Omega-6 Fatty Acid",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
+                createLink(ss,"Hydrochloric Acid",supplements_detail,"Supplement","Hydrochloric Acid")
+                createLink(ss,"Fiber",supplements_detail,"Food","Fiber")
             }
             "Gout" ->{
                 supplements_detail = "• Bromelain: 250 mg. 3 times a day away from food\n" +
@@ -2847,6 +6649,8 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Quercetin: 400 mg. 3 times a day away from food\n" +
                         "• *Digestive Enzymes: 2 tablets with each meal"
                 ss = SpannableString(supplements_detail)
+                createLink(ss,"Bromelain",supplements_detail,"Supplement","Bromelain")
+                createLink(ss,"Omega 3",supplements_detail,"Food","Essential Fatty Acids (EFAs)")
             }
             "Headache, General" ->{
                 supplements_detail = "• Quercetin: 500 mg. 15 minutes prior to eating\n" +
@@ -5067,7 +8871,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(botanical_detail)
             }
         }
-        checkAllLinks(ss,botanical_detail)
+        botanicalLink(ss,botanical_detail.lowercase())
         binding.contentData.text = ss
     }
 
@@ -6439,7 +10243,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "AIDS" -> {
                 other_therapy = "• Lactobacillus acidophilus enema\n" +
                         "• Chelate excess iron if necessary\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Reduce stress where at all possible\n" +
                         "• Stop smoking\n" +
                         "• Moderate exercise has been shown to slow the disease progression"
@@ -6452,7 +10256,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• Avoid living near high levels of truck and other vehicle exhaust\n" +
                         "• Eliminate dust mites from bedding\n" +
                         "• Reduce mold and fungus levels in the living environment\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Do not let children be innoculated with pertussis vaccine unless absolutely necessary\n"
                 ss = SpannableString(other_therapy)
 
@@ -6469,7 +10273,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(other_therapy)
             }
             "Amenorrhea" -> {
-                other_therapy = "• Constitutional hydrotherapy\n" +
+                other_therapy = "• Constitutional Hydrotherapy\n" +
                         "• Hot sitz baths and alternating sitz baths (hot and cold)\n" +
                         "• *Hot enemas\n" +
                         "• *Cold douches (cold spray - 50° to 70° F for 2-10 seconds)\n" +
@@ -6510,7 +10314,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Arthritis, Psoriatic" -> {
                 other_therapy = "• Coffee enema: 2/week (also insure that the bowels move every day)\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• D'Adamo blood test for specific dietary recommendations\n" +
                         "• Sea water bathing\n" +
                         "• Oat meal baths (for itching and soothing the nerves)\n" +
@@ -6568,7 +10372,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Add mineral oil or glycerin to bath\n" +
                         "• *Apply oil (olive oil), cream, or ointment after bath while still wet (key is to preserve moisture)\n" +
                         "• *Humidify home air\n" +
-                        "• *Constitutional hydrotherapy\n" +
+                        "• *Constitutional Hydrotherapy\n" +
                         "• *Avoid soap - it is too drying\n" +
                         "• *Preparation H promotes healing of sores and fissures\n" +
                         "• *Wear no perfumes, perfumed ointments, or allergic sensitizers\n" +
@@ -6651,7 +10455,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Bronchitis" ->{
                 other_therapy =  "• *Anti-infection IV therapy: every 2 days until bronchitis clears\n" +
                         "• *Heating compress to the chest: daily\n" +
-                        "• *Constitutional hydrotherapy\n" +
+                        "• *Constitutional Hydrotherapy\n" +
                         "• *Steam inhalation with vapor balm or eucalyptus oil\n" +
                         "• *Heating pad or hot water bottle on chest and back for 30 minutes\n" +
                         "• *Mustard plaster - 1 part mustard powder, 3 parts flour, mixed with olive oil or water to make a paste. Put on diaper; fold; put on chest for 5 - 20 minutes\n"
@@ -6680,7 +10484,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Candida Infection" ->{
                 other_therapy =  "• Lactobacillus acidophilus enema (or douche): 2/week\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Quit taking antibiotics\n" +
                         "• Avoid oral contraceptives and estrogen supplements\n" +
                         "• Avoid or reduce cortisone use\n" +
@@ -6690,7 +10494,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Candidiasis" ->{
                 other_therapy =  "• Lactobacillus acidophilus enema (or douche): 2/week\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Quit taking antibiotics\n" +
                         "• Avoid oral contraceptives and estrogen supplements\n" +
                         "• Avoid or reduce cortisone use\n" +
@@ -6717,7 +10521,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 other_therapy =  "• Antiviral IV therapy: 2/week\n" +
                         "• Tonic IV therapy\n" +
                         "• Branched amino acid IV therapy\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Eliminate candidal infection if necessary\n" +
                         "• Eliminate as many responsibilities as possible and reduce stress. Use relaxation methods (yoga, massage, tapes, etc.).\n" +
                         "• Consistent, graded, aerobic exercise - walking, swimming, cycling, etc.\n" +
@@ -6760,7 +10564,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 other_therapy =  "• Antiviral IV therapy: 2/week\n" +
                         "• Tonic IV therapy\n" +
                         "• Branched amino acid IV therapy\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Eliminate candidal infection if necessary\n" +
                         "• Eliminate as many responsibilities as possible and reduce stress. Use relaxation methods (yoga, massage, tapes, etc.).\n" +
                         "• Consistent, graded, aerobic exercise - walking, swimming, cycling, etc.\n" +
@@ -6852,7 +10656,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Ear Infection" ->{
                 other_therapy =  "• *Cold wet socks (put on cold, wet, cotton socks and put on dry wool socks over them)\n" +
                         "• *Hot (5 min.) then cold (1 min.) compresses over ear (repeat 2 or 3 times)\n" +
-                        "• *Constitutional hydrotherapy\n" +
+                        "• *Constitutional Hydrotherapy\n" +
                         "• *Hot foot baths relieve pain of earache very quickly\n" +
                         "• *Light massage around neck while pulling on the ear lobe repeatedly (creates suction with the tragus)\n" +
                         "• *Honey or glycerin in external ear canal (osmotic gradient)\n" +
@@ -6871,7 +10675,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                         "• *Add mineral oil or glycerin to bath\n" +
                         "• *Apply oil (olive oil), cream, or ointment after bath while still wet (key is to preserve moisture)\n" +
                         "• *Humidify home air\n" +
-                        "• *Constitutional hydrotherapy\n" +
+                        "• *Constitutional Hydrotherapy\n" +
                         "• *Avoid soap - it is too drying\n" +
                         "• *Preparation H promotes healing of sores and fissures\n" +
                         "• *Wear no perfumes, perfumed ointments, or allergic sensitizers\n" +
@@ -6959,7 +10763,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(other_therapy)
             }
             "Headache, General" ->{
-                other_therapy =  "• Constitutional hydrotherapy\n" +
+                other_therapy =  "• Constitutional Hydrotherapy\n" +
                         "• Get regular exercise\n" +
                         "• Consider biofeedback therapy\n" +
                         "• Consider acupuncture"
@@ -7022,7 +10826,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "HIV" ->{
                 other_therapy =  "• Lactobacillus acidophilus enema\n" +
                         "• Chelate excess iron if necessary\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Reduce stress where at all possible\n" +
                         "• Stop smoking\n" +
                         "• Moderate exercise has been shown to slow the disease progression"
@@ -7143,7 +10947,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Mastitis" ->{
                 other_therapy =  "• Heating Compress to breast: daily\n" +
-                        "• Constitutional hydrotherapy - 1 per day\n" +
+                        "• Constitutional Hydrotherapy - 1 per day\n" +
                         "• Make a poultice of raw potato and carrot and place against the breast for 30 minutes twice a day (or taped in place all night if possible)\n" +
                         "• Ice packs (applied 5 minutes) 1 to 3 times per day along with concurrent hot foot bath\n" +
                         "• Stop smoking\n"
@@ -7187,7 +10991,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Multiple Sclerosis" ->{
                 other_therapy =  "• MS IV therapy\n" +
-                        "• Constitutional hydrotherapy: 3 / week\n" +
+                        "• Constitutional Hydrotherapy: 3 / week\n" +
                         "• Cold baths to prevent muscular atrophy\n" +
                         "• Cold (50° F) immersion of spastic extremity for 10 minutes followed by exercise\n" +
                         "• Do not smoke\n" +
@@ -7223,7 +11027,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Otitis Media" ->{
                 other_therapy =  "• *Cold wet socks (put on cold, wet, cotton socks and put on dry wool socks over them)\n" +
                         "• *Hot (5 min.) then cold (1 min.) compresses over ear (repeat 2 or 3 times)\n" +
-                        "• *Constitutional hydrotherapy\n" +
+                        "• *Constitutional Hydrotherapy\n" +
                         "• *Hot foot baths relieve pain of earache very quickly\n" +
                         "• *Light massage around neck while pulling on the ear lobe repeatedly (creates suction with the tragus)\n" +
                         "• *Honey or glycerin in external ear canal (osmotic gradient)\n" +
@@ -7271,7 +11075,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(other_therapy)
             }
             "Peptic Ulcers" ->{
-                other_therapy =  "• Constitutional hydrotherapy\n" +
+                other_therapy =  "• Constitutional Hydrotherapy\n" +
                         "• Exercise 20 minutes a day for 4-5 days weekly\n" +
                         "• Quit smoking\n" +
                         "• Don't take aspirin or NSAIDs\n" +
@@ -7279,7 +11083,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(other_therapy)
             }
             "PMS" ->{
-                other_therapy =  "• Constitutional hydrotherapy\n" +
+                other_therapy =  "• Constitutional Hydrotherapy\n" +
                         "• Sitz bath (alternating hot and cold)\n" +
                         "• Hot foot baths\n" +
                         "• Abdominal massage\n" +
@@ -7289,7 +11093,7 @@ class ConditionDetailActivity : AppCompatActivity() {
                 ss = SpannableString(other_therapy)
             }
             "Premenstrual Syndrome" ->{
-                other_therapy =  "• Constitutional hydrotherapy\n" +
+                other_therapy =  "• Constitutional Hydrotherapy\n" +
                         "• Sitz bath (alternating hot and cold)\n" +
                         "• Hot foot baths\n" +
                         "• Abdominal massage\n" +
@@ -7300,7 +11104,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Psoriasis" ->{
                 other_therapy =  "• Coffee enema: 2/week\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Sea water bathing\n" +
                         "• Oat meal baths (for itching and soothing the nerves)\n" +
                         "• Topical application of Vitamin D in the activated form: Calcitrol or Calcipotriol - BID\n" +
@@ -7311,7 +11115,7 @@ class ConditionDetailActivity : AppCompatActivity() {
             }
             "Psoriatic Arthritis" ->{
                 other_therapy =  "• Coffee enema: 2/week (also insure that the bowels move every day)\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• D'Adamo blood test for specific dietary recommendations\n" +
                         "• Sea water bathing\n" +
                         "• Oat meal baths (for itching and soothing the nerves)\n" +
@@ -7400,14 +11204,14 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Uterine Fibroids" ->{
                 other_therapy =  "• Progesterone cream\n" +
                         "• Alternating sitz bath (week 1 - 2: daily, week 3 - 4: every other day, week 5: rest)\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Exercise to improve pelvic circulation\n" +
                         "• Chelate heavy metals if indicated by hair analysis or other lab work"
                 ss = SpannableString(other_therapy)
             }
             "Vaginal Yeast Infection" ->{
                 other_therapy =  "• Lactobacillus acidophilus enema (or douche): 2/week\n" +
-                        "• Constitutional hydrotherapy\n" +
+                        "• Constitutional Hydrotherapy\n" +
                         "• Quit taking antibiotics\n" +
                         "• Avoid oral contraceptives and estrogen supplements\n" +
                         "• Avoid or reduce cortisone use\n" +
@@ -8957,11 +12761,11 @@ class ConditionDetailActivity : AppCompatActivity() {
 
     fun checkAllLinks(ss:SpannableString,text:String){
 
-        createLink(ss,"here.",text,"Hydrotherapy","Homeopathy")
+        createLink(ss,"here.",text,"HydroTherapy","Homeopathy")
         createLink(ss, "anthocyanadin", text.lowercase(), "Supplement", "Bioflavonoids")
-        createLink(ss, "acidophilis and bifidus", text.lowercase(), "Supplement", "Acidophilus/Bifidus")
         createLink(ss, "bioflavonoids", text.lowercase(), "Supplement", "Bioflavonoids")
         createLink(ss, "adrenal glandular", text.lowercase(), "Supplement", "Glandulars")
+        createLink(ss, "alternating sitz bath", text.lowercase(), "HydroTherapy", "Sitz Bath")
         createLink(
             ss,
             "althea officinalis",
@@ -9000,15 +12804,28 @@ class ConditionDetailActivity : AppCompatActivity() {
         createLink(ss, "acetyl-l-carnitine", text.lowercase(), "Supplement", "Carnitine")
         createLink(ss, "althea", text.lowercase(), "Botanical", "Althea officinalis (Marshmallow)")
         if(heading!="ADD/ADHD")
-        createLink(ss, "allergies", text.lowercase(), "Condition", "Allergies")
+            createLink(ss, "allergies", text.lowercase(), "Condition", "Allergies")
+        createLink(ss, "amenorrhea", text.lowercase(), "Condition", "Amenorrhea")
         createLink(ss, "allium sativum", text.lowercase(), "Botanical", "Allium sativum (Garlic)")
+        createLink(ss, "asthma iv therapy", text.lowercase(), "iv", "Asthma")
+        createLink(ss, "asthma", text.lowercase(), "Condition", "Asthma")
+        createLink(ss,"acidophilus and bifidus",text.lowercase(),"Supplement","Acidophilus/Bifidus")
+        createLink(ss,"acetyl-l-carnitine",text.lowercase(),"supplement","Carnitine")
+        createLink(ss,"clanine",text.lowercase(),"Supplement","Alanine")
+        createLink(ss,"amino acids",text.lowercase(),"Supplement","Amino Acids")
+        createLink(ss,"anthocyanadin",text.lowercase(),"Supplement","Bioflavonoids")
+        createLink(ss,"adrenal glandular",text.lowercase(),"Supplement","Glandulars")
+        createLink(ss, "alzheimer's aisease", text.lowercase(), "Condition", "Alzheimer's Disease")
+        createLink(ss, "anorexia nervosa", text.lowercase(), "Condition", "Anorexia Nervosa")
+        createLink(ss, "antiviral iv therapy", text.lowercase(), "iv", "Antiviral")
+        createLink(ss, "anti-infection iv therapy", text.lowercase(), "iv", "Anti-Infection")
         createLink(ss, "arctium lappa", text.lowercase(), "Botanical", "Arctium lappa (Burdock)")
         createLink(
             ss,
             "astragalus membranaceus",
             text.lowercase(),
             "Botanical",
-            "Astragalus membranaceus (Astragalus, Milk vetch)"
+            "Astragalus membranaceus (Milk vetch)"
         )
         createLink(
             ss,
@@ -9019,12 +12836,29 @@ class ConditionDetailActivity : AppCompatActivity() {
         )
         createLink(ss, "beta carotene", text.lowercase(), "Vitamin", "Beta Carotene (Carotenoids)")
         createLink(ss, "beta-carotene", text.lowercase(), "Vitamin", "Beta Carotene (Carotenoids)")
+        createLink(ss,"bioflavonoids",text.lowercase(),"Supplement","Bioflavonoids")
+        createLink(ss,"bromelain",text.lowercase(),"Supplement","Bromelain")
+        createLink(ss,"bone glandular",text.lowercase(),"Supplement","Glandulars")
         createLink(
             ss,
             "berberis vulgaris",
             text.lowercase(),
             "Botanical",
-            "Berberis vulgaris (Barberry, Oregon grape)"
+            "Berberis vulgaris (Barberry)"
+        )
+        createLink(
+            ss,
+            "bipolar disease (manic phase)",
+            text.lowercase(),
+            "Condition",
+            "Bipolar Disorder"
+        )
+        createLink(
+            ss,
+            "bipolar disorder",
+            text.lowercase(),
+            "Condition",
+            "Bipolar Disorder"
         )
         createLink(
             ss,
@@ -9033,25 +12867,48 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Capsicum frutescens (Cayenne, Red pepper)"
         )
+        createLink(
+            ss,
+            "continuous bath/hammock bath",
+            text.lowercase(),
+            "HydroTherapy",
+            "Continuous Bath"
+        )
         createLink(ss, "curcuma longa", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
         createLink(ss, "cysteine", text.lowercase(), "Supplement", "N-Acetyl Cysteine")
         createLink(ss, "calcium", text.lowercase(), "Vitamin", "Calcium")
+        createLink(ss, "Copper", text.lowercase(), "Vitamin", "Copper")
         createLink(ss, "copper", text.lowercase(), "Vitamin", "Copper")
         createLink(ss, "cataract", text.lowercase(), "Condition", "Cataract Prevention")
-        createLink(ss, "coenzyme q10", text.lowercase(), "Supplement", "Coenzyme Q10")
-        createLink(ss, "coffee enema", text.lowercase(), "Hydrotherapy", "Enemas")
+        createLink(ss,"coenzyme q10",text.lowercase(),"Supplement","Coenzyme Q10")
+        createLink(ss,"carnosine",text.lowercase(),"Supplement","Carnosine")
+        createLink(ss,"cysteine",text.lowercase(),"Supplement","N-Acetyl Cysteine")
+        createLink(ss,"choline",text.lowercase(),"Vitamin","Choline (Lecithin)")
+        createLink(ss,"citrus bioflavonoids",text.lowercase(),"Supplement","Bioflavonoids")
+        createLink(ss, "coffee enema", text.lowercase(), "HydroTherapy", "Enemas")
         createLink(
             ss,
             "constitutional hydrotherapy",
             text.lowercase(),
-            "Hydrotherapy",
+            "HydroTherapy",
             "Constitutional Hydrotherapy"
         )
         createLink(ss, "curcuma", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
+        createLink(ss, "congestive heart iv therapy", text.lowercase(), "iv", "Congestive Heart Failure")
+        createLink(ss, "congestive heart failure", text.lowercase(), "iv", "Congestive Heart Failure")
+        createLink(ss, "charcoal poultice", text.lowercase(), "HydroTherapy", "Poultices")
         createLink(ss, "candidiasis", text.lowercase(), "Condition", "Candidiasis")
+        createLink(ss, "crohn's disease", text.lowercase(), "Condition", "Crohn's Disease")
+        createLink(ss, "crohns disease", text.lowercase(), "Condition", "Crohn's Disease")
+        createLink(ss, "chronic fatigue syndrome", text.lowercase(), "Condition", "Chronic Fatigue Syndrome")
         createLink(ss, "dhea", text.lowercase(), "Supplement", "Dehydroepiandrosterone (DHEA)")
-        createLink(ss, "digestive enzymes", text.lowercase(), "Supplement", "Digestive Enzymes")
-        createLink(ss, "EFA", text, "Fat", "Fat")
+        createLink(ss, "diabetes", text.lowercase(), "Condition", "Diabetes Mellitus (Type 2)")
+        createLink(ss, "depression", text.lowercase(), "Condition", "Depression")
+        createLink(ss,"digestive enzymes",text.lowercase(),"Supplement","Digestive Enzymes")
+        createLink(ss,"dhea (dehydroepiandrosterone)",text.lowercase(),"Supplement","Dehydroepiandrosterone (DHEA)")
+        createLink(ss,"dehydroepiandrosterone (dhea)",text.lowercase(),"Supplement","Dehydroepiandrosterone (DHEA)")
+        createLink(ss,"dimethyl glycine (dmg)",text.lowercase(),"Supplement","Dimethyl Glycine (DMG)")
+        createLink(ss, "diabetes iv therapy", text.lowercase(), "iv", "Diabetes")
         createLink(
             ss,
             "echinacea",
@@ -9067,12 +12924,24 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Echinacea angustifolia (Purple cone flower)"
         )
         createLink(ss, "ephedra sinica", text.lowercase(), "Botanical", "Ephedra sinica (Ma huang)")
+        createLink(ss, "endometriosis", text.lowercase(), "Condition", "Endometriosis")
+        createLink(ss,"efa",text.lowercase(),"Supplement","Essential Fatty Acids (EFAs)")
+        createLink(ss,"essential fatty acids",text.lowercase(),"Supplement","Essential Fatty Acids (EFAs)")
+        createLink(ss,"edta",text.lowercase(),"Supplement","Ethylenediaminetetraacetic acid (EDTA)")
+        createLink(ss,"fructooligosaccarides",text.lowercase(),"Supplement","Fructooligosaccharides (FOS)")
+        createLink(ss,"fiber",text.lowercase(),"Food","Fiber")
+        createLink(ss,"fumaric acid",text.lowercase(),"Supplement","Fumaric Acid")
         createLink(ss, "fiber", text.lowercase(), "Food", "Fiber")
+        createLink(ss, "fibromyalgia", text.lowercase(), "Condition", "Fibromyalgia")
         createLink(ss, "folate", text.lowercase(), "Vitamin", "Folate")
+        createLink(ss, "food allergies", text.lowercase(), "Condition", "Allergies")
         createLink(ss, "garlic", text.lowercase(), "Botanical", "Allium sativum (Garlic)")
+        createLink(ss, "gout", text.lowercase(), "Condition", "Gout")
+        createLink(ss, "gall bladder disease (cholecystitis)", text.lowercase(), "Condition", "Cholecystitis")
+        createLink(ss, "gallstones (cholelithiasis)", text.lowercase(), "Condition", "Gallstones")
         createLink(
             ss,
-            "Geranium maculatum (Wild geranium, Cranesbill)".lowercase(),
+            "geranium maculatum (wild geranium, cranesbill)".lowercase(),
             text.lowercase(),
             "Botanical",
             "Geranium maculatum (Wild geranium, Cranesbill)"
@@ -9100,12 +12969,28 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Glycyrrhiza glabra (Licorice)"
         )
+        createLink(ss,"garlic",text.lowercase(),"Food","Allium sativum (Garlic)")
+        createLink(ss,"glutathione",text.lowercase(),"Supplement","Glutathione")
+        createLink(ss,"glutathionine",text.lowercase(),"Supplement","Glutathione")
+        createLink(ss,"glucosamine sulfate",text.lowercase(),"Food","Glucosamine Sulfate")
+        createLink(ss,"glutamic acid",text.lowercase(),"Supplement","Glutamic Acid")
+        createLink(ss,"gydrochloric acid (hcl)",text.lowercase(),"Supplement","Hydrochloric Acid")
+        createLink(ss,"hydrochloric acid",text.lowercase(),"Supplement","Hydrochloric Acid")
+        createLink(ss,"5-hydroxytryptophan",text.lowercase(),"supplement","Tryptophan")
+        createLink(ss,"hypothalamus glandular",text.lowercase(),"Supplement","Glandulars")
         createLink(
             ss,
             "hydrastis",
             text.lowercase(),
             "Botanical",
             "Hydrastis canadensis (Goldenseal)"
+        )
+        createLink(
+            ss,
+            "hepatitis b and c",
+            text.lowercase(),
+            "Condition",
+            "Hepatitis"
         )
         createLink(
             ss,
@@ -9116,14 +13001,44 @@ class ConditionDetailActivity : AppCompatActivity() {
         )
         createLink(
             ss,
-            "hydrastis canadensis (Goldenseal)".lowercase(),
+            "hydrastis canadensis (goldenseal)".lowercase(),
             text.lowercase(),
             "Botanical",
             "Hydrastis canadensis (Goldenseal)"
         )
+        createLink(
+            ss,
+            "Hot sitz baths and alternating sitz baths (hot and cold)",
+            text.lowercase(),
+            "HydroTherapy",
+            "Sitz Bath"
+        )
+        createLink(
+            ss,
+            "hot enemas",
+            text.lowercase(),
+            "HydroTherapy",
+            "Enemas"
+        )
         createLink(ss, "hydrochloric acid", text.lowercase(), "Supplement", "Hydrochloric Acid")
+        createLink(ss, "heating compress", text.lowercase(), "HydroTherapy", "Heating Compress")
+        createLink(ss, "hypertension iv therapy", text.lowercase(), "iv", "Hepatitis")
+        createLink(ss, "hepatitis iv therapy", text.lowercase(), "iv", "Hepatitis")
+        createLink(ss, "hypothyroidism", text.lowercase(), "Condition", "Hypothyroid")
+        createLink(ss, "headache", text.lowercase(), "Condition", "Headache")
+        createLink(ss, "herpes", text.lowercase(), "Condition", "herpes Simplex")
+        createLink(ss, "iron", text.lowercase(), "Vitamin", "Iron")
+        createLink(ss,"inositol",text.lowercase(),"Vitamin","Inositol")
         createLink(ss, "l-glutathione", text.lowercase(), "Supplement", "Glutathione")
-        createLink(ss, "lipoic acid", text.lowercase(), "Supplement", "Lipoic Acid")
+        createLink(ss,"l-arginine",text.lowercase(),"supplement","Arginine")
+        createLink(ss,"l-glutathione",text.lowercase(),"Supplement","Glutathione")
+        createLink(ss,"lysine",text.lowercase(),"Supplement","Lysine")
+        createLink(ss,"lipoic acid",text.lowercase(),"supplement","Lipoic Acid")
+        createLink(ss,"l-methionine",text.lowercase(),"supplement","Methionine")
+        createLink(ss,"l-carnitine",text.lowercase(),"supplement","Carnitine")
+        createLink(ss,"l-tyrosine",text.lowercase(),"supplement","Tyrosine")
+        createLink(ss,"l-glutamine",text.lowercase(),"supplement","Glutamine")
+        createLink(ss,"l-glycine",text.lowercase(),"supplement","Glycine")
         createLink(
             ss,
             "ligusticum porteri",
@@ -9142,26 +13057,46 @@ class ConditionDetailActivity : AppCompatActivity() {
             ss,
             "lactobacillus acidophilus enema",
             text.lowercase(),
-            "Hydrotherapy",
+            "HydroTherapy",
             "Enemas"
         )
         createLink(ss, "methionine", text.lowercase(), "Supplement", "Methionine")
         createLink(ss, "magnesium", text.lowercase(), "Vitamin", "Magnesium")
+        createLink(ss, "manganese", text.lowercase(), "Vitamin", "Manganese")
+        createLink(ss, "menopause", text.lowercase(), "Condition", "Menopause")
+        createLink(ss, "migraine", text.lowercase(), "Condition", "Migraine Headache")
+        createLink(ss, "migraine iv therapy", text.lowercase(), "iv", "Migraine")
+        createLink(ss, "migraine iv push therapy", text.lowercase(), "iv", "Migraine")
+        createLink(ss, "ms iv therapy", text.lowercase(), "iv", "Multiple Sclerosis")
         createLink(ss, "melatonin", text.lowercase(), "Supplement", "Melatonin")
+        createLink(ss, "multiple sclerosis", text.lowercase(), "Condition", "Multiple Sclerosis")
+        createLink(ss, "macular degeneration iv therapy", text.lowercase(), "iv", "Macular Degeneration")
         createLink(
             ss,
-            "macular degeneration iv therapy",
+            "macular degeneration",
             text.lowercase(),
             "iv",
             "Macular Degeneration"
         )
+        createLink(ss,"melatonin",text.lowercase(),"supplement","Melatonin")
+        createLink(ss,"nadh",text.lowercase(),"Supplement","NADH")
+        createLink(ss,"n-acetyl cysteine",text.lowercase(),"Supplement","N-Acetyl Cysteine")
+        createLink(ss,"nerve glandular",text.lowercase(),"Supplement","Glandulars")
         createLink(ss, "niacinamide", text.lowercase(), "Vitamin", "Vitamin B3 (Niacin)")
         createLink(ss, "n-acetyl cysteine", text.lowercase(), "Supplement", "N-Acetyl Cysteine")
-        createLink(ss, "omega-3 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega 3 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega 6 fatty acids", text.lowercase(), "Fat", "")
-        createLink(ss, "omega-6 fatty acids", text.lowercase(), "Fat", "")
+        createLink(ss, "omega 3 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "omega 6 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "Omega 3 and 6 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "omega-6 fatty acids", text.lowercase(), "Fat", "Essential Fatty Acid (EFAs)")
+        createLink(ss, "osteoarthritis", text.lowercase(), "Condition", "osteoarthritis")
+        createLink(ss, "otitis media", text.lowercase(), "Condition", "Otitis Media (Ear Infection)")
+        createLink(ss,"Omega-3 Fatty Acid",text.lowercase(),"Food","Essential Fatty Acids (EFAs)")
+        createLink(ss,"Orchic Glandular",text.lowercase(),"Supplement","Glandulars")
+        createLink(ss,"Ovary Glandular",text.lowercase(),"Supplement","Glandulars")
         createLink(ss, "pycnogenol", text.lowercase(), "Supplement", "Pycnogenol")
+        createLink(ss, "psoriasis", text.lowercase(), "Condition", "Psoriasis")
+        createLink(ss, "peptic ulcer", text.lowercase(), "Condition", "Peptic Ulcer")
+        createLink(ss, "Parkinsons Disease", text.lowercase(), "Condition", "Parkinson's Disease")
         createLink(
             ss,
             "panax ginseng",
@@ -9176,12 +13111,42 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Polygonum multiflorum (Fo-ti, He-shou-wu)"
         )
+        createLink(ss,"Pycnogenol",text.lowercase(),"Supplement","Pycnogenol")
+        createLink(ss,"Phenylalanine",text.lowercase(),"Food","Phenylalanine")
+        createLink(ss,"Pituitary Glandular",text.lowercase(),"Supplement","Glandulars")
+        createLink(ss,"Phosphatidylserine",text.lowercase(),"Supplement","Phosphatidylserine")
+        createLink(ss,"Quercetin",text.lowercase(),"Supplement","Quercetin")
+        createLink(ss,"Red Yeast Rice",text.lowercase(),"Supplement","Red Yeast Rice")
+        createLink(ss,"S-Adenosylmethionine (SAMe)",text.lowercase(),"Food","S-Adenosy-L-Methionine (SAM)")
+        createLink(ss,"S-Adenosy-L-Methionine (SAM)",text.lowercase(),"Food","S-Adenosy-L-Methionine (SAM)")
         createLink(
             ss,
             "subacute cutaneous systemic lupus erythematosus",
             text.lowercase(),
             "Condition",
             "Systemic Lupus Erythematosus"
+        )
+        createLink(
+            ss,
+            "sitz bath",
+            text.lowercase(),
+            "HydroTherapy",
+            "Sitz Bath"
+        )
+        createLink(
+            ss,
+            "schizophrenia",
+            text.lowercase(),
+            "Condition",
+            "Schizophrenia"
+        )
+
+        createLink(
+            ss,
+            "systemic lupus erythematosus (SLE)",
+            text.lowercase(),
+            "Condition",
+            "Systemic Lupus Erythematosus (SLE)"
         )
         createLink(ss, "selenium", text.lowercase(), "Vitamin", "Selenium")
         createLink(
@@ -9199,10 +13164,24 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Spilanthes acmella (Paracress)"
         )
         createLink(ss, "taurine", text.lowercase(), "Supplement", "Taurine")
-        createLink(ss, "tonic iv therapy", text.lowercase(), "iv", "Tonic Therapy")
+        createLink(ss, "Tonic iv therapy", text.lowercase(), "iv", "Tonic Therapy")
         createLink(ss, "tumeric", text.lowercase(), "Botanical", "Curcuma longa (Tumeric)")
-        createLink(ss, "thymus glandular", text.lowercase(), "Supplement", "Glandulars")
+        createLink(ss,"Taurine",text.lowercase(),"supplement","Taurine")
+        createLink(ss,"Trimethylglycine HCL",text.lowercase(),"Supplement","Dimethyl Glycine (DMG)")
+        createLink(ss,"Thymus Glandular",text.lowercase(),"Supplement","Glandulars")
+        createLink(ss,"Thyroid Glandular",text.lowercase(),"Supplement","Glandulars")
+        createLink(ss,"Tyrosine",text.lowercase(),"Supplement","Tyrosine")
+        createLink(ss,"Uterus Glandular",text.lowercase(),"Supplement","Glandulars")
         createLink(ss, "urtica urens", text.lowercase(), "Botanical", "Urtica urens (Nettles)")
+        createLink(ss, "ulcerative colitis", text.lowercase(), "Condition", "Ulcerative Colitis")
+        createLink(
+            ss,
+            "Ulcerative colitis IV therapy",
+            text.lowercase(),
+            "iv",
+            "Crohn's Disease"
+        )
+        createLink(ss, "Uterine fibroids", text.lowercase(), "Condition", "Uterine Fibroids")
         createLink(
             ss,
             "ulmus",
@@ -9224,6 +13203,7 @@ class ConditionDetailActivity : AppCompatActivity() {
         createLink(ss, "vitamin k", text.lowercase(), "Vitamin", "Vitamin K (Quinones)")
         createLink(ss, "vitamin e", text.lowercase(), "Vitamin", "Vitamin E (Tocopherol)")
         createLink(ss, "vitamin a", text.lowercase(), "Vitamin", "Vitamin A (Retinol)")
+        createLink(ss, "vanadium", text.lowercase(), "Vitamin", "Vanadium")
         createLink(ss, "vitamin b12", text.lowercase(), "Vitamin","Vitamin B12 (Cobalamin)")
         createLink(
             ss,
@@ -9239,64 +13219,79 @@ class ConditionDetailActivity : AppCompatActivity() {
             "Botanical",
             "Withania somnifera (Ashwagandha)"
         )
+
         createLink(ss, "quercetin", text.lowercase(), "Supplement", "Quercetin")
+        createLink(ss, "rheumatoid arthritis", text.lowercase(), "Condition", "Rheumatoid Arthritis")
+        createLink(ss, "vanadium", text.lowercase(), "Vitamin", "Vanadium")
         createLink(ss, "zinc", text.lowercase(), "Vitamin", "Zinc")
+
     }
 
-        private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
+    private fun createLink(ss: SpannableString, sub_str: String, string: String, activity: String, heading: String) {
 
-            var index = string.indexOf(sub_str)
-            while (index != -1) {
-                val clickableSpan = object : ClickableSpan(){
-                    override fun onClick(widget: View) {
-                        val intent : Intent
-                        if(activity=="Condition"){
-                            intent = Intent(this@ConditionDetailActivity,ConditionDetailActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity=="Supplement"){
-                            intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity=="Fiber"){
-                            intent = Intent(this@ConditionDetailActivity,FiberDetailActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity=="Vitamin"){
-                            intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity=="Botanical"){
-                            intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity == "Fat"){
-                            val intent = Intent(this@ConditionDetailActivity,FattyAcidActivity::class.java)
-                            startActivity(intent)
-                        }else if(activity == "Food"){
-                            val intent = Intent(this@ConditionDetailActivity,FiberDetailActivity::class.java)
-                            startActivity(intent)
-                        }else if(activity == "Hydrotherapy"){
-                            val intent = Intent(this@ConditionDetailActivity,HydroTherapyActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }else if(activity == "iv"){
-                            val intent = Intent(this@ConditionDetailActivity,FourTherapyActivity::class.java)
-                            intent.putExtra("heading",heading)
-                            startActivity(intent)
-                        }
+        var index = string.indexOf(sub_str.lowercase())
+        while (index != -1) {
+            val clickableSpan = object : ClickableSpan(){
+                override fun onClick(widget: View) {
+                    val intent : Intent
+                    if(activity=="Condition"){
+                        intent = Intent(this@ConditionDetailActivity,ConditionDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Supplement"){
+                        intent = Intent(this@ConditionDetailActivity,SupplementDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Fiber"){
+                        intent = Intent(this@ConditionDetailActivity,FiberDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Vitamin"){
+                        intent = Intent(this@ConditionDetailActivity,VitaminMineralDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity=="Botanical"){
+                        intent = Intent(this@ConditionDetailActivity,BotanicalDetailActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity == "Fat"){
+                        val intent = Intent(this@ConditionDetailActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }else if(activity == "Food"){
+                        val intent = Intent(this@ConditionDetailActivity,FiberDetailActivity::class.java)
+                        startActivity(intent)
+                    }else if(activity == "HydroTherapy"){
+                        val intent = Intent(this@ConditionDetailActivity,HydroTherapyActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+                    }else if(activity == "iv"){
+                        val intent = Intent(this@ConditionDetailActivity,FourTherapyActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
                     }
                 }
-
-                ss.setSpan(clickableSpan,index,index+sub_str.length,
-                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-                index = string.indexOf(sub_str, index + 1)
             }
+
+            ss.setSpan(clickableSpan,index,index+sub_str.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            index = string.indexOf(sub_str, index + 1)
         }
+    }
     fun makeBold(ss : SpannableString,string:String,substr:String){
         if(string.indexOf(substr)!=-1 )
             ss.setSpan(android.text.style.StyleSpan(android.graphics.Typeface.BOLD),string.indexOf(substr),string.indexOf(substr)+substr.length,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    }
+    fun botanicalLink( ss : SpannableString,text : String){
+        val list = botanicalData()
+        for(i in list.indices){
+            val str = list[i]
+            var index = str.indexOf('(')
+            index--
+            var substr = str.subSequence(0,index).toString()
+            createLink(ss, substr.lowercase(),text,"Botanical",str)
+        }
+
     }
 
 }

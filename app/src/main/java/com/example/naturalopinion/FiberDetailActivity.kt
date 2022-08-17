@@ -37,13 +37,45 @@ class FiberDetailActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.fiberDescription.text = "Fiber is the components of plant cell walls and the undigestible carbohydrates residues, except lignin which is a non carbohydrate polymer. There are several types of fiber: water soluble (e.g., pectin, gums, mucilages) found in fruits; and water insoluble (e.g., cellulose, hemicelluloses) found in wheat bran."
-        binding.contentData.text = "• Pill form-can swell 7 times the original size in 1 minute after contact with water\n" +
-                "• Fiber-filled gelatin capsules-begin to swell 6 minutes after contact with water\n" +
-                "• Best sources of water-soluble fibers for non-laxative effects:\n" +
-                "psyllium, guar gum, glucomannan, gum karaya, and pectin"
-        binding.subHeading.text = "Supplement Forms"
+        binding.fiberDescription.text = ""
+        binding.contentData.text = "• Fiber is the components of plant cell walls and the undigestible carbohydrates residues, except lignin which is a non carbohydrate polymer. There are several types of fiber: water soluble (e.g., pectin, gums, mucilages) found in fruits; and water insoluble (e.g., cellulose, hemicelluloses) found in wheat bran."
+        binding.subHeading.text = "Description"
 
+        binding.desc.setOnClickListener {
+
+            binding.contentData.text = "• Fiber is the components of plant cell walls and the undigestible carbohydrates residues, except lignin which is a non carbohydrate polymer. There are several types of fiber: water soluble (e.g., pectin, gums, mucilages) found in fruits; and water insoluble (e.g., cellulose, hemicelluloses) found in wheat bran."
+            binding.subHeading.text = "Description"
+
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.skin))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.deep_green))
+            binding.desc.strokeWidth = 0
+
+            binding.second.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.secondText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.second.strokeWidth = 5
+
+            binding.third.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.thirdText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.third.strokeWidth = 5
+
+            binding.forth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.forthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.forth.strokeWidth = 5
+
+            binding.fifth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.fifthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.fifth.strokeWidth = 5
+
+            binding.sixth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.sixth.strokeWidth = 5
+
+            binding.first.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.firstText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.first.strokeWidth = 5
+
+
+        }
         binding.first.setOnClickListener {
             binding.subHeading.text = "Supplement Forms"
             binding.contentData.text = "• Pill form-can swell 7 times the original size in 1 minute after contact with water\n" +
@@ -74,6 +106,10 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.sixth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixth.strokeWidth = 5
+
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
 
         }
         binding.second.setOnClickListener {
@@ -161,6 +197,9 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixth.strokeWidth = 5
 
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
 
         }
         binding.third.setOnClickListener {
@@ -300,6 +339,10 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixth.strokeWidth = 5
 
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
+
         }
         binding.forth.setOnClickListener {
             binding.subHeading.text = "Physiologic therapeutics"
@@ -336,6 +379,10 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixth.strokeWidth = 5
 
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
+
 
         }
         binding.fifth.setOnClickListener {
@@ -365,6 +412,10 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.sixth.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
             binding.sixthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.sixth.strokeWidth = 5
+
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
 
         }
         binding.sixth.setOnClickListener {
@@ -396,7 +447,9 @@ class FiberDetailActivity : AppCompatActivity() {
             binding.fifthText.setTextColor(ContextCompat.getColor(this,R.color.skin))
             binding.fifth.strokeWidth = 5
 
-
+            binding.desc.setCardBackgroundColor(ContextCompat.getColor(this,R.color.transparent))
+            binding.descText.setTextColor(ContextCompat.getColor(this,R.color.skin))
+            binding.desc.strokeWidth = 5
 
         }
 

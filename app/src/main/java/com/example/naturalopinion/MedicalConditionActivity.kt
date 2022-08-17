@@ -105,7 +105,7 @@ class MedicalConditionActivity : AppCompatActivity(), onMedicalItemClick {
             items.add("Hypothyroid")
             items.add("IBS")
             items.add("Impotence")
-            items.add("Incontinence")
+            items.add("Incontinence, Stress")
             items.add("Infertility")
             items.add("Insomnia")
             items.add("Irritable Bowel Syndrome")

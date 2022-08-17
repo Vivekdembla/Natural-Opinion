@@ -188,6 +188,28 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/lab"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="30dp"
+                    app:strokeWidth="5px"
+                    app:strokeColor="@color/white"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Labs"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/skin"
+                        android:id="@+id/lab_text"/>
+
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/seventh"
                     app:cardCornerRadius="20dp"
                     app:cardBackgroundColor="@color/transparent"

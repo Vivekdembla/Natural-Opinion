@@ -494,10 +494,10 @@ class HydroTherapyActivity : AppCompatActivity() {
                 binding.secondText.text = "Procedure"
 
                 binding.third.visibility = View.VISIBLE
-                binding.thirdText.text = "Clincial Indications"
+                binding.thirdText.text = "Indications"
 
                 binding.forth.visibility = View.VISIBLE
-                binding.firstText.text = "Contraindications"
+                binding.forthText.text = "Contraindications"
             }
             "Sitz Bath" -> {
                 binding.fiberDescription.text = "Patient sits with lower abdomen and pelvis immersed in water."
@@ -546,6 +546,7 @@ class HydroTherapyActivity : AppCompatActivity() {
                 ss = SpannableString(s)
             }
         }
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
         binding.contentData.text = ss
     }
 
@@ -601,6 +602,8 @@ class HydroTherapyActivity : AppCompatActivity() {
                 ss = SpannableString(s)
             }
         }
+
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
         binding.contentData.text = ss
 
     }
@@ -716,11 +719,15 @@ class HydroTherapyActivity : AppCompatActivity() {
         }
 
         makeBold(ss,s,"Contraindications")
+        makeBold(ss,s,"Chest compress:")
+        makeBold(ss,s,"Abdominal compress:")
         createLink(ss,"AIDS",s,"Condition","AIDS")
         createLink(ss,"Allergies",s,"Condition","Allergies")
         createLink(ss,"Amenorrhea",s,"Condition","Amenorrhea")
         createLink(ss,"Asthma, chronic",s,"Condition","Asthma")
+        createLink(ss,"Asthma",s,"Condition","Asthma")
         createLink(ss,"Bronchitis",s,"Condition","Bronchitis")
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
         createLink(ss,"Candidiasis",s,"Condition","Candidiasis")
         createLink(ss,"Chronic fatigue syndrome",s,"Condition","Chronic Fatigue Syndrome")
         createLink(ss,"Crohn's disease",s,"Condition","Crohn's Disease")
@@ -836,6 +843,7 @@ class HydroTherapyActivity : AppCompatActivity() {
             }
         }
 
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
         binding.contentData.text = ss
     }
 
@@ -1155,6 +1163,7 @@ class HydroTherapyActivity : AppCompatActivity() {
         createLink(ss,"Cystitis",s,"Condition","Cystitis")
         createLink(ss,"Endometriosis",s,"Condition","Endometriosis")
         createLink(ss,"Hemorrhoids",s,"Condition","Hemorrhoids")
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
         binding.contentData.text = ss
     }
     fun makeBold(ss : SpannableString,string:String,substr:String){

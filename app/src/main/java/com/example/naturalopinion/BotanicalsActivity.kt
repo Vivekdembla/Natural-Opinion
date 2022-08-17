@@ -238,9 +238,9 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
         items_by_common.add("Korean ginseng (Panax ginseng)")
 
         items_by_common.add("Lady's mantle (Alchemilla vulgaris)")
-        items_by_common.add("Lavender (Lavendula angustifolia)\n")
-        items_by_common.add("Lemon balm (Melissa officinalis)\n")
-        items_by_common.add("Licorice (Glycyrrhiza glabra)\n")
+        items_by_common.add("Lavender (Lavendula angustifolia)")
+        items_by_common.add("Lemon balm (Melissa officinalis)")
+        items_by_common.add("Licorice (Glycyrrhiza glabra)")
         items_by_common.add("Lime blossom (Tilia europaea)")
         items_by_common.add("Linden flower (Tilia europaea)")
         items_by_common.add("Linseed (Linum usitatissimum)")
@@ -619,7 +619,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Valeriana officinalis (Valerian)")
                         list.add("Verbascum thapsus (Mullein)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Antiallergic" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -645,7 +645,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Medicago sativa (Alfalfa)")
                         list.add("Polygonum multiflorum (Fo-Ti, He-shou-wu)")
                         list.add("Salvia miltiorrhiza (Danshen)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Antibiotic/Antibacterial" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -839,7 +839,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Verbena officinalis (Vervain)")
                         list.add("Viburnum opulus (Cramp bark)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Antitussive" -> {
                         list.add("Arctium lappa (Burdock)")
@@ -912,7 +912,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Sambucus canadensis, nigra (Elder)")
                         list.add("Valeriana officinalis (Valerian)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Cathartic" -> {
                         list.add("Baptisia tintoria (Wild indigo)")
@@ -985,7 +985,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Tilia europaea (Linden flower, Lime blossom)")
                         list.add("Verbena officinalis (Vervain)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Diuretic" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -1083,7 +1083,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Thymus vulgaris (Thyme)")
                         list.add("Tussilago farfara (Colt's foot)")
                         list.add("Urtica urens (Nettles)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Febrifuge" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -1202,7 +1202,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Chelidonium majus (Celandine)")
                         list.add("Cinnamomum spp. (Cinnamon)")
                         list.add("Rosmarius officinalis (Rosemary)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Sedative" -> {
                         list.add("Aconitum napellus (Monkshood, Aconite)")
@@ -1242,7 +1242,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Lobelia inflata (Indian tobacco, Puke weed)")
                         list.add("Sanguinaria canadensia (Blood root)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Stimulant" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -1274,7 +1274,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Valeriana officinalis (Valerian)")
                         list.add("Zanthoxylum clava-herculis (Southern prickly ash)")
                         list.add("Zea mays (Corn silk)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Stomachic" -> {
                         list.add("Achillea millefolium (Yarrow)")
@@ -1294,7 +1294,7 @@ class BotanicalsActivity : AppCompatActivity(), onMedicalItemClick {
                         list.add("Thymus vulgaris (Thyme)")
                         list.add("Valeriana officinalis (Valerian)")
                         list.add("Verbena officinalis (Vervain)")
-                        list.add("Zingiber offiniale (Ginger)")
+                        list.add("Zingiber officinale (Ginger)")
                     }
                     "Synergist" -> {
                         list.add("Acorus calamus (Sweet flag)")

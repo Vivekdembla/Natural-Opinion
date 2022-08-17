@@ -45,7 +45,7 @@ class PhysicalExamActivity : AppCompatActivity() {
         val ss = SpannableString(text)
 
         createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
-        createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+        createLink(ss,"magnesium",text,"Vitamin","Magnesium")
         createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
 
         makeBold(ss,text,"Orthostatic hypertension")
@@ -67,7 +67,7 @@ class PhysicalExamActivity : AppCompatActivity() {
             makeBold(ss,text,"Hypertension in a pregnant woman (accompanied by ankle edema)")
 
             createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
-            createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+            createLink(ss,"magnesium",text,"Vitamin","Magnesium")
             createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
             binding.contentData.text = ss
 
@@ -166,17 +166,18 @@ class PhysicalExamActivity : AppCompatActivity() {
             makeBold(ss,text,"Premature graying")
 
             createLink(ss,"hypothyroidism",text,"Condition","Hypothyroid")
-            createLink(ss,"magnesium",text,"Vitmain","Magnesium")
+            createLink(ss,"magnesium",text,"Vitamin","Magnesium")
             createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
 
-            createLink(ss,"vitamin D",text,"Vitmain","Vitamin D (Cholecalciferol)")
-            createLink(ss,"selenium",text,"Vitmain","Selenium")
+            createLink(ss,"vitamin D",text,"Vitamin","Vitamin D (Cholecalciferol)")
+            createLink(ss,"selenium",text,"Vitamin","Selenium")
             createLink(ss,"EFAs",text,"Fat","")
             createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"vitamin b-complex",text.lowercase(),"HydroTherapy","B Complex")
             createLink(ss,"DHEA",text,"Supplement","Dehydroepiandrosterone (DHEA)")
             createLink(ss,"folate",text,"Vitamin","Folate")
             createLink(ss,"PABA",text,"Vitamin","PABA (Para-aminobenzoic Acid)")
-            createLink(ss,"hydrochloric acid",text,"Condition","Hydrochloric Acid")
+            createLink(ss,"hydrochloric acid",text,"Supplement","Hydrochloric Acid")
             binding.contentData.text = ss
 
 
@@ -262,7 +263,7 @@ class PhysicalExamActivity : AppCompatActivity() {
             makeBold(ss,text,"Dark circles under both eyes")
             makeBold(ss,text,"Dilated pupils to 1/4 inch or more in a child")
 
-            createLink(ss,"vitamin D",text,"Vitmain","Vitamin D (Cholecalciferol)")
+            createLink(ss,"vitamin D",text,"Vitamin","Vitamin D (Cholecalciferol)")
             createLink(ss,"vitamin B2",text,"Vitamin","Vitamin B2 (Riboflavin)")
             createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
             createLink(ss,"vitamin C",text,"Vitamin","Vitamin C (Ascorbic Acid)")
@@ -271,7 +272,7 @@ class PhysicalExamActivity : AppCompatActivity() {
             createLink(ss,"magnesium",text,"Vitamin","Magnesium")
             createLink(ss,"choline",text,"Vitamin","Choline (Lecithin)")
             createLink(ss,"inositol",text,"Vitamin","Inositol")
-            createLink(ss,"methionine",text,"Vitamin","Methionine")
+            createLink(ss,"methionine",text,"Supplement","Methionine")
             createLink(ss,"calcium",text,"Vitamin","Calcium")
             createLink(ss,"allergies",text,"Condition","Allergies")
 
@@ -430,6 +431,7 @@ class PhysicalExamActivity : AppCompatActivity() {
             makeBold(ss,text,"Diagonal crease across lobes")
             makeBold(ss,text,"Fluid behind TM or recurrent otitis media")
             makeBold(ss,text,"Tinnitus")
+            createLink(ss,"EFAs",text,"Fat","")
 
 
             createLink(ss,"vitamin A",text,"Vitamin","Vitamin A (Retinol)")
@@ -520,6 +522,7 @@ class PhysicalExamActivity : AppCompatActivity() {
 
             createLink(ss,"zinc",text,"Vitamin","Zinc")
             createLink(ss,"vitamin B2",text,"Condition","Vitamin B2 (Riboflavin)")
+            createLink(ss,"vitamin b-complex",text.lowercase(),"HydroTherapy","B Complex")
 
             binding.contentData.text = ss
 
@@ -769,6 +772,7 @@ class PhysicalExamActivity : AppCompatActivity() {
             createLink(ss,"folate",text,"Vitamin","Folate")
             createLink(ss,"PABA",text,"Vitamin","PABA (Para-aminobenzoic Acid)")
             createLink(ss,"vitamin B6",text,"Vitamin","Vitamin B6 (Pyridoxine)")
+            createLink(ss,"vitamin b-complex",text.lowercase(),"HydroTherapy","B Complex")
 
             binding.contentData.text = ss
 
@@ -1283,9 +1287,15 @@ class PhysicalExamActivity : AppCompatActivity() {
                         intent = Intent(this@PhysicalExamActivity,BotanicalDetailActivity::class.java)
                         intent.putExtra("heading",heading)
                         startActivity(intent)
-                    }else if(heading == "Fat"){
+                    }else if(activity == "Fat"){
                         val intent = Intent(this@PhysicalExamActivity,FattyAcidActivity::class.java)
                         startActivity(intent)
+                    }else if(activity=="HydroTherapy"){
+
+                        val intent = Intent(this@PhysicalExamActivity,HydroTherapyActivity::class.java)
+                        intent.putExtra("heading",heading)
+                        startActivity(intent)
+
                     }
                 }
             }

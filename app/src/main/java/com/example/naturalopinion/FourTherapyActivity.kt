@@ -28,6 +28,19 @@ class FourTherapyActivity : AppCompatActivity() {
 
         heading = intent.getStringExtra("heading").toString()
 
+
+        if(heading=="Crohn's Disease"){
+            binding.fiber.text = "Crohn's Disease and Ulcerative Colitis IV Treatment"
+        }else if(heading=="Macular Degeneration"){
+            binding.fiber.text = "Macular Degeneration IV Treatment"
+        }else if(heading=="Migraine Headaches"){
+            binding.fiber.text = "Migraine IV Treatment"
+        }else if(heading=="IV Migraine Push"){
+            binding.fiber.text = "Migraine IV Push Treatment"
+        }else{
+            binding.fiber.text = heading + " IV Treatment"
+        }
+
         //Status bar color changed
         val window = this.window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -150,6 +163,7 @@ class FourTherapyActivity : AppCompatActivity() {
         }
         makeBold(ss,s,"IV:")
         makeBold(ss,s,"Directions:")
+        setLinks(ss,s)
         binding.contentData.text = ss
 
     }
@@ -170,11 +184,38 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Directions:\n" +
                         "Administer over at least 2.5 hours.\n" +
                         "Use a large vein."
-                ss = SpannableString(s)
+            }
+            "Tonic Therapy" -> {
+                s = "IV:\n" +
+                        "AMP (50 mg.): 2 cc\n" +
+                        "Glycyrrhiza (glycyron) (2 mg.): 2 cc\n" +
+                        "Germanium (100 mg.): 1 cc\n" +
+                        "Normal saline: 5 - 7 cc\n" +
+                        "1/2 Normal saline: 100 - 125 cc\n" +
+                        "or\n" +
+                        "Lactated Ringer's: 100 - 125 cc\n" +
+                        "Directions:\n" +
+                        "Give IV over 30 - 45 minute period.\n" +
+                        "Give K+ before and after.\n" +
+                        "Indications:\n" +
+                        "Allergic rhinitis, chronic sinusitis\n" +
+                        "Asthma\n" +
+                        "Chronic fatigue syndrome (CFS)\n" +
+                        "Congestive heart failure (CHF)\n" +
+                        "Depression, chronic\n" +
+                        "Fibromyalgia\n" +
+                        "Angina\n" +
+                        "Urticaria\n" +
+                        "Muscle spasms\n" +
+                        "Acute infections\n" +
+                        "Senile dementia"
             }
         }
+        ss = SpannableString(s)
         makeBold(ss,s,"IV:")
         makeBold(ss,s,"Directions:")
+
+        setLinks(ss,s)
         binding.contentData.text = ss
 
     }
@@ -195,13 +236,40 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Directions:\n" +
                         "Do as a slow IV push. If painful inject 1/2 cc, wait, inject another 1/2 cc.\n" +
                         "Patient can squeeze a ball with same hand to enhance blood flow."
-                ss = SpannableString(s)
+            }
+            "Asthma" -> {
+                s = "IV:\n" +
+                        "L-Arginine: 9 cc\n" +
+                        "Magnesium sulfate 50%: 10 cc\n" +
+                        "Vitamin B6: 5 cc\n" +
+                        "ACE (adrenal cortical extract): 20 cc\n" +
+                        "Vitamin B12: l0 cc\n" +
+                        "Vitamin C: 20 cc\n" +
+                        "Vitamin B-complex: 2 cc\n" +
+                        "1/2 Normal saline: 250 cc\n" +
+                        "Total: 326 cc\n" +
+                        "Directions:\n" +
+                        "In 250 cc 1/2 normal saline run over 1-2 hours\n" +
+                        "Slow down if magnesium is \"over heating.\""
+            }
+            "Tonic Therapy" -> {
+                s = "IV:\n" +
+                        "Vitamin B12 (IM only):1 cc--0.38 mOsm\n" +
+                        "Selenium 40 mcg./cc.:10 cc--0.0l mOsm\n" +
+                        "Vitamin B-complex: 2 cc--4.28 mOsm\n" +
+                        "Vitamin B5 (Dexpanthenol) 500 mg: 1 cc--2.6 mOsm\n" +
+                        "Magnesium sulfate (500 mg./ml.): 2 cc--8.12 mOsm\n" +
+                        "HCl (2 mg./ml. of 1:500): 5 cc--0.55 mOsm\n" +
+                        "Ascorbic acid (500 mg/ml): l0 cc--29.2 mOsm\n" +
+                        "1/2 Normal saline (0.45%): 125 cc--20.0 mOsm"
             }
         }
+        ss = SpannableString(s)
         makeBold(ss,s,"IV:")
         makeBold(ss,s,"Directions:")
-        binding.contentData.text = ss
 
+        setLinks(ss,s)
+        binding.contentData.text = ss
     }
 
     private fun setFirst(heading: String) {
@@ -283,7 +351,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Vitamin C (500 mg./ml.): 100 cc\n" +
                         "Calcium gluconate: 50 cc\n" +
                         "Vitamin B-complex: 5 cc\n" +
-                        "Vitamin Bl2: 3 cc\n" +
+                        "Vitamin B12: 3 cc\n" +
                         "Magnesium sulfate: 4 cc\n" +
                         "Vitamin B6 (100 mg/ml): 3 cc\n" +
                         "Sodium bicarbonate: 10 - 12 cc (if needed for vein irritation)\n" +
@@ -405,37 +473,20 @@ class FourTherapyActivity : AppCompatActivity() {
                         "* The amounts of the vitamins, minerals and other substances used in this IV therapy will vary according to each manufacturer's specific osmolarity."
             }
             "Hepatitis" ->{
-                s = "Option #1:\n" +
-                        "Zinc (1 mg./ml.): 10 ml.\n" +
-                        "Selenium (40 mcg./ml.): 10 ml.\n" +
-                        "Lactated Ringer's: 120 ml.\n" +
-                        " \n" +
-                        "\n" +
-                        "Option #2:\n" +
-                        "MTE #5 concentrate: 2 ml.\n" +
-                        "Selenium (40 mcg./ml.): 8 ml.\n" +
-                        "Lactated Ringer's: 120 ml.\n" +
-                        "(This option provides about the same amount of zinc and selenium, but also provides copper, chromium, and manganese.)\n" +
-                        "\n" +
+                s = "IV:\n" +
+                        "Ascorbic acid (500 mg./ml.): 150 ml.\n" +
+                        "Calcium gluconate: 50 ml.\n" +
+                        "Vitamin B12: 3 ml.\n" +
+                        "Vitamin B6: 3 ml.\n" +
+                        "Selenium: 2 ml.\n" +
+                        "Vitamin B-complex: 5 ml.\n" +
+                        "Magnesium sulfate: 4 ml.\n" +
+                        "Sodium bicarbonate 8.4%: 10 - 12 ml. (if needed to relieve vein irritation)\n" +
+                        "Sterile water: 450 ml.\n" +
                         "Directions:\n" +
-                        "Give over 30 minute period\n" +
-                        "Give twice weekly for four weeks\n" +
-                        "Dosage may then be doubled and given weekly as needed for maintenance\n" +
-                        " \n" +
-                        "\n" +
-                        "Option #3:\n" +
-                        "Trace minerals: 1 ml.\n" +
-                        "Vitamin C (500 mg./ml.): 5 ml.\n" +
-                        "Calcium gluconate: 4 ml.\n" +
-                        "Magnesium chloride: 15 ml.\n" +
-                        "Vitamin B-complex: 2 cc\n" +
-                        "Vitamin B6: 2 ml.\n" +
-                        "Selenium: 5 ml.\n" +
-                        "Taurine: 150 mg.\n" +
-                        "Procaine: 5 ml.\n" +
-                        "DMSO 100%: 5 ml.\n" +
-                        "Sterile water: 250 ml.\n" +
-                        "* The amounts of the vitamins, minerals and other substances used in this IV therapy will vary according to each manufacturer's specific osmolarity."
+                        "Infuse over 4 - 5 hours\n" +
+                        "Advise patient to maximize oral vitamin C intake between IV treatments (to bowel tolerance)\n" +
+                        "Digestive enzymes will increase bowel tolerance."
 
             }
             "Hypertension" -> {
@@ -608,7 +659,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Calcium gluconate: 4 gm.\n" +
                         "Magnesium sulfate: 2 gm.\n" +
                         "Zinc: 10 mg.\n" +
-                        "Cooper: 1 mg.\n" +
+                        "Copper: 1 mg.\n" +
                         "Chromium: 50 mcg.\n" +
                         "Selenium: 200 mcg.\n" +
                         "Manganese: 0.l mg.\n" +
@@ -653,7 +704,7 @@ class FourTherapyActivity : AppCompatActivity() {
                         "Calcium gluconate: 6 gm.\n" +
                         "Magnesium sulfate: 4 gm.\n" +
                         "Zinc: l0 mg.\n" +
-                        "Cooper: 2 mg.\n" +
+                        "Copper: 2 mg.\n" +
                         "Chromium: 200 mcg.\n" +
                         "Selenium: 400 mcg.\n" +
                         "Manganese: 0.5 mg.\n" +
@@ -731,6 +782,37 @@ class FourTherapyActivity : AppCompatActivity() {
         if(heading == "WBC Stimulation"){
             makeBold(ss,s,"Injection:")
         }
+        setLinks(ss,s)
+
+
+        binding.contentData.text = ss
+    }
+
+    private fun setOptions(heading: String) {
+        when(heading){
+            "Antiviral" ->{
+                binding.second.visibility = View.VISIBLE
+                binding.secondText.text = "Treatment 2"
+                binding.third.visibility = View.VISIBLE
+                binding.thirdText.text = "Treatment 3 (Long)"
+                binding.forth.visibility = View.VISIBLE
+                binding.forthText.text = "Treatment 4 (Short)"
+            }
+            "Asthma" -> {
+                binding.second.visibility = View.VISIBLE
+                binding.secondText.text = "Asthma Spasmolytic IV Treatment"
+                binding.firstText.text = "Asthma IV Treatment"
+            }
+            "Tonic Therapy" -> {
+                binding.second.visibility = View.VISIBLE
+                binding.secondText.text = "Short Anti-viral IV Treatment"
+                binding.third.visibility = View.VISIBLE
+                binding.thirdText.text = "Tonic Plus(add to Short Anti-viral IV)"
+            }
+        }
+    }
+
+    private fun setLinks(ss : SpannableString, s : String){
         createLink(ss,"asthma",s,"Condition","Asthma")
         createLink(ss,"Asthma",s,"Condition","Asthma")
         createLink(ss,"Allergic rhinitis",s,"Condition","Allergies")
@@ -740,6 +822,7 @@ class FourTherapyActivity : AppCompatActivity() {
         createLink(ss,"Boron",s,"Vitamin","Boron")
         createLink(ss,"Calcium gluconate",s,"Vitamin","Calcium")
         createLink(ss,"Ca1cium phosphate",s,"Vitamin","Calcium")
+        createLink(ss,"Ca1cium",s,"Vitamin","Calcium")
         createLink(ss,"Calcium glycerophosphate",s,"Vitamin","Calcium")
         createLink(ss,"Copper",s,"Vitamin","Copper")
         createLink(ss,"Chromium",s,"Vitamin","Chromium")
@@ -770,6 +853,7 @@ class FourTherapyActivity : AppCompatActivity() {
         createLink(ss,"Niacin",s,"Vitamin","Vitamin B3 (Niacin)")
         createLink(ss,"Pyridoxine HCl",s,"Vitamin","Vitamin B6 (Pyridoxine)")
         createLink(ss,"Pyridoxine",s,"Vitamin","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"Pycnogenol",s,"Supplement","Pycnogenol")
         createLink(ss,"Pantothenic acid",s,"Vitamin","Vitamin B5 (Pantothenic Acid)")
         createLink(ss,"Potassium chloride",s,"Vitamin","Potassium")
         createLink(ss,"Riboflavin",s,"Vitamin","Vitamin B2 (Riboflavin)")
@@ -780,42 +864,17 @@ class FourTherapyActivity : AppCompatActivity() {
         createLink(ss,"Sodium",s,"Vitamin","Sodium")
         createLink(ss,"Taurine",s,"Supplement","Taurine")
         createLink(ss,"Thiamine",s,"Vitamin","Vitamin B1 (Thiamine)")
-        createLink(ss,"Vitamin C",s,"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"Vitamin C".lowercase(),s.lowercase(),"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"Vitamin A",s,"Vitamin","Vitamin A (Retinol)")
         createLink(ss,"Vanadium",s,"Vitamin","Vanadium")
         createLink(ss,"Vitamin B6",s,"Vitamin","Vitamin B6 (Pyridoxine)")
         createLink(ss,"Vitamin B5",s,"Vitamin","Vitamin B5 (Pantothenic Acid)")
-        createLink(ss,"Vitamin B12",s,"Vitamin","Vitamin B12 (Cobalamin)")
+        createLink(ss,"vitamin b12",s.lowercase(),"Vitamin","Vitamin B12 (Cobalamin)")
         createLink(ss,"Vitamin E",s,"Vitamin","Vitamin E (Tocopherol)")
         createLink(ss,"Vitamin K",s,"Vitamin","Vitamin K (Quinones)")
         createLink(ss,"Zinc",s,"Vitamin","Zinc")
         createLink(ss,"Zinc sulfate",s,"Vitamin","Zinc")
-
-//        createLink(ss,"Vitamin B-complex",s,"Vitamin","Molybdenum")
-
-
-        binding.contentData.text = ss
-    }
-
-    private fun setOptions(heading: String) {
-        when(heading){
-            "Antiviral" ->{
-                binding.second.visibility = View.VISIBLE
-                binding.secondText.text = "Treatment 2"
-                binding.third.visibility = View.VISIBLE
-                binding.thirdText.text = "Treatment 3 (Long)"
-                binding.forth.visibility = View.VISIBLE
-                binding.forthText.text = "Treatment 4 (Short)"
-            }
-            "Asthma" -> {
-                binding.second.visibility = View.VISIBLE
-                binding.secondText.text = "Asthma Spasmolytic IV Treatment"
-                binding.firstText.text = "Asthma IV Treatment"
-            }
-            "Tonic Therapy" -> {
-                binding.secondText.text = "Short Anti-viral IV Treatment"
-                binding.thirdText.text = "Tonic Plus(add to Short Anti-viral IV)"
-            }
-        }
+        createLink(ss,"vitamin b-complex",s.lowercase(),"HydroTherapy","B Complex")
     }
 
     fun makeBold(ss : SpannableString,string:String,substr:String){
@@ -850,8 +909,12 @@ class FourTherapyActivity : AppCompatActivity() {
                         intent = Intent(this@FourTherapyActivity,BotanicalDetailActivity::class.java)
                         intent.putExtra("heading",heading)
                         startActivity(intent)
-                    }else if(heading == "Fat"){
+                    }else if(activity == "Fat"){
                         val intent = Intent(this@FourTherapyActivity,FattyAcidActivity::class.java)
+                        startActivity(intent)
+                    }else if(activity == "HydroTherapy"){
+                        val intent = Intent(this@FourTherapyActivity,HydroTherapyActivity::class.java)
+                        intent.putExtra("heading",heading)
                         startActivity(intent)
                     }
                 }

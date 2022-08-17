@@ -246,7 +246,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tremors\n" +
                         "• Vertigo"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• Toxic dose: greater than 10 drops of the tincture\n" +
                         "• Fatal dose: 5 ml. of the tincture, or 1 gm. of the plant\n" +
                         "• Symptoms include:\n" +
@@ -269,7 +269,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Next-gastric lavage Oxygen as needed\n" +
                         "• Supine with elevated feet"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text = "• (In rats)\n" +
                         "Fluid in the abdomen (ascites)\n" +
                         "Growth depression\n" +
@@ -324,7 +324,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Angelica sinensis (Dong quai)", "Dong quai (Angelica sinensis)" -> {
                 text = "• Very low toxicity, but the furocoumarins could cause photosensitivity"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text =
                     "• No known toxicity but long term use or excessive doses of the seed can cause urinary tract irritation\n" +
                             "• Contains phytosterols - do not use excessively"
@@ -425,7 +425,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Camellia sinensis (Green tea)", "Green tea (Camellia sinensis)" -> {
                 text = "• No known toxicity"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text =
                     "• In large doses - GI irritation with vomiting, purging, and pain in the stomach and bowel"
             }
@@ -515,7 +515,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Cynara scolymus (Artichoke)", "Artichoke (Cynara scolymus)" -> {
                 text = "• Considered safe"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text = "• Symptoms:\n" +
                         "Confusion\n" +
                         "Coma\n" +
@@ -549,7 +549,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Tremors\n" +
                         "Urinary retention"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text = "• When used chronically, may produce beri-beri like symptoms:\n" +
                         "Acute cerebral symptoms\n" +
                         "Cardiac symptoms\n" +
@@ -574,13 +574,13 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Seizures\n" +
                         "Vomiting"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• See contraindications"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• None known"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Sympotms include:\n" +
                         "Convulsions\n" +
                         "Double vision with drooping eyelids and lower jaw\n" +
@@ -611,7 +611,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Activated charcoal\n" +
                         "Emesis or gastric lavage"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• None known"
             }
             "Ginkgo biloba (Ginkgo)", "Ginkgo (Ginkgo biloba)" -> {
@@ -637,7 +637,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Hamamelis virginiana (Witch hazel)", "Witch hazel (Hamamelis virginiana)" -> {
                 text = "• In rare cases, witch hazel tannins may cause liver damage"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• No known toxicity"
             }
             "Humulus lupulus (Hops)", "Hops (Humulus lupulus)" -> {
@@ -664,7 +664,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Juniperis communis (Juniper)", "Juniper (Juniperis communis)" -> {
                 text = "• Chronic over-dosage may cause kidney damage"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Discontinue use if these symptoms appear:\n" +
                         "Dark urine\n" +
                         "Fatigue\n" +
@@ -682,10 +682,10 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Ligusticum porteri (Osha)", "Osha (Ligusticum porteri)" -> {
                 text = "• None known"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text = "• None known"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text = "• 1 drop of lobeline alkaloid causes vomiting\n" +
                         "• Toxic levels usually product vomiting, lessening the results\n" +
                         "• Symptoms include:\n" +
@@ -733,7 +733,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Muscle tremor\n" +
                         "Skin rash"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• No known toxicity"
             }
             "Momordica charantia (Bitter melon)", "Bitter melon (Momordica charantia)" -> {
@@ -745,7 +745,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Oplopanax horridum (Devil's club)", "Devil's club (Oplopanax horridum)" -> {
                 text = "• Overdoses can produce hypertension"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text = "• Overdoses can produce hypertension"
             }
             "Passiflora incarnata (Passionflower)", "Passionflower (Passiflora incarnata)" -> {
@@ -768,7 +768,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                             "Emesis or gastric lavage\n" +
                             "Monitor and treat serum potassium imbalance or glucose/insulin"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text =
                     "• Do NOT use unprocessed Petasite due to the alkaloids although alkaloid-free varieties are cultivated under laboratory conditions\n" +
                             "• Pyrrolizidine alkaloids may cause:\n" +
@@ -813,7 +813,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Lowered blood pressure\n" +
                         "Reduced respiratory rate and volume"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Unprocessed root may cause mild diarhea\n" +
                         "• Very high doses may cause numbness in arms or legs"
             }
@@ -849,7 +849,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Rosmarius officinalis (Rosemary)", "Rosemary (Rosmarius officinalis)" -> {
                 text = "• No known toxicity"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• None"
             }
             "Ruscus aculeatus (Butcher's broom)", "Butcher's broom (Ruscus aculeatus)" -> {
@@ -951,7 +951,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text = "• Chewing the leaves may cause aphthous stomatitis\n" +
                         "• No report of toxic reactions"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
                 text = "• Considered safe, even in large amounts"
             }
             "Taxus brevifolia (Yew)", "Yew (Taxus brevifolia)" -> {
@@ -998,7 +998,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Monitor acid/base balance\n" +
                         "Seizures: IV diazepam"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• No known toxicity"
             }
             "Trifollium pratense (Red clover)", "Red clover (Trifollium pratense)" -> {
@@ -1016,7 +1016,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Liver and kidney teratogenicity\n" +
                         "Potential liver toxicity"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• None known"
             }
             "Urtica urens (Nettles)", "Nettles (Urtica urens)" -> {
@@ -1062,7 +1062,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Vomiting\n" +
                         "Death in 10 hours after ingestion"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text = "• Generally regarded as safe - can use for months without any side effects"
             }
             "Withania somnifera (Ashwagandha)", "Ashwagandha (Withania somnifera)" -> {
@@ -1120,7 +1120,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sabinene\n" +
                         "• Pinene"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• Acids:\n" +
                         "• Aconitic acid\n" +
                         "• Itaconic acid\n" +
@@ -1135,7 +1135,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Starch\n" +
                         "• Sugars"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text = "• Acoric acid\n" +
                         "• Acorin, a bitter glycoside\n" +
                         "• Bitters\n" +
@@ -1254,7 +1254,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Safrole\n" +
                         "• Sequterpenes"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text = "• Alkaloids\n" +
                         "• Flavonoids\n" +
                         "• Glycoside arctiine\n" +
@@ -1471,7 +1471,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Vitamin C\n" +
                         "• Vitamin E"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text =
                     "• Capsaicin, a phenolic resin that depletes the amount of substance P in sensory nerves and inhibits platelet aggregation\n" +
                             "• Capsicin, a rubefacient volatile oil\n" +
@@ -1732,7 +1732,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Vitamin B1\n" +
                         "Vitamin B6"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text = "• Tropane alkaloids:\n" +
                         "Hyoscamine\n" +
                         "Hyoscine\n" +
@@ -1769,7 +1769,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Ephedra sinica (Ma huang)", "Ma huang (Ephedra sinica)" -> {
                 text = "• Ephedrine, an alkaloid that is molecularly similar to catecholamines"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text = "• Alkaloids:\n" +
                         "Nicotine\n" +
                         "Palustrine\n" +
@@ -1871,7 +1871,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Organic acids\n" +
                         "• Vitamins"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• Fucophorethols which are polyhydroxyoligophenylethers\n" +
                         "• High molecular weight phlorotannin derivatives\n" +
                         "• Iodine\n" +
@@ -1886,7 +1886,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sulphuryl-, sulphonyl- and phosphonyl-glycosyl estr diglycerides\n" +
                         "• Volatile oil"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• Anthraquinone derivatives:\n" +
                         "Alizarin and derivatives\n" +
                         "Galiosin and simple anthraquinones\n" +
@@ -1900,7 +1900,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Gallic\n" +
                         "P-coumaric"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Alkaloids (CNS depressants) including:\n" +
                         "Gelsdine\n" +
                         "Gelsemidine\n" +
@@ -1941,7 +1941,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Gentisin\n" +
                         "Isogentisin"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• Gum\n" +
                         "• Organic acids:\n" +
                         "Galic acid\n" +
@@ -2035,7 +2035,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Hexenol\n" +
                         "n-hexen-2-al"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• Flavonoids:\n" +
                         "Luteolin glycosides\n" +
                         "Kaempferol\n" +
@@ -2144,7 +2144,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Pinene\n" +
                         "• Sabinene"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Alkaloids\n" +
                         "• Flavonoids\n" +
                         "• NDGA (Norhydroguiuratic acid)\n" +
@@ -2187,14 +2187,14 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Ligusticum porteri (Osha)", "Osha (Ligusticum porteri)" -> {
                 text = "• Limited data"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text = "• Amygdalin\n" +
                         "• Linamarine-a cyanogenic glycoside\n" +
                         "• Linoleic and linolenic acids\n" +
                         "• Mucilage\n" +
                         "• Protein"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text = "• Chelidonic acid\n" +
                         "• Gum\n" +
                         "• Lipids\n" +
@@ -2348,7 +2348,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Rosmarinic acid\n" +
                         "• Tannins"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• Alkaloids\n" +
                         "• Glycosides\n" +
                         "• Tannins\n" +
@@ -2428,7 +2428,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Beta-elemene\n" +
                         "• Zinc"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text = "• Acetylenic compounds:\n" +
                         "Falcarinol and Falcarintriol\n" +
                         "Panaxydol and Panaxytriol\n" +
@@ -2485,7 +2485,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Pseudoyohombine\n" +
                         "Yohimbine"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text = "• 3-Isopetasanestern\n" +
                         "• Isopetasin\n" +
                         "• Petasin\n" +
@@ -2535,7 +2535,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tannin\n" +
                         "• Vitamin K"
             }
-            "Pimpinella anisum (Anise)", "Anise (Pimpinella anisum)\n" -> {
+            "Pimpinella anisum (Anise)", "Anise (Pimpinella anisum)" -> {
                 text = "• Calcium\n" +
                         "• Carbohydrates\n" +
                         "• Coumarins:\n" +
@@ -2586,7 +2586,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Organic acids:\n" +
                         "Piscidic acid and its mono- and diethyl esters, fukiic acid and its 3'-O-methyl esters"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Glycosides\n" +
                         "• Lecithin"
             }
@@ -2669,7 +2669,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Terpineol\n" +
                         "Verbenol"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• Calcium\n" +
                         "• Chrysaphoric acid (organic acid) - laxative\n" +
                         "• Emodin anthraquinone - laxative\n" +
@@ -2918,7 +2918,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Parthenolide, a sesquiterpene lactone\n" +
                         "• Sesquiterpene lactones"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
                 text = "• Calcium\n" +
                         "• Chlorophyll\n" +
                         "• Choline\n" +
@@ -2991,7 +2991,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "Thymol\n" +
                         "Thymol methyl ether"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• Coumarin fraxoside\n" +
                         "• Flavonoids:\n" +
                         "Astralagin\n" +
@@ -3063,7 +3063,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tussilagone\n" +
                         "• Volatile oil"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• Amino acids\n" +
                         "• Bromine\n" +
                         "• Calcium\n" +
@@ -3165,7 +3165,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Triterpenoid saponins\n" +
                         "• Viscotoxins I, II, III, - a cardioactive polypeptides"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text = "• Castine, a bitter\n" +
                         "• Flavonoids\n" +
                         "• Glycosides\n" +
@@ -3290,10 +3290,10 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text =
                     "• Counterproductive to use medications that inhibit stomach acid production, ie antacids, gastric acid secretion inhibitors and histamine H2 receptor antagonists, since yarrow promotes stomach acid secretion"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• No interactions have been reported"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text =
                     "• Counterproductive to use medications that inhibit stomach acid production, ie antacids, gastric acid secretion inhibitors and histamine H2 receptor antagonists, since calamus promotes stomach acid secretion"
             }
@@ -3326,7 +3326,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Angelica sinensis (Dong quai)", "Dong quai (Angelica sinensis)" -> {
                 text = "• No interactions have been reported"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text = "• Insulin should be monitored due to the hypoglycemic activity"
             }
             "Arctostaphylos uva ursi (Bearberry)", "Bearberry (Arctostaphylos uva ursi)" -> {
@@ -3376,7 +3376,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Camellia sinensis (Green tea)", "Green tea (Camellia sinensis)" -> {
                 text = "• Limited data"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text =
                     "• ACE inhibitors may cause coughing when capsaicin cream is used topically\n" +
                             "• Aspirin damage to the gastric mucosa is decreased if chili powder is ingested 30 minutes before taking aspirin\n" +
@@ -3430,7 +3430,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Cynara scolymus (Artichoke)", "Artichoke (Cynara scolymus)" -> {
                 text = "• No interactions have been reported"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text = "• Patients on antidepressant drugs should avoid Datura"
             }
             "Dioscorea villosa (Wild yam)", "Wild yam (Dioscorea villosa)" -> {
@@ -3455,7 +3455,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Urinary acidifiers, includig ammonium chloride, increase the rate of ephedrine and pseudoephedrine excretion\n" +
                         "• Urinary alkalinizers, including sodium bicarbonate, decrease the rate of ephedrine and pseudoephedrine excretion"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text =
                     "• Diuretic effect can cause loss of potassium and may potentiate the toxic effects of digitalis and its cardiac glycosides\n" +
                             "• Promotes the breakdown of thaimine"
@@ -3477,20 +3477,20 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Foeniculum vulgare (Fennel)", "Fennel (Foeniculum vulgare)" -> {
                 text = "• Limited data"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• Lithium carbonate enhances large doses of iodides found in bladderwrack"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• No interactions have been reported"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Limited data"
             }
             "Gentiana lutea (Gentian)", "Gentian (Gentiana lutea)" -> {
                 text =
                     "• Counterproductive to use medications that inhibit stomach acid production, ie antacids, gastric acid secretion inhibitors and histamine H2 receptor antagonists, since gentian promotes stomach acid secretion"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• Limited data"
             }
             "Ginkgo biloba (Ginkgo)", "Ginkgo (Ginkgo biloba)" -> {
@@ -3519,7 +3519,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Hamamelis virginiana (Witch hazel)", "Witch hazel (Hamamelis virginiana)" -> {
                 text = "• Limited data"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• Limited data"
             }
             "Humulus lupulus (Hops)", "Hops (Humulus lupulus)" -> {
@@ -3552,7 +3552,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text =
                     "• Oral hypoglycemic medications or insulin users should monitor insulin levels regularly due to the hypoglycemic effect of juniper berries"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Limited data"
             }
             "Lavendula angustifolia (Lavender)", "Lavender (Lavendula angustifolia)" -> {
@@ -3564,11 +3564,11 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Ligusticum porteri (Osha)", "Osha (Ligusticum porteri)" -> {
                 text = "• Limited data"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text =
                     "• Oral drugs or herbs taken at the same time as flax may have delayed absorption due to the mucilage content"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text = "• Limited data"
             }
             "Lomatium disectum (Desert parsley)", "Desert parsley (Lomatium disectum)" -> {
@@ -3596,7 +3596,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Mentha piperita (Peppermint)", "Peppermint (Mentha piperita)" -> {
                 text = "• No interactions have been reported"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• Limited data"
             }
             "Momordica charantia (Bitter melon)", "Bitter melon (Momordica charantia)" -> {
@@ -3611,7 +3611,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text =
                     "• Insulin or oral hypoglycemic drugs should be monitored due to the hypoglycemic effect"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text =
                     "• In diabetics, insulin should be monitored due to the hypoglycemic effects\n" +
                             "• Decreases anticoagulant effects of warfarin"
@@ -3632,7 +3632,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                             "Certain decongestants\n" +
                             "• Tricyclic antidepressants, including imipramine, clomipramine and amitriptyline, and yohimbine taken concurrently may produce hypertension"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text = "• No interactions have been reported"
             }
             "Petroselinum crispum (Parsley)", "Parsley (Petroselinum crispum)" -> {
@@ -3652,7 +3652,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Piscidia piscipula (Jamaican dogwood)", "Jamaican dogwood (Piscidia piscipula)" -> {
                 text = "• Limited data"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Do not take with onions, chives or garlic - empirical\n" +
                         "• No known interactions with drugs have been reported"
             }
@@ -3678,7 +3678,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Rosmarius officinalis (Rosemary)", "Rosemary (Rosmarius officinalis)" -> {
                 text = "• Limited data"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• Limited data"
             }
             "Ruscus aculeatus (Butcher's broom)", "Butcher's broom (Ruscus aculeatus)" -> {
@@ -3744,7 +3744,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Tanacetum parthenium) (Feverfew)", "Feverfew (Tanacetum parthenium)" -> {
                 text = "• No interactions have been reported"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
                 text =
                     "• Counterproductive to use medications that inhibit stomach acid production, ie antacids, gastric acid secretion inhibitors and histamine H2 receptor antagonists, since dandelion root promotes stomach acid secretion\n" +
                             "• Insulin or oral hypoglycemic drugs should be monitored due to the hypoglycemic effect\n" +
@@ -3759,7 +3759,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Thymus vulgaris (Thyme)", "Thyme (Thymus vulgaris)" -> {
                 text = "• Limited data"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• Limited data"
             }
             "Trifollium pratense (Red clover)", "Red clover (Trifollium pratense)" -> {
@@ -3776,7 +3776,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Tussilago farfara (Colt's foot)", "Colt's foot (Tussilago farfara)" -> {
                 text = "• Limited data"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• Limited data"
             }
             "Urtica urens (Nettles)", "Nettles (Urtica urens)" -> {
@@ -3808,7 +3808,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Viscum alba (Mistletoe)", "Mistletoe (Viscum alba)" -> {
                 text = "• Limited data"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text =
                     "• May counteract the effectiveness of birth control pills and other hormone therapy"
             }
@@ -3849,10 +3849,10 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Pregnancy:\n" +
                         "• Due to the emmenagogue and abortifacient effects"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• No contraindications have been reported"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text =
                     "• Pregnancy - due to the emmenagogue effect and genotoxic property of asarone"
             }
@@ -3896,7 +3896,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Pregnancy\n" +
                         "• Women with heavy menstrual flow due to the uterine vasodilatory effect"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text =
                     "• Pregnancy due to the oxytocic effect and uterine stimulant action on animal uteri"
             }
@@ -3953,7 +3953,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                             "• Lactating women due to avoid sleep disorder in infant due to caffeine\n" +
                             "• Pregnancy due to caffeine constituent"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text = "• Avoid in acute inflammation"
             }
             "Caulophyllum thalictroides (Blue cohosh)", "Blue cohosh (Caulophyllum thalictroides)" -> {
@@ -4015,7 +4015,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                     "• Allergic hypersensitivity to artichoke or other species in the Asteracea family\n" +
                             "• Bile duct obstruction due to the cholagogue effect"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text = "• Glaucoma\n" +
                         "• Pregnancy\n" +
                         "• Prostatic disease\n" +
@@ -4045,7 +4045,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Stomach ulcers due to reduction of mucus production\n" +
                         "• Weak, aged, or debilitated patient"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text = "• Cardiovascular problems\n" +
                         "• Hypertension\n" +
                         "• Pregnant"
@@ -4069,24 +4069,24 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Pregnancy due to the emmenagogue effect and phytoestrogen activity - empirical data\n" +
                         "• Prolonged usage unless under a physician's care - due to the speculative procarcinogenic estragole constituent in the volatile oil"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• Goiter\n" +
                         "• Graves disease\n" +
                         "• Hyperthyroidism\n" +
                         "• Lactation\n" +
                         "• Pregnancy"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• None known"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Hypotension\n" +
                         "• Pregnancy"
             }
             "Gentiana lutea (Gentian)", "Gentian (Gentiana lutea)" -> {
                 text = "• Acute gastric inflammation"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• Best used with a demulcent herb\n" +
                         "• Do not use with acute or profuse internal bleeding"
             }
@@ -4116,7 +4116,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Hamamelis virginiana (Witch hazel)", "Witch hazel (Hamamelis virginiana)" -> {
                 text = "• Sensitive individuals may experience irritation of the stomach"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• Acute gall bladder disease\n" +
                         "• Gastric and duodenal ulcers\n" +
                         "• Pregnancy"
@@ -4148,7 +4148,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                             "• Nephritis\n" +
                             "• Pregnancy because the essential oil prevents implantation of fetus on days 0-4 of pregnancy in mice"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Pregnancy\n" +
                         "• Avoid long-term use due to alkaloid constituents and stimulating substances\n" +
                         "• Hepatotoxicity or liver damage"
@@ -4171,10 +4171,10 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Ligusticum porteri (Osha)", "Osha (Ligusticum porteri)" -> {
                 text = "• Pregnancy"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text = "• Bowel obstruction"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text =
                     "• Asthma of cardiac decompensation,'hypertension' sinus arrhythmia or bundle branch block\n" +
                             "• Avoid in the very young and elderly\n" +
@@ -4218,7 +4218,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Hiatal hernia, due to relaxing effect of lower esophageal sphincter\n" +
                         "• Small children should not inhale essential oil"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• None known"
             }
             "Momordica charantia (Bitter melon)", "Bitter melon (Momordica charantia)" -> {
@@ -4235,7 +4235,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Hypertension\n" +
                         "• Pregnancy"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text = "• Acute illness, such as colds, flu or allergy attack\n" +
                         "• Bronchitis\n" +
                         "• Children\n" +
@@ -4255,7 +4255,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Hypotension\n" +
                         "• Nervous disorders, especially schizophrenia"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text = "• Lactation\n" +
                         "• Pregnancy"
             }
@@ -4275,7 +4275,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Piscidia piscipula (Jamaican dogwood)", "Jamaican dogwood (Piscidia piscipula)" -> {
                 text = "• Children and elderly due to neuromuscular depression"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Hypersensitive to Fo-Ti may result in a skin rash"
             }
             "Pygeum africanum (Pygeum)", "Pygeum (Pygeum africanum)" -> {
@@ -4315,7 +4315,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Rosmarius officinalis (Rosemary)", "Rosemary (Rosmarius officinalis)" -> {
                 text = "• Pregnancy due to the abortifacient and emmenagogue effects"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• None"
             }
             "Ruscus aculeatus (Butcher's broom)", "Butcher's broom (Ruscus aculeatus)" -> {
@@ -4380,7 +4380,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                 text = "• Pregnancy, due to emmenagogue effect\n" +
                         "• Sensitive individual may develop exudative dermatitis from external contact"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
                 text = "• Acute cholecystitis\n" +
                         "• Acute diarrhea\n" +
                         "• Irritable or inflammatory conditions of the stomach or intestines"
@@ -4395,7 +4395,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Thymus vulgaris (Thyme)", "Thyme (Thymus vulgaris)" -> {
                 text = "• Pregnancy"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• Hypotension"
             }
             "Trifollium pratense (Red clover)", "Red clover (Trifollium pratense)" -> {
@@ -4413,7 +4413,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Contraindicated in pregnancy and nursing due to the content of hepatotoxic pyrrolizidine alkaloids\n" +
                         "• Liver disease due to the alkaloid pyrrolizidine"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• None"
             }
             "Urtica urens (Nettles)", "Nettles (Urtica urens)" -> {
@@ -4441,7 +4441,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
             "Viscum alba (Mistletoe)", "Mistletoe (Viscum alba)" -> {
                 text = "• Pregnancy due to uterine stimulation"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text =
                     "• Pregnancy due to emmenagogue effect but may be helpful in first trimester to prevent miscarriage"
             }
@@ -4488,14 +4488,14 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Uterine spasms\n" +
                         "• Vaginitis with vaginal atony"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• Endometriosis\n" +
                         "• Bruises, topically\n" +
                         "• Sciatica, topically\n" +
                         "• Trigeminal\n" +
                         "• Used in various forms of heart disease with aconitine removed"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text = "• AIDS - wasting\n" +
                         "• Anorexia nervosa\n" +
                         "• Digestive disorders that require secretory activity to be increased\n" +
@@ -4636,7 +4636,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Uterine cramps\n" +
                         "• Vasculitis"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text = "• AIDS\n" +
                         "• Amenorrhea\n" +
                         "• Cancer prevention\n" +
@@ -4845,7 +4845,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sickle cell anemia\n" +
                         "• Skin infections"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text = "• Allergies\n" +
                         "• Atherosclerosis\n" +
                         "• Bronchitis\n" +
@@ -5081,7 +5081,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Dyspepsia\n" +
                         "• Hypercholesterolemia"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text =
                     "• Asthma in combination with other herbs i.e. Belladonna, Lobelia, Ephedra\n" +
                             "• Cerebral irritation\n" +
@@ -5162,7 +5162,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Influenza and common cold\n" +
                         "• Upper respiratory infections"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text = "• Cystitis\n" +
                         "• Osteoporosis\n" +
                         "• Psoriatic arthritis\n" +
@@ -5226,7 +5226,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Flatulence\n" +
                         "• Indigestion"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• Chronic fatigue syndrome\n" +
                         "• Hypothyroidism\n" +
                         "• Multiple sclerosis\n" +
@@ -5234,7 +5234,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Rheumatoid arthritis (external poultice)\n" +
                         "• Any condition where fatigue is a complication"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• Benign prostatic hypertrophy (BPH)\n" +
                         "• Cystitis\n" +
                         "• Eczema\n" +
@@ -5250,7 +5250,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Lymphadenophy\n" +
                         "• Urinary lithiasis"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Endometrosis\n" +
                         "• Insomnia, in small doses\n" +
                         "• Urinary tract irritation with scarce urine"
@@ -5262,7 +5262,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Gastritis\n" +
                         "• Heartburn"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• Crohn's disease\n" +
                         "• Irritable bowel syndrome\n" +
                         "• Peptic ulcer\n" +
@@ -5365,7 +5365,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sprains\n" +
                         "• Varicose veins"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• Cholecystitis\n" +
                         "• Cholelithiasiss\n" +
                         "• Gout\n" +
@@ -5484,7 +5484,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sciatica\n" +
                         "• Urethritis"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Otitis media\n" +
                         "• Psoriatic arthritis\n" +
                         "• Rheumatoid arthritis\n" +
@@ -5527,7 +5527,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Respiratory tract infection, especially debilitating with much mucus and congestion in the tissues\n" +
                         "• Viral infections"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text = "• Allergies\n" +
                         "• Cholelithiasis\n" +
                         "• Hemorrhoids due to constipation\n" +
@@ -5542,7 +5542,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Skin irritations\n" +
                         "• Upper respiratory infections"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text = "• Asthma\n" +
                         "• Bronchitis\n" +
                         "• Cholecystitis\n" +
@@ -5664,7 +5664,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Mumps\n" +
                         "• Senility"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• Amenorrhea\n" +
                         "• Dysmenorrhea\n" +
                         "• Incontinence\n" +
@@ -5694,7 +5694,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sexual inadequacy\n" +
                         "• Stress"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text = "• Aging prevention\n" +
                         "• Congestive heart failure\n" +
                         "• Diabetes mellitus\n" +
@@ -5727,7 +5727,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Angina pectoris\n" +
                         "• Narcolepsy"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text = "• Asthma\n" +
                         "• Bronchitis\n" +
                         "• Dysmenorrhea\n" +
@@ -5799,7 +5799,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Migraine headache\n" +
                         "• Neuralgia"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Aging prevention\n" +
                         "• Atherosclerosis\n" +
                         "• Bronchitis\n" +
@@ -5859,7 +5859,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Psychological tension\n" +
                         "• Sciatica - externally in a poultice"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• Osteoporosis\n" +
                         "• Anemia\n" +
                         "• Chronic skin disorders\n" +
@@ -6038,7 +6038,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tinnitus\n" +
                         "• Vomiting"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
 
                 text = "• Amenorrhea\n" +
                         "• Anorexia nervosa\n" +
@@ -6103,7 +6103,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tonsillitis\n" +
                         "• Whooping couh"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• Hypertension\n" +
                         "• Arteriosclerosis\n" +
                         "• Colds\n" +
@@ -6139,7 +6139,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Emphysema\n" +
                         "• Pharyngitis"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• Crohn's Disease\n" +
                         "• Irritable bowel syndrome\n" +
                         "• Peptic ulcer\n" +
@@ -6233,7 +6233,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Cancer - ovarian, bronchial, malignant pleural effusion\n" +
                         "• Tachycardia"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text = "• Amenorrhea\n" +
                         "• Fertility/Infertility\n" +
                         "• Fibrocystic breast disease\n" +
@@ -6422,13 +6422,13 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Stimulant\n" +
                         "• Urinary antiseptic"
             }
-            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)" -> {
+            "Aconitum napellus (Monkshood, Aconite)", "Monkshood (Aconitum napellus)", "Aconite (Aconitum napellus)" -> {
                 text = "• Analgesic\n" +
                         "• Anti-inflammatory\n" +
                         "• Increases coronary flow\n" +
                         "• Vasodilation of the blood vessels in limbs (animal studies)"
             }
-            "Acorus calamus (Sweetflag, Acorus)", "Sweetflag (Acorus calamus)" -> {
+            "Acorus calamus (Sweetflag, Acorus)", "Calamus (Acorus calamus)","Sweetflag (Acorus calamus)" -> {
                 text = "• Anti-anorectic\n" +
                         "• Aromatic bitter\n" +
                         "• Carminative\n" +
@@ -6552,7 +6552,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Strengthens heart contractility while decreasing the rate of contractions\n" +
                         "• Uterine tonic if the volatile oil is decocted"
             }
-            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)" -> {
+            "Arctium lappa (Burdock)", "Burdock (Arctium lappa)","Burdock (Arctium lappa)" -> {
                 text = "• Antibacterial\n" +
                         "• Antifungal\n" +
                         "• Anti-inflammatory\n" +
@@ -6770,7 +6770,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Stabilizes collagen\n" +
                         "• Stimulates glutathione peroxidase and catalase"
             }
-            "Capsicum frutescens (Cayenne, Red pepper)", "Cayenne (Capsicum frutescens)" -> {
+            "Capsicum frutescens (Cayenne, Red pepper)", "Red pepper (Capsicum frutescens)","Cayenne (Capsicum frutescens)" -> {
                 text = "• Anodyne\n" +
                         "• Antiseptic\n" +
                         "• Aphrodisiac\n" +
@@ -6999,7 +6999,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Reduces cholesterol and cholinesterase levels\n" +
                         "• Significant liver regenerating and protecting effects"
             }
-            "Datura stramonium (Jimson weed, Thornapple)", "Jimson weed (Datura stramonium)" -> {
+            "Datura stramonium (Jimson weed, Thornapple)", "Thornapple (Datura stramonium)","Jimson weed (Datura stramonium)" -> {
                 text = "• Anodyne\n" +
                         "• Anticholinergic\n" +
                         "• Antispasmodic\n" +
@@ -7070,7 +7070,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Stimulant\n" +
                         "• Sympathomimetic - both alpha and beta adrenergic receptors as well as the release of norepinephrine"
             }
-            "Equisetum arvense (Shave grass, Horsetail)", "Shave grass (Equisetum arvense)" -> {
+            "Equisetum arvense (Shave grass, Horsetail)", "Horsetail (Equisetum arvense)","Shave grass (Equisetum arvense)" -> {
                 text = "• Astringent\n" +
                         "• Causes diuresis without altering the electrolyte balance\n" +
                         "• Diuretic\n" +
@@ -7139,7 +7139,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Relaxes the intestines\n" +
                         "• Relaxes the uterus"
             }
-            "Fucus vesiculosus (Bladderwrack, Kelp)", "Bladderwrack (Fucus vesiculosus)" -> {
+            "Fucus vesiculosus (Bladderwrack, Kelp)", "Kelp (Fucus versiculosus)","Bladderwrack (Fucus vesiculosus)" -> {
                 text = "• Antibiotic activity\n" +
                         "• Anti-obesity agent, probably due to the effect on an underactive thyroid\n" +
                         "• Diuretic\n" +
@@ -7148,7 +7148,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Metabolic stimulant\n" +
                         "• Supplies minerals and trace elements like iodine, in the form of inorganic salts or bound to proteins and lipids"
             }
-            "Galium aparine (Cleavers, Bed straw)", "Cleavers (Galium aparine)" -> {
+            "Galium aparine (Cleavers, Bed straw)", "Bed straw (Galium aparine)","Cleavers (Galium aparine)" -> {
                 text = "• Alterative\n" +
                         "• Corrects inability to pass normal catabolic wastes\n" +
                         "• Diuretic\n" +
@@ -7158,7 +7158,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Supports the immune system\n" +
                         "• Tonic"
             }
-            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Yellow jasmine (Gelsemium sempervirens)" -> {
+            "Gelsemium sempervirens (Yellow jasmine, Gelsemium)", "Gelsemium (Gelsemium sempervirens)","Yellow jasmine (Gelsemium sempervirens)" -> {
                 text = "• Anodyne\n" +
                         "• Antispasmodic\n" +
                         "• Initially stimulates then depresses neural function\n" +
@@ -7173,7 +7173,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Sialagogue\n" +
                         "• Tonic"
             }
-            "Geranium maculatum (Wild geranium, Cranesbill)", "Wild geranium (Geranium maculatum)" -> {
+            "Geranium maculatum (Wild geranium, Cranesbill)", "Cranesbill (Geranium maculatum)","Wild geranium (Geranium maculatum)" -> {
                 text = "• Astringent\n" +
                         "• Atonic tissues with discharges due to over-relaxation\n" +
                         "• Diarrhea\n" +
@@ -7242,7 +7242,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Astringent\n" +
                         "• Hemostatic, especially for passive hemorrhages, wounds, local inflammations and venous laxity and congestion"
             }
-            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Devil's claw (Harpagophytum procumbens)" -> {
+            "Harpagophytum procumbens (Devil's claw, Grapple plant)", "Grapple plant (Harpagophytum procumbens)","Devil's claw (Harpagophytum procumbens)" -> {
                 text = "• Anodyne/analgesic\n" +
                         "• Anti-arthritic\n" +
                         "• Anti-inflammatory\n" +
@@ -7335,7 +7335,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Urinary stimulant\n" +
                         "• Uterine stimulant"
             }
-            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Chapparrel (Larrea tridentata)" -> {
+            "Larrea tridentata (Chapparrel, Creosote bush, Creosotum)", "Creosotum (Larrea tridentata)","Creosote bush (Larrea tridentata)","Chapparrel (Larrea tridentata)" -> {
                 text = "• Antibacterial\n" +
                         "• Antifungal\n" +
                         "• Anti-inflammatory\n" +
@@ -7378,7 +7378,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Immune stimulating properties\n" +
                         "• Promotes expectoration"
             }
-            "Linum usitatissimum (Flax, Linseed)", "Flax (Linum usitatissimum)" -> {
+            "Linum usitatissimum (Flax, Linseed)", "Linseed (Linum usitatissimum)","Flax (Linum usitatissimum)" -> {
                 text = "• Anti-inflammatory\n" +
                         "• Bulking agent\n" +
                         "• Demulcent\n" +
@@ -7387,7 +7387,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Lubricating agent\n" +
                         "• Mucilaginous agent"
             }
-            "Lobelia inflata (Indian tobacco, Puke weed)", "Indian tobacco (Lobelia inflata)" -> {
+            "Lobelia inflata (Indian tobacco, Puke weed)", "Puke weed (Lobelia inflata)","Indian tobacco (Lobelia inflata)" -> {
                 text =
                     "• Inhibits cardioactivity (slowing pulse rate and blood pressure) followed by increased pulse and blood pressure in small doses\n" +
                             "• Lowers carbon dioxide threshold to increase respiration\n" +
@@ -7498,7 +7498,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Stimulates circulation\n" +
                         "• Stimulates contractile activity and bile secretion in the gallbladder"
             }
-            "Mitchella repens (Squawvine, Partridge berry)", "Squawvine (Mitchella repens)" -> {
+            "Mitchella repens (Squawvine, Partridge berry)", "Partridge berry (Mitchella repens)","Squawvine (Mitchella repens)" -> {
                 text = "• Astringent\n" +
                         "• Calming effect on the nervous system\n" +
                         "• Emmenagogue\n" +
@@ -7541,7 +7541,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Inhibits thrombin induced conversion of fibrinogen to fibrin, preventing platelet aggregation (in rat studies)\n" +
                         "• Stimulates the biosynthesis of proteins (in rat studies)"
             }
-            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Chinese ginseng (Panax ginseng)" -> {
+            "Panax ginseng (Chinese ginseng, Korean ginseng)", "Korean ginseng (Panax ginseng)","Chinese ginseng (Panax ginseng)" -> {
                 text = "• Antifatigue and stimulant properties\n" +
                         "• CNS sedative\n" +
                         "• Controls homeostasis by acting on the endocrine system\n" +
@@ -7574,7 +7574,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Monoamine oxidase inhibitor\n" +
                         "• Vasodilator-skin and mucous membranes"
             }
-            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Butterbur (Petasites hybridus)" -> {
+            "Petasites hybridus (Butterbur, Bladderdock, Bog Rhubarb)", "Bladderdock (Petasites hybridus)","Bog Rhubarb (Petasites hybridus)","Butterbur (Petasites hybridus)" -> {
                 text = "• Appetite stimulant\n" +
                         "• Anodyne\n" +
                         "• Antiinflammatory\n" +
@@ -7628,7 +7628,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Antispasmodic for smooth muscles\n" +
                         "• Sedative"
             }
-            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "Fo-ti (Polygonum multiflorum)" -> {
+            "Polygonum multiflorum (Fo-ti, He-shou-wu)", "He-shou-wu (Polygonum multiflorum)","Fo-ti (Polygonum multiflorum)" -> {
                 text = "• Antibacterial activity\n" +
                         "• Antiinflammatory effects\n" +
                         "• Antioxidant activity\n" +
@@ -7695,7 +7695,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Supresses the endotoxin-induced activation of complement, the formation of prostacyclin, both hypotensive phases, thrombocytopenia and the concomitant release of thromboxane Az\n" +
                         "• Tones and calms the digestive tract"
             }
-            "Rumex crispis (Yellow dock, Curly dock)", "Yellow dock (Rumex crispis)" -> {
+            "Rumex crispis (Yellow dock, Curly dock)", "Curly dock (Rumex crispis)","Yellow dock (Rumex crispis)" -> {
                 text = "• Alterative\n" +
                         "• Laxative\n" +
                         "• Tonic"
@@ -7870,7 +7870,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Tonic effect on vascular smooth muscle\n" +
                         "• Uterine stimulant"
             }
-            "Taraxacum officinale (Dandelion, Lion's tooth)", "Dandelion (Taraxacum officinale)" -> {
+            "Taraxacum officinale (Dandelion, Lion's tooth)", "Lion's tooth (Taraxacum officinale)","Dandelion (Taraxacum officinale)" -> {
                 text = "• Anti-inflammatory\n" +
                         "• Antirheumatic\n" +
                         "• Anti-tumor agent\n" +
@@ -7911,7 +7911,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Spasmolytic\n" +
                         "• Urinary tract antiseptic"
             }
-            "Tilia europaea (Linden flower, Lime blossom)", "Linden flower (Tilia europaea)" -> {
+            "Tilia europaea (Linden flower, Lime blossom)", "Lime blossom (Tilia europaea)","Linden flower (Tilia europaea)" -> {
                 text = "• Antispasmodic\n" +
                         "• Diaphoretic\n" +
                         "• Diuretic\n" +
@@ -7957,7 +7957,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Potent cardiovascular stimulant, a feature of tussilagone\n" +
                         "• Sedative"
             }
-            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)" -> {
+            "Ulmus fulva (Slippery elm, American elm)", "Slippery elm (Ulmus fulva)","American elm (Ulmus fulva)" -> {
                 text = "• Demulcent - used to soothe irritated mucosal tissues\n" +
                         "• Nutritive\n" +
                         "• Vulnerary"
@@ -8042,7 +8042,7 @@ class BotanicalDetailActivity : AppCompatActivity() {
                         "• Peripheral vasodialator\n" +
                         "• Slows heart rate"
             }
-            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Chaste tree (Vitex agnus castus)" -> {
+            "Vitex agnus castus (Chaste tree, Monk's pepper)", "Monk's pepper (Vitex agnus castus)","Chaste tree (Vitex agnus castus)" -> {
                 text = "• Anaphrodisiac\n" +
                         "• Decreases FSH secretion\n" +
                         "• Galactagogue - improves both quantity of milk and let-down mechanism\n" +

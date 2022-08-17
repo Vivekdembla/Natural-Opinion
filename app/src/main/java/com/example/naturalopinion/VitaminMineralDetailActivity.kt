@@ -597,14 +597,22 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             "Boron"->{
                 binding.third.visibility = View.GONE
             }
+            "Biotin" -> {
+                binding.third.visibility = View.GONE
+                binding.sixth.visibility = View.GONE
+
+            }
             "Chromium" -> {
+                binding.third.visibility  = View.GONE
+            }
+            "Choline (Lecithin)" -> {
                 binding.third.visibility  = View.GONE
             }
             "Cobalt" -> {
                 binding.third.visibility  = View.GONE
             }
-            "Copper" -> {
-                binding.eight.visibility = View.VISIBLE
+            "Folate" -> {
+                binding.sixth.visibility = View.GONE
             }
             "Germanium" -> {
                 binding.third.visibility = View.GONE
@@ -618,8 +626,12 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             "Lithium" -> {
                 binding.third.visibility = View.GONE
             }
+            "Molybdenum" -> {
+                binding.thirdText.text = "Deficiency"
+            }
             "Nickel" -> {
                 binding.thirdText.text = "Deficiency"
+                binding.fifth.visibility = View.GONE
             }
             "Phosphorus" -> {
                 binding.thirdText.text = "Deficiency"
@@ -1515,7 +1527,6 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             createLink(ss,"bph",text.lowercase(),"Condition","Benign Prostatic Hypertrophy")
             createLink(ss,"bipolar disorder",text.lowercase(),"Condition","Bipolar Disorder")
             createLink(ss,"bronchitis",text.lowercase(),"Condition","Bronchitis")
-            if(heading!="Vitamin D (Cholecalciferol)")
             createLink(ss,"cancer prevention",text.lowercase(),"Condition","Cancer Prevention")
             createLink(ss,"candidiasis",text.lowercase(),"Condition","Candidiasis")
             createLink(ss,"cataract prevention",text.lowercase(),"Condition","Cataract Prevention")
@@ -1563,6 +1574,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             createLink(ss,"rheumatoid arthritis",text.lowercase(),"Condition","Rheumatoid Arthritis")
             createLink(ss,"schizophrenia",text.lowercase(),"Condition","Schizophrenia")
             createLink(ss,"systemic lupus erythematosus (sle)",text.lowercase(),"Condition","Systemic Lupus Erythematosus")
+            createLink(ss,"thiamine",text.lowercase(),"Condition","Vitamin B1 (Thiamine)")
             createLink(ss,"ulcerative colitis",text.lowercase(),"Condition","Ulcerative Colitis")
             createLink(ss,"uterine fibroid",text.lowercase(),"Condition","Uterine Fibroids")
             createLink(ss,"zinc",text.lowercase(),"Vitamin","Zinc")
@@ -1878,12 +1890,13 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         }
 
         val ss = SpannableString(text)
-        createLink(ss,"tryptophan",text,"Supplement","Tryptophan")
-        createLink(ss,"vitamin k",text,"Supplement","Vitamin K (Quinones)")
-        createLink(ss,"vitamin b6",text,"Supplement","Vitamin B6 (Pyridoxine)")
-        createLink(ss,"folic acid",text,"Supplement","Folate")
-        createLink(ss,"niacin",text,"Supplement","Vitamin B3 (Niacin)")
-        createLink(ss,"carnitine",text,"Supplement","Carnitine")
+        createLink(ss,"tryptophan",text.lowercase(),"Supplement","Tryptophan")
+        createLink(ss,"vitamin k",text.lowercase(),"Supplement","Vitamin K (Quinones)")
+        createLink(ss,"vitamin b6",text.lowercase(),"Supplement","Vitamin B6 (Pyridoxine)")
+        createLink(ss,"folic acid",text.lowercase(),"Supplement","Folate")
+        createLink(ss,"niacin",text.lowercase(),"Supplement","Vitamin B3 (Niacin)")
+        createLink(ss,"carnitine",text.lowercase(),"Supplement","Carnitine")
+        createLink(ss,"vitamin a",text.lowercase(),"Vitamin","Vitamin A (Retinol)")
         binding.contentData.text = ss
 
     }//
@@ -2042,6 +2055,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                         "• Colchicine may lead to hyponatremia\n" +
                         "• Mannitol, causing blood volume expansion, may lead to a relative hyponatremia\n" +
                         "• Carbenicillin may lead to hypernatremia"
+            }
+            "Strontium" -> {
+                text = "• Limited data"
             }
             "Tin" -> {
                 text =  "• >50 mg./day can have negative effect on zinc"
@@ -2253,6 +2269,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         createLink(ss,"selenium",text.lowercase(),"Vitamin","Selenium")
         if(heading!="Vitamin A (Retinol)")
         createLink(ss,"vitamin a",text.lowercase(),"Vitamin","Vitamin A (Retinol)")
+        createLink(ss,"copper",text.lowercase(),"Vitamin","Copper")
 
         binding.contentData.text = ss
     }//
@@ -2353,6 +2370,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                 text =  "• Large doses may cause diarrhea\n" +
                         "• Contraindicated in people with renal failure\n" +
                         "• Contraindicated in people with diabetes that have an abnormality of potassium metabolism"
+            }
+            "Strontium" -> {
+                text = "• Appears to be quite safe"
             }
             "Selenium" -> {
                 text =  "• Large doses: hair loss, nail loss, nausea, vomiting, fatigue, diarrhea, irritability, paresthesias, garlic odor\n" +
@@ -2513,6 +2533,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         }
         val ss = SpannableString(text)
         createLink(ss,"parkinson's disease",text.lowercase(),"Condition","Parkinson's Disease")
+        createLink(ss,"parkinson's",text.lowercase(),"Condition","Parkinson's Disease")
         binding.contentData.text = ss
     }//
 
@@ -2520,6 +2541,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Causes of Deficiency"
         var text = ""
         when(heading){
+            "Strontium" -> {
+                text = "• Strontium-depleted refined foods"
+            }
             "Manganese" -> {
                 text = "• Consuming refined foods"
             }
@@ -2588,8 +2612,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                         "• Severe respiratory problems"
             }
             "Molybdenum" -> {
-                text =  "• Rare genetic defect - sulfite oxidase deficiency\n" +
-                        "• Total parenteral nutrition"
+                text =  "• Very rare"
             }
             "Nickel" -> {
                 text =  "• Decreased levels of glucose 6 - phosphate\n" +
@@ -2746,9 +2769,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         }
         val ss = SpannableString(text)
         if(heading=="Vitamin A (Retinol)")
-        createLink(ss,"zinc",text,"Vitamin","Zinc")
-        createLink(ss,"vitamin c",text,"Vitamin","Vitamin C (Ascorbic Acid)")
-        createLink(ss,"copper",text,"Vitamin","Copper")
+        createLink(ss,"zinc",text.lowercase(),"Vitamin","Zinc")
+        createLink(ss,"vitamin c",text.lowercase(),"Vitamin","Vitamin C (Ascorbic Acid)")
+        createLink(ss,"copper",text.lowercase(),"Vitamin","Copper")
         binding.contentData.text = ss
     }//
 
@@ -2756,6 +2779,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Signs and Symptoms of Deficiency"
         var text = ""
         when(heading){
+            "Strontium" -> {
+                text = "• May have reverse effect on bone, increased bone resorption"
+            }
             "Manganese" -> {
                 text = "• Cartilage defects (in animal studies)\n" +
                         "• Bone defects (in animal studies)\n" +
@@ -3074,6 +3100,11 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Food Sources"
         var text = ""
         when(heading){
+            "Strontium" -> {
+                text = "• Dairy products\n" +
+                        "• Vegetables\n" +
+                        "• Fruits"
+            }
             "Manganese" -> {
                 text = "• Avocado\n" +
                         "• Blackberries\n" +
@@ -3532,7 +3563,7 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
             }
         }
         val ss = SpannableString(text)
-        createLink(ss,"green tea",text,"Botanical","Camellia sinensis (Green tea)")
+        createLink(ss,"green tea",text.lowercase(),"Botanical","Camellia sinensis (Green tea)")
         binding.contentData.text = ss
     }//
 
@@ -3540,6 +3571,10 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Labs:"
         var text = ""
         when(heading){
+
+            "Strontium" -> {
+                text = "• Limited data"
+            }
             "Manganese" -> {
                 text = "• Whole blood manganese - preferred\n" +
                         "• Hair analysis varies with graying"
@@ -3561,6 +3596,14 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
                         "• Magnesium challenge - intravenous magnesium (.2 mEq./kg. over 4 hours)\n" +
                         "• Serum and RBC levels inaccurate unless severe depletion and can alter depending on age of RBCs\n" +
                         "• WBC magnesium - better indicator of tissue magnesium"
+            }
+            "Nickel" -> {
+                binding.subHeading.text = "Deficiency:"
+                text = "• Limited data"
+            }
+            "Phosphorus" -> {
+                binding.subHeading.text = "Deficiency:"
+                text = "• Very little possibility of a deficiency since most people consume too much phosphorus"
             }
             "Potassium" -> {
                 text = "• RBC potassium - for correlating EKG changes\n" +
@@ -3639,6 +3682,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Supplement Forms:"
         var text = ""
         when(heading){
+            "Strontium" -> {
+                text = "• Usually found in multi-mineral supplements"
+            }
             "Manganese" -> {
                 text = "• Manganese carbonate\n" +
                         "• Manganese chloride\n" +
@@ -3828,6 +3874,9 @@ class VitaminMineralDetailActivity : AppCompatActivity() {
         binding.subHeading.text = "Requirements"
         var text = ""
         when(heading){
+            "Strontium" -> {
+                text = "• No RDA has been established for strontium"
+            }
             "Manganese" -> {
                 text =  "• RDA:\n" +
                         "None\n" +

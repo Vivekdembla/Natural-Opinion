@@ -46,7 +46,8 @@ class SupplementDetailActivity : AppCompatActivity() {
         window.statusBarColor = this.resources.getColor(R.color.deep_green)
 
         binding.supplement.text = heading
-
+        if(heading=="Glandulars")
+            binding.supplement.text = "Glandulars (Protomorphogens)"
         showNecessarySections(heading)
 
         binding.backButton6.setOnClickListener { finish() }
@@ -607,11 +608,13 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Coenzyme Q10" -> {
+                binding.adverseReactionText.text = "Adverse reaction and Toxicity"
                 text = "• Generally well tolerated\n" +
                         "• Restrict during pregnancy and lactation because no studies have been done"
                 ss = SpannableString(text)
             }
             "Dehydroepiandrosterone (DHEA)" -> {
+                binding.adverseReactionText.text = "Adverse reaction and Toxicity"
                 text = "• Avoid if patient has hormonally sensitive cancer, including prostate and breast cancers\n" +
                         "• Relatively safe\n" +
                         "• Rarely in extremely large doses:\n" +
@@ -620,11 +623,13 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Dimethyl Glycine (DMG)" -> {
+                binding.adverseReactionText.text = "Adverse reaction and Toxicity"
                 text = "• No known toxic effects\n" +
                         "• Initial nausea that can be avoided by taking with largest meal of the day"
                 ss = SpannableString(text)
             }
             "Ethylenediaminetetraacetic acid (EDTA)" -> {
+                binding.adverseReactionText.text = "Adverse reaction and Toxicity"
                 text = "• Unpleasant skin odors\n" +
                         "• Fatigue\n" +
                         "• Nausea\n" +
@@ -655,6 +660,7 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "NADH" -> {
+                binding.adverseReactionText.text = "Adverse Reaction and Toxicity"
                 text = "• No adverse reactions or toxicity with usage of 1 year or more"
                 ss = SpannableString(text)
             }
@@ -754,6 +760,7 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "NADH" -> {
+                binding.drugNutritionText.text = "Drug/Nutrition Interaction"
                 text = "• Alcoholism may cause a vitamin B3 deficiency and therefore a deficiency in NADH"
                 ss = SpannableString(text)
             }
@@ -924,6 +931,7 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Carnitine" -> {
+                binding.toxicityText.text = "Toxicity and Side effects"
                 text = "• Large doses may produce body odor\n" +
                         "• Large doses may produce gastrointestinal discomfort\n" +
                         "• Only L-carnitine form should be taken, not D-carnitine or the D-L-carnitine form"
@@ -934,6 +942,7 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Cystine" -> {
+                binding.toxicityText.text = "Toxicity and Side effects"
                 text = "• A build-up of cystine can occur-see contraindications"
                 ss = SpannableString(text)
             }
@@ -943,6 +952,7 @@ class SupplementDetailActivity : AppCompatActivity() {
 
             }
             "Glutamic Acid" -> {
+                binding.toxicityText.text = "Toxicity and Side effects"
                 text ="• Neurotoxicity could occur in extremely large doses\n" +
                         "• 140 gm. for the average male adult could product symptoms of toxicity:\n" +
                         "Nausea\n" +
@@ -1178,15 +1188,8 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Carnosine" -> {
-                text="• Severe protein deficiency\n" +
-                        "• Genetic abnormalities\n" +
-                        "• Infants on carnosine-deficient formula\n" +
-                        "• Kidney patients undergoing dialysis\n" +
-                        "• Patients on liquid or TPN diets\n" +
-                        "• Pregnant women\n" +
-                        "• Premature infants on total parenteral nutrition\n" +
-                        "• Several neuromuscular disorders, including Duchenne-type muscular dystrophy\n" +
-                        "• Starvation, especially kwashiorkor"
+                text="• Muscle weakness\n" +
+                        "• Progressive muscle weakness"
                 ss = SpannableString(text)
             }
             "Cystine" -> {
@@ -1406,11 +1409,11 @@ class SupplementDetailActivity : AppCompatActivity() {
                         "• Diabetes mellitus\n" +
                         "• Alcoholic hepatitis\n" +
                         "• Hypoglycemia\n" +
-                        "• Kidney stone prevention"
+                        "• Kidney stone prevention "
+                ss = SpannableString(text)
                 createLink(ss,"AIDS",text,"Condition","AIDS")
                 createLink(ss,"Benign prostatic hypertrophy (BPH)",text,"Condition","Benign Prostatic Hypertrophy (BPH)")
                 createLink(ss,"Diabetes mellitus",text,"Condition","Diabetes Mellitus")
-                ss = SpannableString(text)
             }
             "Amino Acids" -> {
                 text = "• Depression"
@@ -1606,13 +1609,26 @@ class SupplementDetailActivity : AppCompatActivity() {
                 ss = SpannableString(text)
             }
             "Dehydroepiandrosterone (DHEA)" -> {
-                text = "• Bronchitis\n" +
-                        "• Burns\n" +
-                        "• Cystic fibrosis\n" +
-                        "• Kidney stone prevention\n" +
-                        "• Protection against alcohol intake by preventing liver damage\n" +
-                        "• Protection against cigarette smoke\n" +
-                        "• Protection against radiation effects"
+                text = "• Aging prevention\n" +
+                        "• AIDS\n" +
+                        "• Alzheimer's disease, in female patients\n" +
+                        "• Asthma\n" +
+                        "• Atherosclerosis\n" +
+                        "• Chronic fatigue syndrome\n" +
+                        "• Depression\n" +
+                        "• Diabetes mellitus\n" +
+                        "• Erectile Dysfunction (Impotence)\n" +
+                        "• Insomnia\n" +
+                        "• Menopause, hot flashes\n" +
+                        "• Multiple sclerosis\n" +
+                        "• Obesity\n" +
+                        "• Osteoporosis\n" +
+                        "• Psoriatic arthritis\n" +
+                        "• Rheumatoid arthritis\n" +
+                        "• Systemic lupus erythematosus (SLE)\n" +
+                        "• Ulcerative colitis\n" +
+                        "• Cancers, especially colon and liver\n" +
+                        "• Dermatomyositis"
                 ss = SpannableString(text)
             }
             "Dimethyl Glycine (DMG)" -> {
@@ -1978,32 +1994,45 @@ class SupplementDetailActivity : AppCompatActivity() {
                     "• Substance addiction"
             ss = SpannableString(text)
         }
+            "Cystine" -> {
+                text = "• Bronchitis\n" +
+                        "• Burns\n" +
+                        "• Cystic fibrosis\n" +
+                        "• Kidney stone prevention\n" +
+                        "• Protection against alcohol intake by preventing liver damage\n" +
+                        "• Protection against cigarette smoke\n" +
+                        "• Protection against radiation effects"
+                ss = SpannableString(text)
+            }
         }
 
         createLink(ss,"Aging prevention",text,"Condition","Aging Prevention")
         createLink(ss,"AIDS",text,"Condition","AIDS")
         createLink(ss,"Anorexia nervosa",text,"Condition","Anorexia Nervosa")
         createLink(ss,"Autism",text,"Condition","Autism")
-        createLink(ss,"Attention decficit disorder (ADD)",text,"Condition","Attention Deficit Disorder")
+        createLink(ss,"attention deficit disorder",text.lowercase(),"Condition","Attention Deficit Disorder")
         createLink(ss,"Allergies",text,"Condition","Allergies")
         createLink(ss,"Alzheimer's disease",text,"Condition","Alzheimer's Disease")
         createLink(ss,"Aphthous stomatitis",text,"Condition","Aphthous Stomatitis")
         createLink(ss,"Asthma",text,"Condition","Asthma")
         createLink(ss,"Atherosclerosis",text,"Condition","Atherosclerosis")
         createLink(ss,"Autism",text,"Condition","Autism")
+        createLink(ss,"Otitis media",text.lowercase(),"Condition","Otitis Media")
         createLink(ss,"Bipolar disorder",text,"Condition","Bipolar Disorder")
         createLink(ss,"Bipolar disease",text,"Condition","Bipolar Disorder")
+        createLink(ss,"Bronchitis",text,"Condition","Bronchitis")
         createLink(ss,"Benign prostatic hypertrophy (BPH)",text,"Condition","Benign Prostatic Hypertrophy")
         createLink(ss,"Benign prostatic hypertrophy",text,"Condition","Benign Prostatic Hypertrophy")
         createLink(ss,"Cancer prevention",text,"Condition","Cancer Prevention")
         createLink(ss,"Cataract",text,"Condition","Cataract")
         createLink(ss,"Cataract prevention",text,"Condition","Cataract prevention")
-        createLink(ss,"Chronic fatigue syndrome",text,"Condition","Chronic Fatigue Syndrome")
+        createLink(ss,"chronic fatigue syndrome",text.lowercase(),"Condition","Chronic Fatigue Syndrome")
         createLink(ss,"Congestive heart failure",text,"Condition","Congestive Heart Failure")
         createLink(ss,"Cholecystitis",text,"Condition","Cholecystitis")
         createLink(ss,"Cholelithiasis",text,"Condition","Cholelithiasis")
         createLink(ss,"Crohn's disease",text,"Condition","Crohn's Disease")
         createLink(ss,"Diabetes",text,"Condition","Diabetes Mellitus")
+        createLink(ss,"diabetes mellitus",text.lowercase(),"Condition","Diabetes Mellitus")
         createLink(ss,"Depression",text,"Condition","Depression")
         createLink(ss,"Dysmenorrhea",text,"Condition","Dysmenorrhea")
         createLink(ss,"dysmenorrhea",text,"Condition","Dysmenorrhea")
@@ -2020,7 +2049,7 @@ class SupplementDetailActivity : AppCompatActivity() {
         createLink(ss,"Herpes simplex",text,"Condition","Herpes Simplex")
         createLink(ss,"Hemorrhoids",text,"Condition","Hemorrhoids")
         createLink(ss,"Hypertension",text,"Condition","Hypertension")
-        createLink(ss,"Hypercholesterolemia",text,"Condition","Hypercholesterolemia")
+        createLink(ss,"hypercholesterolemia",text.lowercase(),"Condition","Hypercholesterolemia")
         createLink(ss,"Hypothyroidism",text,"Condition","Hypothyroidism")
         createLink(ss,"Impotence",text,"Condition","Impotence")
         createLink(ss,"Insomnia",text,"Condition","Insomnia")
@@ -2029,19 +2058,22 @@ class SupplementDetailActivity : AppCompatActivity() {
         createLink(ss,"Macular degeneration",text,"Condition","Macular Degeneration")
         createLink(ss,"Menopause",text,"Condition","Menopause")
         createLink(ss,"Multiple sclerosis",text,"Condition","Multiple Sclerosis")
-        createLink(ss,"Memory Loss",text,"Condition","Memory Loss")
+        createLink(ss,"memory loss",text.lowercase(),"Condition","Memory Loss")
         createLink(ss,"Obesity",text,"Condition","Obesity")
         createLink(ss,"Osteoarthritis",text,"Condition","Osteoarthritis")
         createLink(ss,"osteoarthritis",text,"Condition","Osteoarthritis")
+        createLink(ss,"osteoporosis",text.lowercase(),"Condition","Osteoporosis")
+        createLink(ss,"oteoarthritis",text.lowercase(),"Condition","Osteoarthritis")
         createLink(ss,"Short term memory loss",text,"Condition","Memory Loss")
-        createLink(ss,"Peptic ulcers",text,"Condition","Peptic Ulcers")
+        createLink(ss,"peptic ulcers",text.lowercase(),"Condition","Peptic Ulcers")
+        createLink(ss,"peptic ulcer",text.lowercase(),"Condition","Peptic Ulcers")
         createLink(ss,"Psoriasis",text,"Condition","Psoriasis")
         createLink(ss,"PMS",text,"Condition","PMS")
         createLink(ss,"Psoriatic arthritis",text,"Condition","Psoriatic Arthritis")
         createLink(ss,"psoriatic arthritis",text,"Condition","Psoriatic Arthritis")
-        createLink(ss,"Parkinson's disease",text,"Condition","Parkinson's Disease")
+        createLink(ss,"parkinson's disease",text.lowercase(),"Condition","Parkinson's Disease")
         createLink(ss,"Rheumatoid arthritis",text,"Condition","Rheumatoid Arthritis")
-        createLink(ss,"rheumatoid arthritis",text,"Condition","Rheumatoid Arthritis")
+        createLink(ss,"rheumatoid arthritis",text.lowercase(),"Condition","Rheumatoid Arthritis")
         createLink(ss,"Schizophrenia",text,"Condition","Schizophrenia")
         createLink(ss,"Uterine Fibroids",text,"Condition","Uterine Fibroids")
         createLink(ss,"Ulcerative colitis",text,"Condition","Ulcerative Colitis")
@@ -2380,111 +2412,112 @@ class SupplementDetailActivity : AppCompatActivity() {
                     "• Prohibits both spontaneous and induced mutations in bacteria\n" +
                     "• Mucolytic agent\n" +
                     "• Regulatory mediator between macrophages and lymphocytes"
-            function_ss = SpannableString(function_text)
-            createLink(function_ss,"glutathione,",function_text,"Supplement","Glutathione")
-            createLink(function_ss,"l-methionine ",function_text,"Supplement","Methionine")
-            createLink(function_ss,"glutathione ",function_text,"Supplement","Glutathione")
+                function_ss = SpannableString(function_text)
+                createLink(function_ss,"glutathione,",function_text,"Supplement","Glutathione")
+                createLink(function_ss,"l-methionine ",function_text,"Supplement","Methionine")
+                createLink(function_ss,"glutathione ",function_text,"Supplement","Glutathione")
         }"NADH" -> {
-            function_text = "• Energy production"
-            function_ss = SpannableString(function_text)
-        }"Phenylalanine" -> {
-            function_text = "• Blocks enkephalinase in the CNS\n" +
-                    "• Precursor to tyrosine, tyramine, dopamine, epinephrine, norepinephrine\n" +
-                    "• Required for normal thyroid function\n" +
-                    "• Triggers the release of cholycystokinin, including satiety"
-            function_ss = SpannableString(function_text)
-        }"Phosphatidylserine" -> {
-            function_text = "• Improves behavioral performance by restoring cell membrane composition\n" +
-                    "• Improves cognitive function by restoring cell membrane composition\n" +
-                    "• Improves emotional well-being by restoring cell membrane composition"
-            function_ss = SpannableString(function_text)
-        }"Proline" -> {
-            function_text = "• Essential element in some neuropeptides\n" +
-                    "• One form of substance P is a tetrapeptide containing arginine-proline, lysine-proline\n" +
-                    "• One of the main component of collagen\n" +
-                    "• Stimulates wound healing"
-            function_ss = SpannableString(function_text)
-        }"Pycnogenol" -> {
-            function_text = "• Counteracts spontaneous mutation in Saccharomyces cerevisiae both at nuclear and mitochondrial levels\n" +
-                    "• Decreases the postoperative edema associated with certain surgeries\n" +
-                    "• Free radical scavenging action\n" +
-                    "• Histidine decarboxylase inhibitors, lowering histamine levels in the aortic endothelium\n" +
-                    "• Increases capillary resistance\n" +
-                    "• Inhibits activities of proteolytic electase and collagenase\n" +
-                    "• Inhibits the activities of the glycosides hyaluronidase and beta-glucuronidase\n" +
-                    "• Inhibits xanthine oxidase activity\n" +
-                    "• Prevents vascular permeability in animal studies"
-            function_ss = SpannableString(function_text)
-        }"Red Yeast Rice" -> {
-            function_text = "• Lowers blood levels of both cholesterol and triglycerides\n" +
-                    "• Direct inhibitory effect on HMG-CoA-reductase and reduced cellular cholesterol levels"
-            function_ss = SpannableString(function_text)
-        }"Quercetin" -> {
-            function_text = "• Affects a variety of enzyme systems:\n" +
-                    "Aldose reductase (an enzyme which promotes the synthesis and intracellular accumulation of sorbitol)\n" +
-                    "Catechol-O-methyltransferase\n" +
-                    "Cyclic nucleotide phosphodiesterases\n" +
-                    "Cyclo-oxygenase\n" +
-                    "Estrogen synthetase\n" +
-                    "Histidine decarboxylase\n" +
-                    "Hyaluronidase\n" +
-                    "Phospholipase A2\n" +
-                    "Protein kinases\n" +
-                    "Transport ATPases\n" +
-                    "Xanthine oxidase\n" +
-                    "• Anti-inflammatory - prevents mast cell and basophil degranulation\n" +
-                    "• Anti-oxidant\n" +
-                    "• Helps reduce the formation of leukotrienes\n" +
-                    "• Increases cyclic AMP\n" +
-                    "• Inhibits phospholipase A 2\n" +
-                    "• Inhibits platelet aggregation\n" +
-                    "• Prevents breakdown of collagen matrix of connective tissue and ground substance\n" +
-                    "• Protects pancreatic beta cells from damaging effects of free radicals\n" +
-                    "• Sparing effect on epinephrine\n" +
-                    "• Stabilizes membranes"
-            function_ss = SpannableString(function_text)
-        }"S-Adenosyl-L-Methionine (SAM)" -> {
-            function_text = "• Decreases serum bilirubin with Gilbert's syndrome\n" +
-                    "• Essential for all sulfur-containing compounds synthesis, including glutathione and other cartilage components that contain sulfur\n" +
-                    "• Functions closely with folic acid and vitamin B12 in methylation reactions\n" +
-                    "• Improves binding of neurotransmitters to receptor sites\n" +
-                    "• Improves fluidity of brain cell membrane\n" +
-                    "• Improves membrane function of the liver\n" +
-                    "• Improves the structure and function of cartilage in osteoarthritic joints\n" +
-                    "• Inactivates estrogens\n" +
-                    "• Increases levels of glutathionine\n" +
-                    "• Increases levels of serotonin, dopamine and phosphatidylserine\n" +
-                    "• May reduce the risk of liver cancer in individuals with chronic liver diseases like chronic hepatitis\n" +
-                    "• Necessary for manufacture of neurotransmitters and phospholipids like phosphatidylcholine and phosphatidylserine\n" +
-                    "• Promotes bile flow\n" +
-                    "• Relieves inflammation and pain of osteoarthritis"
-            function_ss = SpannableString(function_text)
-        }"Taurine" -> {
-            function_text = "• Facilitates the cellular flux of sodium, potassium and possibly calcium and magnesium ions\n" +
-                    "• Increases the hormone prolactin for lactating women\n" +
-                    "• May be an inhibitory neurotransmitter\n" +
-                    "• Modulates calcium flux and neuron excitability\n" +
-                    "• Modulates the activity of cAMP\n" +
-                    "• Part of white blood cell defense mechanism\n" +
-                    "• Required for conjugation of bile acids\n" +
-                    "• Required for nervous system development\n" +
-                    "• Required for the normal functioning of the heart, brain, eyes, gallbladder, and vascular system"
-            function_ss = SpannableString(function_text)
-        }"Tryptophan" -> {
-            function_text = "• Essential in the synthesis of nicotinic acid\n" +
-                    "• Large doses increases prolactin and growth hormone\n" +
-                    "• Precursor to serotonin"
-            function_ss = SpannableString(function_text)
-        }"Tyrosine" -> {
-            function_text = "• Increases appetite in small doses\n" +
-                    "• Increases libido, due to increased catecholamine levels\n" +
-                    "• Precursor to hormones such as thyroid and catecholestrogens\n" +
-                    "• Precursor for melanin\n" +
-                    "• Precursor to neurotransmitters norepinephrine, epinephrine and dopamine\n" +
-                    "• Reduces appetite in large doses"
-            function_ss = SpannableString(function_text)
+                function_text = "• Energy production"
+                function_ss = SpannableString(function_text)
+            }"Phenylalanine" -> {
+                function_text = "• Blocks enkephalinase in the CNS\n" +
+                        "• Precursor to tyrosine, tyramine, dopamine, epinephrine, norepinephrine\n" +
+                        "• Required for normal thyroid function\n" +
+                        "• Triggers the release of cholycystokinin, including satiety"
+                function_ss = SpannableString(function_text)
+            }"Phosphatidylserine" -> {
+                function_text = "• Improves behavioral performance by restoring cell membrane composition\n" +
+                        "• Improves cognitive function by restoring cell membrane composition\n" +
+                        "• Improves emotional well-being by restoring cell membrane composition"
+                function_ss = SpannableString(function_text)
+            }"Proline" -> {
+                function_text = "• Essential element in some neuropeptides\n" +
+                        "• One form of substance P is a tetrapeptide containing arginine-proline, lysine-proline\n" +
+                        "• One of the main component of collagen\n" +
+                        "• Stimulates wound healing"
+                function_ss = SpannableString(function_text)
+            }"Pycnogenol" -> {
+                function_text = "• Counteracts spontaneous mutation in Saccharomyces cerevisiae both at nuclear and mitochondrial levels\n" +
+                        "• Decreases the postoperative edema associated with certain surgeries\n" +
+                        "• Free radical scavenging action\n" +
+                        "• Histidine decarboxylase inhibitors, lowering histamine levels in the aortic endothelium\n" +
+                        "• Increases capillary resistance\n" +
+                        "• Inhibits activities of proteolytic electase and collagenase\n" +
+                        "• Inhibits the activities of the glycosides hyaluronidase and beta-glucuronidase\n" +
+                        "• Inhibits xanthine oxidase activity\n" +
+                        "• Prevents vascular permeability in animal studies"
+                function_ss = SpannableString(function_text)
+            }"Red Yeast Rice" -> {
+                function_text = "• Lowers blood levels of both cholesterol and triglycerides\n" +
+                        "• Direct inhibitory effect on HMG-CoA-reductase and reduced cellular cholesterol levels"
+                function_ss = SpannableString(function_text)
+            }"Quercetin" -> {
+                function_text = "• Affects a variety of enzyme systems:\n" +
+                        "Aldose reductase (an enzyme which promotes the synthesis and intracellular accumulation of sorbitol)\n" +
+                        "Catechol-O-methyltransferase\n" +
+                        "Cyclic nucleotide phosphodiesterases\n" +
+                        "Cyclo-oxygenase\n" +
+                        "Estrogen synthetase\n" +
+                        "Histidine decarboxylase\n" +
+                        "Hyaluronidase\n" +
+                        "Phospholipase A2\n" +
+                        "Protein kinases\n" +
+                        "Transport ATPases\n" +
+                        "Xanthine oxidase\n" +
+                        "• Anti-inflammatory - prevents mast cell and basophil degranulation\n" +
+                        "• Anti-oxidant\n" +
+                        "• Helps reduce the formation of leukotrienes\n" +
+                        "• Increases cyclic AMP\n" +
+                        "• Inhibits phospholipase A 2\n" +
+                        "• Inhibits platelet aggregation\n" +
+                        "• Prevents breakdown of collagen matrix of connective tissue and ground substance\n" +
+                        "• Protects pancreatic beta cells from damaging effects of free radicals\n" +
+                        "• Sparing effect on epinephrine\n" +
+                        "• Stabilizes membranes"
+                function_ss = SpannableString(function_text)
+            }"S-Adenosyl-L-Methionine (SAM)" -> {
+                function_text = "• Decreases serum bilirubin with Gilbert's syndrome\n" +
+                        "• Essential for all sulfur-containing compounds synthesis, including glutathione and other cartilage components that contain sulfur\n" +
+                        "• Functions closely with folic acid and vitamin B12 in methylation reactions\n" +
+                        "• Improves binding of neurotransmitters to receptor sites\n" +
+                        "• Improves fluidity of brain cell membrane\n" +
+                        "• Improves membrane function of the liver\n" +
+                        "• Improves the structure and function of cartilage in osteoarthritic joints\n" +
+                        "• Inactivates estrogens\n" +
+                        "• Increases levels of glutathionine\n" +
+                        "• Increases levels of serotonin, dopamine and phosphatidylserine\n" +
+                        "• May reduce the risk of liver cancer in individuals with chronic liver diseases like chronic hepatitis\n" +
+                        "• Necessary for manufacture of neurotransmitters and phospholipids like phosphatidylcholine and phosphatidylserine\n" +
+                        "• Promotes bile flow\n" +
+                        "• Relieves inflammation and pain of osteoarthritis"
+                function_ss = SpannableString(function_text)
+            }"Taurine" -> {
+                function_text = "• Facilitates the cellular flux of sodium, potassium and possibly calcium and magnesium ions\n" +
+                        "• Increases the hormone prolactin for lactating women\n" +
+                        "• May be an inhibitory neurotransmitter\n" +
+                        "• Modulates calcium flux and neuron excitability\n" +
+                        "• Modulates the activity of cAMP\n" +
+                        "• Part of white blood cell defense mechanism\n" +
+                        "• Required for conjugation of bile acids\n" +
+                        "• Required for nervous system development\n" +
+                        "• Required for the normal functioning of the heart, brain, eyes, gallbladder, and vascular system"
+                function_ss = SpannableString(function_text)
+            }"Tryptophan" -> {
+                function_text = "• Essential in the synthesis of nicotinic acid\n" +
+                        "• Large doses increases prolactin and growth hormone\n" +
+                        "• Precursor to serotonin"
+                function_ss = SpannableString(function_text)
+            }"Tyrosine" -> {
+                function_text = "• Increases appetite in small doses\n" +
+                        "• Increases libido, due to increased catecholamine levels\n" +
+                        "• Precursor to hormones such as thyroid and catecholestrogens\n" +
+                        "• Precursor for melanin\n" +
+                        "• Precursor to neurotransmitters norepinephrine, epinephrine and dopamine\n" +
+                        "• Reduces appetite in large doses"
+                function_ss = SpannableString(function_text)
+            }
         }
-        }
+        createLink(function_ss,"carnitine",function_text,"Supplement","Carnitine")
         binding.contentData.text = function_ss
         binding.subHeading.text = "Physiologic Functions"
 
@@ -3075,13 +3108,13 @@ class SupplementDetailActivity : AppCompatActivity() {
             if(heading =="Ethylenediaminetetraacetic acid (EDTA)")
                 binding.contraindiction.visibility = View.VISIBLE
             binding.adverseReaction.visibility = View.VISIBLE
-            if(heading=="Pycnogenol"||heading=="Quercetin"){
+            if(heading=="Quercetin"||heading=="Dimethyl Glycine (DMG)"){
                 binding.plantFood.visibility = View.VISIBLE
             }
         }
         else if(heading=="Arginine"||heading == "Carnitine"||heading=="Carnosine"||
             heading =="Cystine"||heading=="Phenylalanine"||heading=="Proline"
-            ||heading=="Taurine"||heading=="Tryptophan"||heading=="Tyrosine"){
+            ||heading=="Taurine"||heading=="Tryptophan"||heading=="Tyrosine"||heading=="Bioflavonoids"){
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
@@ -3093,7 +3126,7 @@ class SupplementDetailActivity : AppCompatActivity() {
             if(heading=="Bioflavonoids")
                 binding.drugNutrition.visibility = View.VISIBLE
 
-        }else if(heading=="Bromelain"||heading=="Phosphatidylserine"){
+        }else if(heading=="Bromelain"||heading=="Phosphatidylserine"||heading=="Fructooligosaccharides (FOS)"||heading=="Pycnogenol"){
 
             binding.description.visibility = View.VISIBLE
             binding.plantFood.visibility = View.VISIBLE
@@ -3102,8 +3135,10 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.drugNutrition.visibility = View.VISIBLE
             binding.dosage.visibility = View.VISIBLE
             binding.adverseReaction.visibility = View.VISIBLE
-            if(heading=="Phosphatidylserine"){
+            if(heading=="Phosphatidylserine"||heading=="Fructooligosaccharides (FOS)"){
+                if(heading!="Fructooligosaccharides (FOS)")
                 binding.plantFoodText.text = "Sources:"
+
                 binding.functionText.text = "Physiologic Therapeutics:"
             }
         }else if(heading=="Digestive Enzymes"){
@@ -3122,6 +3157,8 @@ class SupplementDetailActivity : AppCompatActivity() {
             binding.function.visibility = View.VISIBLE
             binding.functionText.text = "Types of Tissue Extracts:"
         }else if(heading=="Glucosamine Sulfate"||heading=="Methylsufonylmethane (MSM)"){
+            if(heading=="Methylsufonylmethane (MSM)")
+                binding.dosage.visibility = View.VISIBLE
             binding.description.visibility = View.VISIBLE
             binding.function.visibility = View.VISIBLE
             binding.indication.visibility = View.VISIBLE
