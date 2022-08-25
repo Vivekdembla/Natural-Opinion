@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.naturalopinion">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,12 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NaturalOpinion"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".PaymentActivity"
+            android:name=".VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".SulphiteSourceActivity"
+            android:name=".OrderFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
             android:exported="false" />
         <activity
             android:name=".FourTherapyActivity"

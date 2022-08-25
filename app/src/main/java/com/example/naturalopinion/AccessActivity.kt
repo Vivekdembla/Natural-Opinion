@@ -12,7 +12,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.naturalopinion.Data.LoginData
 import com.example.naturalopinion.databinding.ActivityAccessBinding
+import java.lang.Error
+import java.util.regex.Pattern
 
 
 class AccessActivity : AppCompatActivity() {
@@ -50,18 +53,25 @@ class AccessActivity : AppCompatActivity() {
                 binding.cross2Error.visibility = View.VISIBLE
                 return@setOnClickListener
             }
-            if(binding.accessCode.text.toString() == "121212"){
-                binding.accessCard.strokeWidth = 0
-                binding.emailCardview.strokeWidth = 0
-                binding.cross1Error.visibility = View.GONE
-                binding.cross2Error.visibility = View.GONE
-                binding.cross1.visibility = View.VISIBLE
-                binding.cross2.visibility = View.VISIBLE
-                Toast.makeText(this,"Valid Request",Toast.LENGTH_SHORT).show()
-                val editor = getSharedPreferences("Paid", MODE_PRIVATE).edit()
-                editor.putBoolean("Premium",true)
-                editor.apply()
-            }else{
+            val password = binding.accessCode.text.toString()
+            var restApiService = RestApiService()
+            val email = binding.email.text.toString()
+
+            if(EMAIL_ADDRESS_PATTERN.matcher(email).matches()&& password.isNotEmpty())
+            try {
+                restApiService.login(LoginData(email,password)){
+                    if(it?.responseCode==200){
+                        Toast.makeText(this,"Valid Request",Toast.LENGTH_SHORT).show()
+                        val editor = getSharedPreferences("Paid", MODE_PRIVATE).edit()
+                        editor.putBoolean("Premium",true)
+                        editor.apply()
+                        finish()
+                    }else{
+                        Toast.makeText(this,it?.response_message,Toast.LENGTH_LONG).show()
+                    }
+                }
+            }catch (e:Error){
+                Toast.makeText(this,e.toString(),Toast.LENGTH_LONG).show()
                 binding.accessCard.strokeWidth = 3
                 binding.cross2.visibility = View.GONE
                 binding.cross2Error.visibility = View.VISIBLE
@@ -77,6 +87,7 @@ class AccessActivity : AppCompatActivity() {
 
         forgot.setOnClickListener { startActivity(Intent(this,ForgotActivity::class.java)) }
 
+
     }
     fun isValidEmail(target: CharSequence?): Boolean {
         return if (TextUtils.isEmpty(target)) {
@@ -85,4 +96,13 @@ class AccessActivity : AppCompatActivity() {
             Patterns.EMAIL_ADDRESS.matcher(target!!).matches()
         }
     }
+    val EMAIL_ADDRESS_PATTERN: Pattern = Pattern.compile(
+        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+"
+    )
 }

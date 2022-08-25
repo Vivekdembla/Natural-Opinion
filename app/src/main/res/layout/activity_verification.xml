@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="@id/form_heading"
+            app:layout_constraintBottom_toBottomOf="@id/form_heading"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/ic_back"
+            android:id="@+id/back_button"/>
+
+        <TextView
+            android:id="@+id/form_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:text="Email Verification"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_alert"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/alert_icon"
+            app:layout_constraintTop_toBottomOf="@id/form_heading"
+            android:layout_marginTop="50dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alert_icon"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Check your email"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/check"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/check"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="We have send an one time password  (OTP) to your email"
+            android:paddingHorizontal="20dp"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/check"
+            android:layout_marginTop="100dp"
+            android:id="@+id/email_card">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/email_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="5dp"
+                app:strokeColor="@color/red">
+
+                <EditText
+                    android:id="@+id/otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="50dp"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="5dp"
+                    android:hint="1234"
+                    android:textColor="@color/black"/>
+
+                <ImageView
+                    android:id="@+id/cross_1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_cross" />
+
+                <ImageView
+                    android:id="@+id/cross_1_error"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_error"
+                    android:visibility="gone" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingHorizontal="5dp"
+                android:text="Enter OTP"
+                android:elevation="2dp"
+                android:background="@color/white"/>
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/email_card"
+            android:layout_marginTop="150dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/submit_button">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Submit Form"
+                android:gravity="center"
+                android:paddingVertical="15dp"
+                android:textColor="@color/white"
+                android:background="@color/deep_green"
+                />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

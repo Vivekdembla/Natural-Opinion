@@ -23,10 +23,11 @@ class PlaceOrderActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_place_order)
         findViewById<CardView>(R.id.open_form).setOnClickListener {
-            val uri: Uri =
-                Uri.parse("http://www.naturalopinion.com/nmp/OrderNMP.html") // missing 'http://' will cause crashed
-
-            val intent = Intent(Intent.ACTION_VIEW, uri)
+//            val uri: Uri =
+//                Uri.parse("http://www.naturalopinion.com/nmp/OrderNMP.html") // missing 'http://' will cause crashed
+//
+//            val intent = Intent(Intent.ACTION_VIEW, uri)
+            val intent = Intent(this,OrderFormActivity::class.java)
             startActivity(intent)
         }
 

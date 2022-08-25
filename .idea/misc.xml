@@ -16,7 +16,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/drawable/ic_third_image.xml" value="0.188" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/drawable/ic_welcome.xml" value="0.1265" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/drawable/welcome_image.xml" value="0.1265" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_about.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_about.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_access.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_botanical_detail.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_botanicals.xml" value="0.22" />
@@ -34,6 +34,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_medical_condition.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_nutritional_tips.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_order_form.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_other_therapy.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_payment.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_physcal_exam.xml" value="0.2" />
@@ -46,6 +47,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_sulphite_source.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_supplement_detail.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_suppliment.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_verification.xml" value="0.24351050679851668" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_vitam.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/activity_vitamin_mineral_detail.xml" value="0.22" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NaturalOpinion/app/src/main/res/layout/card_item.xml" value="0.2" />
